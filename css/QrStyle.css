@@ -1,0 +1,260 @@
+     body {
+        background-image: url("imagenes/fondo azul.avif");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        font-family: 'Poppins', sans-serif;
+        overflow-x: hidden;
+    }
+
+
+
+    /* Fondo blanco del contenido */
+    .sectionInside {
+        background: rgba(255, 255, 255, 0.8); /* Fondo blanco translúcido */
+        width: 65%;
+        height: 10%;
+        padding: 20px;
+        border-radius: 8px;
+        margin-top: 8%;
+        margin-bottom: 5%;
+        box-shadow: 0 2px 10px white;
+
+    }
+
+    /* Fondo morado */
+    .qr-section {
+        background-color: #4a4a9d;
+        color: white;
+        padding: 20px;
+        border-radius: 8px;
+        margin-top: 20px;
+        box-shadow: 0 2px 10px #4a4a9d;
+
+
+    }
+
+    .bordeimagen {
+        background-color: white;
+        width: 29%; /* Ancho fijo, ajusta según necesites */
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 2px 10px white;
+
+
+    }
+
+    .qr-section .imagen {
+        width: 100%;
+        max-width: 300px; /* Ajusta este valor según el tamaño deseado */
+        height: auto;
+        margin: 0;
+        display: block;
+        padding: 5%;
+        
+    }
+
+    .qr-section .imagen img {
+        width: 100%;
+        height: auto;
+        border-radius: 4px;
+        display: block;
+        padding: 5%;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+
+    }
+
+    /* Botones */
+    .botones {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+    }
+
+    .botones button {
+        padding: 4% 4%;
+        background-color: white;
+        color: #4B2E83;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1.3em;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+        box-shadow: 0 2px 10px black;
+
+
+    }
+
+    .botones button:hover {
+        background-color: #8E0D3C;
+        color: white;
+        transition: 0.3s ease;
+    }
+    
+    /* Texto */
+
+    .texto-superior{
+        background-color: white;
+        color: #4a4a9d;
+        padding: 3%;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 2em;
+        box-shadow: 0 2px 10px black;
+
+    }
+
+    .texto-final {
+        background-color: white;
+        color: #4a4a9d;
+        padding: 3%;
+        margin-top: 20px;
+        border-radius: 8px;
+        text-align: center;
+        font-size: 2em;
+        box-shadow: 0 2px 10px black;
+
+    }
+
+
+/* Responsividad */
+
+/* Media Queries */
+
+/* Para pantallas móviles (menores a 600px de ancho) */
+@media (max-width: 600px) {
+    .sectionInside {
+        width: 90%;
+        margin-top: 100px; /* Separación mayor desde el nav */
+    }
+
+    .qr-section {
+        width: 100%;
+        margin-top: 10px;
+        padding: 15px;
+    }
+
+    .bordeimagen {
+        width: 80%; /* Imagen un poco más grande */
+    }
+
+    .botones {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px; /* Separación entre los botones */
+    }
+
+    .botones button {
+        width: 80%;
+        margin-bottom: 10px; /* Separación entre botones */
+        padding: 3% 3%;
+        font-size: 1.1em; /* Reducir tamaño de texto en los botones */
+    }
+
+    .texto-superior, .texto-final {
+        font-size: 1.2em; /* Ajustar tamaño del texto */
+        padding: 10px;
+    }
+
+    #popup, #popup2 {
+        width: 80%;
+        height: auto;
+        padding: 15px;
+    }
+}
+
+/* Para tabletas (pantallas entre 600px y 900px) */
+@media (max-width: 900px) and (min-width: 600px) {
+    .sectionInside {
+        width: 80%;
+        margin-top: 100px;
+    }
+
+    .qr-section {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .bordeimagen {
+        width: 50%; /* Imagen más pequeña en tabletas */
+        min-width: 60%;
+
+    }
+
+    .botones {
+        flex-direction: row;
+        justify-content: space-evenly;
+        gap: 15px; /* Separación entre botones */
+    }
+
+    .botones button {
+        width: 45%;
+        padding: 4% 4%;
+        font-size: 1.2em; /* Ajuste de tamaño de texto */
+    }
+
+    .texto-superior, .texto-final {
+        font-size: 1.8em; /* Ajuste de tamaño de texto */
+        padding: 15px;
+    }
+
+    #popup, #popup2 {
+        width: 60%;
+        padding: 20px;
+    }
+}
+
+/* Para pantallas de escritorio (mayores de 900px) */
+@media (min-width: 900px) {
+    .sectionInside {
+        width: 65%; /* Mantener el ancho original */
+        height: auto; /* Ajuste automático de altura */
+        margin-top: 100px; /* Ajustar separación superior */
+        padding: 20px;
+        box-shadow: 0 2px 10px white;
+    }
+
+    .qr-section {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .bordeimagen {
+        width: 30%; /* Imagen de tamaño reducido */
+        min-width: 20%;
+
+    }
+
+    .botones {
+        justify-content: space-around;
+    }
+
+    .botones button {
+        width: auto;
+        padding: 4% 4%; /* Ajuste de tamaño de los botones */
+    }
+
+    .texto-superior, .texto-final {
+        font-size: 2em; /* Tamaño mayor de texto en pantallas grandes */
+        padding: 20px;
+    }
+
+    #popup, #popup2 {
+        width: 40%;
+        height: auto;
+        padding: 20px;
+    }
+}
+
+
+
+
+
+
+

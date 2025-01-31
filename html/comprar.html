@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discoteca comprar</title>
+  <link rel='stylesheet' type='text/css' media='screen' href="../css/headerFoooter.css">
+  <style>
+    /* Estilo para el contenedor principal */
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      background: #fff;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      margin-top: 130px;
+      margin-bottom:30px;
+    }
+
+    .container:hover {
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Estilo para la sección principal */
+    main {
+      flex: 1;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    /* Estilo para las tarjetas principales */
+    .main-card {
+      text-align: center;
+      background-color: #3d3d5c;
+      padding: 30px;
+      border-radius: 10px;
+      color: #fff;
+      border: 5px solid #3a0be2;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .main-card:hover {
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .main-card h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+
+    .card-image {
+      background: #24244d;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    /* Estilo para los botones dentro de la tarjeta */
+    .controls {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+    }
+
+    .btn {
+      width: 50px;
+      height: 50px;
+      background-color: #fff;
+      color: #333;
+      border: none;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn:hover {
+      background-color: #ff4757;
+      color: #fff;
+      transform: scale(1.1);
+    }
+
+    /* Estilo para el botón de comparar */
+    .compare-btn {
+      margin-top: 10px;
+      padding: 12px 30px;
+      background-color: #ff4757;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .compare-btn:hover {
+      background-color: #e63946;
+      transform: scale(1.05);
+    }
+
+    /* Sección de información */
+    .info-section {
+      margin-top: 40px;
+    }
+
+    .info-section h2 {
+      font-size: 1.8rem;
+      color: #870d36;
+      margin-bottom: 30px;
+    }
+
+    .info-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .info-text {
+      flex: 2;
+      background: #870d36;
+      color: #fff;
+      padding: 60px;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .info-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #e0e0e0;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+    }
+
+    .info-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="logo-container">
+        <a href="../html/index.html" class="logo"><img id="logo" src="../imagenes/logo.png" alt=""></a>
+      <h1 class="title">FestVibe</h1>
+    </div>
+    <nav class="nav-links">
+      <ul>
+        <li><a href="../html/index.html">Inicio</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="ayuda.html">Ayuda</a></li>
+      </ul>
+    </nav>
+    <div class="icons">
+      <a href="#" class="icon"><img class="icono" src="../imagenes/mail.png" alt=""></a>
+      <a href="#" class="icon"><img class="icono" src="../imagenes/settings.png" alt=""></a>
+    </div>
+    <button class="hamburger" aria-label="Abrir menú">☰</button>
+  </header>
+  <!-- Main Container -->
+  <div class="container">
+    <main>
+      <section class="main-card">
+        <h2>Sala Treasure</h2>
+        <div class="card-image">
+          <div class="controls">
+            <button class="btn minus">-</button>
+            <button class="btn reset">+</button>
+          </div>
+        </div>
+        <button class="compare-btn">Comparar</button>
+      </section>
+      <section class="info-section">
+        <h2>Heading 2</h2>
+        <div class="info-content">
+          <div class="info-text">
+            Espacio diseñado para párrafo Informativo
+          </div>
+          <div class="info-image">
+            <img src="https://img.freepik.com/fotos-premium/noche-discotecas-bailar-siluetas-divertidas-personas-bailando-club-nocturno-ia-generativa_771335-60008.jpg" alt="Placeholder">
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <div class="footInfo">
+      <p class="titulo"><strong>Empresa XYZ</strong></p>
+      <p>© 2024 Empresa XYZ. Todos los derechos reservados.</p>
+    </div>
+  
+    <div class="footInfo">
+      <p class="titulo"><strong>Contacto</strong></p>
+      <p>📞 Teléfono: +34 123 456 789</p>
+      <p>✉️ Correo electrónico: <a href="mailto:info@empresa.xyz">info@empresa.xyz</a></p>
+      <p>📍 Dirección: Calle Falsa 123, 28013 Madrid, España</p>
+    </div>
+  
+    <div class="footInfo">
+      <p class="titulo"><strong>Enlaces útiles</strong></p>
+      <ul>
+        <li><a href="#1">Inicio</a></li>
+        <li><a href="#2">Sobre nosotros</a></li>
+        <li><a href="#3">Servicios</a></li>
+        <li><a href="#4">Blog</a></li>
+        <li><a href="#5">Contacto</a></li>
+        <li><a href="#6">Política de privacidad</a></li>
+        <li><a href="#7">Términos y condiciones</a></li>
+      </ul>
+    </div>
+  
+    <div class="footInfo">
+      <p class="titulo"><strong>Síguenos</strong></p>
+      <ul>
+        <li><a href="https://www.facebook.com" target="_blank"><img src="../imagenes/Facebook.png" alt="Facebook"></a></li>
+        <li><a href="https://www.twitter.com" target="_blank"><img src="../imagenes/Twitter.png" alt="Twitter"></a></li>
+        <li><a href="https://www.instagram.com" target="_blank"><img src="../imagenes/Instagram.png" alt="Instagram"></a></li>
+        <li><a href="https://www.tiktok.com" target="_blank"><img src="../imagenes/TikTok.png" alt="TikTok"></a></li>
+      </ul>
+    </div>
+  
+    <div class="footInfo">
+      <p class="titulo"><strong>Horario de atención</strong></p>
+      <p>Lunes a Viernes: 9:00 AM - 6:00 PM</p>
+      <p>Sábados: 10:00 AM - 2:00 PM</p>
+      <p>Domingos y festivos: Cerrado</p>
+    </div>
+  </footer>
+</body>
+</html>

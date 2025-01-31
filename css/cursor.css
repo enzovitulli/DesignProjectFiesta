@@ -1,0 +1,9 @@
+button{
+    cursor: pointer;
+}
+input, p{
+    cursor:text;
+}
+.contenido {
+    cursor: help;
+}

@@ -1,0 +1,74 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Contenido principal */
+section {
+    padding: 3rem 5%; /* Aumento de margen entre textos */
+    display: grid;
+    gap: 2rem; /* Espacio entre los elementos internos */
+}
+
+#sectionInside {
+    padding: 1%;
+    border-radius: 40px;
+    background: rgba(255, 255, 255, 0.5);
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+section div img {
+    height: auto;
+    width: 35%;
+    border-radius: 20px;
+}
+
+section div .d {
+    flex-grow: 2;
+    width: 57%;
+    padding: 6%;
+    background: rgba(224, 122, 245, 0.8);
+    border-radius: 20px;
+}
+
+section div .d button {
+    width: 100%;
+    height: 3em;
+    border: none;
+    background: #040a55;
+    color: white;
+    transition: background-color 0.3s ease, text-shadow 0.3s ease;
+    box-shadow: black;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Sombra de texto en los botones */
+}
+
+section div .d button:hover {
+    background-color: #040a55;
+}
+
+section div .d button:active {
+    background-color: rgb(56, 94, 177);
+    color: white;
+    box-shadow: 5px 5px 5px #040a55 inset;
+    transition: none;
+}
+
+/* Estilo de los apartados */
+.apartado {
+    margin: 1.5%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap: 1%;
+}
+
+/* Títulos */
+h2 {
+    text-align: center;
+    color: rgb(42, 248, 228);
+    text-shadow: 5px 5px 5px black;
+}
+

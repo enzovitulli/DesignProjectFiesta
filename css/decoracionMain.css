@@ -1,0 +1,128 @@
+/* SLIDER */
+.slider-container {
+  overflow: hidden; /* Oculta el contenido que sale del contenedor */
+}
+
+.slider {
+  width: 90%;
+  margin: auto
+}
+.logos {
+  filter: drop-shadow(2px 2px 2px white);
+}
+.slider .slider-track {
+  display: flex;
+  justify-content: flex-start; /* Alinea las imágenes desde la izquierda */
+  animation: scroll 40s linear infinite;
+  width: calc(200px * 15); /* Multiplicamos por el número total de imágenes */
+  margin-top: 20px;
+}
+
+.slider .slide {
+  display: flex; /* Activa el modelo flexbox */
+  justify-content: center; /* Centra horizontalmente el contenido */
+  align-items: center; /* Centra verticalmente el contenido */
+  width: 200px;
+  margin-right: 40px; /* Espaciado entre las imágenes */
+}
+
+.slider .slide img {
+  display: block; /* Asegura que se comporte como un bloque para centrar correctamente */
+  margin: auto; /* Centra automáticamente dentro de su contenedor */
+  width: 100%;
+}
+
+/* Animación de desplazamiento */
+@keyframes scroll {
+  0% {
+      transform: translateX(0);
+  }
+  100% {
+      transform: translateX(-100%); /* Desplaza todo el contenido fuera de la vista */
+  }
+}
+
+
+/*Sección final */
+.container { 
+  width: 85%;
+  margin: 0 auto;
+  margin-top: 2em; 
+  padding: 20px;
+  justify-content: center; 
+  display: flex;  
+} 
+.content { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: flex-start; 
+  gap: 50px; 
+  width: 80%;
+}
+
+.form {
+  flex: 50%;
+  margin: auto;
+  border-radius: 50px; 
+  border-color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} 
+
+.form input[type="text"], 
+.form input[type="email"], 
+.form input[type="date"] { 
+  width: 70%; 
+  padding: 20px; 
+  margin-bottom: 10px; 
+  margin-top: 10px;
+  border: 1px solid #ccc; 
+  border-radius: 5px;
+} 
+
+.form button { 
+  background-color: #ffeb3b;
+  color: #000; 
+  padding: 10px 20px; 
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer;
+  width: 20%; /* Hace que el botón tenga el mismo ancho que los inputs */
+}
+
+.spotify {
+  flex: 50%;
+  margin-left: 2%;
+  max-width: 500px;
+}
+.spotify .tituloSpotify{
+  margin-bottom: 5px;
+}
+.spotify iframe {
+  width: 100%; /* Ajusta el ancho del iframe al 100% del contenedor .spotify */
+}
+@media (min-width: 955px) {
+  /* Cambios específicos para pantallas más grandes */
+  .final {
+    flex-direction: row; /* Cambia la dirección a fila en pantallas más grandes */
+    justify-content: space-around; /* Distribuye los elementos horizontalmente */
+    align-items: flex-start; /* Alinea los elementos al inicio del eje Y */
+  }
+
+  .news,
+  .spotify {
+    width: 100%; /* Ajusta el ancho de los elementos en pantallas más grandes */
+    margin-bottom: 0; /* Elimina el margen inferior en pantallas más grandes */
+    margin: auto;
+  }
+
+  .spotify {
+    width: 40%;
+    float: left; /* Ajusta el ancho de .spotify en pantallas más grandes */
+  }
+
+  .spotify iframe {
+    width: 100%; /* Ajusta el ancho del iframe al 100% del contenedor .spotify en pantallas grandes */
+  }
+}
