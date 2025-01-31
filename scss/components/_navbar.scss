@@ -1,0 +1,156 @@
+.navbar {
+  @include glass-effect;
+  font-family: $header-font;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $spacing-unit * 2 $spacing-unit * 3;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(15px);
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  border: none;
+
+  .logo-container {
+    display: flex;
+    align-items: center;
+    gap: $spacing-unit * 1.5;
+
+    .logo {
+      text-decoration: none;
+      transition: transform 0.3s ease;
+
+      img {
+        height: 3.5rem;
+        width: auto;
+        filter: brightness(0) invert(1);
+      }
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+
+    .title {
+      font-size: 2.4rem;
+      color: white;
+      letter-spacing: 0.1rem;
+    }
+  }
+
+  .nav-links {
+    margin: 0 auto; // Center the nav-links instead of pushing to right
+    padding: 0 $spacing-unit * 4; // Increased padding
+
+    ul {
+      display: flex;
+      list-style: none;
+      gap: $spacing-unit * 10; // Increased gap from 6 to 10 units
+
+      a {
+        text-decoration: none;
+        color: white;
+        font-size: 2rem; // Increased from 1.8rem to 2rem
+        transition: all 0.3s ease;
+        position: relative;
+        padding: $spacing-unit * 1.5 0; // Increased padding
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 0;
+          height: 2px;
+          background: $neon-blue;
+          transition: width 0.3s ease;
+        }
+
+        &:hover {
+          color: $neon-blue;
+          &::after {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  .hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    width: 3rem;
+    height: 3rem;
+    position: relative;
+    transition: all 0.3s ease;
+
+    span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: white;
+      position: absolute;
+      left: 0;
+      transition: all 0.3s ease;
+
+      &:first-child { top: 25%; }
+      &:nth-child(2) { top: 50%; }
+      &:last-child { top: 75%; }
+    }
+
+    &.active {
+      span {
+        &:first-child {
+          top: 50%;
+          transform: rotate(45deg);
+        }
+        &:nth-child(2) {
+          opacity: 0;
+        }
+        &:last-child {
+          top: 50%;
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  @include mobile {
+    .nav-links {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      height: 100vh;
+      width: 70%;
+      background: rgba(0, 0, 0, 0.95);
+      backdrop-filter: blur(15px);
+      transition: right 0.3s ease;
+      padding: $spacing-unit * 8 $spacing-unit * 3;
+
+      &.active {
+        right: 0;
+      }
+
+      ul {
+        flex-direction: column;
+        gap: $spacing-unit * 3;
+        
+        a {
+          font-size: 2.2rem;
+        }
+      }
+    }
+
+    .hamburger {
+      display: block;
+      z-index: 1001;
+    }
+  }
+}

@@ -1,0 +1,71 @@
+// Main content sections
+section {
+  padding: $spacing-unit * 3.75 5%;
+  display: grid;
+  gap: $spacing-unit * 2.5;
+}
+
+#sectionInside {
+  padding: 1%;
+  border-radius: $border-radius * 2;
+  background: rgba(255, 255, 255, 0.5);
+  margin: {
+    left: 5%;
+    right: 5%;
+  }
+}
+
+// Section content styles
+section div {
+  img {
+    height: auto;
+    width: 35%;
+    border-radius: $border-radius;
+  }
+
+  .d {
+    flex-grow: 2;
+    width: 57%;
+    padding: 6%;
+    background: $party-purple;
+    border-radius: $border-radius;
+
+    button {
+      width: 100%;
+      height: 3em;
+      border: none;
+      background: $royal-navy;
+      color: white;
+      transition: background-color 0.3s ease, text-shadow 0.3s ease;
+      box-shadow: $midnight-black;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+
+      &:hover {
+        background-color: $royal-navy;
+      }
+
+      &:active {
+        background-color: rgb(56, 94, 177);
+        color: white;
+        box-shadow: 5px 5px 5px $royal-navy inset;
+        transition: none;
+      }
+    }
+  }
+}
+
+// Apartado styles
+.apartado {
+  margin: $spacing-unit * 1.875;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 1%;
+}
+
+// Title styles
+h2 {
+  text-align: center;
+  color: $neon-blue;
+  text-shadow: 5px 5px 5px $midnight-black;
+}

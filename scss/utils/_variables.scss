@@ -1,0 +1,40 @@
+// Base Colors
+$pure-white: #ffffff;
+$pure-black: #000000;
+
+// Primary Colors
+$neon-blue: #00f1d6;  // Keeping existing neon blue
+$deep-purple: #9D4EDD; // Brighter version of purple for better visibility
+$hot-pink: #FF0080;    // Vibrant accent color
+
+// Secondary Colors
+$deep-navy: #0A1128;   // Dark background alternative
+$cyber-teal: #00B4D8;  // Secondary accent
+
+// Opacity Variants
+$glass-black: rgba($pure-black, 0.85);
+$glass-navy: rgba($deep-navy, 0.9);
+$glass-purple: rgba($deep-purple, 0.8);
+
+// Text Colors
+$text-dark: $pure-black;
+$text-light: $pure-white;
+
+// Functional Colors
+$primary-bg: $deep-navy;
+$secondary-bg: $glass-black;
+$accent-primary: $neon-blue;
+$accent-secondary: $deep-purple;
+$accent-highlight: $hot-pink;
+
+// Gradients
+$nav-gradient: linear-gradient(to bottom, $glass-black, $glass-navy);
+$body-gradient: linear-gradient(to bottom, $deep-navy, $pure-black);
+
+// Spacing
+$spacing-unit: 0.8rem;
+$container-padding: $spacing-unit * 2;
+
+// Borders
+$border-radius: 2rem;
+$border-radius-sm: 0.5rem;

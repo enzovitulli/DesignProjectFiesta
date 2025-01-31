@@ -1,0 +1,15 @@
+// Utils - Load first as they contain variables and mixins needed by other files
+@import 'utils/variables';
+@import 'utils/mixins';
+
+// Base styles
+@import 'base/reset';
+@import 'base/typography';
+
+// Layouts
+@import 'layouts/index';
+
+// Components
+@import 'components/navbar';
+@import 'components/footer';
+@import 'components/slider';
