@@ -1,21 +1,31 @@
 // Main content sections
-section {
-  @include glass-effect;
-  padding: $spacing-unit * 3.75 5%;
-  display: grid;
-  gap: $spacing-unit * 2.5;
+section:not(.hero-section, .gallery-preview, .slider-section) {
+  margin: $spacing-unit * 4 auto; // Changed from 5% to auto
+  padding: $spacing-unit * 4;
+  border-radius: $border-radius;
+  max-width: 1000px; // Added max-width to make sections narrower
+  width: 90%; // Added width to maintain responsive margins
+  
+  // Ensure content is properly centered
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  // Removed background and box-shadow
 }
 
 #registration-section {
-  @include glass-effect;
   padding: 1%;
   border-radius: $border-radius * 2;
-  background: rgba($pure-black, 0.3); // Darker background
-  margin: {
-    left: 5%;
-    right: 5%;
-  }
+  margin: $spacing-unit * 4 auto; // Changed from 5% to auto
+  max-width: 1000px; // Added max-width
+  width: 90%; // Added width
   border: none; // Added to ensure no border
+
+  .container {
+    width: 100%;
+    max-width: 1200px;
+  }
 }
 
 // Section content styles
@@ -27,13 +37,12 @@ section div {
   }
 
   .content-box {
-    @include glass-effect;
     flex-grow: 2;
     width: 57%;
     padding: 6%;
-    background: $primary-bg;
     border-radius: $border-radius;
     border: none; // Added to ensure no border
+    // Removed background
 
     button {
       width: 100%;
@@ -61,7 +70,6 @@ section div {
 
 // Room grid styles
 .room-grid {
-  @include glass-effect;
   margin: $spacing-unit * 1.875;
   display: flex;
   flex-wrap: wrap;
@@ -142,42 +150,333 @@ h2 {
 
     .cta-buttons {
       display: flex;
-      gap: $spacing-unit * 2;
+      gap: $spacing-unit * 3; // Increased gap between buttons
       justify-content: center;
 
-      @include mobile {
-        flex-direction: column;
-        gap: $spacing-unit;
-      }
-
       .cta-button {
-        padding: $spacing-unit * 1.5 $spacing-unit * 3;
-        border-radius: $border-radius-sm;
-        font-size: 1.8rem;
+        border-radius: 1rem; // Increased from border-radius-sm (0.5rem) but not too much
+        font-size: 2.5rem; // Increased from 2rem
         font-weight: 500;
         text-decoration: none;
         transition: all 0.3s ease;
+        position: relative;
+        min-width: 200px; // Reduced from 240px
+        width: 200px;    // Reduced from 240px
+        height: 7.5rem; // Increased from 6rem
+        padding: $spacing-unit * 1.8 $spacing-unit * 3; // Increased vertical padding
+        text-align: center; // Added to ensure text centering
+        display: flex;      // Added for perfect centering
+        align-items: center;
+        justify-content: center;
 
         &.primary {
-          background: $hot-pink;
-          color: $text-light; // Changed to white for better contrast
+          background-size: 300% 100%;
+          background-image: linear-gradient(
+            to right,
+            $deep-purple 0%,
+            $hot-pink 45%,
+            $hot-pink 55%,
+            $deep-purple 100%
+          );
+          background-position: right bottom;
+          transition: all 0.3s ease, background-position 0.75s ease;
+          color: $text-light;
+          border: none;
+          box-shadow: 
+            // Inner shadows (unchanged)
+            inset 0 12px 12px -12px rgba(255, 255, 255, 0.6),
+            inset 12px 0 12px -12px rgba(255, 255, 255, 0.6),
+            inset 2px 2px 4px rgba(255, 255, 255, 0.4),
+            inset -4px -4px 8px rgba(0, 0, 0, 0.7),
+            inset -8px -8px 16px rgba(0, 0, 0, 0.5),
+            // Enhanced outer shadows
+            2px 2px 4px rgba(0, 0, 0, 0.3),   // Top-left shadow
+            6px 6px 12px rgba(0, 0, 0, 0.4),  // Medium spread
+            8px 8px 16px rgba(0, 0, 0, 0.3),  // Larger spread
+            12px 12px 24px rgba(0, 0, 0, 0.2); // Largest spread
 
           &:hover {
-            background: lighten($hot-pink, 10%);
+            background-position: left bottom;
             transform: translateY(-2px);
+            text-shadow: 
+              0 0 15px rgba($accent-primary, 0.7),
+              0 0 30px rgba($accent-primary, 0.5);
+            box-shadow: 
+              // Inner shadows
+              inset 0 16px 16px -12px rgba(255, 255, 255, 0.7),
+              inset 16px 0 16px -12px rgba(255, 255, 255, 0.7),
+              inset 2px 2px 4px rgba(255, 255, 255, 0.5),
+              inset -6px -6px 12px rgba(0, 0, 0, 0.8),
+              inset -12px -12px 24px rgba(0, 0, 0, 0.6),
+              // Enhanced hover outer shadows with stronger glow
+              2px 2px 4px rgba(0, 0, 0, 0.4),
+              8px 8px 16px rgba(0, 0, 0, 0.5),
+              12px 12px 24px rgba(0, 0, 0, 0.4),
+              16px 16px 32px rgba(0, 0, 0, 0.3),
+              // Enhanced glow effect
+              0 0 30px rgba($accent-primary, 0.4),
+              0 0 60px rgba($accent-primary, 0.3),
+              0 0 90px rgba($accent-primary, 0.2);
+          }
+
+          &:active {
+            background-position: 0 0;
+            transform: translateY(2px);
+            background: linear-gradient(135deg, darken($hot-pink, 15%), darken($deep-purple, 15%));
+            box-shadow: 
+              // Compressed top and left gradients
+              inset 0 6px 6px -6px rgba(255, 255, 255, 0.3),
+              inset 6px 0 6px -6px rgba(255, 255, 255, 0.3),
+              // Deeper bottom and right shadows
+              inset -2px -2px 4px rgba(0, 0, 0, 0.9),
+              inset -4px -4px 8px rgba(0, 0, 0, 0.7),
+              inset -6px -6px 12px rgba(0, 0, 0, 0.5),
+              // Minimal outer shadow when pressed
+              1px 1px 2px rgba(0, 0, 0, 0.4);
+            background-image: linear-gradient(
+              to right,
+              darken($deep-purple, 15%) 0%,
+              darken($hot-pink, 15%) 45%,
+              darken($hot-pink, 15%) 55%,
+              darken($deep-purple, 15%) 100%
+            );
           }
         }
 
         &.secondary {
-          background: transparent;
+          background-size: 300% 100%;
+          background-image: linear-gradient(
+            to right,
+            $deep-navy 0%,
+            $deep-purple 45%,
+            $deep-purple 55%,
+            $deep-navy 100%
+          );
+          background-position: right bottom;
+          transition: all 0.3s ease, background-position 0.75s ease;
           color: $text-light;
-          border: 2px solid $hot-pink;
+          border: none;
+          box-shadow: 
+            // Inner shadows (unchanged)
+            inset 0 12px 12px -12px rgba(255, 255, 255, 0.4),
+            inset 12px 0 12px -12px rgba(255, 255, 255, 0.4),
+            inset 2px 2px 4px rgba(255, 255, 255, 0.2),
+            inset -4px -4px 8px rgba(0, 0, 0, 0.8),
+            inset -8px -8px 16px rgba(0, 0, 0, 0.6),
+            // Enhanced outer shadows
+            2px 2px 4px rgba(0, 0, 0, 0.4),   // Top-left shadow
+            6px 6px 12px rgba(0, 0, 0, 0.5),  // Medium spread
+            8px 8px 16px rgba(0, 0, 0, 0.4),  // Larger spread
+            12px 12px 24px rgba(0, 0, 0, 0.3); // Largest spread
 
           &:hover {
-            background: rgba($hot-pink, 0.1);
+            background-position: left bottom;
             transform: translateY(-2px);
+            text-shadow: 
+              0 0 15px rgba($accent-primary, 0.7),
+              0 0 30px rgba($accent-primary, 0.5);
+            box-shadow: 
+              // Inner shadows
+              inset 0 16px 16px -12px rgba(255, 255, 255, 0.7),
+              inset 16px 0 16px -12px rgba(255, 255, 255, 0.7),
+              inset 2px 2px 4px rgba(255, 255, 255, 0.5),
+              inset -6px -6px 12px rgba(0, 0, 0, 0.8),
+              inset -12px -12px 24px rgba(0, 0, 0, 0.6),
+              // Enhanced hover outer shadows with stronger glow
+              2px 2px 4px rgba(0, 0, 0, 0.4),
+              8px 8px 16px rgba(0, 0, 0, 0.5),
+              12px 12px 24px rgba(0, 0, 0, 0.4),
+              16px 16px 32px rgba(0, 0, 0, 0.3),
+              // Enhanced glow effect
+              0 0 30px rgba($accent-primary, 0.4),
+              0 0 60px rgba($accent-primary, 0.3),
+              0 0 90px rgba($accent-primary, 0.2);
+          }
+
+          &:active {
+            background-position: 0 0;
+            transform: translateY(2px);
+            background: linear-gradient(135deg, darken($deep-purple, 15%), darken($deep-navy, 15%));
+            box-shadow: 
+              // Compressed top and left gradients
+              inset 0 6px 6px -6px rgba(255, 255, 255, 0.2),
+              inset 6px 0 6px -6px rgba(255, 255, 255, 0.2),
+              // Deeper bottom and right shadows
+              inset -2px -2px 4px rgba(0, 0, 0, 1),
+              inset -4px -4px 8px rgba(0, 0, 0, 0.8),
+              inset -6px -6px 12px rgba(0, 0, 0, 0.6),
+              // Minimal outer shadow when pressed
+              1px 1px 2px rgba(0, 0, 0, 0.5);
+            background-image: linear-gradient(
+              to right,
+              darken($deep-navy, 15%) 0%,
+              darken($deep-purple, 15%) 45%,
+              darken($deep-purple, 15%) 55%,
+              darken($deep-navy, 15%) 100%
+            );
           }
         }
+      }
+
+      @include mobile {
+        flex-direction: column;
+        gap: $spacing-unit * 2;
+        width: 100%;
+        max-width: 240px; // Reduced from 280px
+        margin: 0 auto;
+
+        .cta-button {
+          width: 100%;    // Fill container width
+          min-width: auto; // Remove min-width constraint
+          height: 7.2rem; // Match the desktop height
+          padding: $spacing-unit * 1.8 $spacing-unit * 2; // Increased vertical padding
+        }
+      }
+    }
+  }
+}
+
+.promo-video {
+  padding: $spacing-unit * 4 5%;
+  margin: $spacing-unit * 4 auto; // Changed from margin-bottom to margin
+  max-width: 1000px; // Added max-width
+  width: 90%; // Added width
+
+  .video-container {
+    position: relative;
+    padding-bottom: 56.25%; // Changed to 16:9 aspect ratio
+    height: 0;
+    overflow: hidden;
+    border-radius: $border-radius;
+    width: 100%;
+    max-width: 100%;
+    
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.rooms-section {  // Changed from about-us
+  padding: $spacing-unit * 4 0; // Changed from 5% to 0 to match gallery
+  text-align: center;
+  margin: $spacing-unit * 4 auto; // Added margin auto
+  max-width: 1400px; // Changed to match gallery-preview
+  width: 90%;
+  
+  h2 {
+    margin-bottom: $spacing-unit * 4;
+  }
+
+  .rooms-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); // Changed to 4 columns
+    gap: $spacing-unit * 3; // Increased gap for better spacing
+    width: 100%;
+    margin: 0;
+    
+    .room-card {
+      width: 100%;
+      transition: transform 0.3s ease;
+      
+      // Removed padding
+      
+      &:hover {
+        transform: translateY(-5px);
+      }
+
+      img {
+        width: 100%;
+        height: 450px; // Taller for portrait images
+        object-fit: cover;
+        border-radius: $border-radius-sm;
+        margin-bottom: $spacing-unit; // Reduced margin
+      }
+
+      h3 {
+        color: $text-light;
+        font-family: $header-font;
+        font-size: 2.4rem;
+      }
+    }
+  }
+}
+
+.gallery-preview {
+  width: 90%;
+  max-width: 1400px; // Increased to accommodate more columns on larger screens
+  margin: 0 auto;
+  columns: 300px; // Fixed column width instead of column count
+  column-gap: $spacing-unit * 2;
+  padding: $spacing-unit * 4 0;
+
+  img {
+    width: 100%;
+    height: auto;
+    margin-bottom: $spacing-unit * 2;
+    break-inside: avoid;
+    display: block; // Ensure proper block display
+  }
+}
+
+.location {
+  padding: $spacing-unit * 4 5%;
+  margin: $spacing-unit * 4 auto; // Changed from margin-bottom to margin
+  max-width: 1000px; // Added max-width
+  width: 90%; // Added width
+  
+  h2 {
+    margin-bottom: $spacing-unit * 3;
+    text-align: center;
+  }
+
+  .map-container {
+    border-radius: $border-radius;
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%; // Changed from 1200px
+    
+    iframe {
+      width: 100%;
+      height: 450px;
+    }
+  }
+}
+
+.slider-section {
+  background: transparent;
+  overflow: visible;
+  padding: $spacing-unit * 4 0;
+  
+  .slider-container {
+    margin: 0 5%;
+  }
+}
+
+@include mobile {
+  section:not(.hero-section, .gallery-preview, .slider-section) {
+    margin: $spacing-unit * 2 auto; // Changed from 5% to auto
+    padding: $spacing-unit * 2;
+    width: 95%; // Slightly wider on mobile
+  }
+
+  section:not(.hero-section),
+  .gallery-preview {
+    width: 95%;
+  }
+
+  .rooms-section {  // Changed from about-us
+    .rooms-grid {
+      grid-template-columns: 1fr; // Single column on mobile
+      gap: $spacing-unit * 3;
+      
+      .room-card {
+        max-width: 400px; // Added max-width for mobile
+        margin: 0 auto;
       }
     }
   }

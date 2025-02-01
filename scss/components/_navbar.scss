@@ -1,12 +1,11 @@
 .navbar {
-  @include glass-effect;
   font-family: $header-font;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: $spacing-unit * 2 $spacing-unit * 3;
-  background: rgba($pure-black, 0.95); // Changed from solid black to semi-transparent
-  backdrop-filter: blur(10px); // Restored blur effect
+  background: rgba($pure-black, 0.90); // Changed from solid black to semi-transparent
+  backdrop-filter: blur(8px); // Restored blur effect
   color: $text-light;
   position: fixed;
   top: 0;
@@ -63,7 +62,7 @@
       a {
         text-decoration: none;
         color: $text-light;
-        font-size: 2rem; // Increased from 1.8rem to 2rem
+        font-size: 2.5rem; // Increased from 1.8rem to 2rem
         transition: all 0.3s ease;
         position: relative;
         padding: $spacing-unit * 1.5 0; // Increased padding

@@ -1,5 +1,4 @@
 footer {
-  @include glass-effect;
   background: $pure-black;
   backdrop-filter: none; // Remove blur effect
   color: $text-light;
@@ -13,16 +12,18 @@ footer {
     justify-content: space-between;
     gap: $spacing-unit * 4;
     margin: 0 auto;
+    max-width: 1200px; // Added to control footer width
 
     .footer-section {
       flex: 1;
       max-width: 380px; // Prevent sections from getting too wide
       min-width: 280px; // Ensure sections don't get too narrow
+      text-align: left; // Add this to ensure left alignment
       
       h3 {
         margin-bottom: $spacing-unit * 2;
         font-family: $header-font;
-        font-size: 2rem;
+        font-size: 2.5rem; // Changed to match navbar links
         font-weight: 400; // Match navbar link weight
         position: relative;
         
@@ -38,10 +39,18 @@ footer {
       }
 
       &.about-us {
+        max-width: 380px; // Reset to original max-width
+        min-width: 280px; // Keep original min-width
+        margin: 0; // Remove any auto margins
+        padding: 0; // Remove any extra padding
+        width: auto; // Remove fixed width
+        text-align: left; // Explicitly set left alignment
+        
         p {
           line-height: 1.8;
           margin-bottom: $spacing-unit * 2;
           opacity: 0.9; // Slightly dimmed like navbar text
+          text-align: left; // Ensure paragraph is also left-aligned
         }
       }
 
@@ -128,32 +137,61 @@ footer {
       flex-direction: column;
       align-items: center;
       text-align: center;
+      width: 100%;
 
       .footer-section {
-        width: 100%;
-        max-width: 100%;
-
-        h3::after {
-          left: 50%;
-          transform: translateX(-50%);
+        width: 90%; // Set consistent width for all sections
+        max-width: 380px; // Keep max-width consistent
+        margin: 0 auto $spacing-unit * 4; // Add bottom margin for spacing
+        text-align: center;
+        
+        &:last-child {
+          margin-bottom: 0; // Remove margin from last section
         }
 
-        &.schedule .schedule-item {
-          flex-direction: column;
-          gap: $spacing-unit;
+        h3 {
+          text-align: center;
+          
+          &::after {
+            left: 50%;
+            transform: translateX(-50%);
+          }
+        }
+
+        &.schedule {
+          margin: 0 auto $spacing-unit * 4; // Consistent margins
+          width: 90%;
+          max-width: 380px;
+          
+          .schedule-item {
+            flex-direction: column;
+            gap: $spacing-unit;
+            text-align: center;
+          }
         }
 
         &.contact {
-          margin: 0 auto; // Center in mobile view
+          margin: 0 auto $spacing-unit * 4; // Consistent margins
+          width: 90%;
+          max-width: 380px;
+
           .contact-item {
             flex-direction: column;
-            gap: $spacing-unit;
+            align-items: center;
+            text-align: center;
             
             i {
-              margin: 0;
-              font-size: 2.4rem;
+              margin: 0 0 $spacing-unit;
+            }
+
+            p, a {
+              text-align: center;
             }
           }
+        }
+
+        &.about-us p {
+          text-align: center;
         }
       }
     }

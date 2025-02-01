@@ -11,9 +11,3 @@
   align-items: center;
   justify-content: center;
 }
-
-@mixin glass-effect {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  // Removed border property
-}
