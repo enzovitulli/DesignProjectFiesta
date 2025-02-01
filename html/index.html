@@ -5,18 +5,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Página principal</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Raleway:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap"
-    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
   <link rel='stylesheet' type='text/css' media='screen' href="../css/main.css">
 </head>
 
 <body>
   <header class="navbar">
     <div class="logo-container">
-      <a href="../html/index.html" class="logo"><img id="logo" src="../imagenes/logo.png" alt=""></a>
-      <h1 class="title">FestVibe</h1>
+      <a href="index.html" class="logo"><img id="logo" src="../imagenes/logo.png" alt=""></a>
+      <h1 class="title">NIGHTTIME</h1>
     </div>
     <nav class="nav-links">
       <ul>
@@ -25,7 +22,27 @@
         <li><a href="#contacto">Contacto</a></li>
         <li><a href="../html/ayuda.html">Ayuda</a></li>
       </ul>
+      <!-- Added mobile-only icons container -->
+      <div class="nav-icons-mobile">
+        <a href="mailto:contact@nighttime.com" class="icon-link">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a href="#" class="icon-link">
+          <i class="fas fa-share-nodes"></i>
+        </a>
+      </div>
     </nav>
+
+    <!-- This will be desktop-only icons -->
+    <div class="nav-icons-desktop">
+      <a href="mailto:contact@nighttime.com" class="icon-link">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <a href="#" class="icon-link">
+        <i class="fas fa-share-nodes"></i>
+      </a>
+    </div>
+
     <button class="hamburger" aria-label="Abrir menú">
       <span></span>
       <span></span>
@@ -33,39 +50,24 @@
     </button>
   </header>
 
-  <section class="grid-section">
-    <div id="contenedor" class="apartado">
-      <div class="grid-item" id="uno">
-        <a href="#">
-          <img class="imgMenú" src="../imagenes/Robot.jpg" alt="">
-          <p class="sala-name">Sala Gold</p>
-        </a>
-      </div>
-      <div class="grid-item" id="dos">
-        <a href="#">
-          <img class="imgMenú" src="../imagenes/Botellas1.jpg" alt="">
-          <p class="sala-name">Sala Diamante</p>
-        </a>
-      </div>
-      <div class="grid-item" id="tres">
-        <a href="../html/Vip.html">
-          <img class="imgMenú" src="../imagenes/Botellas2.jpg" alt="">
-          <p class="sala-name">Sala VIP</p>
-        </a>
-      </div>
-      <div class="grid-item" id="izq">
-        <a href="../html/seleccionSala.html">
-          <img class="imgMenú" src="../imagenes/Barcelo.jpg" alt="">
-          <p class="sala-name">Entrada General</p>
-        </a>
+  <section class="hero-section">
+    <div class="hero-background">
+      <img src="../assets/img/hero-section-image.png" alt="Nightclub atmosphere">
+    </div>
+    <div class="hero-content">
+      <h1>La Mejor Experiencia Nocturna</h1>
+      <p>Vive momentos inolvidables en el corazón de Madrid</p>
+      <div class="cta-buttons">
+        <a href="reservas-vip.html" class="cta-button primary">Reserva VIP</a>
+        <a href="entradas.html" class="cta-button secondary">Comprar Entradas</a>
       </div>
     </div>
   </section>
 
-  <section id="sectionInside">
+  <section id="registration-section">
     <div class="container">
       <div class="content">
-        <div class="form">
+        <div class="registration-form">
           <h2>Registrate para enterarte de todo!!</h2>
           <input type="text" placeholder="Nombre">
           <input type="email" placeholder="Correo electrónico">
@@ -73,8 +75,8 @@
           <input type="text" placeholder="Ciudad">
           <button><strong>Enviar</strong></button>
         </div>
-        <div class="d spotify">
-          <h2 class="tituloSpotify">Nuestra playlist de la semana!</h2>
+        <div class="content-box spotify-player">
+          <h2 class="spotify-title">Nuestra playlist de la semana!</h2>
           <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DXcBWIGoYBM5M" frameborder="0"
             allow="encrypted-media" allowfullscreen style="border-radius: 12px" width="90%" height="400" frameborder="0"
             allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
@@ -88,74 +90,140 @@
     <div class="slider-container">
       <div class="slider">
         <div class="slider-track">
-          <!-- Primera serie de imágenes -->
-          <div class="slide"><img src="../imagenes/Barcelo.png" alt="Image 1" class="logos"></div>
-          <div class="slide"><img src="../imagenes/Cocacola.png" alt="Image 2" class="logos"></div>
-          <div class="slide"><img src="../imagenes/Cutty.png" alt="Image 3" class="logos"></div>
-          <div class="slide"><img src="../imagenes/GobiernoEspaña.png" alt="Image 4" class="logos"></div>
-          <div class="slide"><img src="../imagenes/Heineken.png" alt="Image 5" class="logos"></div>
-          <div class="slide"><img src="../imagenes/Idealista.png" alt="Image 6" class="logos"></div>
-          <div class="slide"><img src="../imagenes/JoseCuervo.png" alt="Image 7" class="logos"></div>
-          <div class="slide"><img src="../imagenes/Madrid.png" alt="Image 8" class="logos"></div>
-          <div class="slide"><img src="../imagenes/Negrita.png" alt="Image 9" class="logos"></div>
-          <div class="slide"><img src="../imagenes/Redbull.png" alt="Image 10" class="logos"></div>
-          <!-- Duplicar la serie de imágenes para crear el efecto de desplazamiento continuo -->
-          <div class="slide"><img src="../imagenes/Barcelo.png" alt="Image 1" class="logos"></div>
-          <div class="slide"><img src="../imagenes/Cocacola.png" alt="Image 2" class="logos"></div>
-          <div class="slide"><img src="../imagenes/Cutty.png" alt="Image 3" class="logos"></div>
-          <div class="slide"><img src="../imagenes/GobiernoEspaña.png" alt="Image 4" class="logos"></div>
-          <div class="slide"><img src="../imagenes/Heineken.png" alt="Image 5" class="logos"></div>
-          <div class="slide"><img src="../imagenes/Idealista.png" alt="Image 6" class="logos"></div>
-          <div class="slide"><img src="../imagenes/JoseCuervo.png" alt="Image 7" class="logos"></div>
-          <div class="slide"><img src="../imagenes/Madrid.png" alt="Image 8" class="logos"></div>
-          <div class="slide"><img src="../imagenes/Negrita.png" alt="Image 9" class="logos"></div>
-          <div class="slide"><img src="../imagenes/Redbull.png" alt="Image 10" class="logos"></div>
+          <!-- Original set -->
+          <div class="slide"><img src="../assets/brands/coca-cola-logo-black-and-white.png" alt="Coca Cola"
+              class="logos"></div>
+          <div class="slide"><img src="../assets/brands/heineken-logo-black-and-white.png" alt="Heineken" class="logos">
+          </div>
+          <div class="slide"><img src="../assets/brands/jose-cuervo-logo-black-and-white.png" alt="Jose Cuervo"
+              class="logos"></div>
+          <div class="slide"><img src="../assets/brands/redbull-logo-black-and-white.png" alt="Redbull" class="logos">
+          </div>
+          <div class="slide"><img src="../assets/brands/johnnie-walker-logo-black-and-white.png" alt="Johnnie Walker"
+              class="logos"></div>
+          <div class="slide"><img src="../assets/brands/smirnoff-logo-black-and-white.png" alt="Smirnoff" class="logos">
+          </div>
+          <div class="slide"><img src="../assets/brands/absolut-logo-black-and-white.png" alt="Absolut" class="logos">
+          </div>
+          <div class="slide"><img src="../assets/brands/bacardi-logo-black-and-white.png" alt="Bacardi" class="logos">
+          </div>
+          <div class="slide"><img src="../assets/brands/jagermeister-logo-black-and-white.png" alt="Jagermeister"
+              class="logos"></div>
+          <div class="slide"><img src="../assets/brands/schweppes-logo-black-and-white.png" alt="Schweppes"
+              class="logos"></div>
+          <div class="slide"><img src="../assets/brands/hennessy-cognac-logo-black-and-white.png" alt="Hennessy"
+              class="logos"></div>
+          <div class="slide"><img src="../assets/brands/barcelo-logo-black-and-white.png" alt="Barceló" class="logos">
+          </div>
+          <!-- Duplicate set -->
+          <div class="slide"><img src="../assets/brands/coca-cola-logo-black-and-white.png" alt="Coca Cola"
+              class="logos"></div>
+          <div class="slide"><img src="../assets/brands/heineken-logo-black-and-white.png" alt="Heineken" class="logos">
+          </div>
+          <div class="slide"><img src="../assets/brands/jose-cuervo-logo-black-and-white.png" alt="Jose Cuervo"
+              class="logos"></div>
+          <div class="slide"><img src="../assets/brands/redbull-logo-black-and-white.png" alt="Redbull" class="logos">
+          </div>
+          <div class="slide"><img src="../assets/brands/johnnie-walker-logo-black-and-white.png" alt="Johnnie Walker"
+              class="logos"></div>
+          <div class="slide"><img src="../assets/brands/smirnoff-logo-black-and-white.png" alt="Smirnoff" class="logos">
+          </div>
+          <div class="slide"><img src="../assets/brands/absolut-logo-black-and-white.png" alt="Absolut" class="logos">
+          </div>
+          <div class="slide"><img src="../assets/brands/bacardi-logo-black-and-white.png" alt="Bacardi" class="logos">
+          </div>
+          <div class="slide"><img src="../assets/brands/jagermeister-logo-black-and-white.png" alt="Jagermeister"
+              class="logos"></div>
+          <div class="slide"><img src="../assets/brands/schweppes-logo-black-and-white.png" alt="Schweppes"
+              class="logos"></div>
+          <div class="slide"><img src="../assets/brands/hennessy-cognac-logo-black-and-white.png" alt="Hennessy"
+              class="logos"></div>
+          <div class="slide"><img src="../assets/brands/barcelo-logo-black-and-white.png" alt="Barceló" class="logos">
+          </div>
+          <!-- Second duplicate set for smoother loop -->
+          <div class="slide"><img src="../assets/brands/coca-cola-logo-black-and-white.png" alt="Coca Cola"
+              class="logos"></div>
+          <div class="slide"><img src="../assets/brands/heineken-logo-black-and-white.png" alt="Heineken" class="logos">
+          </div>
+          <div class="slide"><img src="../assets/brands/jose-cuervo-logo-black-and-white.png" alt="Jose Cuervo"
+              class="logos"></div>
+          <div class="slide"><img src="../assets/brands/redbull-logo-black-and-white.png" alt="Redbull" class="logos">
+          </div>
+          <div class="slide"><img src="../assets/brands/johnnie-walker-logo-black-and-white.png" alt="Johnnie Walker"
+              class="logos"></div>
+          <div class="slide"><img src="../assets/brands/smirnoff-logo-black-and-white.png" alt="Smirnoff" class="logos">
+          </div>
+          <div class="slide"><img src="../assets/brands/absolut-logo-black-and-white.png" alt="Absolut" class="logos">
+          </div>
+          <div class="slide"><img src="../assets/brands/bacardi-logo-black-and-white.png" alt="Bacardi" class="logos">
+          </div>
+          <div class="slide"><img src="../assets/brands/jagermeister-logo-black-and-white.png" alt="Jagermeister"
+              class="logos"></div>
+          <div class="slide"><img src="../assets/brands/schweppes-logo-black-and-white.png" alt="Schweppes"
+              class="logos"></div>
+          <div class="slide"><img src="../assets/brands/hennessy-cognac-logo-black-and-white.png" alt="Hennessy"
+              class="logos"></div>
+          <div class="slide"><img src="../assets/brands/barcelo-logo-black-and-white.png" alt="Barceló" class="logos">
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <footer>
-    <div class="footInfo">
-      <p class="titulo"><strong>Empresa XYZ</strong></p>
-      <p>© 2024 Empresa XYZ. Todos los derechos reservados.</p>
+    <div class="footer-content">
+      <div class="footer-section about-us">
+        <h3>Sobre Nosotros</h3>
+        <p>Nighttime es tu destino nocturno premium, donde la música, el ambiente y la diversión se fusionan para crear
+          experiencias inolvidables. Desde 2010 liderando el entretenimiento nocturno en Madrid.</p>
+      </div>
+
+      <div class="footer-section schedule">
+        <h3>Horario</h3>
+        <div class="schedule-item">
+          <span class="day">Lunes - Miércoles:</span>
+          <span class="hours">23:00 - 04:00</span>
+        </div>
+        <div class="schedule-item">
+          <span class="day">Jueves:</span>
+          <span class="hours">23:00 - 05:00</span>
+        </div>
+        <div class="schedule-item">
+          <span class="day">Viernes - Sábado:</span>
+          <span class="hours">23:00 - 06:00</span>
+        </div>
+        <div class="schedule-item">
+          <span class="day">Domingo:</span>
+          <span class="hours">Cerrado</span>
+        </div>
+      </div>
+
+      <div class="footer-section contact">
+        <h3>Visítanos</h3>
+        <div class="contact-item">
+          <i class="fas fa-location-dot"></i>
+          <p>Calle Falsa 123, 28000 Madrid</p>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <a href="mailto:info@nighttime.com">info@nighttime.com</a>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-phone"></i>
+          <a href="tel:+34912345678">+34 91 234 56 78</a>
+        </div>
+        <div class="contact-item">
+          <i class="fab fa-whatsapp"></i>
+          <a href="https://wa.me/34666123456">+34 666 12 34 56</a>
+        </div>
+      </div>
     </div>
 
-    <div class="footInfo">
-      <p class="titulo"><strong>Contacto</strong></p>
-      <p>Teléfono: +34 123 456 789</p>
-      <p>Correo electrónico: <a href="mailto:info@empresa.xyz">info@empresa.xyz</a></p>
-      <p>Dirección: Calle Falsa 123, 28013 Madrid, España</p>
-    </div>
-
-    <div class="footInfo">
-      <p class="titulo"><strong>Enlaces útiles</strong></p>
-      <p><a href="#1">Inicio</a></p>
-      <p><a href="#2">Sobre nosotros</a></p>
-      <p><a href="#3">Servicios</a></p>
-      <p><a href="#4">Blog</a></p>
-      <p><a href="#5">Contacto</a></p>
-      <p><a href="#6">Política de privacidad</a></p>
-      <p><a href="#7">Términos y condiciones</a></p>
-    </div>
-
-    <div class="footInfo">
-      <p class="titulo"><strong>Síguenos</strong></p>
-      <ul>
-        <li><a href="https://www.facebook.com" target="_blank"><img src="../imagenes/Facebook.png" alt="Facebook"></a>
-        </li>
-        <li><a href="https://www.twitter.com" target="_blank"><img src="../imagenes/Twitter.png" alt="Twitter"></a></li>
-        <li><a href="https://www.instagram.com" target="_blank"><img src="../imagenes/Instagram.png"
-              alt="Instagram"></a></li>
-        <li><a href="https://www.tiktok.com" target="_blank"><img src="../imagenes/TikTok.png" alt="TikTok"></a></li>
-      </ul>
-    </div>
-
-    <div class="footInfo">
-      <p class="titulo"><strong>Horario de atención</strong></p>
-      <p>Lunes a Viernes: 9:00 AM - 6:00 PM</p>
-      <p>Sábados: 10:00 AM - 2:00 PM</p>
-      <p>Domingos y festivos: Cerrado</p>
+    <div class="social-links">
+      <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
     </div>
   </footer>
 

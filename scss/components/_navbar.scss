@@ -5,9 +5,9 @@
   justify-content: space-between;
   align-items: center;
   padding: $spacing-unit * 2 $spacing-unit * 3;
-  background: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(15px);
-  color: white;
+  background: rgba($pure-black, 0.95); // Changed from solid black to semi-transparent
+  backdrop-filter: blur(10px); // Restored blur effect
+  color: $text-light;
   position: fixed;
   top: 0;
   left: 0;
@@ -21,24 +21,33 @@
     gap: $spacing-unit * 1.5;
 
     .logo {
+      flex-shrink: 0; // Prevent logo from shrinking
       text-decoration: none;
       transition: transform 0.3s ease;
 
       img {
-        height: 3.5rem;
+        height: 4rem;
         width: auto;
         filter: brightness(0) invert(1);
-      }
-
-      &:hover {
-        transform: scale(1.05);
       }
     }
 
     .title {
-      font-size: 2.4rem;
-      color: white;
-      letter-spacing: 0.1rem;
+      @extend .logo-text;
+      color: $text-light;
+      position: relative;
+      display: inline-block; 
+      cursor: default;
+      transition: all 0.5s ease;
+      
+      &:hover {
+        letter-spacing: 1.5rem;
+        text-shadow: 
+          0 0 10px rgba($accent-primary, 0.5),
+          0 0 20px rgba($accent-primary, 0.3),
+          0 0 30px rgba($accent-primary, 0.1);
+        color: mix($text-light, $accent-primary, 85%);
+      }
     }
   }
 
@@ -53,7 +62,7 @@
 
       a {
         text-decoration: none;
-        color: white;
+        color: $text-light;
         font-size: 2rem; // Increased from 1.8rem to 2rem
         transition: all 0.3s ease;
         position: relative;
@@ -66,18 +75,58 @@
           left: 0;
           width: 0;
           height: 2px;
-          background: $neon-blue;
+          background: $accent-primary;
           transition: width 0.3s ease;
         }
 
         &:hover {
-          color: $neon-blue;
+          color: $accent-primary;
           &::after {
             width: 100%;
           }
         }
       }
     }
+  }
+
+  .nav-icons {
+    display: flex;
+    gap: $spacing-unit * 4; // Increased from 2 to 4 units
+    margin-left: auto;
+    padding-left: $spacing-unit * 3; // Increased padding from 2 to 3 units
+
+    .icon-link {
+      color: $text-light;
+      font-size: 2rem;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        color: $accent-primary;
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  .nav-icons-desktop {
+    display: flex;
+    gap: $spacing-unit * 4;
+    margin-left: auto;
+    padding-left: $spacing-unit * 3;
+
+    .icon-link {
+      color: $text-light;
+      font-size: 2rem;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        color: $accent-primary;
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  .nav-icons-mobile {
+    display: none; // Hidden by default
   }
 
   .hamburger {
@@ -95,7 +144,7 @@
       display: block;
       width: 100%;
       height: 2px;
-      background: white;
+      background: $text-light;
       position: absolute;
       left: 0;
       transition: all 0.3s ease;
@@ -122,14 +171,26 @@
     }
   }
 
+  @include desktop {
+    .logo-container {
+      width: 35rem;
+      min-width: 35rem; // Prevent container from shrinking
+      justify-content: flex-start; // Align items to the start
+    }
+  }
+
   @include mobile {
+    .nav-icons-desktop {
+      display: none; // Hide desktop icons in mobile
+    }
+
     .nav-links {
       position: fixed;
       top: 0;
       right: -100%;
       height: 100vh;
       width: 70%;
-      background: rgba(0, 0, 0, 0.95);
+      background: $glass-black;
       backdrop-filter: blur(15px);
       transition: right 0.3s ease;
       padding: $spacing-unit * 8 $spacing-unit * 3;
@@ -144,6 +205,42 @@
         
         a {
           font-size: 2.2rem;
+        }
+      }
+
+      .nav-icons {
+        position: absolute;
+        bottom: $spacing-unit * 4;
+        left: 0;
+        width: 100%;
+        justify-content: center;
+        padding: $spacing-unit * 2;
+        gap: $spacing-unit * 8; // Increased from 4 to 8 units for mobile
+
+        .icon-link {
+          font-size: 2.4rem;
+        }
+      }
+
+      .nav-icons-mobile {
+        display: flex;
+        position: absolute;
+        bottom: $spacing-unit * 4;
+        left: 0;
+        width: 100%;
+        justify-content: center;
+        padding: $spacing-unit * 2;
+        gap: $spacing-unit * 8;
+
+        .icon-link {
+          color: $text-light;
+          font-size: 2.4rem;
+          transition: all 0.3s ease;
+          
+          &:hover {
+            color: $accent-primary;
+            transform: scale(1.1);
+          }
         }
       }
     }

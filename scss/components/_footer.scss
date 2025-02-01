@@ -1,69 +1,169 @@
 footer {
-  background-color: $midnight-black;
-  color: white;
-  display: flex;
-  flex-wrap: wrap;
-  padding: $container-padding;
+  @include glass-effect;
+  background: $pure-black;
+  backdrop-filter: none; // Remove blur effect
+  color: $text-light;
+  font-weight: 300;
+  padding: $spacing-unit * 4 5%;
   width: 100%;
-  justify-content: space-around;
-  gap: $spacing-unit * 2.5;
-  text-align: left;
-  height: 30rem;
+  border: none; // Added to match navbar
 
-  .footInfo {
-    text-align: center;
-    flex: 1;
-    min-width: 20rem;
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: $spacing-unit * 4;
+    margin: 0 auto;
 
-    .titulo {
-      margin-bottom: $spacing-unit * 0.375;
-      font-weight: bold;
-    }
+    .footer-section {
+      flex: 1;
+      max-width: 380px; // Prevent sections from getting too wide
+      min-width: 280px; // Ensure sections don't get too narrow
+      
+      h3 {
+        margin-bottom: $spacing-unit * 2;
+        font-family: $header-font;
+        font-size: 2rem;
+        font-weight: 400; // Match navbar link weight
+        position: relative;
+        
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: -$spacing-unit;
+          left: 0;
+          width: 60px;
+          height: 2px;
+          background: $accent-primary; // Keep underline accent colored
+        }
+      }
 
-    p {
-      font-weight: normal;
-      margin-bottom: 1%;
-    }
+      &.about-us {
+        p {
+          line-height: 1.8;
+          margin-bottom: $spacing-unit * 2;
+          opacity: 0.9; // Slightly dimmed like navbar text
+        }
+      }
 
-    ul {
-      list-style-type: none;
-      padding: 0;
+      &.schedule {
+        flex: 0.6; // Reduced from 0.8 for narrower width
+        min-width: 220px; // Adjusted minimum width to prevent too narrow display
+        max-width: 300px; // Added max-width to keep content compact
+        margin: 0 auto; // Center the narrower section
 
-      li a img {
-        margin-bottom: $spacing-unit * 0.375;
-        width: 3.2rem;
-        height: 3.2rem;
-        transition: transform 0.3s ease;
+        .schedule-item {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: $spacing-unit;
+          
+          .day, .hours {
+            color: $text-light; // Ensure hours are also white
+            opacity: 0.9;
+            font-weight: 300;
+          }
+        }
+      }
 
-        &:hover {
-          transform: scale(1.1);
+      &.contact {
+        max-width: 2px; // Added max-width to control text length
+        margin-left: auto; // Push to the right side of its space
+        
+        .contact-item {
+          display: flex;
+          align-items: center;
+          margin-bottom: $spacing-unit * 2;
+          max-width: 100%; // Ensure items don't overflow
+          
+          i {
+            color: $text-light; // Changed from accent to white
+            font-size: 2rem;
+            margin-right: $spacing-unit * 2;
+            width: 2.4rem;
+            text-align: center;
+            opacity: 0.9;
+          }
+
+          p, a {
+            color: $text-light;
+            font-weight: 300; // Made lighter
+            text-decoration: none;
+            transition: color 0.3s ease;
+            opacity: 0.9;
+            max-width: calc(100% - 4rem); // Account for icon width
+
+            &:hover {
+              color: $accent-primary;
+            }
+          }
         }
       }
     }
+  }
+
+  .social-links {
+    margin-top: $spacing-unit * 4;
+    padding-top: $spacing-unit * 3;
+    border-top: 1px solid rgba($text-light, 0.1);
+    text-align: center;
 
     a {
-      color: $neon-blue;
-      text-decoration: none;
-      transition: color 0.3s;
+      display: inline-block;
+      color: $text-light; // Ensure icons are white
+      font-size: 2.4rem;
+      margin: 0 $spacing-unit * 2;
+      transition: all 0.3s ease;
+      opacity: 0.9;
 
       &:hover {
-        color: $electric-yellow;
+        color: $accent-primary;
+        transform: translateY(-3px);
+        text-shadow: 0 0 10px rgba($accent-primary, 0.5); // Added glow effect
+        opacity: 1;
       }
     }
   }
 
   @include mobile {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-
-    .footInfo {
+    .footer-content {
+      flex-direction: column;
+      align-items: center;
       text-align: center;
-      margin-bottom: $spacing-unit * 2.5;
 
-      ul li {
-        display: block;
-        margin-bottom: $spacing-unit;
+      .footer-section {
+        width: 100%;
+        max-width: 100%;
+
+        h3::after {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+
+        &.schedule .schedule-item {
+          flex-direction: column;
+          gap: $spacing-unit;
+        }
+
+        &.contact {
+          margin: 0 auto; // Center in mobile view
+          .contact-item {
+            flex-direction: column;
+            gap: $spacing-unit;
+            
+            i {
+              margin: 0;
+              font-size: 2.4rem;
+            }
+          }
+        }
+      }
+    }
+
+    .social-links {
+      margin-top: $spacing-unit * 3;
+      
+      a {
+        margin: $spacing-unit;
+        font-size: 2.8rem;
       }
     }
   }

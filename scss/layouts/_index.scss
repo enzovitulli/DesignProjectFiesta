@@ -1,18 +1,21 @@
 // Main content sections
 section {
+  @include glass-effect;
   padding: $spacing-unit * 3.75 5%;
   display: grid;
   gap: $spacing-unit * 2.5;
 }
 
-#sectionInside {
+#registration-section {
+  @include glass-effect;
   padding: 1%;
   border-radius: $border-radius * 2;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba($pure-black, 0.3); // Darker background
   margin: {
     left: 5%;
     right: 5%;
   }
+  border: none; // Added to ensure no border
 }
 
 // Section content styles
@@ -23,49 +26,159 @@ section div {
     border-radius: $border-radius;
   }
 
-  .d {
+  .content-box {
+    @include glass-effect;
     flex-grow: 2;
     width: 57%;
     padding: 6%;
-    background: $party-purple;
+    background: $primary-bg;
     border-radius: $border-radius;
+    border: none; // Added to ensure no border
 
     button {
       width: 100%;
       height: 3em;
       border: none;
-      background: $royal-navy;
-      color: white;
+      background: $accent-secondary;
+      color: $text-light;
       transition: background-color 0.3s ease, text-shadow 0.3s ease;
-      box-shadow: $midnight-black;
+      box-shadow: 0 4px 8px rgba($pure-black, 0.2);
       text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 
       &:hover {
-        background-color: $royal-navy;
+        background-color: $cyber-teal;
       }
 
       &:active {
-        background-color: rgb(56, 94, 177);
-        color: white;
-        box-shadow: 5px 5px 5px $royal-navy inset;
+        background-color: $accent-secondary;
+        color: $text-light;
+        box-shadow: 5px 5px 5px $primary-bg inset;
         transition: none;
       }
     }
   }
 }
 
-// Apartado styles
-.apartado {
+// Room grid styles
+.room-grid {
+  @include glass-effect;
   margin: $spacing-unit * 1.875;
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
   gap: 1%;
+  padding: $spacing-unit * 2;
+  border: none; // Added to ensure no border
 }
 
 // Title styles
 h2 {
   text-align: center;
-  color: $neon-blue;
-  text-shadow: 5px 5px 5px $midnight-black;
+  color: $accent-primary;
+  text-shadow: 5px 5px 5px $primary-bg;
+}
+
+// Hero Section
+.hero-section {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: calc(#{$spacing-unit} * 10) $spacing-unit * 2;
+  margin-bottom: $spacing-unit * 4;
+
+  .hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 0; // Removed rounded borders
+      filter: brightness(0.9); // Add subtle dimming to the image
+    }
+  }
+
+  .hero-content {
+    text-align: center;
+    max-width: 800px;
+    z-index: 1;
+
+    h1 {
+      font-family: $header-font; // Changed from title-font
+      font-size: 9rem; // Increased to match Bebas Neue proportions
+      color: $text-light;
+      margin-bottom: $spacing-unit * 3;
+      letter-spacing: 0.1rem; // Added letter spacing for Bebas Neue
+      text-shadow: 2px 4px 8px rgba($pure-black, 0.3),
+                  0 0 30px rgba($pure-black, 0.2); // Added layered shadow for depth
+
+      @include mobile {
+        font-size: 5.6rem;
+      }
+    }
+
+    p {
+      font-family: $header-font; // Changed from title-font
+      font-size: 3.6rem; // Adjusted for Bebas Neue
+      color: $text-light;
+      text-transform: uppercase;
+      margin-bottom: $spacing-unit * 4;
+      letter-spacing: 0.1rem; // Added letter spacing for Bebas Neue
+      text-shadow: 1px 2px 4px rgba($pure-black, 0.3),
+                  0 0 20px rgba($pure-black, 0.2); // Added subtle layered shadow
+      
+      @include mobile {
+        font-size: 2.8rem;
+      }
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: $spacing-unit * 2;
+      justify-content: center;
+
+      @include mobile {
+        flex-direction: column;
+        gap: $spacing-unit;
+      }
+
+      .cta-button {
+        padding: $spacing-unit * 1.5 $spacing-unit * 3;
+        border-radius: $border-radius-sm;
+        font-size: 1.8rem;
+        font-weight: 500;
+        text-decoration: none;
+        transition: all 0.3s ease;
+
+        &.primary {
+          background: $hot-pink;
+          color: $text-light; // Changed to white for better contrast
+
+          &:hover {
+            background: lighten($hot-pink, 10%);
+            transform: translateY(-2px);
+          }
+        }
+
+        &.secondary {
+          background: transparent;
+          color: $text-light;
+          border: 2px solid $hot-pink;
+
+          &:hover {
+            background: rgba($hot-pink, 0.1);
+            transform: translateY(-2px);
+          }
+        }
+      }
+    }
+  }
 }
