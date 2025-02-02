@@ -119,34 +119,88 @@
     <img src="https://placehold.co/600x700" alt="Gallery 8" class="gallery-img">
   </section>
 
-  <section id="registration-section">
+  <section class="registration-section">
     <div class="container">
-      <div class="content">
-        <div class="registration-form">
-          <h2>Registrate para enterarte de todo!!</h2>
-          <input type="text" placeholder="Nombre">
-          <input type="email" placeholder="Correo electrónico">
-          <input type="date" placeholder="Fecha de nacimiento">
-          <input type="text" placeholder="Ciudad">
-          <button><strong>Enviar</strong></button>
+      <div class="registration-form">
+        <h2>Reserva Tu Experiencia VIP</h2>
+        <div class="form-group">
+          <label for="name">Nombre Completo</label>
+          <input type="text" id="name" placeholder="Tu nombre">
         </div>
-        <div class="content-box spotify-player">
-          <h2 class="spotify-title">Nuestra playlist de la semana!</h2>
-          <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DXcBWIGoYBM5M" frameborder="0"
-            allow="encrypted-media" allowfullscreen style="border-radius: 12px" width="90%" height="400" frameborder="0"
-            allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy"></iframe>
+        <div class="form-group">
+          <label for="email">Correo Electrónico</label>
+          <input type="email" id="email" placeholder="tu@email.com">
         </div>
+        <div class="form-group">
+          <label for="phone">Teléfono</label>
+          <input type="tel" id="phone" placeholder="+34 600 000 000">
+        </div>
+        <div class="form-group">
+          <label for="date">Fecha de Reserva</label>
+          <input type="date" id="date">
+        </div>
+        <div class="form-group">
+          <label for="guests">Número de Invitados</label>
+          <input type="number" id="guests" placeholder="2" min="1" max="20">
+        </div>
+        <button type="submit" class="standard-button">Reservar Ahora</button>
+      </div>
+      
+      <div class="spotify-player">
+        <h2>Nuestra Playlist de la Semana</h2>
+        <iframe 
+          src="https://open.spotify.com/embed/playlist/37i9dQZF1DXcBWIGoYBM5M" 
+          frameborder="0" 
+          allowtransparency="true" 
+          allow="encrypted-media"
+        ></iframe>
       </div>
     </div>
   </section>
 
   <section class="location">
-    <h2>Encuentra el Club</h2>
-    <div class="map-container">
-      <iframe src="https://www.google.com/maps/embed?pb=your-map-embed-code" width="100%" height="450" style="border:0;"
-        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
+    <div class="container">
+      <div class="location-info">
+        <h2>Encuentra el Club</h2>
+        <div class="info-group">
+          <h3>Dirección</h3>
+          <div class="transport-option">
+            <i class="fas fa-location-dot"></i>
+            <span>Calle Falsa 123, 28000 Madrid<br>Barrio Salamanca</span>
+          </div>
+        </div>
+        <div class="info-group">
+          <h3>Transporte</h3>
+          <div class="transport-option">
+            <i class="fas fa-train-subway"></i>
+            <span>Metro: Línea 4 - Serrano (2 min)</span>
+          </div>
+          <div class="transport-option">
+            <i class="fas fa-bus"></i>
+            <span>Bus: Líneas 9, 19, 51 (Parada Serrano)</span>
+          </div>
+          <div class="transport-option">
+            <i class="fas fa-square-parking"></i>
+            <span>Parking público a 100m</span>
+          </div>
+        </div>
+        <div class="info-group">
+          <h3>Consejos</h3>
+          <div class="transport-option">
+            <i class="fas fa-circle-info"></i>
+            <span>Recomendamos reservar con antelación los fines de semana. Zona de taxis disponible 24h.</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="map-container">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=your-map-embed-code" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
     </div>
   </section>
 
@@ -291,31 +345,68 @@
       // Remove the position reset, let it fade out where it was last seen
     });
 
-    // Updated Card tilt effect with corrected direction
+    // Updated Card tilt effect with faster response
     const cards = document.querySelectorAll('.room-card');
     
     cards.forEach(card => {
+      let ticking = false; // For requestAnimationFrame
+
       card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-        
-        // Changed the direction of rotateX and removed the -1 multiplier from CSS
-        const rotateX = -((y - centerY) / 10); // Negative for correct top/bottom tilt
-        const rotateY = ((x - centerX) / 10);  // Positive for correct left/right tilt
-        
-        card.classList.add('tilt');
-        card.style.setProperty('--rotateX', `${rotateX}deg`);
-        card.style.setProperty('--rotateY', `${rotateY}deg`);
+        if (!ticking) {
+          requestAnimationFrame(() => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            const rotateX = -((y - centerY) / 20);
+            const rotateY = ((x - centerX) / 20);
+            
+            card.classList.add('tilt');
+            card.style.setProperty('--rotateX', `${rotateX}deg`);
+            card.style.setProperty('--rotateY', `${rotateY}deg`);
+            
+            ticking = false;
+          });
+          
+          ticking = true;
+        }
       });
 
       card.addEventListener('mouseleave', () => {
         card.classList.remove('tilt');
         card.style.setProperty('--rotateX', '0deg');
         card.style.setProperty('--rotateY', '0deg');
+      });
+    });
+
+    // Add hover effect to registration cards
+    const registrationCards = document.querySelectorAll('.registration-form, .spotify-player');
+    
+    registrationCards.forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        card.style.setProperty('--mouse-x', `${x}px`);
+        card.style.setProperty('--mouse-y', `${y}px`);
+      });
+    });
+
+    // Add hover effect to location cards
+    const locationCards = document.querySelectorAll('.location-info, .map-container');
+    
+    locationCards.forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        card.style.setProperty('--mouse-x', `${x}px`);
+        card.style.setProperty('--mouse-y', `${y}px`);
       });
     });
   </script>

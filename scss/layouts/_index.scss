@@ -1,34 +1,4 @@
-// Main content sections
-section:not(.hero-section, .gallery-preview, .slider-section, .rooms-section) {
-  margin: $spacing-unit * 4 auto; // Changed from 5% to auto
-  padding: $spacing-unit * 4;
-  border-radius: $border-radius;
-  max-width: 1000px; // Added max-width to make sections narrower
-  width: 90%; // Added width to maintain responsive margins
-  
-  // Ensure content is properly centered
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  
-  // Removed background and box-shadow
-}
-
-#registration-section {
-  padding: 1%;
-  border-radius: $border-radius * 2;
-  margin: $spacing-unit * 4 auto; // Changed from 5% to auto
-  max-width: 1000px; // Added max-width
-  width: 90%; // Added width
-  border: none; // Added to ensure no border
-
-  .container {
-    width: 100%;
-    max-width: 1200px;
-  }
-}
-
-// Section content styles
+// Common section content styles
 section div {
   img {
     height: auto;
@@ -68,18 +38,7 @@ section div {
   }
 }
 
-// Room grid styles
-.room-grid {
-  margin: $spacing-unit * 1.875;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: stretch;
-  gap: 1%;
-  padding: $spacing-unit * 2;
-  border: none; // Added to ensure no border
-}
-
-// Title styles
+// Common title styles
 h2 {
   text-align: center;
   color: $accent-primary;
@@ -150,20 +109,23 @@ h2 {
   }
 }
 
+// Promo Video Section
 .promo-video {
   padding: $spacing-unit * 4 5%;
-  margin: $spacing-unit * 4 auto; // Changed from margin-bottom to margin
-  max-width: 1000px; // Added max-width
-  width: 90%; // Added width
+  margin: $spacing-unit * 4 auto;
+  width: 90%;
+  height: 90vh; // Changed to viewport height
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   .video-container {
     position: relative;
-    padding-bottom: 56.25%; // Changed to 16:9 aspect ratio
-    height: 0;
-    overflow: hidden;
-    border-radius: $border-radius;
     width: 100%;
-    max-width: 100%;
+    height: 100%; // Take full height of parent
+    max-height: 80vh; // Limit maximum height
+    border-radius: $border-radius;
+    overflow: hidden;
     
     iframe {
       position: absolute;
@@ -171,10 +133,31 @@ h2 {
       left: 0;
       width: 100%;
       height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  @include desktop {
+    @media (min-height: 1000px) {
+      height: 70vh; // Smaller height for very tall screens
+      
+      .video-container {
+        max-height: 65vh;
+      }
+    }
+  }
+
+  @include mobile {
+    height: 60vh;
+    padding: $spacing-unit * 2 5%;
+    
+    .video-container {
+      max-height: 55vh;
     }
   }
 }
 
+// Rooms Section
 .rooms-section {  // Changed from about-us
   padding: $spacing-unit * 2 0; // Reduced from 4 to 2
   text-align: left; // Changed from center
@@ -273,9 +256,10 @@ h2 {
     padding: 0;
     
     .room-card {
-      flex: 1 1 calc(25% - #{$spacing-unit * 3}); // 4 cards per row with gap consideration
-      min-width: 250px; // Minimum width before wrapping
-      max-width: 320px; // Maximum width to maintain proportions
+      flex: 0 0 calc(25% - #{$spacing-unit * 2.25}); // Fixed width at exactly 25% minus gap
+      width: calc(25% - #{$spacing-unit * 2.25}); // Explicit width as backup
+      min-width: 0; // Remove min-width constraint
+      max-width: none; // Remove max-width constraint
       @include frosted-glass;
       @include card-tilt;
       padding: $spacing-unit * 3;
@@ -316,6 +300,10 @@ h2 {
     .rooms-grid {
       @media (min-width: 1200px) {
         gap: $spacing-unit * 5; // Larger gap on very wide screens
+        .room-card {
+          flex: 0 0 calc(25% - #{$spacing-unit * 3.75}); // Adjust for larger gap
+          width: calc(25% - #{$spacing-unit * 3.75}); // Backup width calculation
+        }
       }
     }
   }
@@ -326,58 +314,320 @@ h2 {
       padding: 0 $spacing-unit;
       
       .room-card {
-        flex: 1 1 calc(50% - #{$spacing-unit * 2}); // 2 cards per row on tablets
-        
-        @media (max-width: 600px) {
-          flex: 1 1 100%; // 1 card per row on phones
-          max-width: 350px; // Slightly wider on mobile
-        }
+        flex: 0 0 100%; // Force full width on mobile
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
       }
     }
   }
 }
 
+// Gallery Preview Section
 .gallery-preview {
   width: 90%;
   max-width: 1400px; // Increased to accommodate more columns on larger screens
   margin: 0 auto;
   columns: 300px; // Fixed column width instead of column count
-  column-gap: $spacing-unit * 2;
+  column-gap: $spacing-unit * 4; // Increased from 2 to 4 units
   padding: $spacing-unit * 4 0;
 
   img {
     width: 100%;
     height: auto;
-    margin-bottom: $spacing-unit * 2;
+    margin-bottom: $spacing-unit * 4; // Increased from 2 to 4 units
     break-inside: avoid;
     display: block; // Ensure proper block display
   }
 }
 
-.location {
+// Registration Section (changed from ID to class)
+.registration-section {
   padding: $spacing-unit * 4 5%;
-  margin: $spacing-unit * 4 auto; // Changed from margin-bottom to margin
-  max-width: 1000px; // Added max-width
-  width: 90%; // Added width
-  
-  h2 {
-    margin-bottom: $spacing-unit * 3;
-    text-align: center;
+  margin: $spacing-unit * 8 auto;
+  width: 100%;
+  max-width: 1800px;
+
+  .container {
+    display: flex;
+    gap: $spacing-unit * 6;
+    justify-content: center;
+    align-items: stretch;
+    width: 100%;
+
+    .registration-form,
+    .spotify-player {
+      flex: 1;
+      min-height: 70vh;
+      max-width: 600px;
+      @include frosted-glass;
+      padding: $spacing-unit * 6;
+      position: relative;
+      transition: transform 0.3s ease;
+      
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        background: radial-gradient(
+          circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+          rgba($hot-pink, 0.15),
+          transparent 250px
+        );
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+      }
+
+      &:hover {
+        transform: translateY(-5px);
+        
+        &::before {
+          opacity: 1;
+        }
+      }
+
+      h2 {
+        font-family: $header-font;
+        font-size: 4.2rem;
+        color: $text-light;
+        margin-bottom: $spacing-unit * 4;
+        letter-spacing: 0.1rem;
+        text-transform: uppercase;
+        text-shadow: 2px 4px 8px rgba($pure-black, 0.3);
+        text-align: left;
+      }
+    }
+
+    .registration-form {
+      display: flex;
+      flex-direction: column;
+      
+      .form-group {
+        margin-bottom: $spacing-unit * 3;
+        width: 100%;
+
+        label {
+          display: block;
+          color: $text-light;
+          font-family: $header-font;
+          font-size: 2rem;
+          margin-bottom: $spacing-unit;
+          letter-spacing: 0.05rem;
+        }
+
+        input {
+          width: 100%;
+          padding: $spacing-unit * 1.5;
+          background: rgba($pure-white, 0.1);
+          border: 1px solid rgba($pure-white, 0.2);
+          border-radius: $border-radius-sm;
+          color: $text-light;
+          font-size: 1.6rem;
+          transition: all 0.3s ease;
+
+          &:focus {
+            outline: none;
+            background: rgba($pure-white, 0.15);
+            border-color: rgba($pure-white, 0.3);
+            box-shadow: 0 0 15px rgba($accent-primary, 0.3);
+          }
+
+          &::placeholder {
+            color: rgba($text-light, 0.5);
+          }
+        }
+      }
+
+      .standard-button {
+        display: block; // Add this to ensure centering works
+        margin: 0 auto; // Add this to center the button
+      }
+    }
+
+    .spotify-player {
+      display: flex;
+      flex-direction: column;
+
+      iframe {
+        flex: 1;
+        margin-top: $spacing-unit * 2;
+        border-radius: $border-radius-sm;
+        min-height: 450px;
+      }
+    }
   }
 
-  .map-container {
-    border-radius: $border-radius;
-    overflow: hidden;
-    width: 100%;
-    max-width: 100%; // Changed from 1200px
+  @include mobile {
+    padding: $spacing-unit * 2;
     
-    iframe {
-      width: 100%;
-      height: 450px;
+    .container {
+      flex-direction: column;
+      gap: $spacing-unit * 4;
+
+      .registration-form,
+      .spotify-player {
+        min-height: auto;
+        padding: $spacing-unit * 4;
+        width: 100%;
+        max-width: 100%;
+      }
+
+      .spotify-player iframe {
+        min-height: 380px;
+      }
     }
   }
 }
 
+// Location Section
+.location {
+  padding: $spacing-unit * 4 5%;
+  margin: $spacing-unit * 8 auto;
+  width: 100%;
+  max-width: 1800px;
+
+  .container {
+    display: flex;
+    gap: $spacing-unit * 6;
+    justify-content: center;
+    align-items: stretch;
+
+    .location-info {
+      flex: 0.8; // Reduced from 1 to make it narrower
+      min-height: 60vh;
+      max-width: 600px;
+      @include frosted-glass;
+      padding: $spacing-unit * 6;
+      position: relative;
+      transition: transform 0.3s ease;
+      
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        background: radial-gradient(
+          circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+          rgba($hot-pink, 0.15),
+          transparent 250px
+        );
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+      }
+
+      &:hover {
+        transform: translateY(-5px);
+        
+        &::before {
+          opacity: 1;
+        }
+      }
+
+      display: flex;
+      flex-direction: column;
+
+      h2 {
+        font-family: $header-font;
+        font-size: 4.2rem;
+        color: $text-light;
+        margin-bottom: $spacing-unit * 4;
+        letter-spacing: 0.1rem;
+        text-transform: uppercase;
+        text-shadow: 2px 4px 8px rgba($pure-black, 0.3);
+        text-align: left;
+      }
+
+      .info-group {
+        margin-bottom: $spacing-unit * 3;
+
+        h3 {
+          color: $text-light;
+          font-family: $header-font;
+          font-size: 2.8rem;
+          margin-bottom: $spacing-unit * 2;
+          letter-spacing: 0.05rem;
+        }
+
+        p {
+          color: rgba($text-light, 0.9);
+          font-size: 1.6rem;
+          line-height: 1.6;
+          margin-bottom: $spacing-unit * 2;
+        }
+
+        .transport-option {
+          display: flex;
+          align-items: center;
+          gap: $spacing-unit * 2;
+          margin-bottom: $spacing-unit * 2;
+
+          i {
+            font-size: 2.4rem;
+            color: $text-light; // Changed from accent to white
+            width: 3rem; // Added fixed width for alignment
+            text-align: center; // Center the icons
+          }
+
+          span {
+            color: $text-light;
+            font-size: 1.6rem;
+          }
+        }
+      }
+    }
+
+    .map-container {
+      flex: 1.2; // Increased from 1 to make it wider
+      @include frosted-glass; // Added to match left card styling
+      overflow: hidden;
+      padding: 0;
+      position: relative; // Added for proper border radius handling
+
+      iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+        position: relative; // Added to ensure proper layering
+        z-index: 1; // Ensure iframe is above the frosted glass background
+      }
+    }
+  }
+
+  @include mobile {
+    padding: $spacing-unit * 2;
+    
+    .container {
+      flex-direction: column;
+      gap: $spacing-unit * 4;
+
+      .location-info,
+      .map-container {
+        min-height: auto;
+        width: 100%;
+        max-width: 100%;
+      }
+
+      .location-info {
+        padding: $spacing-unit * 4;
+      }
+
+      .map-container {
+        height: 400px;
+      }
+    }
+  }
+}
+
+// Slider Section
 .slider-section {
   background: transparent;
   overflow: visible;
@@ -388,6 +638,7 @@ h2 {
   }
 }
 
+// Mobile Styles (at the end for proper cascade)
 @include mobile {
   section:not(.hero-section, .gallery-preview, .slider-section) {
     margin: $spacing-unit * 2 auto; // Changed from 5% to auto
