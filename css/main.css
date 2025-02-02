@@ -65,7 +65,7 @@ h4 {
   letter-spacing: 1rem;
 }
 
-section:not(.hero-section, .gallery-preview, .slider-section) {
+section:not(.hero-section, .gallery-preview, .slider-section, .rooms-section) {
   margin: 3.2rem auto;
   padding: 3.2rem;
   border-radius: 2rem;
@@ -161,7 +161,7 @@ h2 {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 0;
-  filter: brightness(0.9);
+  filter: brightness(0.7);
 }
 .hero-section .hero-content {
   text-align: center;
@@ -195,86 +195,6 @@ h2 {
     font-size: 2.8rem;
   }
 }
-.hero-section .hero-content .cta-buttons {
-  display: flex;
-  gap: 2.4rem;
-  justify-content: center;
-}
-.hero-section .hero-content .cta-buttons .cta-button {
-  border-radius: 1rem;
-  font-size: 2.5rem;
-  font-weight: 500;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  position: relative;
-  min-width: 200px;
-  width: 200px;
-  height: 7.5rem;
-  padding: 1.44rem 2.4rem;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.hero-section .hero-content .cta-buttons .cta-button.primary {
-  background-size: 300% 100%;
-  background-image: linear-gradient(to right, #9030FD 0%, #ff4d97 45%, #ff4d97 55%, #9030FD 100%);
-  background-position: right bottom;
-  transition: all 0.3s ease, background-position 0.75s ease;
-  color: #FFFFFF;
-  border: none;
-  box-shadow: inset 0 12px 12px -12px rgba(255, 255, 255, 0.6), inset 12px 0 12px -12px rgba(255, 255, 255, 0.6), inset 2px 2px 4px rgba(255, 255, 255, 0.4), inset -4px -4px 8px rgba(0, 0, 0, 0.7), inset -8px -8px 16px rgba(0, 0, 0, 0.5), 2px 2px 4px rgba(0, 0, 0, 0.3), 6px 6px 12px rgba(0, 0, 0, 0.4), 8px 8px 16px rgba(0, 0, 0, 0.3), 12px 12px 24px rgba(0, 0, 0, 0.2);
-}
-.hero-section .hero-content .cta-buttons .cta-button.primary:hover {
-  background-position: left bottom;
-  transform: translateY(-2px);
-  text-shadow: 0 0 15px rgba(0, 216, 255, 0.7), 0 0 30px rgba(0, 216, 255, 0.5);
-  box-shadow: inset 0 16px 16px -12px rgba(255, 255, 255, 0.7), inset 16px 0 16px -12px rgba(255, 255, 255, 0.7), inset 2px 2px 4px rgba(255, 255, 255, 0.5), inset -6px -6px 12px rgba(0, 0, 0, 0.8), inset -12px -12px 24px rgba(0, 0, 0, 0.6), 2px 2px 4px rgba(0, 0, 0, 0.4), 8px 8px 16px rgba(0, 0, 0, 0.5), 12px 12px 24px rgba(0, 0, 0, 0.4), 16px 16px 32px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 216, 255, 0.4), 0 0 60px rgba(0, 216, 255, 0.3), 0 0 90px rgba(0, 216, 255, 0.2);
-}
-.hero-section .hero-content .cta-buttons .cta-button.primary:active {
-  background-position: 0 0;
-  transform: translateY(2px);
-  background: linear-gradient(135deg, #ff016a, #6902de);
-  box-shadow: inset 0 6px 6px -6px rgba(255, 255, 255, 0.3), inset 6px 0 6px -6px rgba(255, 255, 255, 0.3), inset -2px -2px 4px rgba(0, 0, 0, 0.9), inset -4px -4px 8px rgba(0, 0, 0, 0.7), inset -6px -6px 12px rgba(0, 0, 0, 0.5), 1px 1px 2px rgba(0, 0, 0, 0.4);
-  background-image: linear-gradient(to right, #6902de 0%, #ff016a 45%, #ff016a 55%, #6902de 100%);
-}
-.hero-section .hero-content .cta-buttons .cta-button.secondary {
-  background-size: 300% 100%;
-  background-image: linear-gradient(to right, #050A1C 0%, #9030FD 45%, #9030FD 55%, #050A1C 100%);
-  background-position: right bottom;
-  transition: all 0.3s ease, background-position 0.75s ease;
-  color: #FFFFFF;
-  border: none;
-  box-shadow: inset 0 12px 12px -12px rgba(255, 255, 255, 0.4), inset 12px 0 12px -12px rgba(255, 255, 255, 0.4), inset 2px 2px 4px rgba(255, 255, 255, 0.2), inset -4px -4px 8px rgba(0, 0, 0, 0.8), inset -8px -8px 16px rgba(0, 0, 0, 0.6), 2px 2px 4px rgba(0, 0, 0, 0.4), 6px 6px 12px rgba(0, 0, 0, 0.5), 8px 8px 16px rgba(0, 0, 0, 0.4), 12px 12px 24px rgba(0, 0, 0, 0.3);
-}
-.hero-section .hero-content .cta-buttons .cta-button.secondary:hover {
-  background-position: left bottom;
-  transform: translateY(-2px);
-  text-shadow: 0 0 15px rgba(0, 216, 255, 0.7), 0 0 30px rgba(0, 216, 255, 0.5);
-  box-shadow: inset 0 16px 16px -12px rgba(255, 255, 255, 0.7), inset 16px 0 16px -12px rgba(255, 255, 255, 0.7), inset 2px 2px 4px rgba(255, 255, 255, 0.5), inset -6px -6px 12px rgba(0, 0, 0, 0.8), inset -12px -12px 24px rgba(0, 0, 0, 0.6), 2px 2px 4px rgba(0, 0, 0, 0.4), 8px 8px 16px rgba(0, 0, 0, 0.5), 12px 12px 24px rgba(0, 0, 0, 0.4), 16px 16px 32px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 216, 255, 0.4), 0 0 60px rgba(0, 216, 255, 0.3), 0 0 90px rgba(0, 216, 255, 0.2);
-}
-.hero-section .hero-content .cta-buttons .cta-button.secondary:active {
-  background-position: 0 0;
-  transform: translateY(2px);
-  background: linear-gradient(135deg, #6902de, black);
-  box-shadow: inset 0 6px 6px -6px rgba(255, 255, 255, 0.2), inset 6px 0 6px -6px rgba(255, 255, 255, 0.2), inset -2px -2px 4px rgb(0, 0, 0), inset -4px -4px 8px rgba(0, 0, 0, 0.8), inset -6px -6px 12px rgba(0, 0, 0, 0.6), 1px 1px 2px rgba(0, 0, 0, 0.5);
-  background-image: linear-gradient(to right, black 0%, #6902de 45%, #6902de 55%, black 100%);
-}
-@media (max-width: 999px) {
-  .hero-section .hero-content .cta-buttons {
-    flex-direction: column;
-    gap: 1.6rem;
-    width: 100%;
-    max-width: 240px;
-    margin: 0 auto;
-  }
-  .hero-section .hero-content .cta-buttons .cta-button {
-    width: 100%;
-    min-width: auto;
-    height: 7.2rem;
-    padding: 1.44rem 1.6rem;
-  }
-}
 
 .promo-video {
   padding: 3.2rem 5%;
@@ -300,41 +220,155 @@ h2 {
 }
 
 .rooms-section {
-  padding: 3.2rem 0;
-  text-align: center;
-  margin: 3.2rem auto;
-  max-width: 1400px;
-  width: 90%;
+  padding: 1.6rem 0;
+  text-align: left;
+  margin: 1.6rem 0;
+  width: 100%;
+  max-width: none;
 }
-.rooms-section h2 {
+.rooms-section .section-intro {
+  max-width: 1000px;
+  margin: 0 auto 3.2rem;
+  padding: 6.4rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  position: relative;
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.1), 0 10px 30px rgba(0, 0, 0, 0.2), inset 0 0 60px rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+  text-align: left;
+}
+.rooms-section .section-intro::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 77, 151, 0.15), transparent 250px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+.rooms-section .section-intro:hover {
+  transform: translateY(-5px);
+}
+.rooms-section .section-intro:hover::before {
+  opacity: 1;
+}
+.rooms-section .section-intro h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 4.8rem;
+  color: #FFFFFF;
+  margin-bottom: 3.2rem;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+  text-align: left;
+}
+.rooms-section .section-intro p {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.8rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2.4rem;
+  padding: 0;
+  max-width: 800px;
+}
+.rooms-section .section-intro p:last-child {
   margin-bottom: 3.2rem;
 }
+.rooms-section .section-intro .rooms-available {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2.8rem;
+  color: #FFFFFF;
+  letter-spacing: 0.1rem;
+  padding-top: 2.4rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+  text-align: left;
+}
 .rooms-section .rooms-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 2.4rem;
+  max-width: 1800px;
   width: 100%;
-  margin: 0;
+  margin: 0 auto;
+  padding: 0;
 }
 .rooms-section .rooms-grid .room-card {
-  width: 100%;
-  transition: transform 0.3s ease;
+  flex: 1 1 calc(25% - 2.4rem);
+  min-width: 250px;
+  max-width: 320px;
+  background: rgba(255, 255, 255, 0.05);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 2rem;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.1), 0 10px 30px rgba(0, 0, 0, 0.2), inset 0 0 60px rgba(255, 255, 255, 0.05);
+  transform-style: preserve-3d;
+  perspective: 800px;
+  transition: all 0.3s ease;
+  padding: 2.4rem;
+  position: relative;
 }
 .rooms-section .rooms-grid .room-card:hover {
   transform: translateY(-5px);
 }
-.rooms-section .rooms-grid .room-card img {
+.rooms-section .rooms-grid .room-card.tilt {
+  transform: perspective(800px) rotateX(var(--rotateX)) rotateY(var(--rotateY));
+}
+.rooms-section .rooms-grid .room-card .image-container {
   width: 100%;
-  height: 450px;
+  padding-top: 133.33%;
+  position: relative;
+  margin-bottom: 1.6rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.2);
+}
+.rooms-section .rooms-grid .room-card .image-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 0.5rem;
-  margin-bottom: 0.8rem;
 }
 .rooms-section .rooms-grid .room-card h3 {
   color: #FFFFFF;
   font-family: "Bebas Neue", sans-serif;
   font-size: 2.4rem;
+  text-align: center;
+  margin: 0.8rem 0;
+  transform: translateZ(20px);
+}
+@media (min-width: 1000px) and (min-width: 1200px) {
+  .rooms-section .rooms-grid {
+    gap: 4rem;
+  }
+}
+@media (max-width: 999px) {
+  .rooms-section .rooms-grid {
+    gap: 2.4rem;
+    padding: 0 0.8rem;
+  }
+  .rooms-section .rooms-grid .room-card {
+    flex: 1 1 calc(50% - 1.6rem);
+  }
+}
+@media (max-width: 999px) and (max-width: 600px) {
+  .rooms-section .rooms-grid .room-card {
+    flex: 1 1 100%;
+    max-width: 350px;
+  }
 }
 
 .gallery-preview {
@@ -405,6 +439,89 @@ h2 {
     margin: 0 auto;
   }
 }
+.cta-buttons {
+  display: flex;
+  gap: 2.4rem;
+  justify-content: center;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+}
+.cta-buttons .cta-button {
+  border-radius: 1rem;
+  font-size: 2.5rem;
+  font-weight: 400;
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 0.1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  color: #FFFFFF;
+  width: 220px;
+  height: 7.5rem;
+  padding: 1.44rem 2.4rem;
+}
+.cta-buttons .cta-button.primary {
+  background-size: 300% 100%;
+  background-image: linear-gradient(to right, #9030FD 0%, #ff4d97 45%, #ff4d97 55%, #9030FD 100%);
+  background-position: right bottom;
+  transition: all 0.3s ease, background-position 1s ease;
+  box-shadow: inset 0 12px 12px -12px rgba(255, 255, 255, 0.6), inset 12px 0 12px -12px rgba(255, 255, 255, 0.6), inset 2px 2px 4px rgba(255, 255, 255, 0.4), inset -4px -4px 8px rgba(0, 0, 0, 0.7), inset -8px -8px 16px rgba(0, 0, 0, 0.5), 2px 2px 4px rgba(0, 0, 0, 0.3), 6px 6px 12px rgba(0, 0, 0, 0.4), 8px 8px 16px rgba(0, 0, 0, 0.3), 12px 12px 24px rgba(0, 0, 0, 0.2);
+}
+.cta-buttons .cta-button.primary:hover {
+  background-position: left bottom;
+  transform: translateY(-2px);
+  text-shadow: 0 0 15px rgba(0, 216, 255, 0.7), 0 0 30px rgba(0, 216, 255, 0.5);
+  box-shadow: inset 0 16px 16px -12px rgba(255, 255, 255, 0.7), inset 16px 0 16px -12px rgba(255, 255, 255, 0.7), inset 2px 2px 4px rgba(255, 255, 255, 0.5), inset -6px -6px 12px rgba(0, 0, 0, 0.8), inset -12px -12px 24px rgba(0, 0, 0, 0.6), 2px 2px 4px rgba(0, 0, 0, 0.4), 8px 8px 16px rgba(0, 0, 0, 0.5), 12px 12px 24px rgba(0, 0, 0, 0.4), 16px 16px 32px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 216, 255, 0.4), 0 0 60px rgba(0, 216, 255, 0.3), 0 0 90px rgba(0, 216, 255, 0.2);
+}
+.cta-buttons .cta-button.primary:active {
+  background-position: 0 0;
+  background-image: linear-gradient(to right, #5d02c5 0%, #e60060 45%, #e60060 55%, #5d02c5 100%);
+  transform: translateY(3px);
+  box-shadow: inset 0 2px 2px -2px rgba(255, 255, 255, 0.2), inset 2px 0 2px -2px rgba(255, 255, 255, 0.2), inset -1px -1px 3px rgba(0, 0, 0, 0.9), inset -2px -2px 6px rgba(0, 0, 0, 0.8), inset -3px -3px 9px rgba(0, 0, 0, 0.7), 0 1px 2px rgba(0, 0, 0, 0.3);
+  filter: brightness(0.85);
+  transition: all 0.1s ease;
+}
+.cta-buttons .cta-button.secondary {
+  background-size: 300% 100%;
+  background-image: linear-gradient(to right, #050A1C 0%, #9030FD 45%, #9030FD 55%, #050A1C 100%);
+  background-position: right bottom;
+  transition: all 0.3s ease, background-position 1s ease;
+  box-shadow: inset 0 12px 12px -12px rgba(255, 255, 255, 0.6), inset 12px 0 12px -12px rgba(255, 255, 255, 0.6), inset 2px 2px 4px rgba(255, 255, 255, 0.4), inset -4px -4px 8px rgba(0, 0, 0, 0.7), inset -8px -8px 16px rgba(0, 0, 0, 0.5), 2px 2px 4px rgba(0, 0, 0, 0.3), 6px 6px 12px rgba(0, 0, 0, 0.4), 8px 8px 16px rgba(0, 0, 0, 0.3), 12px 12px 24px rgba(0, 0, 0, 0.2);
+}
+.cta-buttons .cta-button.secondary:hover {
+  background-position: left bottom;
+  transform: translateY(-2px);
+  text-shadow: 0 0 15px rgba(0, 216, 255, 0.7), 0 0 30px rgba(0, 216, 255, 0.5);
+  box-shadow: inset 0 16px 16px -12px rgba(255, 255, 255, 0.7), inset 16px 0 16px -12px rgba(255, 255, 255, 0.7), inset 2px 2px 4px rgba(255, 255, 255, 0.5), inset -6px -6px 12px rgba(0, 0, 0, 0.8), inset -12px -12px 24px rgba(0, 0, 0, 0.6), 2px 2px 4px rgba(0, 0, 0, 0.4), 8px 8px 16px rgba(0, 0, 0, 0.5), 12px 12px 24px rgba(0, 0, 0, 0.4), 16px 16px 32px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 216, 255, 0.4), 0 0 60px rgba(0, 216, 255, 0.3), 0 0 90px rgba(0, 216, 255, 0.2);
+}
+.cta-buttons .cta-button.secondary:active {
+  background-position: 0 0;
+  background-image: linear-gradient(to right, black 0%, #5d02c5 45%, #5d02c5 55%, black 100%);
+  transform: translateY(3px);
+  box-shadow: inset 0 2px 2px -2px rgba(255, 255, 255, 0.2), inset 2px 0 2px -2px rgba(255, 255, 255, 0.2), inset -1px -1px 3px rgba(0, 0, 0, 0.9), inset -2px -2px 6px rgba(0, 0, 0, 0.8), inset -3px -3px 9px rgba(0, 0, 0, 0.7), 0 1px 2px rgba(0, 0, 0, 0.3);
+  filter: brightness(0.85);
+  transition: all 0.1s ease;
+}
+@media (max-width: 999px) {
+  .cta-buttons {
+    flex-direction: column;
+    gap: 1.6rem;
+    width: 90%;
+    max-width: 220px;
+  }
+  .cta-buttons .cta-button {
+    width: 100%;
+    height: 7.2rem;
+    padding: 1.44rem 1.6rem;
+  }
+}
+
 .navbar {
   font-family: "Bebas Neue", sans-serif;
   display: flex;

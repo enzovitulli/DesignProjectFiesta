@@ -1,0 +1,92 @@
+.cta-buttons {
+  display: flex;
+  gap: $spacing-unit * 3;
+  justify-content: center;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+
+  .cta-button {
+    @include button-3d-base;
+    width: 220px;
+    height: 7.5rem;
+    padding: $spacing-unit * 1.8 $spacing-unit * 3;
+
+    &.primary {
+      background-size: 300% 100%;
+      background-image: linear-gradient(
+        to right,
+        $deep-purple 0%,
+        $hot-pink 45%,
+        $hot-pink 55%,
+        $deep-purple 100%
+      );
+      background-position: right bottom;
+      transition: all 0.3s ease, background-position 1s ease;
+      @include button-3d-shadow;
+
+      &:hover {
+        background-position: left bottom;
+        @include button-3d-hover;
+      }
+
+      &:active {
+        background-position: 0 0;
+        background-image: linear-gradient(
+          to right,
+          darken($deep-purple, 20%) 0%,
+          darken($hot-pink, 20%) 45%,
+          darken($hot-pink, 20%) 55%,
+          darken($deep-purple, 20%) 100%
+        );
+        @include button-3d-active;
+        transition: all 0.1s ease; // Faster transition for active state
+      }
+    }
+
+    &.secondary {
+      background-size: 300% 100%;
+      background-image: linear-gradient(
+        to right,
+        $deep-navy 0%,
+        $deep-purple 45%,
+        $deep-purple 55%,
+        $deep-navy 100%
+      );
+      background-position: right bottom;
+      transition: all 0.3s ease, background-position 1s ease;
+      @include button-3d-shadow;
+
+      &:hover {
+        background-position: left bottom;
+        @include button-3d-hover;
+      }
+
+      &:active {
+        background-position: 0 0;
+        background-image: linear-gradient(
+          to right,
+          darken($deep-navy, 20%) 0%,
+          darken($deep-purple, 20%) 45%,
+          darken($deep-purple, 20%) 55%,
+          darken($deep-navy, 20%) 100%
+        );
+        @include button-3d-active;
+        transition: all 0.1s ease; // Faster transition for active state
+      }
+    }
+  }
+
+  @include mobile {
+    flex-direction: column;
+    gap: $spacing-unit * 2;
+    width: 90%;
+    max-width: 220px;
+
+    .cta-button {
+      width: 100%;
+      height: 7.2rem;
+      padding: $spacing-unit * 1.8 $spacing-unit * 2;
+    }
+  }
+}

@@ -1,5 +1,5 @@
 // Main content sections
-section:not(.hero-section, .gallery-preview, .slider-section) {
+section:not(.hero-section, .gallery-preview, .slider-section, .rooms-section) {
   margin: $spacing-unit * 4 auto; // Changed from 5% to auto
   padding: $spacing-unit * 4;
   border-radius: $border-radius;
@@ -110,7 +110,7 @@ h2 {
       height: 100%;
       object-fit: cover;
       border-radius: 0; // Removed rounded borders
-      filter: brightness(0.9); // Add subtle dimming to the image
+      filter: brightness(0.7); // Changed from 0.9 to 0.7 for more dimming
     }
   }
 
@@ -147,192 +147,6 @@ h2 {
         font-size: 2.8rem;
       }
     }
-
-    .cta-buttons {
-      display: flex;
-      gap: $spacing-unit * 3; // Increased gap between buttons
-      justify-content: center;
-
-      .cta-button {
-        border-radius: 1rem; // Increased from border-radius-sm (0.5rem) but not too much
-        font-size: 2.5rem; // Increased from 2rem
-        font-weight: 500;
-        text-decoration: none;
-        transition: all 0.3s ease;
-        position: relative;
-        min-width: 200px; // Reduced from 240px
-        width: 200px;    // Reduced from 240px
-        height: 7.5rem; // Increased from 6rem
-        padding: $spacing-unit * 1.8 $spacing-unit * 3; // Increased vertical padding
-        text-align: center; // Added to ensure text centering
-        display: flex;      // Added for perfect centering
-        align-items: center;
-        justify-content: center;
-
-        &.primary {
-          background-size: 300% 100%;
-          background-image: linear-gradient(
-            to right,
-            $deep-purple 0%,
-            $hot-pink 45%,
-            $hot-pink 55%,
-            $deep-purple 100%
-          );
-          background-position: right bottom;
-          transition: all 0.3s ease, background-position 0.75s ease;
-          color: $text-light;
-          border: none;
-          box-shadow: 
-            // Inner shadows (unchanged)
-            inset 0 12px 12px -12px rgba(255, 255, 255, 0.6),
-            inset 12px 0 12px -12px rgba(255, 255, 255, 0.6),
-            inset 2px 2px 4px rgba(255, 255, 255, 0.4),
-            inset -4px -4px 8px rgba(0, 0, 0, 0.7),
-            inset -8px -8px 16px rgba(0, 0, 0, 0.5),
-            // Enhanced outer shadows
-            2px 2px 4px rgba(0, 0, 0, 0.3),   // Top-left shadow
-            6px 6px 12px rgba(0, 0, 0, 0.4),  // Medium spread
-            8px 8px 16px rgba(0, 0, 0, 0.3),  // Larger spread
-            12px 12px 24px rgba(0, 0, 0, 0.2); // Largest spread
-
-          &:hover {
-            background-position: left bottom;
-            transform: translateY(-2px);
-            text-shadow: 
-              0 0 15px rgba($accent-primary, 0.7),
-              0 0 30px rgba($accent-primary, 0.5);
-            box-shadow: 
-              // Inner shadows
-              inset 0 16px 16px -12px rgba(255, 255, 255, 0.7),
-              inset 16px 0 16px -12px rgba(255, 255, 255, 0.7),
-              inset 2px 2px 4px rgba(255, 255, 255, 0.5),
-              inset -6px -6px 12px rgba(0, 0, 0, 0.8),
-              inset -12px -12px 24px rgba(0, 0, 0, 0.6),
-              // Enhanced hover outer shadows with stronger glow
-              2px 2px 4px rgba(0, 0, 0, 0.4),
-              8px 8px 16px rgba(0, 0, 0, 0.5),
-              12px 12px 24px rgba(0, 0, 0, 0.4),
-              16px 16px 32px rgba(0, 0, 0, 0.3),
-              // Enhanced glow effect
-              0 0 30px rgba($accent-primary, 0.4),
-              0 0 60px rgba($accent-primary, 0.3),
-              0 0 90px rgba($accent-primary, 0.2);
-          }
-
-          &:active {
-            background-position: 0 0;
-            transform: translateY(2px);
-            background: linear-gradient(135deg, darken($hot-pink, 15%), darken($deep-purple, 15%));
-            box-shadow: 
-              // Compressed top and left gradients
-              inset 0 6px 6px -6px rgba(255, 255, 255, 0.3),
-              inset 6px 0 6px -6px rgba(255, 255, 255, 0.3),
-              // Deeper bottom and right shadows
-              inset -2px -2px 4px rgba(0, 0, 0, 0.9),
-              inset -4px -4px 8px rgba(0, 0, 0, 0.7),
-              inset -6px -6px 12px rgba(0, 0, 0, 0.5),
-              // Minimal outer shadow when pressed
-              1px 1px 2px rgba(0, 0, 0, 0.4);
-            background-image: linear-gradient(
-              to right,
-              darken($deep-purple, 15%) 0%,
-              darken($hot-pink, 15%) 45%,
-              darken($hot-pink, 15%) 55%,
-              darken($deep-purple, 15%) 100%
-            );
-          }
-        }
-
-        &.secondary {
-          background-size: 300% 100%;
-          background-image: linear-gradient(
-            to right,
-            $deep-navy 0%,
-            $deep-purple 45%,
-            $deep-purple 55%,
-            $deep-navy 100%
-          );
-          background-position: right bottom;
-          transition: all 0.3s ease, background-position 0.75s ease;
-          color: $text-light;
-          border: none;
-          box-shadow: 
-            // Inner shadows (unchanged)
-            inset 0 12px 12px -12px rgba(255, 255, 255, 0.4),
-            inset 12px 0 12px -12px rgba(255, 255, 255, 0.4),
-            inset 2px 2px 4px rgba(255, 255, 255, 0.2),
-            inset -4px -4px 8px rgba(0, 0, 0, 0.8),
-            inset -8px -8px 16px rgba(0, 0, 0, 0.6),
-            // Enhanced outer shadows
-            2px 2px 4px rgba(0, 0, 0, 0.4),   // Top-left shadow
-            6px 6px 12px rgba(0, 0, 0, 0.5),  // Medium spread
-            8px 8px 16px rgba(0, 0, 0, 0.4),  // Larger spread
-            12px 12px 24px rgba(0, 0, 0, 0.3); // Largest spread
-
-          &:hover {
-            background-position: left bottom;
-            transform: translateY(-2px);
-            text-shadow: 
-              0 0 15px rgba($accent-primary, 0.7),
-              0 0 30px rgba($accent-primary, 0.5);
-            box-shadow: 
-              // Inner shadows
-              inset 0 16px 16px -12px rgba(255, 255, 255, 0.7),
-              inset 16px 0 16px -12px rgba(255, 255, 255, 0.7),
-              inset 2px 2px 4px rgba(255, 255, 255, 0.5),
-              inset -6px -6px 12px rgba(0, 0, 0, 0.8),
-              inset -12px -12px 24px rgba(0, 0, 0, 0.6),
-              // Enhanced hover outer shadows with stronger glow
-              2px 2px 4px rgba(0, 0, 0, 0.4),
-              8px 8px 16px rgba(0, 0, 0, 0.5),
-              12px 12px 24px rgba(0, 0, 0, 0.4),
-              16px 16px 32px rgba(0, 0, 0, 0.3),
-              // Enhanced glow effect
-              0 0 30px rgba($accent-primary, 0.4),
-              0 0 60px rgba($accent-primary, 0.3),
-              0 0 90px rgba($accent-primary, 0.2);
-          }
-
-          &:active {
-            background-position: 0 0;
-            transform: translateY(2px);
-            background: linear-gradient(135deg, darken($deep-purple, 15%), darken($deep-navy, 15%));
-            box-shadow: 
-              // Compressed top and left gradients
-              inset 0 6px 6px -6px rgba(255, 255, 255, 0.2),
-              inset 6px 0 6px -6px rgba(255, 255, 255, 0.2),
-              // Deeper bottom and right shadows
-              inset -2px -2px 4px rgba(0, 0, 0, 1),
-              inset -4px -4px 8px rgba(0, 0, 0, 0.8),
-              inset -6px -6px 12px rgba(0, 0, 0, 0.6),
-              // Minimal outer shadow when pressed
-              1px 1px 2px rgba(0, 0, 0, 0.5);
-            background-image: linear-gradient(
-              to right,
-              darken($deep-navy, 15%) 0%,
-              darken($deep-purple, 15%) 45%,
-              darken($deep-purple, 15%) 55%,
-              darken($deep-navy, 15%) 100%
-            );
-          }
-        }
-      }
-
-      @include mobile {
-        flex-direction: column;
-        gap: $spacing-unit * 2;
-        width: 100%;
-        max-width: 240px; // Reduced from 280px
-        margin: 0 auto;
-
-        .cta-button {
-          width: 100%;    // Fill container width
-          min-width: auto; // Remove min-width constraint
-          height: 7.2rem; // Match the desktop height
-          padding: $spacing-unit * 1.8 $spacing-unit * 2; // Increased vertical padding
-        }
-      }
-    }
   }
 }
 
@@ -362,45 +176,162 @@ h2 {
 }
 
 .rooms-section {  // Changed from about-us
-  padding: $spacing-unit * 4 0; // Changed from 5% to 0 to match gallery
-  text-align: center;
-  margin: $spacing-unit * 4 auto; // Added margin auto
-  max-width: 1400px; // Changed to match gallery-preview
-  width: 90%;
+  padding: $spacing-unit * 2 0; // Reduced from 4 to 2
+  text-align: left; // Changed from center
+  margin: $spacing-unit * 2 0; // Reduced from 4 to 2
+  width: 100%; // Changed from 90% to full width
+  max-width: none; // Remove max-width constraint
   
-  h2 {
-    margin-bottom: $spacing-unit * 4;
+  .section-intro {
+    max-width: 1000px; // Increased from 1400px to match rooms-grid
+    margin: 0 auto $spacing-unit * 4; // Reduced from 6 to 4
+    padding: $spacing-unit * 8; // Increased padding for better text width
+    border: 1px solid rgba($pure-white, 0.2);
+    border-radius: $border-radius;
+    background: rgba($pure-white, 0.05);
+    backdrop-filter: blur(20px);
+    position: relative;
+    transition: transform 0.3s ease;
+    box-shadow: 
+      0 0 40px rgba($pure-black, 0.1),
+      0 10px 30px rgba($pure-black, 0.2),
+      inset 0 0 60px rgba($pure-white, 0.05);
+    overflow: hidden;
+    text-align: left; // Added explicit left alignment
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+      background: radial-gradient(
+        circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+        rgba($hot-pink, 0.15),
+        transparent 250px
+      );
+      opacity: 0;
+      transition: opacity 0.3s ease; // Only transition opacity, not position
+      pointer-events: none; // Ensure gradient doesn't interfere with interactions
+    }
+
+    &:hover {
+      transform: translateY(-5px);
+      
+      &::before {
+        opacity: 1;
+      }
+    }
+    
+    h2 {
+      font-family: $header-font;
+      font-size: 4.8rem;
+      color: $text-light; // Changed to white
+      margin-bottom: $spacing-unit * 4; // Increased spacing
+      letter-spacing: 0.1rem;
+      text-transform: uppercase;
+      text-shadow: 2px 4px 8px rgba($pure-black, 0.3); // Added shadow for depth
+      text-align: left; // Changed from center
+    }
+
+    p {
+      font-family: $body-font;
+      font-size: 1.8rem;
+      line-height: 1.8;
+      color: rgba($text-light, 0.9);
+      margin-bottom: $spacing-unit * 3;
+      padding: 0; // Removed horizontal padding
+      max-width: 800px; // Added max-width for better readability
+
+      &:last-child {
+        margin-bottom: $spacing-unit * 4; // Added space before rooms-available
+      }
+    }
+
+    .rooms-available {
+      font-family: $header-font;
+      font-size: 2.8rem; // Increased size
+      color: $text-light; // Changed to white
+      letter-spacing: 0.1rem;
+      padding-top: $spacing-unit * 3; // Added top padding
+      border-top: 1px solid rgba($text-light, 0.1); // Added separator line
+      text-shadow: 2px 4px 8px rgba($pure-black, 0.3); // Added shadow for depth
+      text-align: left; // Added explicit left alignment
+    }
   }
 
   .rooms-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); // Changed to 4 columns
-    gap: $spacing-unit * 3; // Increased gap for better spacing
-    width: 100%;
-    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: $spacing-unit * 3; // Reduced from 4 to 3 for tighter spacing
+    max-width: 1800px; // Increased from 1400px
+    width: 100%; // Increased from 98% for even less margin
+    margin: 0 auto;
+    padding: 0;
     
     .room-card {
-      width: 100%;
-      transition: transform 0.3s ease;
+      flex: 1 1 calc(25% - #{$spacing-unit * 3}); // 4 cards per row with gap consideration
+      min-width: 250px; // Minimum width before wrapping
+      max-width: 320px; // Maximum width to maintain proportions
+      @include frosted-glass;
+      @include card-tilt;
+      padding: $spacing-unit * 3;
+      position: relative;
       
-      // Removed padding
-      
-      &:hover {
-        transform: translateY(-5px);
-      }
-
-      img {
+      .image-container {
         width: 100%;
-        height: 450px; // Taller for portrait images
-        object-fit: cover;
+        padding-top: 133.33%; // 3:4 aspect ratio (like portrait photos)
+        position: relative;
+        margin-bottom: $spacing-unit * 2;
         border-radius: $border-radius-sm;
-        margin-bottom: $spacing-unit; // Reduced margin
+        overflow: hidden;
+        background: rgba($pure-black, 0.2); // Added subtle background while loading
+        
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          // Removed transition and hover effect
+        }
       }
 
       h3 {
         color: $text-light;
         font-family: $header-font;
         font-size: 2.4rem;
+        text-align: center;
+        margin: $spacing-unit 0;
+        transform: translateZ(20px);
+      }
+    }
+  }
+
+  @include desktop {
+    .rooms-grid {
+      @media (min-width: 1200px) {
+        gap: $spacing-unit * 5; // Larger gap on very wide screens
+      }
+    }
+  }
+
+  @include mobile {
+    .rooms-grid {
+      gap: $spacing-unit * 3;
+      padding: 0 $spacing-unit;
+      
+      .room-card {
+        flex: 1 1 calc(50% - #{$spacing-unit * 2}); // 2 cards per row on tablets
+        
+        @media (max-width: 600px) {
+          flex: 1 1 100%; // 1 card per row on phones
+          max-width: 350px; // Slightly wider on mobile
+        }
       }
     }
   }
