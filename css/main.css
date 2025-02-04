@@ -821,7 +821,6 @@ h2 {
   color: #FFFFFF;
   position: relative;
   display: inline-block;
-  cursor: default;
   transition: all 0.5s ease;
 }
 .navbar .logo-container .title:hover {
