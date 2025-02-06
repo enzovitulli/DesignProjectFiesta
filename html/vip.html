@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIP Experience - Nighttime</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <link rel='stylesheet' type='text/css' media='screen' href="../css/main.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo-container">
+          <a href="index.html" class="logo"><img id="logo" src="../assets/img/logo.png" alt=""></a>
+          <a href="index.html"><h1 class="title">NIGHTTIME</h1></a>
+        </div>
+        <nav class="nav-links">
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="vip.html">VIP</a></li>
+            <li><a href="tickets.html">Entradas</a></li>
+            <li><a href="gallery.html">Galería</a></li>
+            <li><a href="contact.html">Contacto</a></li>
+          </ul>
+          <!-- Added mobile-only icons container -->
+          <div class="nav-icons-mobile">
+            <a href="mailto:contact@nighttime.com" class="icon-link">
+              <i class="fas fa-envelope"></i>
+            </a>
+            <a href="#" class="icon-link">
+              <i class="fas fa-share-nodes"></i>
+            </a>
+          </div>
+        </nav>
+    
+        <!-- This will be desktop-only icons -->
+        <div class="nav-icons-desktop">
+          <a href="mailto:contact@nighttime.com" class="icon-link">
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a href="#" class="icon-link">
+            <i class="fas fa-share-nodes"></i>
+          </a>
+        </div>
+    
+        <button class="hamburger" aria-label="Abrir menú">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </header>
+
+    <section class="hero-section">
+        <div class="hero-background">
+            <img src="../assets/img/vip/vip-hero.jpg" alt="VIP Experience">
+        </div>
+        <div class="hero-content">
+            <h1>Experiencia VIP</h1>
+            <p>Vive la noche al más alto nivel</p>
+            <div class="cta-buttons">
+                <a href="#vip-packages" class="cta-button primary">Ver Paquetes VIP</a>
+                <a href="#booking" class="cta-button secondary">Reservar Ahora</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+          <div class="footer-section about-us">
+            <h3>Sobre Nosotros</h3>
+            <p>Nighttime es tu destino nocturno premium, donde la música, el ambiente y la diversión se fusionan para crear
+              experiencias inolvidables. Desde 2010 liderando el entretenimiento nocturno en Madrid.</p>
+          </div>
+    
+          <div class="footer-section schedule">
+            <h3>Horario</h3>
+            <div class="schedule-item">
+              <span class="day">Lunes - Miércoles:</span>
+              <span class="hours">23:00 - 04:00</span>
+            </div>
+            <div class="schedule-item">
+              <span class="day">Jueves:</span>
+              <span class="hours">23:00 - 05:00</span>
+            </div>
+            <div class="schedule-item">
+              <span class="day">Viernes - Sábado:</span>
+              <span class="hours">23:00 - 06:00</span>
+            </div>
+            <div class="schedule-item">
+              <span class="day">Domingo:</span>
+              <span class="hours">Cerrado</span>
+            </div>
+          </div>
+    
+          <div class="footer-section contact">
+            <h3>Visítanos</h3>
+            <div class="contact-item">
+              <i class="fas fa-location-dot"></i>
+              <p>Calle Falsa 123, 28000 Madrid</p>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <a href="mailto:info@nighttime.com">info@nighttime.com</a>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-phone"></i>
+              <a href="tel:+34912345678">+34 91 234 56 78</a>
+            </div>
+            <div class="contact-item">
+              <i class="fab fa-whatsapp"></i>
+              <a href="https://wa.me/34666123456">+34 666 12 34 56</a>
+            </div>
+          </div>
+        </div>
+    
+        <div class="social-links">
+          <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </footer>
+    
+      <script>
+        // Hamburger menu
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+    
+        hamburger.addEventListener('click', () => {
+          hamburger.classList.toggle('active');
+          navLinks.classList.toggle('active');
+        });
+    
+        // Unified glow effect
+        const glowElements = document.querySelectorAll('.glow-effect');
+        
+        glowElements.forEach(element => {
+          element.addEventListener('mousemove', (e) => {
+            const rect = element.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            element.style.setProperty('--mouse-x', `${x}px`);
+            element.style.setProperty('--mouse-y', `${y}px`);
+          });
+        });
+    
+        // Tilt effect on room cards (keeping this separate as it's different functionality)
+        const cards = document.querySelectorAll('.room-card');
+        
+        cards.forEach(card => {
+          let ticking = false;
+    
+          card.addEventListener('mousemove', (e) => {
+            if (!ticking) {
+              requestAnimationFrame(() => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const rotateX = -((y - centerY) / 20);
+                const rotateY = ((x - centerX) / 20);
+                
+                card.classList.add('tilt');
+                card.style.setProperty('--rotateX', `${rotateX}deg`);
+                card.style.setProperty('--rotateY', `${rotateY}deg`);
+                
+                ticking = false;
+              });
+              
+              ticking = true;
+            }
+          });
+    
+          card.addEventListener('mouseleave', () => {
+            card.classList.remove('tilt');
+            card.style.setProperty('--rotateX', '0deg');
+            card.style.setProperty('--rotateY', '0deg');
+          });
+        });
+    
+        // Ensure slider track width is correct
+        const sliderTrack = document.querySelector('.slider-track');
+        const slides = document.querySelectorAll('.slide');
+        const slideWidth = 200; // Match this with your CSS
+        const slideCount = slides.length;
+        const gap = 16; // This should match your $spacing-unit * 2
+    
+        // Set the track width to accommodate all slides plus gaps
+        sliderTrack.style.width = `${(slideWidth + gap) * slideCount}px`;
+      </script>
+</body>
+</html>

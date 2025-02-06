@@ -1,0 +1,41 @@
+.gallery-full {
+  width: 95%;
+  max-width: 1920px;
+  margin: $spacing-unit * 8 auto;
+  columns: 400px;
+  column-gap: $spacing-unit * 5;
+  padding: $spacing-unit * 8 0;
+
+  .gallery-item {
+    break-inside: avoid;
+    margin-bottom: $spacing-unit * 4; // Match index preview
+    position: relative;
+    overflow: hidden;
+    @include glow-effect;
+    
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 0; // Remove border radius
+      transition: transform 0.3s ease;
+    }
+
+    &:hover {
+      img {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  @include mobile {
+    width: 90%;
+    columns: 1;
+    gap: $spacing-unit * 2;
+    padding: $spacing-unit * 2;
+  }
+
+  @media (min-width: 1600px) {
+    columns: 500px; // Wider columns for larger screens
+  }
+}
