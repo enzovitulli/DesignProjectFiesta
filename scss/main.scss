@@ -1,16 +1,17 @@
-// Utils - Load first as they contain variables and mixins needed by other files
+// 1. Utils (variables, mixins, functions)
 @import 'utils/variables';
 @import 'utils/mixins';
 
-// Base styles
+// 2. Base styles
 @import 'base/reset';
 @import 'base/typography';
 
-// Layouts
-@import 'layouts/index';
-
-// Components
+// 3. Components (standalone items)
 @import 'components/buttons';
+@import 'components/cards';  // Added new cards component
 @import 'components/navbar';
-@import 'components/footer';
 @import 'components/slider';
+@import 'components/footer';
+
+// 4. Layouts (page sections)
+@import 'layouts/index';

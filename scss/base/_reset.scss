@@ -15,7 +15,8 @@ html, body {
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-  background-color: $deep-navy;
+  background: $deep-navy; // Simplified background
+  position: relative;
 }
 
 img, picture, video, canvas, svg {

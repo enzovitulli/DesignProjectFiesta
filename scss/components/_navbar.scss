@@ -59,6 +59,7 @@
       gap: $spacing-unit * 10; // Increased gap from 6 to 10 units
 
       a {
+        @include link-base; // Replace duplicate link styles
         text-decoration: none;
         color: $text-light;
         font-size: 2.5rem; // Increased from 1.8rem to 2rem
@@ -94,6 +95,7 @@
     padding-left: $spacing-unit * 3; // Increased padding from 2 to 3 units
 
     .icon-link {
+      @include link-base; // Replace duplicate link styles
       color: $text-light;
       font-size: 2rem;
       transition: all 0.3s ease;
@@ -112,6 +114,7 @@
     padding-left: $spacing-unit * 3;
 
     .icon-link {
+      @include link-base; // Replace duplicate link styles
       color: $text-light;
       font-size: 2rem;
       transition: all 0.3s ease;
@@ -202,6 +205,7 @@
         gap: $spacing-unit * 3;
         
         a {
+          @include link-base; // Replace duplicate link styles
           font-size: 2.2rem;
         }
       }
@@ -216,6 +220,7 @@
         gap: $spacing-unit * 8; // Increased from 4 to 8 units for mobile
 
         .icon-link {
+          @include link-base; // Replace duplicate link styles
           font-size: 2.4rem;
         }
       }
@@ -231,6 +236,7 @@
         gap: $spacing-unit * 8;
 
         .icon-link {
+          @include link-base; // Replace duplicate link styles
           color: $text-light;
           font-size: 2.4rem;
           transition: all 0.3s ease;

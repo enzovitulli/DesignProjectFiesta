@@ -101,3 +101,88 @@
     transform: perspective(800px) rotateX(var(--rotateX)) rotateY(var(--rotateY));
   }
 }
+
+@mixin glow-effect {
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background: radial-gradient(
+      circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      rgba($hot-pink, 0.15),
+      transparent 250px
+    );
+    opacity: 0;
+    transition: opacity 1s ease-out;
+    pointer-events: none;
+  }
+
+  &:hover::before {
+    opacity: 1;
+    transition: opacity 0.3s ease-in; // Faster transition in, slower transition out
+  }
+}
+
+@mixin section-container {
+  width: 90%;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: $spacing-unit * 4 5%;
+}
+
+@mixin header-text {
+  font-family: $header-font;
+  font-size: 4.2rem;
+  color: $text-light;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  text-shadow: 2px 4px 8px rgba($pure-black, 0.3);
+}
+
+@mixin card-base {
+  @include frosted-glass;
+  position: relative;
+  transition: transform 0.3s ease;
+  @include glow-effect;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+@mixin mobile-section {
+  padding: $spacing-unit * 2;
+  width: 95%;
+  margin: $spacing-unit * 2 auto;
+}
+
+@mixin mobile-card {
+  min-height: auto;
+  width: 100%;
+  max-width: 100%;
+  padding: $spacing-unit * 4;
+}
+
+// Add new mixin for common hover transition
+@mixin hover-transition {
+  transition: all 0.3s ease;
+  
+  &:hover {
+    color: $accent-primary;
+    transform: translateY(-3px);
+  }
+}
+
+// Add common link styles mixin
+@mixin link-base {
+  color: $text-light;
+  opacity: 0.9;
+  text-decoration: none;
+  @include hover-transition;
+}

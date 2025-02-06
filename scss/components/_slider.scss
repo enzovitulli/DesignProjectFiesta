@@ -1,5 +1,6 @@
 .slider-section {
-  padding: $spacing-unit * 4 0;
+  width: 100%;
+  padding: 0;  // Reset padding
   background: transparent;
   overflow: hidden;
 }
@@ -7,13 +8,16 @@
 .slider-container {
   position: relative;
   width: 100%;
+  max-width: none;  // Removed max-width constraint
+  margin: 0;        // Removed margin
+  padding: 0;       // Removed padding
   
   &::before,
   &::after {
     content: '';
     position: absolute;
     top: 0;
-    width: 50px; // Reduced from 200px
+    width: 300px;  // Increased fade width significantly
     height: 100%;
     z-index: 2;
     pointer-events: none;
@@ -21,30 +25,40 @@
 
   &::before {
     left: 0;
-    background: linear-gradient(to right, $deep-navy 0%, transparent 100%);
+    background: linear-gradient(
+      to right,
+      $deep-navy 0%,
+      rgba($deep-navy, 0.9) 20%,
+      rgba($deep-navy, 0.7) 40%,
+      rgba($deep-navy, 0.2) 80%,
+      transparent 100%
+    );
   }
 
   &::after {
     right: 0;
-    background: linear-gradient(to left, $deep-navy 0%, transparent 100%);
+    background: linear-gradient(
+      to left,
+      $deep-navy 0%,
+      rgba($deep-navy, 0.9) 20%,
+      rgba($deep-navy, 0.7) 40%,
+      rgba($deep-navy, 0.2) 80%,
+      transparent 100%
+    );
   }
 }
 
 .slider {
+  position: relative;
   width: 100%;
   overflow: hidden;
-  // Remove the mask properties that were causing additional fade
-  // -webkit-mask and mask properties removed
 }
 
 .slider-track {
-  display: inline-flex;
+  display: flex;
+  gap: $spacing-unit * 2;  // Add gap between slides
   animation: scroll 40s linear infinite;
   will-change: transform;
-
-  &:hover {
-    animation-play-state: paused;
-  }
 }
 
 .slide {
@@ -61,49 +75,64 @@
     object-fit: contain;
     filter: invert(1);
     opacity: 0.7;
-    transition: all 0.3s ease;
+    transition: all 0.5s ease; // Changed to transition all properties with longer duration
 
     &:hover {
       opacity: 1;
-      transform: scale(1.1) translateY(-2px); // Reduced from -5px
-      filter: invert(1) drop-shadow(0 2px 8px rgba($accent-primary, 0.3)); // Reduced shadow distance and spread
+      filter: invert(1) drop-shadow(0 2px 8px rgba($accent-primary, 0.3));
     }
   }
 }
 
 @keyframes scroll {
-  from {
+  0% {
     transform: translateX(0);
   }
-  to {
-    transform: translateX(calc(-200px * 12)); // Number of original slides
+  100% {
+    transform: translateX(calc(-200px * 12 - #{$spacing-unit * 24})); // Account for gaps
   }
 }
 
 @include mobile {
+  .slider-section {
+    padding: 0;  // Remove all padding
+    width: 100vw; // Force full viewport width
+    margin-left: -5%; // Compensate for any parent container margins
+  }
+
   .slider-container {
+    padding: 0; // Remove container padding
+    margin: 0; // Remove any margin
+    width: 100vw; // Force full viewport width
+    overflow: hidden; // Ensure no horizontal scrollbar
+    
     &::before,
     &::after {
-      width: 30px; // Even smaller on mobile
+      width: 80px;  // Reduced fade width for mobile
     }
   }
 
+  .slider {
+    padding: 0;  // Remove slider padding
+    width: 100vw; // Force full viewport width
+  }
+
   .slide {
-    width: 150px;
+    width: 120px; // Slightly smaller slides on mobile
     padding: $spacing-unit;
     
     img.logos {
-      width: 100px;
-      height: 100px;
+      width: 80px; // Smaller logos on mobile
+      height: 80px;
     }
   }
 
   @keyframes scroll {
-    from {
+    0% {
       transform: translateX(0);
     }
-    to {
-      transform: translateX(calc(-150px * 12));
+    100% {
+      transform: translateX(calc(-120px * 12 - #{$spacing-unit * 12})); // Adjusted for new slide width
     }
   }
 }

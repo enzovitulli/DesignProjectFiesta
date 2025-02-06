@@ -21,10 +21,9 @@ footer {
       text-align: left; // Add this to ensure left alignment
       
       h3 {
+        @include header-text;
+        font-size: 2.5rem;
         margin-bottom: $spacing-unit * 2;
-        font-family: $header-font;
-        font-size: 2.5rem; // Changed to match navbar links
-        font-weight: 400; // Match navbar link weight
         position: relative;
         
         &::after {
@@ -36,6 +35,16 @@ footer {
           height: 2px;
           background: $accent-primary; // Keep underline accent colored
         }
+      }
+
+      p, a, .schedule-item {
+        color: $text-light;
+        opacity: 0.9;
+        font-weight: 300;
+      }
+
+      a {
+        @include link-base; // Replace duplicate link styles
       }
 
       &.about-us {
@@ -116,8 +125,7 @@ footer {
     text-align: center;
 
     a {
-      display: inline-block;
-      color: $text-light; // Ensure icons are white
+      @include link-base; // Replace duplicate link styles
       font-size: 2.4rem;
       margin: 0 $spacing-unit * 2;
       transition: all 0.3s ease;

@@ -1,0 +1,68 @@
+// Base card styles
+.card-component {
+  @include card-base;
+  padding: $spacing-unit * 3;
+  margin-bottom: $spacing-unit * 4;
+}
+
+// Room cards specific styles
+.room-card {
+  @include card-base;
+  @include card-tilt;
+  padding: $spacing-unit * 3;
+  
+  .image-container {
+    width: 100%;
+    padding-top: 133.33%;
+    position: relative;
+    margin-bottom: $spacing-unit * 2;
+    border-radius: $border-radius;
+    overflow: hidden;
+    background: rgba($pure-black, 0.2);
+    
+    img {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: none;
+    }
+  }
+
+  h3 {
+    color: $text-light;
+    font-family: $header-font;
+    font-size: 2.4rem;
+    text-align: center;
+    margin: $spacing-unit 0;
+    transform: translateZ(20px);
+  }
+}
+
+// Form cards specific styles
+.form-card {
+  @include card-base;
+  padding: $spacing-unit * 6;
+  min-height: 70vh;
+  max-width: 600px;
+  
+  h2 {
+    @include header-text;
+    margin-bottom: $spacing-unit * 4;
+    text-align: left;
+  }
+}
+
+@include mobile {
+  .card-component,
+  .form-card {
+    @include mobile-card;
+  }
+
+  .room-card {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
