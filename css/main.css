@@ -1531,6 +1531,26 @@ h2 {
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 2rem;
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.1), 0 10px 30px rgba(0, 0, 0, 0.2), inset 0 0 60px rgba(255, 255, 255, 0.05);
+  position: relative;
+  position: relative;
+  overflow: hidden;
+}
+.legal-section .legal-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 77, 151, 0.15), transparent 250px);
+  opacity: 0;
+  transition: opacity 1s ease-out;
+  pointer-events: none;
+}
+.legal-section .legal-content:hover::before {
+  opacity: 1;
+  transition: opacity 0.3s ease-in;
 }
 .legal-section .legal-content h1 {
   font-family: "Bebas Neue", sans-serif;

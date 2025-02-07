@@ -9,10 +9,10 @@
         width: 100%;
         max-width: 800px;
         padding: $spacing-unit * 6;
-        @include glass-card; // Updated to use our standard glass mixin
-        @include glow-effect; // Added our standard glow effect
-        position: relative; // Required for glow effect
-        overflow: hidden; // Contains the glow
+        @include frosted-glass;
+        @include glow-effect; // Changed to use the proper glow effect mixin
+        position: relative;
+        overflow: hidden;
         
         h1 {
             font-family: $header-font;
