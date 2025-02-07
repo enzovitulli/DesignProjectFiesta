@@ -66,132 +66,136 @@
     </section>
 
     <footer>
-        <div class="footer-content">
-          <div class="footer-section about-us">
-            <h3>Sobre Nosotros</h3>
-            <p>Nighttime es tu destino nocturno premium, donde la música, el ambiente y la diversión se fusionan para crear
-              experiencias inolvidables. Desde 2010 liderando el entretenimiento nocturno en Madrid.</p>
+      <div class="footer-content">
+        <div class="footer-section about-us">
+          <h3>Sobre Nosotros</h3>
+          <p>Nighttime es tu destino nocturno premium, donde la música, el ambiente y la diversión se fusionan para crear
+            experiencias inolvidables. Desde 2010 liderando el entretenimiento nocturno en Madrid.</p>
+        </div>
+  
+        <div class="footer-section schedule">
+          <h3>Horario</h3>
+          <div class="schedule-item">
+            <span class="day">Lunes - Miércoles:</span>
+            <span class="hours">23:00 - 04:00</span>
           </div>
-    
-          <div class="footer-section schedule">
-            <h3>Horario</h3>
-            <div class="schedule-item">
-              <span class="day">Lunes - Miércoles:</span>
-              <span class="hours">23:00 - 04:00</span>
-            </div>
-            <div class="schedule-item">
-              <span class="day">Jueves:</span>
-              <span class="hours">23:00 - 05:00</span>
-            </div>
-            <div class="schedule-item">
-              <span class="day">Viernes - Sábado:</span>
-              <span class="hours">23:00 - 06:00</span>
-            </div>
-            <div class="schedule-item">
-              <span class="day">Domingo:</span>
-              <span class="hours">Cerrado</span>
-            </div>
+          <div class="schedule-item">
+            <span class="day">Jueves:</span>
+            <span class="hours">23:00 - 05:00</span>
           </div>
-    
-          <div class="footer-section contact">
-            <h3>Visítanos</h3>
-            <div class="contact-item">
-              <i class="fas fa-location-dot"></i>
-              <p>Calle Falsa 123, 28000 Madrid</p>
-            </div>
-            <div class="contact-item">
-              <i class="fas fa-envelope"></i>
-              <a href="mailto:info@nighttime.com">info@nighttime.com</a>
-            </div>
-            <div class="contact-item">
-              <i class="fas fa-phone"></i>
-              <a href="tel:+34912345678">+34 91 234 56 78</a>
-            </div>
-            <div class="contact-item">
-              <i class="fab fa-whatsapp"></i>
-              <a href="https://wa.me/34666123456">+34 666 12 34 56</a>
-            </div>
+          <div class="schedule-item">
+            <span class="day">Viernes - Sábado:</span>
+            <span class="hours">23:00 - 06:00</span>
+          </div>
+          <div class="schedule-item">
+            <span class="day">Domingo:</span>
+            <span class="hours">Cerrado</span>
           </div>
         </div>
-    
-        <div class="social-links">
-          <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
-          <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-          <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
+  
+        <div class="footer-section contact">
+          <h3>Visítanos</h3>
+          <div class="contact-item">
+            <i class="fas fa-location-dot"></i>
+            <p>Calle Falsa 123, 28000 Madrid</p>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:info@nighttime.com">info@nighttime.com</a>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <a href="tel:+34912345678">+34 91 234 56 78</a>
+          </div>
+          <div class="contact-item">
+            <i class="fab fa-whatsapp"></i>
+            <a href="https://wa.me/34666123456">+34 666 12 34 56</a>
+          </div>
         </div>
-      </footer>
+      </div>
+  
+      <div class="footer-legal">
+          <a href="legal.html">Aviso Legal</a>
+      </div>
+  
+      <div class="social-links">
+        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </footer>
     
-      <script>
-        // Hamburger menu
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
-    
-        hamburger.addEventListener('click', () => {
-          hamburger.classList.toggle('active');
-          navLinks.classList.toggle('active');
+    <script>
+      // Hamburger menu
+      const hamburger = document.querySelector('.hamburger');
+      const navLinks = document.querySelector('.nav-links');
+  
+      hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('active');
+      });
+  
+      // Unified glow effect
+      const glowElements = document.querySelectorAll('.glow-effect');
+      
+      glowElements.forEach(element => {
+        element.addEventListener('mousemove', (e) => {
+          const rect = element.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          
+          element.style.setProperty('--mouse-x', `${x}px`);
+          element.style.setProperty('--mouse-y', `${y}px`);
         });
-    
-        // Unified glow effect
-        const glowElements = document.querySelectorAll('.glow-effect');
-        
-        glowElements.forEach(element => {
-          element.addEventListener('mousemove', (e) => {
-            const rect = element.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            
-            element.style.setProperty('--mouse-x', `${x}px`);
-            element.style.setProperty('--mouse-y', `${y}px`);
-          });
-        });
-    
-        // Tilt effect on room cards (keeping this separate as it's different functionality)
-        const cards = document.querySelectorAll('.room-card');
-        
-        cards.forEach(card => {
-          let ticking = false;
-    
-          card.addEventListener('mousemove', (e) => {
-            if (!ticking) {
-              requestAnimationFrame(() => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
-                
-                const rotateX = -((y - centerY) / 20);
-                const rotateY = ((x - centerX) / 20);
-                
-                card.classList.add('tilt');
-                card.style.setProperty('--rotateX', `${rotateX}deg`);
-                card.style.setProperty('--rotateY', `${rotateY}deg`);
-                
-                ticking = false;
-              });
+      });
+  
+      // Tilt effect on room cards (keeping this separate as it's different functionality)
+      const cards = document.querySelectorAll('.room-card');
+      
+      cards.forEach(card => {
+        let ticking = false;
+  
+        card.addEventListener('mousemove', (e) => {
+          if (!ticking) {
+            requestAnimationFrame(() => {
+              const rect = card.getBoundingClientRect();
+              const x = e.clientX - rect.left;
+              const y = e.clientY - rect.top;
               
-              ticking = true;
-            }
-          });
-    
-          card.addEventListener('mouseleave', () => {
-            card.classList.remove('tilt');
-            card.style.setProperty('--rotateX', '0deg');
-            card.style.setProperty('--rotateY', '0deg');
-          });
+              const centerX = rect.width / 2;
+              const centerY = rect.height / 2;
+              
+              const rotateX = -((y - centerY) / 20);
+              const rotateY = ((x - centerX) / 20);
+              
+              card.classList.add('tilt');
+              card.style.setProperty('--rotateX', `${rotateX}deg`);
+              card.style.setProperty('--rotateY', `${rotateY}deg`);
+              
+              ticking = false;
+            });
+            
+            ticking = true;
+          }
         });
-    
-        // Ensure slider track width is correct
-        const sliderTrack = document.querySelector('.slider-track');
-        const slides = document.querySelectorAll('.slide');
-        const slideWidth = 200; // Match this with your CSS
-        const slideCount = slides.length;
-        const gap = 16; // This should match your $spacing-unit * 2
-    
-        // Set the track width to accommodate all slides plus gaps
-        sliderTrack.style.width = `${(slideWidth + gap) * slideCount}px`;
-      </script>
+  
+        card.addEventListener('mouseleave', () => {
+          card.classList.remove('tilt');
+          card.style.setProperty('--rotateX', '0deg');
+          card.style.setProperty('--rotateY', '0deg');
+        });
+      });
+  
+      // Ensure slider track width is correct
+      const sliderTrack = document.querySelector('.slider-track');
+      const slides = document.querySelectorAll('.slide');
+      const slideWidth = 200; // Match this with your CSS
+      const slideCount = slides.length;
+      const gap = 16; // This should match your $spacing-unit * 2
+  
+      // Set the track width to accommodate all slides plus gaps
+      sliderTrack.style.width = `${(slideWidth + gap) * slideCount}px`;
+    </script>
 </body>
 </html>

@@ -1,0 +1,77 @@
+.legal-section {
+    padding: calc(#{$spacing-unit} * 15) 5% $spacing-unit * 8;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    .legal-content {
+        width: 100%;
+        max-width: 800px;
+        padding: $spacing-unit * 6;
+        @include glass-card; // Updated to use our standard glass mixin
+        @include glow-effect; // Added our standard glow effect
+        position: relative; // Required for glow effect
+        overflow: hidden; // Contains the glow
+        
+        h1 {
+            font-family: $header-font;
+            font-size: 4.8rem;
+            color: $text-light;
+            margin-bottom: $spacing-unit * 6;
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+            text-align: center;
+        }
+
+        .legal-items {
+            .legal-item {
+                margin-bottom: $spacing-unit * 6;
+                
+                &:last-child {
+                    margin-bottom: 0;
+                }
+
+                h2 {
+                    font-family: $header-font;
+                    font-size: 2.8rem;
+                    color: $text-light;
+                    margin-bottom: $spacing-unit * 2;
+                    letter-spacing: 0.05rem;
+                }
+
+                p {
+                    color: rgba($text-light, 0.9);
+                    font-size: 1.6rem;
+                    line-height: 1.8;
+                    margin-bottom: $spacing-unit * 2;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    @include mobile {
+        padding: calc(#{$spacing-unit} * 12) $spacing-unit * 2 $spacing-unit * 4;
+        
+        .legal-content {
+            padding: $spacing-unit * 3;
+
+            h1 {
+                font-size: 3.6rem;
+                margin-bottom: $spacing-unit * 4;
+            }
+
+            .legal-items .legal-item {
+                margin-bottom: $spacing-unit * 4;
+                
+                h2 {
+                    font-size: 2.4rem;
+                }
+            }
+        }
+    }
+}
