@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIP Experience - Nighttime</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <link rel='stylesheet' type='text/css' media='screen' href="../css/main.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo-container">
+      <a href="index.html" class="logo">
+        <img id="logo" src="../assets/img/logo.png" alt="Logotipo de Nighttime">
+      </a>
+      <a href="index.html"><h1 class="title">NIGHTTIME</h1></a>
+    </div>
+    <nav class="nav-links" id="nav-links">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="vip.html">VIP</a></li>
+        <li><a href="tickets.html">Entradas</a></li>
+        <li><a href="gallery.html">Galería</a></li>
+        <li><a href="contact.html">Contacto</a></li>
+      </ul>
+      <div class="nav-icons-mobile">
+        <a href="help.html" class="icon-link" aria-label="Preguntas frecuentes">
+          <i class="fas fa-circle-question"></i>
+        </a>
+        <a href="mailto:contact@nighttime.com" class="icon-link" aria-label="Enviar email">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a href="#" class="icon-link" aria-label="Compartir">
+          <i class="fas fa-share-nodes"></i>
+        </a>
+      </div>
+    </nav>
+    <div class="nav-icons-desktop">
+      <a href="help.html" class="icon-link" aria-label="Preguntas frecuentes">
+        <i class="fas fa-circle-question"></i>
+      </a>
+      <a href="mailto:contact@nighttime.com" class="icon-link" aria-label="Enviar email">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <a href="#" class="icon-link" aria-label="Compartir">
+        <i class="fas fa-share-nodes"></i>
+      </a>
+    </div>
+    <button class="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <section class="hero-section">
+    <div class="hero-background">
+      <img src="../assets/img/vip/vip-hero.jpg" alt="Imagen decorativa de la experiencia VIP">
+    </div>
+    <div class="hero-content">
+      <h1>Experiencia VIP</h1>
+      <p>Vive la noche al más alto nivel</p>
+      <div class="cta-buttons">
+        <a href="#vip-packages" class="cta-button primary">Ver Paquetes VIP</a>
+        <a href="#booking" class="cta-button secondary">Reservar Ahora</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="social-links">
+      <a href="#" target="_blank" aria-label="Visítanos en Facebook"><i class="fab fa-facebook"></i></a>
+      <a href="#" target="_blank" aria-label="Síguenos en Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" target="_blank" aria-label="Síguenos en Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="#" target="_blank" aria-label="Míranos en TikTok"><i class="fab fa-tiktok"></i></a>
+    </div>
+  </footer>
+  
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    
+    hamburger.addEventListener('click', () => {
+      const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', !expanded);
+      navLinks.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
