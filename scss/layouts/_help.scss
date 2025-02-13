@@ -1,0 +1,304 @@
+.help-title-section {
+  @include section-container;
+  margin: $spacing-unit * 12 auto;
+  max-width: min(1200px, 95vw);
+  text-align: center;
+
+  h1 {
+    margin-bottom: $spacing-unit * 4;
+    font-family: $header-font;
+    font-size: clamp(4.2rem, 7vw, 7.2rem);
+    color: $text-light;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    text-shadow: 2px 4px 8px rgba($pure-black, 0.3);
+  }
+
+  p {
+    margin: 0 auto;
+    max-width: 800px;
+    font-family: $body-font;
+    font-size: clamp(1.8rem, 2vw, 2.2rem);
+    color: rgba($text-light, 0.9);
+    line-height: 1.6;
+  }
+}
+
+.faq-section {
+  @include section-container;
+  margin: $spacing-unit * 16 auto;
+
+  .faq-container {
+    @include card-base;
+    max-width: min(1000px, 90vw);
+    margin: 0 auto;
+    padding: $spacing-unit * 8;
+
+    h2 {
+      @include header-text;
+      margin-bottom: $spacing-unit * 8;
+      text-align: center;
+    }
+
+    .faq-list {
+      margin-bottom: $spacing-unit * 2;
+
+      .faq-item {
+        h3 {
+          color: $text-light;
+          font-size: 2.8rem;
+          margin: $spacing-unit * 4 0 $spacing-unit * 2;
+          text-align: left;
+          font-family: $header-font;
+          letter-spacing: 0.1rem;
+          cursor: pointer;
+          position: relative;
+          padding: $spacing-unit * 2;
+          transition: all 0.3s ease;
+          border-radius: $border-radius-sm;
+
+          &::after {
+            content: '\f107';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            right: $spacing-unit * 4;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2.4rem;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+          }
+
+          &.active::after {
+            transform: translateY(-50%) rotate(180deg);
+          }
+
+          &:hover {
+            background: rgba($pure-white, 0.05);
+          }
+        }
+
+        .answer-container {
+          max-height: 0;
+          opacity: 0;
+          overflow: hidden;
+          transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                    opacity 0.3s ease,
+                    transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+          transform: translateY(-20px);
+
+          &.active {
+            max-height: 1000px;
+            opacity: 1;
+            transform: translateY(0);
+          }
+
+          p {
+            padding: $spacing-unit * 2 $spacing-unit * 4;
+            color: rgba($text-light, 0.9);
+            font-size: 1.8rem;
+            line-height: 1.6;
+
+            a {
+              color: $accent-primary;
+              text-decoration: none;
+              transition: all 0.3s ease;
+
+              &:hover {
+                color: $hot-pink;
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.help-additional {
+  @include section-container;
+  margin: $spacing-unit * 16 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $spacing-unit * 4;
+
+  .help-card {
+    @include card-base;
+    padding: $spacing-unit * 6;
+
+    h2 {
+      @include header-text;
+      font-size: 3.6rem;
+      margin-bottom: $spacing-unit * 4;
+      text-align: left;
+    }
+
+    .form-group {
+      margin-bottom: $spacing-unit * 3;
+
+      label {
+        display: block;
+        color: $text-light;
+        font-family: $header-font;
+        font-size: 2rem;
+        margin-bottom: $spacing-unit;
+      }
+
+      input, textarea {
+        width: 100%;
+        padding: $spacing-unit * 1.5;
+        background: rgba($pure-white, 0.1);
+        border: 1px solid rgba($pure-white, 0.2);
+        border-radius: $border-radius-sm;
+        color: $text-light;
+        font-size: 1.6rem;
+        transition: all 0.3s ease;
+
+        &:focus {
+          outline: none;
+          background: rgba($pure-white, 0.15);
+          border-color: rgba($pure-white, 0.3);
+          box-shadow: 0 0 15px rgba($accent-primary, 0.3);
+        }
+      }
+
+      textarea {
+        min-height: 150px;
+        resize: vertical;
+      }
+    }
+
+    .contact-methods {
+      margin-top: $spacing-unit * 4;
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: $spacing-unit * 2;
+        margin-bottom: $spacing-unit * 2;
+
+        i {
+          font-size: 2.4rem;
+          width: 3rem;
+          text-align: center;
+        }
+
+        span, a {
+          color: $text-light;
+          font-size: 1.8rem;
+          text-decoration: none;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: $accent-primary;
+          }
+        }
+      }
+    }
+
+    // Lost & Found Form
+    .lost-found-form {
+      .form-group {
+        margin-bottom: $spacing-unit * 3;
+
+        label {
+          display: block;
+          color: $text-light;
+          font-family: $header-font;
+          font-size: 2rem;
+          margin-bottom: $spacing-unit;
+        }
+
+        input, textarea, select {
+          width: 100%;
+          padding: $spacing-unit * 1.5;
+          background: rgba($pure-white, 0.1);
+          border: 1px solid rgba($pure-white, 0.2);
+          border-radius: $border-radius-sm;
+          color: $text-light;
+          font-size: 1.6rem;
+          transition: all 0.3s ease;
+
+          &:focus {
+            outline: none;
+            background: rgba($pure-white, 0.15);
+            border-color: rgba($pure-white, 0.3);
+            box-shadow: 0 0 15px rgba($accent-primary, 0.3);
+          }
+        }
+
+        textarea {
+          min-height: 120px;
+          resize: vertical;
+        }
+      }
+
+      .standard-button {
+        margin-top: $spacing-unit * 4;
+      }
+    }
+
+    // Quick Links
+    .quick-links {
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-unit * 2;
+
+      .quick-link {
+        @include link-base;
+        display: flex;
+        align-items: center;
+        gap: $spacing-unit * 2;
+        padding: $spacing-unit * 2;
+        border-radius: $border-radius-sm;
+        background: rgba($pure-white, 0.05);
+        transition: all 0.3s ease;
+
+        i {
+          font-size: 2.4rem;
+          width: 3rem;
+          text-align: center;
+          color: $accent-primary;
+        }
+
+        span {
+          font-size: 1.8rem;
+          font-family: $header-font;
+          letter-spacing: 0.05rem;
+        }
+
+        &:hover {
+          background: rgba($pure-white, 0.1);
+          transform: translateX($spacing-unit);
+        }
+      }
+    }
+  }
+}
+
+@include mobile {
+  .help-additional {
+    grid-template-columns: 1fr;
+    gap: $spacing-unit * 3;
+  }
+
+  .faq-section .faq-container {
+    padding: $spacing-unit * 4;
+
+    .faq-list .faq-item {
+      h3 {
+        font-size: 2.4rem;
+        padding: $spacing-unit * 1.5;
+      }
+
+      .answer-container p {
+        padding: $spacing-unit * 1.5 $spacing-unit * 2;
+      }
+    }
+  }
+
+  .help-card {
+    padding: $spacing-unit * 4;
+  }
+}

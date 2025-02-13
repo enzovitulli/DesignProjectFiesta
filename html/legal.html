@@ -134,30 +134,6 @@
         </div>
     </footer>
 
-    <script>
-        // Hamburger menu
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
-
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navLinks.classList.toggle('active');
-        });
-
-        // Add the glow effect handler
-        const glowElements = document.querySelectorAll('.glow-effect');
-        
-        glowElements.forEach(element => {
-            element.addEventListener('mousemove', (e) => {
-                const rect = element.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                
-                element.style.setProperty('--mouse-x', `${x}px`);
-                element.style.setProperty('--mouse-y', `${y}px`);
-            });
-        });
-    </script>
-
+  <script src="../js/main.js"></script>
 </body>
 </html>

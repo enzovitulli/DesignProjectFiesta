@@ -1263,11 +1263,6 @@ footer .footer-legal a:hover {
 .contact-section .inquiry-form:hover {
   transform: translateY(-5px);
 }
-.contact-section .contact-block::before,
-.contact-section .transport-options::before,
-.contact-section .inquiry-form::before {
-  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 77, 151, 0.15), transparent 250px);
-}
 .contact-section .contact-block {
   padding: 4.8rem;
   margin-bottom: 6.4rem;
@@ -1293,6 +1288,7 @@ footer .footer-legal a:hover {
   margin-bottom: 2.4rem;
 }
 .contact-section .contact-block .contact-content .info-text .contact-detail {
+  color: #FFFFFF;
   display: flex;
   align-items: center;
   gap: 1.6rem;
@@ -1302,13 +1298,13 @@ footer .footer-legal a:hover {
   font-size: 2.4rem;
   opacity: 0.9;
 }
-.contact-section .contact-block .contact-content .info-text .contact-detail span, .contact-section .contact-block .contact-content .info-text .contact-detail a {
-  font-size: 1.8rem;
+.contact-section .contact-block .contact-content .info-text .contact-detail a {
   color: #FFFFFF;
+  font-size: 1.8rem;
   text-decoration: none;
   transition: color 0.3s ease;
 }
-.contact-section .contact-block .contact-content .info-text .contact-detail span:hover, .contact-section .contact-block .contact-content .info-text .contact-detail a:hover {
+.contact-section .contact-block .contact-content .info-text .contact-detail a:hover {
   color: #00aaff;
 }
 .contact-section .contact-block .contact-content .map-container {
@@ -1465,24 +1461,6 @@ footer .footer-legal a:hover {
   margin-bottom: 3.2rem;
   position: relative;
   overflow: hidden;
-  position: relative;
-}
-.gallery-full .gallery-item::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 77, 151, 0.15), transparent 250px);
-  opacity: 0;
-  transition: opacity 1s ease-out;
-  pointer-events: none;
-}
-.gallery-full .gallery-item:hover::before {
-  opacity: 1;
-  transition: opacity 0.3s ease-in;
 }
 .gallery-full .gallery-item img {
   width: 100%;
@@ -1510,6 +1488,341 @@ footer .footer-legal a:hover {
   }
 }
 
+.help-title-section {
+  width: 90%;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 3.2rem 5%;
+  margin: 9.6rem auto;
+  max-width: min(1200px, 95vw);
+  text-align: center;
+}
+.help-title-section h1 {
+  margin-bottom: 3.2rem;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(4.2rem, 7vw, 7.2rem);
+  color: #FFFFFF;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+}
+.help-title-section p {
+  margin: 0 auto;
+  max-width: 800px;
+  font-family: "Roboto", sans-serif;
+  font-size: clamp(1.8rem, 2vw, 2.2rem);
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+}
+
+.faq-section {
+  width: 90%;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 3.2rem 5%;
+  margin: 12.8rem auto;
+}
+.faq-section .faq-container {
+  background: rgba(255, 255, 255, 0.05);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 2rem;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.1), 0 10px 30px rgba(0, 0, 0, 0.2), inset 0 0 60px rgba(255, 255, 255, 0.05);
+  position: relative;
+  transition: transform 0.3s ease;
+  position: relative;
+  max-width: min(1000px, 90vw);
+  margin: 0 auto;
+  padding: 6.4rem;
+}
+.faq-section .faq-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 77, 151, 0.15), transparent 250px);
+  opacity: 0;
+  transition: opacity 1s ease-out;
+  pointer-events: none;
+}
+.faq-section .faq-container:hover::before {
+  opacity: 1;
+  transition: opacity 0.3s ease-in;
+}
+.faq-section .faq-container:hover {
+  transform: translateY(-5px);
+}
+.faq-section .faq-container h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 4.2rem;
+  color: #FFFFFF;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+  margin-bottom: 6.4rem;
+  text-align: center;
+}
+.faq-section .faq-container .faq-list {
+  margin-bottom: 1.6rem;
+}
+.faq-section .faq-container .faq-list .faq-item h3 {
+  color: #FFFFFF;
+  font-size: 2.8rem;
+  margin: 3.2rem 0 1.6rem;
+  text-align: left;
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 0.1rem;
+  cursor: pointer;
+  position: relative;
+  padding: 1.6rem;
+  transition: all 0.3s ease;
+  border-radius: 0.5rem;
+}
+.faq-section .faq-container .faq-list .faq-item h3::after {
+  content: "\f107";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  right: 3.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2.4rem;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.faq-section .faq-container .faq-list .faq-item h3.active::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+.faq-section .faq-container .faq-list .faq-item h3:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+.faq-section .faq-container .faq-list .faq-item .answer-container {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(-20px);
+}
+.faq-section .faq-container .faq-list .faq-item .answer-container.active {
+  max-height: 1000px;
+  opacity: 1;
+  transform: translateY(0);
+}
+.faq-section .faq-container .faq-list .faq-item .answer-container p {
+  padding: 1.6rem 3.2rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.8rem;
+  line-height: 1.6;
+}
+.faq-section .faq-container .faq-list .faq-item .answer-container p a {
+  color: #00aaff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.faq-section .faq-container .faq-list .faq-item .answer-container p a:hover {
+  color: #ff4d97;
+  text-decoration: underline;
+}
+
+.help-additional {
+  width: 90%;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 3.2rem 5%;
+  margin: 12.8rem auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3.2rem;
+}
+.help-additional .help-card {
+  background: rgba(255, 255, 255, 0.05);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 2rem;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.1), 0 10px 30px rgba(0, 0, 0, 0.2), inset 0 0 60px rgba(255, 255, 255, 0.05);
+  position: relative;
+  transition: transform 0.3s ease;
+  position: relative;
+  padding: 4.8rem;
+}
+.help-additional .help-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 77, 151, 0.15), transparent 250px);
+  opacity: 0;
+  transition: opacity 1s ease-out;
+  pointer-events: none;
+}
+.help-additional .help-card:hover::before {
+  opacity: 1;
+  transition: opacity 0.3s ease-in;
+}
+.help-additional .help-card:hover {
+  transform: translateY(-5px);
+}
+.help-additional .help-card h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 4.2rem;
+  color: #FFFFFF;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+  font-size: 3.6rem;
+  margin-bottom: 3.2rem;
+  text-align: left;
+}
+.help-additional .help-card .form-group {
+  margin-bottom: 2.4rem;
+}
+.help-additional .help-card .form-group label {
+  display: block;
+  color: #FFFFFF;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
+}
+.help-additional .help-card .form-group input, .help-additional .help-card .form-group textarea {
+  width: 100%;
+  padding: 1.2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.5rem;
+  color: #FFFFFF;
+  font-size: 1.6rem;
+  transition: all 0.3s ease;
+}
+.help-additional .help-card .form-group input:focus, .help-additional .help-card .form-group textarea:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 15px rgba(0, 170, 255, 0.3);
+}
+.help-additional .help-card .form-group textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+.help-additional .help-card .contact-methods {
+  margin-top: 3.2rem;
+}
+.help-additional .help-card .contact-methods .contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  margin-bottom: 1.6rem;
+}
+.help-additional .help-card .contact-methods .contact-item i {
+  font-size: 2.4rem;
+  width: 3rem;
+  text-align: center;
+}
+.help-additional .help-card .contact-methods .contact-item span, .help-additional .help-card .contact-methods .contact-item a {
+  color: #FFFFFF;
+  font-size: 1.8rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.help-additional .help-card .contact-methods .contact-item span:hover, .help-additional .help-card .contact-methods .contact-item a:hover {
+  color: #00aaff;
+}
+.help-additional .help-card .lost-found-form .form-group {
+  margin-bottom: 2.4rem;
+}
+.help-additional .help-card .lost-found-form .form-group label {
+  display: block;
+  color: #FFFFFF;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
+}
+.help-additional .help-card .lost-found-form .form-group input, .help-additional .help-card .lost-found-form .form-group textarea, .help-additional .help-card .lost-found-form .form-group select {
+  width: 100%;
+  padding: 1.2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.5rem;
+  color: #FFFFFF;
+  font-size: 1.6rem;
+  transition: all 0.3s ease;
+}
+.help-additional .help-card .lost-found-form .form-group input:focus, .help-additional .help-card .lost-found-form .form-group textarea:focus, .help-additional .help-card .lost-found-form .form-group select:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 15px rgba(0, 170, 255, 0.3);
+}
+.help-additional .help-card .lost-found-form .form-group textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+.help-additional .help-card .lost-found-form .standard-button {
+  margin-top: 3.2rem;
+}
+.help-additional .help-card .quick-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+.help-additional .help-card .quick-links .quick-link {
+  color: #FFFFFF;
+  opacity: 0.9;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  padding: 1.6rem;
+  border-radius: 0.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+.help-additional .help-card .quick-links .quick-link:hover {
+  color: #00aaff;
+  transform: translateY(-3px);
+}
+.help-additional .help-card .quick-links .quick-link i {
+  font-size: 2.4rem;
+  width: 3rem;
+  text-align: center;
+  color: #00aaff;
+}
+.help-additional .help-card .quick-links .quick-link span {
+  font-size: 1.8rem;
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 0.05rem;
+}
+.help-additional .help-card .quick-links .quick-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(0.8rem);
+}
+
+@media (max-width: 999px) {
+  .help-additional {
+    grid-template-columns: 1fr;
+    gap: 2.4rem;
+  }
+  .faq-section .faq-container {
+    padding: 3.2rem;
+  }
+  .faq-section .faq-container .faq-list .faq-item h3 {
+    font-size: 2.4rem;
+    padding: 1.2rem;
+  }
+  .faq-section .faq-container .faq-list .faq-item .answer-container p {
+    padding: 1.2rem 1.6rem;
+  }
+  .help-card {
+    padding: 3.2rem;
+  }
+}
 section div img {
   height: auto;
   width: 35%;
@@ -1980,16 +2293,39 @@ h2 {
   font-size: 1.6rem;
 }
 .location .container .map-container {
-  flex: 1.2;
   background: rgba(255, 255, 255, 0.05);
   -webkit-backdrop-filter: blur(20px);
           backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 2rem;
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.1), 0 10px 30px rgba(0, 0, 0, 0.2), inset 0 0 60px rgba(255, 255, 255, 0.05);
+  position: relative;
+  transition: transform 0.3s ease;
+  position: relative;
+  flex: 1.2;
   overflow: hidden;
   padding: 0;
   position: relative;
+}
+.location .container .map-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 77, 151, 0.15), transparent 250px);
+  opacity: 0;
+  transition: opacity 1s ease-out;
+  pointer-events: none;
+}
+.location .container .map-container:hover::before {
+  opacity: 1;
+  transition: opacity 0.3s ease-in;
+}
+.location .container .map-container:hover {
+  transform: translateY(-5px);
 }
 .location .container .map-container iframe {
   width: 100%;
@@ -2064,6 +2400,8 @@ h2 {
   border-radius: 2rem;
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.1), 0 10px 30px rgba(0, 0, 0, 0.2), inset 0 0 60px rgba(255, 255, 255, 0.05);
   position: relative;
+  transition: transform 0.3s ease;
+  position: relative;
   position: relative;
   overflow: hidden;
 }
@@ -2083,6 +2421,9 @@ h2 {
 .legal-section .legal-content:hover::before {
   opacity: 1;
   transition: opacity 0.3s ease-in;
+}
+.legal-section .legal-content:hover {
+  transform: translateY(-5px);
 }
 .legal-section .legal-content h1 {
   font-family: "Bebas Neue", sans-serif;
@@ -2674,7 +3015,6 @@ h2 {
   position: relative;
   transition: transform 0.3s ease;
   position: relative;
-  position: relative;
 }
 .vip-intro .intro-content::before {
   content: "";
@@ -2695,23 +3035,6 @@ h2 {
 }
 .vip-intro .intro-content:hover {
   transform: translateY(-5px);
-}
-.vip-intro .intro-content::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 77, 151, 0.15), transparent 250px);
-  opacity: 0;
-  transition: opacity 1s ease-out;
-  pointer-events: none;
-}
-.vip-intro .intro-content:hover::before {
-  opacity: 1;
-  transition: opacity 0.3s ease-in;
 }
 @media (max-width: 999px) {
   .vip-intro .intro-content {

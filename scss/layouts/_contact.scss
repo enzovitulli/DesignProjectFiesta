@@ -29,20 +29,12 @@
   margin: $spacing-unit * 12 auto;
   max-width: 1400px; // Added max-width constraint
 
-  .contact-block, 
+  .contact-block,
   .transport-options,
   .inquiry-form {
     @include card-base;
-    max-width: 1200px; // Make cards narrower
+    max-width: 1200px;
     margin: 0 auto $spacing-unit * 8;
-    
-    &::before {
-      background: radial-gradient(
-        circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-        rgba($hot-pink, 0.15),
-        transparent 250px
-      );
-    }
   }
 
   .contact-block {
@@ -72,6 +64,7 @@
         }
 
         .contact-detail {
+          color: $text-light;
           display: flex;
           align-items: center;
           gap: $spacing-unit * 2;
@@ -82,9 +75,9 @@
             opacity: 0.9;
           }
 
-          span, a {
-            font-size: 1.8rem;
+          a {
             color: $text-light;
+            font-size: 1.8rem;
             text-decoration: none;
             transition: color 0.3s ease;
 
@@ -157,7 +150,7 @@
             position: relative;
 
             &::before {
-              content: '•';
+              content: "•";
               color: $accent-primary;
               position: absolute;
               left: $spacing-unit;

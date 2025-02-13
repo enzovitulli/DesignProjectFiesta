@@ -32,7 +32,6 @@
     margin: 0 auto;
     padding: $spacing-unit * 8;
     @include card-base;
-    @include glow-effect;
 
     @include mobile {
       max-width: min(500px, 95vw); // Narrower on mobile
@@ -312,7 +311,7 @@
 
   .vip-rooms {
     .room {
-      flex-direction: column !important;
+      flex-direction: column !important; // This forces column positioning in the mobile version
       gap: $spacing-unit * 4;
       margin-bottom: $spacing-unit * 8;
 

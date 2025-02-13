@@ -503,8 +503,8 @@ h2 {
     }
 
     .map-container {
+      @include card-base;
       flex: 1.2; // Increased from 1 to make it wider
-      @include frosted-glass; // Added to match left card styling
       overflow: hidden;
       padding: 0;
       position: relative; // Added for proper border radius handling
@@ -514,7 +514,7 @@ h2 {
         height: 100%;
         border: none;
         position: relative; // Added to ensure proper layering
-        z-index: 1; // Ensure iframe is above the frosted glass background
+        z-index: 1; // Ensure iframe is above the glass background
       }
     }
   }

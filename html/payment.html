@@ -29,31 +29,7 @@
         </div>
     </section>
 
-    <!-- Copy the footer from other pages -->
-    <footer>
-        <!-- ...existing footer code... -->
-    </footer>
 
-    <script>
-        // Get URL parameters to show booking summary
-        const params = new URLSearchParams(window.location.search);
-        const summaryDiv = document.querySelector('.booking-summary');
-        
-        if(params.has('room')) {
-            const summary = `
-                <div class="summary-details">
-                    <h3>Resumen de la Reserva</h3>
-                    <p><strong>Nombre:</strong> ${params.get('name')}</p>
-                    <p><strong>Email:</strong> ${params.get('email')}</p>
-                    <p><strong>Teléfono:</strong> ${params.get('phone')}</p>
-                    <p><strong>Sala:</strong> ${params.get('room')}</p>
-                    <p><strong>Invitados:</strong> ${params.get('guests')}</p>
-                </div>
-            `;
-            summaryDiv.innerHTML = summary;
-        }
-
-        // ...existing scripts...
-    </script>
+    <script src="../js/main.js"></script>
 </body>
 </html>

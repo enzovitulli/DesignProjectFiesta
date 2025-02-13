@@ -11,7 +11,6 @@
     margin-bottom: $spacing-unit * 4; // Match index preview
     position: relative;
     overflow: hidden;
-    @include glow-effect;
     
     img {
       width: 100%;

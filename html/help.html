@@ -55,13 +55,129 @@
     </button>
   </header>
 
-    <section class="hero-section">
-        <div class="hero-background">
-            <img src="../assets/img/help/help-hero.jpg" alt="Help Center">
+    <section class="help-title-section">
+        <h1>Centro de Ayuda</h1>
+        <p>Todo lo que necesitas saber sobre el evento más esperado del año. Encuentra respuestas a tus preguntas y asegúrate de estar preparado para una noche inolvidable.</p>
+    </section>
+
+    <section class="faq-section">
+        <div class="faq-container glow-effect">
+            <h2>Preguntas Frecuentes</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <h3>¿Cuándo es el evento?</h3>
+                    <div class="answer-container">
+                        <p>La Fiesta Nighttime tendrá lugar el 31 de Diciembre de 2024, desde las 23:00 hasta las 06:00.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3>¿Cómo funcionan las reservas VIP?</h3>
+                    <div class="answer-container">
+                        <p>Las reservas VIP incluyen acceso exclusivo, mesa privada y servicio personalizado. Consulta nuestro <a href="vip.html#bottle-service">servicio de botellas</a> y beneficios VIP completos.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3>¿Puedo elegir la música en mi sala VIP?</h3>
+                    <div class="answer-container">
+                        <p>Sí, las salas VIP cuentan con un sistema de sonido independiente. Podrás conectar tu dispositivo o solicitar playlists específicas al DJ asignado.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3>¿Cuál es la edad mínima para entrar?</h3>
+                    <div class="answer-container">
+                        <p>La edad mínima de entrada es 18 años. Es obligatorio presentar DNI, pasaporte o carnet de conducir válido.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3>¿Cuál es el código de vestimenta?</h3>
+                    <div class="answer-container">
+                        <p>Requerimos vestimenta elegante: no chanclas, no ropa deportiva, no camisetas sin mangas para hombres. Recomendamos smart casual o elegante.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3>¿Cómo funciona la lista de invitados?</h3>
+                    <div class="answer-container">
+                        <p>Puedes registrarte en nuestra lista de invitados hasta las 20:00 del día del evento. Incluye entrada con descuento y acceso prioritario. <a href="tickets.html">Regístrate aquí</a>.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3>¿Cómo puedo reservar una mesa VIP?</h3>
+                    <div class="answer-container">
+                        <p>Las reservas VIP se pueden realizar online en nuestra <a href="vip.html">sección VIP</a> o contactando directamente con nuestro equipo de reservas al +34 666 123 456.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3>¿Hay parking disponible?</h3>
+                    <div class="answer-container">
+                        <p>Disponemos de acuerdos con varios parkings cercanos. El más próximo está a 100m en la Calle Falsa 124. Tarifa especial para clientes del club.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="hero-content">
-            <h1>Preguntas frecuentes</h1>
-            <p>Respuestas a tus preguntas</p>
+    </section>
+
+    <section class="help-additional">
+        <div class="help-card glow-effect">
+            <h2>Objetos Perdidos</h2>
+            <form class="lost-found-form">
+                <div class="form-group">
+                    <label for="item-type">Tipo de Objeto</label>
+                    <select id="item-type" required>
+                        <option value="">Selecciona una categoría</option>
+                        <option value="personal">Documento Personal</option>
+                        <option value="electronic">Dispositivo Electrónico</option>
+                        <option value="clothing">Prenda de Ropa</option>
+                        <option value="accessory">Accesorio</option>
+                        <option value="other">Otro</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="item-description">Descripción</label>
+                    <textarea id="item-description" required placeholder="Describe el objeto con detalle (color, marca, características distintivas)"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="lost-date">Fecha de Pérdida</label>
+                    <input type="date" id="lost-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact-email">Email de Contacto</label>
+                    <input type="email" id="contact-email" required placeholder="tu@email.com">
+                </div>
+                <button type="submit" class="standard-button">Enviar Formulario</button>
+            </form>
+        </div>
+
+        <div class="help-card glow-effect">
+            <h2>Enlaces Rápidos</h2>
+            <div class="quick-links">
+                <a href="vip.html" class="quick-link">
+                    <i class="fas fa-crown"></i>
+                    <span>Reservas VIP</span>
+                </a>
+                <a href="tickets.html" class="quick-link">
+                    <i class="fas fa-ticket"></i>
+                    <span>Comprar Entradas</span>
+                </a>
+                <a href="contact.html" class="quick-link">
+                    <i class="fas fa-envelope"></i>
+                    <span>Contacto Directo</span>
+                </a>
+                <a href="gallery.html" class="quick-link">
+                    <i class="fas fa-images"></i>
+                    <span>Galería de Eventos</span>
+                </a>
+                <a href="legal.html" class="quick-link">
+                    <i class="fas fa-file-contract"></i>
+                    <span>Términos y Condiciones</span>
+                </a>
+            </div>
         </div>
     </section>
 
@@ -125,77 +241,7 @@
         <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
       </div>
     </footer>
-    
-      <script>
-        // Hamburger menu
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
-    
-        hamburger.addEventListener('click', () => {
-          hamburger.classList.toggle('active');
-          navLinks.classList.toggle('active');
-        });
-    
-        // Unified glow effect
-        const glowElements = document.querySelectorAll('.glow-effect');
-        
-        glowElements.forEach(element => {
-          element.addEventListener('mousemove', (e) => {
-            const rect = element.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            
-            element.style.setProperty('--mouse-x', `${x}px`);
-            element.style.setProperty('--mouse-y', `${y}px`);
-          });
-        });
-    
-        // Tilt effect on room cards (keeping this separate as it's different functionality)
-        const cards = document.querySelectorAll('.room-card');
-        
-        cards.forEach(card => {
-          let ticking = false;
-    
-          card.addEventListener('mousemove', (e) => {
-            if (!ticking) {
-              requestAnimationFrame(() => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
-                
-                const rotateX = -((y - centerY) / 20);
-                const rotateY = ((x - centerX) / 20);
-                
-                card.classList.add('tilt');
-                card.style.setProperty('--rotateX', `${rotateX}deg`);
-                card.style.setProperty('--rotateY', `${rotateY}deg`);
-                
-                ticking = false;
-              });
-              
-              ticking = true;
-            }
-          });
-    
-          card.addEventListener('mouseleave', () => {
-            card.classList.remove('tilt');
-            card.style.setProperty('--rotateX', '0deg');
-            card.style.setProperty('--rotateY', '0deg');
-          });
-        });
-    
-        // Ensure slider track width is correct
-        const sliderTrack = document.querySelector('.slider-track');
-        const slides = document.querySelectorAll('.slide');
-        const slideWidth = 200; // Match this with your CSS
-        const slideCount = slides.length;
-        const gap = 16; // This should match your $spacing-unit * 2
-    
-        // Set the track width to accommodate all slides plus gaps
-        sliderTrack.style.width = `${(slideWidth + gap) * slideCount}px`;
-      </script>
+
+  <script src="../js/main.js"></script>
 </body>
 </html>
