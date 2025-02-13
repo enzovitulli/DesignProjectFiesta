@@ -2,243 +2,388 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galería - Nighttime</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
-    <link rel='stylesheet' type='text/css' media='screen' href="../css/main.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galería - Nighttime</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+  <link rel='stylesheet' type='text/css' media='screen' href="../css/main.css">
 </head>
 
 <body>
-    <header class="navbar">
-        <div class="logo-container">
-            <a href="index.html" class="logo"><img id="logo" src="../assets/img/logo.png" alt=""></a>
-            <a href="index.html"><h1 class="title">NIGHTTIME</h1></a>
+  <header class="navbar">
+    <div class="logo-container">
+      <a href="index.html" class="logo" aria-label="Logo de NightTime"><img id="logo" src="../assets/img/logo.png" alt=""></a>
+      <a href="index.html">
+        <h1 class="title">NIGHTTIME</h1>
+      </a>
+    </div>
+    <nav class="nav-links" role="navigation" aria-label="Menú principal">
+      <ul>
+        <li><a href="index.html" aria-label="Ir a la página de Inicio">Inicio</a></li>
+        <li><a href="vip.html" aria-label="Ir a la sección VIP">VIP</a></li>
+        <li><a href="tickets.html" aria-label="Ir a la sección de Entradas">Entradas</a></li>
+        <li><a href="gallery.html" aria-label="Ir a la Galería">Galería</a></li>
+        <li><a href="contact.html" aria-label="Ir a la página de Contacto">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <!-- Mobile-only icons container -->
+    <div class="nav-icons-mobile" role="navigation" aria-label="Iconos de navegación móvil">
+      <a href="help.html" class="icon-link" aria-label="Ir a la sección de Preguntas frecuentes">
+        <i class="fas fa-circle-question" aria-hidden="true"></i>
+      </a>
+      <a href="mailto:contact@nighttime.com" class="icon-link" aria-label="Enviar un correo a Nighttime">
+        <i class="fas fa-envelope" aria-hidden="true"></i>
+      </a>
+      <a href="#" class="icon-link" aria-label="Compartir contenido">
+        <i class="fas fa-share-nodes" aria-hidden="true"></i>
+      </a>
+    </div>
+
+  <!-- Desktop-only icons -->
+<div class="nav-icons-desktop" role="navigation" aria-label="Iconos de navegación para escritorio">
+  <a href="help.html" class="icon-link" aria-label="Ir a la sección de Preguntas frecuentes">
+    <i class="fas fa-circle-question" aria-hidden="true"></i>
+  </a>
+  <a href="mailto:contact@nighttime.com" class="icon-link" aria-label="Enviar un correo a Nighttime">
+    <i class="fas fa-envelope" aria-hidden="true"></i>
+  </a>
+  <a href="#" class="icon-link" aria-label="Compartir contenido">
+    <i class="fas fa-share-nodes" aria-hidden="true"></i>
+  </a>
+</div>
+
+
+    <button class="hamburger" aria-label="Abrir menú">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <section class="gallery-full">
+    <div class="gallery-item"><img src="../assets/img/galeria/1.webp"
+        alt="Una escena vibrante de discoteca con luces de colores y confeti en el aire."
+        aria-label="Imagen de una discoteca animada con luces brillantes y confeti cayendo, creando un ambiente festivo."
+        loading="lazy"></div>
+    <div class="gallery-item"><img src="../assets/img/galeria/2.webp"
+        alt="Fiesteros disfrutando de un ambiente lleno de espuma con iluminación morada."
+        aria-label="Imagen de una multitud en una fiesta con espuma y luces moradas vibrantes, personas levantando las manos."
+        loading="lazy"></div>
+    <div class="gallery-item"><img src="../assets/img/galeria/3.webp"
+        alt="Siluetas de una multitud bailando bajo luces de escenario rosas y azules con confeti."
+        aria-label="Imagen de personas bailando en una discoteca iluminada por luces rosas y azules, rodeadas de confeti."
+        loading="lazy"></div>
+    <div class="gallery-item"><img src="../assets/img/galeria/4.webp"
+        alt="Una gran discoteca con candelabros, efectos de humo y una multitud animada."
+        aria-label="Imagen de una discoteca llena con candelabros, humo blanco y un público entusiasta levantando las manos."
+        loading="lazy"></div>
+    <div class="gallery-item"><img src="../assets/img/galeria/5.webp"
+        alt="Una discoteca llena de luces láser púrpuras y siluetas de personas bailando."
+        aria-label="Imagen de una fiesta con luces láser púrpuras y una multitud disfrutando del ambiente vibrante."
+        loading="lazy"></div>
+    <div class="gallery-item"><img src="../assets/img/galeria/6.webp"
+        alt="Un grupo de bailarines bajo luces azules y naranjas, rodeados de confeti."
+        aria-label="Imagen de bailarines actuando en una discoteca con iluminación dramática y confeti en el aire."
+        loading="lazy"></div>
+    <div class="gallery-item"><img src="../assets/img/galeria/7.webp"
+        alt="Primer plano de un grupo de mujeres posando en una discoteca con luces brillantes."
+        aria-label="Imagen de mujeres disfrutando en una discoteca, rodeadas de iluminación colorida y un ambiente animado."
+        loading="lazy"></div>
+    <div class="gallery-item"><img src="../assets/img/galeria/8.webp"
+        alt="Un espectáculo en una gran discoteca con chorros de humo y una multitud animada."
+        aria-label="Imagen de un evento en una discoteca con efectos de humo y personas levantando las manos al ritmo de la música."
+        loading="lazy"></div>
+    <div class="gallery-item"><img src="../assets/img/galeria/9.webp"
+        alt="Una multitud bajo un foco dorado y confeti cayendo desde el techo."
+        aria-label="Imagen de una discoteca con una luz dorada dramática y confeti rodeando a los asistentes."
+        loading="lazy"></div>
+    <div class="gallery-item"><img src="../assets/img/galeria/10.webp"
+        alt="Confeti rojo flotando en el aire bajo luces brillantes en una discoteca."
+        aria-label="Imagen de un evento en una discoteca con confeti rojo y luces brillantes creando un ambiente festivo."
+        loading="lazy"></div>
+    <div class="gallery-item"><img src="../assets/img/galeria/11.webp"
+        alt="Bailarinas en el escenario con confeti cayendo y luces brillantes en azul y naranja."
+        aria-label="Imagen de bailarinas actuando bajo luces azules y naranjas, rodeadas de confeti en un escenario."
+        loading="lazy"></div>
+    <div class="gallery-item"><img src="../assets/img/galeria/12.webp"
+        alt="Multitud disfrutando bajo una lluvia de confeti con iluminación morada."
+        aria-label="Imagen de una fiesta animada con confeti cayendo y un público iluminado por luces moradas."
+        loading="lazy"></div>
+    <div class="gallery-item"><img src="../assets/img/galeria/13.webp"
+        alt="Un gran espectáculo en una discoteca con humo y luces intensas."
+        aria-label="Imagen de un evento lleno de efectos de humo, luces brillantes y una multitud animada en una gran discoteca."
+        loading="lazy"></div>
+    <div class="gallery-item"><img src="../assets/img/galeria/14.webp"
+        alt="Manos levantadas en una multitud bajo un cielo lleno de confeti y luces de colores."
+        aria-label="Imagen de asistentes levantando las manos mientras confeti y luces de colores llenan el ambiente."
+        loading="lazy"></div>
+    <div class="gallery-item"><img src="../assets/img/galeria/15.webp"
+        alt="Brindis en la barra de una discoteca con copas brillando bajo luces cálidas."
+        aria-label="Imagen de personas brindando en la barra de una discoteca, rodeadas de un ambiente cálido y elegante."
+        loading="lazy"></div>
+    <div class="gallery-item"><img src="../assets/img/galeria/16.webp"
+        alt="Una fiesta con láseres púrpuras y azules iluminando a la multitud."
+        aria-label="Imagen de una multitud disfrutando de un espectáculo de luces láser púrpuras y azules en una discoteca."
+        loading="lazy"></div>
+    <div class="gallery-item"><img src="../assets/img/galeria/17.webp"
+        alt="Un espectáculo con columnas de humo y una multitud animada en la discoteca."
+        aria-label="Imagen de una discoteca con columnas de humo blancas y asistentes levantando las manos."
+        loading="lazy"></div>
+    <div class="gallery-item"><img src="../assets/img/galeria/18.webp"
+        alt="Un DJ actuando frente a una multitud bajo una lluvia de confeti y luces brillantes."
+        aria-label="Imagen de un DJ dirigiendo un espectáculo mientras el confeti llena el aire y el público disfruta de la música."
+        loading="lazy"></div>
+    <div class="gallery-item"><img src="../assets/img/galeria/19.webp"
+        alt="Primer plano de un grupo de mujeres posando en la barra de una discoteca."
+        aria-label="Imagen de un grupo de amigas disfrutando en una discoteca con un fondo elegante de botellas."
+        loading="lazy"></div>
+    <div class="gallery-item"><img src="../assets/img/galeria/20.webp"
+        alt="Mujer en la barra de una discoteca iluminada por luces cálidas y azules."
+        aria-label="Imagen de una mujer disfrutando del ambiente de la discoteca desde la barra, rodeada de luces elegantes."
+        loading="lazy"></div>
+    <div class="gallery-item"><img src="../assets/img/galeria/21.webp"
+        alt="Vista panorámica de un club nocturno con varias plantas iluminadas."
+        aria-label="Imagen de un club nocturno de múltiples niveles con luces brillantes y una pista de baile en el centro."
+        loading="lazy"></div>
+    <div class="gallery-item"><img src="../assets/img/galeria/22.webp"
+        alt="Rostro de una joven iluminado por luces de colores."
+        aria-label="Una mujer sonriendo mientras la luz de la discoteca proyecta puntos brillantes sobre su cara."
+        loading="lazy"></div>
+    <div class="gallery-item"><img src="../assets/img/galeria/23.webp"
+        alt="Barra de un club nocturno con bebidas y personas disfrutando."
+        aria-label="Imagen de una barra en un club con luces cálidas y personas conversando y pidiendo bebidas."
+        loading="lazy"></div>
+    <div class="gallery-item"><img src="../assets/img/galeria/24.webp"
+        alt="Vaso de cóctel con hielo en un club nocturno."
+        aria-label="Vaso transparente con un cóctel y hielo sobre una barra iluminada en un club nocturno."
+        loading="lazy"></div>
+    <div class="gallery-item"><img src="../assets/img/galeria/25.webp"
+        alt="Bar iluminado con luces de neón y botellas alineadas en estanterías."
+        aria-label="Imagen de un bar con estantes repletos de botellas y luces de colores violetas y azules en un club nocturno."
+        loading="lazy"></div>
+    <div class="gallery-item"><img src="../assets/img/galeria/26.webp"
+        alt="Club nocturno clásico con decoración de madera y una banda tocando en el escenario."
+        aria-label="Interior de un club nocturno decorado en madera con un espectáculo en el escenario central."
+        loading="lazy"></div>
+    <div class="gallery-item"><img src="../assets/img/galeria/27.webp"
+        alt="Multitud de personas disfrutando frente a un DJ con confeti en el aire."
+        aria-label="DJ en el escenario tocando música mientras una multitud celebra con confeti bajo luces de colores."
+        loading="lazy"></div>
+    <div class="gallery-item"><img src="../assets/img/galeria/28.webp"
+        alt="Detalle de un cóctel rojo decorado con flores y hielo seco."
+        aria-label="Un cóctel rojo adornado con flores, emitiendo vapor por el efecto de hielo seco en un club nocturno."
+        loading="lazy"></div>
+    <div class="gallery-item"><img src="../assets/img/galeria/29.webp"
+        alt="Barra circular de un club nocturno con luces violetas y amarillas."
+        aria-label="Vista de una barra redonda rodeada de personas y decorada con luces de neón en un club nocturno."
+        loading="lazy"></div>
+    <div class="gallery-item"><img src="../assets/img/galeria/30.webp"
+        alt="Escenario principal de un club nocturno con luces brillantes y una multitud."
+        aria-label="Imagen del escenario de un club nocturno lleno de personas bajo luces azules y cálidas."
+        loading="lazy"></div>
+    <div class="gallery-item"><img src="../assets/img/galeria/31.webp"
+        alt="Confeti cayendo sobre la pista iluminada del club nocturno."
+        aria-label="Vista del confeti flotando en el aire bajo las luces púrpuras del club nocturno, creando un ambiente festivo."
+        loading="lazy"></div>
+    <div class="gallery-item"><img src="../assets/img/galeria/32.webp"
+        alt="Explosión de espuma y luces brillantes en la pista del club nocturno."
+        aria-label="Escena vibrante en la pista del club nocturno con espuma volando, acompañada de luces de colores que iluminan la multitud."
+        loading="lazy"></div>
+    <div class="gallery-item"><img src="../assets/img/galeria/33.webp"
+        alt="Multitud celebrando bajo un espectáculo de humo y luces verdes en el club nocturno."
+        aria-label="Multitud animada levantando sus bebidas mientras el humo y las luces verdes envuelven el ambiente del club nocturno."
+        loading="lazy"></div>
+    <div class="gallery-item"><img src="../assets/img/galeria/34.webp"
+        alt="Vista desde las alturas del escenario del club nocturno iluminado por luces rojas y azules."
+        aria-label="Perspectiva elevada del escenario principal del club nocturno, con luces intensas iluminando a los asistentes."
+        loading="lazy"></div>
+    <div class="gallery-item"><img src="../assets/img/galeria/35.webp"
+        alt="Barra llena de bebidas y camareros en el club nocturno con iluminación púrpura."
+        aria-label="Camareros preparando bebidas en una barra del club nocturno, iluminada con tonos cálidos y vibrantes."
+        loading="lazy"></div>
+    <div class="gallery-item"><img src="../assets/img/galeria/36.webp"
+        alt="Manos levantadas en la pista con haces de luz y humo en el club nocturno."
+        aria-label="Euforia en la pista del club nocturno, con haces de luz cruzando el humo mientras la gente baila."
+        loading="lazy"></div>
+    <div class="gallery-item"><img src="../assets/img/galeria/37.webp"
+        alt="Vista amplia del club nocturno lleno de asistentes y luces brillantes."
+        aria-label="Perspectiva panorámica del club nocturno mostrando a la multitud disfrutando bajo luces rojas y azules."
+        loading="lazy"></div>
+    <div class="gallery-item"><img src="../assets/img/galeria/38.webp"
+        alt="Clientes disfrutando de cócteles junto a una barra iluminada en tonos cálidos del club nocturno."
+        aria-label="Ambiente sofisticado en el club nocturno con personas disfrutando de bebidas en la barra iluminada."
+        loading="lazy"></div>
+    <div class="gallery-item"><img src="../assets/img/galeria/39.webp"
+        alt="Luces púrpuras y confeti creando un espectáculo visual en el club nocturno."
+        aria-label="Efectos de iluminación púrpura y confeti cayendo mientras la multitud disfruta del espectáculo."
+        loading="lazy"></div>
+    <div class="gallery-item"><img src="../assets/img/galeria/40.webp"
+        alt="Escenario central del club nocturno con luces y efectos especiales, público vibrante al frente."
+        aria-label="Vista de la multitud desde un balcón en el club nocturno, con un espectáculo de luces rosadas y azules."
+        loading="lazy"></div>
+    <div class="gallery-item"><img src="../assets/img/galeria/41.webp"
+        alt="Joven celebrando emocionada bajo luces azules en la pista de baile."
+        aria-label="Mujer levantando los brazos con una sonrisa radiante, rodeada de confeti y luces azules vibrantes en la pista del club nocturno."
+        loading="lazy"></div>
+    <div class="gallery-item"><img src="../assets/img/galeria/42.webp"
+        alt="Grupo de mujeres bailando bajo luces brillantes y efectos de movimiento en la pista."
+        aria-label="Siluetas de mujeres disfrutando la música, bailando con vestidos brillantes mientras las luces crean un efecto dinámico en el club nocturno."
+        loading="lazy"></div>
+    <div class="gallery-item"><img src="../assets/img/galeria/43.webp"
+        alt="Multitud vibrante alzando las manos mientras el escenario brilla con luces naranjas intensas."
+        aria-label="Público entregado disfrutando de un espectáculo en vivo, con una atmósfera cálida de luces doradas y humo en el escenario del club."
+        loading="lazy"></div>
+    <div class="gallery-item"><img src="../assets/img/galeria/44.webp"
+        alt="Espuma brillante llenando el ambiente mientras el público baila bajo luces púrpuras."
+        aria-label="Efectos de espuma y luces púrpuras intensas creando un ambiente festivo y surrealista en el club nocturno."
+        loading="lazy"></div>
+    <div class="gallery-item"><img src="../assets/img/galeria/45.webp"
+        alt="Vista panorámica del club con varios niveles iluminados y un público animado."
+        aria-label="Estructura moderna del club nocturno con varios niveles llenos de gente, luces azules y naranjas destacando el diseño contemporáneo."
+        loading="lazy"></div>
+    <div class="gallery-item"><img src="../assets/img/galeria/46.webp"
+        alt="Escenario principal del club con luces y efectos especiales, público vibrante al frente."
+        aria-label="Público bailando frente al escenario del club, rodeado de luces espectaculares y efectos de humo en una atmósfera llena de energía."
+        loading="lazy"></div>
+    <div class="gallery-item"><img src="../assets/img/galeria/47.webp"
+        alt="Mujer sonriendo en la barra mientras la iluminación cálida destaca el ambiente."
+        aria-label="Mujer disfrutando una bebida en la barra del club nocturno, con luces cálidas y una multitud vibrante al fondo."
+        loading="lazy"></div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section about-us">
+        <h3>Sobre Nosotros</h3>
+        <p>Nighttime es tu destino nocturno premium, donde la música, el ambiente y la diversión se fusionan para crear
+          experiencias inolvidables. Desde 2010 liderando el entretenimiento nocturno en Madrid.</p>
+      </div>
+
+      <div class="footer-section schedule">
+        <h3>Horario</h3>
+        <div class="schedule-item">
+          <span class="day">Lunes - Miércoles:</span>
+          <span class="hours">23:00 - 04:00</span>
         </div>
-        <nav class="nav-links">
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="vip.html">VIP</a></li>
-                <li><a href="tickets.html">Entradas</a></li>
-                <li><a href="gallery.html">Galería</a></li>
-                <li><a href="contact.html">Contacto</a></li>
-            </ul>
-            <!-- Mobile-only icons container -->
-            <div class="nav-icons-mobile">
-                <a href="help.html" class="icon-link" aria-label="Preguntas frecuentes">
-                    <i class="fas fa-circle-question"></i>
-                </a>
-                <a href="mailto:contact@nighttime.com" class="icon-link" aria-label="Enviar email">
-                    <i class="fas fa-envelope"></i>
-                </a>
-                <a href="#" class="icon-link" aria-label="Compartir">
-                    <i class="fas fa-share-nodes"></i>
-                </a>
-            </div>
-        </nav>
-
-        <!-- Desktop-only icons -->
-        <div class="nav-icons-desktop">
-            <a href="help.html" class="icon-link" aria-label="Preguntas frecuentes">
-                <i class="fas fa-circle-question"></i>
-            </a>
-            <a href="mailto:contact@nighttime.com" class="icon-link" aria-label="Enviar email">
-                <i class="fas fa-envelope"></i>
-            </a>
-            <a href="#" class="icon-link" aria-label="Compartir">
-                <i class="fas fa-share-nodes"></i>
-            </a>
+        <div class="schedule-item">
+          <span class="day">Jueves:</span>
+          <span class="hours">23:00 - 05:00</span>
         </div>
-
-        <button class="hamburger" aria-label="Abrir menú">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-    </header>
-
-    <section class="gallery-full">
-        <div class="gallery-item"><img src="../assets/img/galeria/1.webp" alt="Una escena vibrante de discoteca con luces de colores y confeti en el aire." aria-label="Imagen de una discoteca animada con luces brillantes y confeti cayendo, creando un ambiente festivo." loading="lazy"></div>
-        <div class="gallery-item"><img src="../assets/img/galeria/2.webp" alt="Fiesteros disfrutando de un ambiente lleno de espuma con iluminación morada." aria-label="Imagen de una multitud en una fiesta con espuma y luces moradas vibrantes, personas levantando las manos." loading="lazy"></div>
-        <div class="gallery-item"><img src="../assets/img/galeria/3.webp" alt="Siluetas de una multitud bailando bajo luces de escenario rosas y azules con confeti." aria-label="Imagen de personas bailando en una discoteca iluminada por luces rosas y azules, rodeadas de confeti." loading="lazy"></div>
-        <div class="gallery-item"><img src="../assets/img/galeria/4.webp" alt="Una gran discoteca con candelabros, efectos de humo y una multitud animada." aria-label="Imagen de una discoteca llena con candelabros, humo blanco y un público entusiasta levantando las manos." loading="lazy"></div>
-        <div class="gallery-item"><img src="../assets/img/galeria/5.webp" alt="Una discoteca llena de luces láser púrpuras y siluetas de personas bailando." aria-label="Imagen de una fiesta con luces láser púrpuras y una multitud disfrutando del ambiente vibrante." loading="lazy"></div>
-        <div class="gallery-item"><img src="../assets/img/galeria/6.webp" alt="Un grupo de bailarines bajo luces azules y naranjas, rodeados de confeti." aria-label="Imagen de bailarines actuando en una discoteca con iluminación dramática y confeti en el aire." loading="lazy"></div>
-        <div class="gallery-item"><img src="../assets/img/galeria/7.webp" alt="Primer plano de un grupo de mujeres posando en una discoteca con luces brillantes." aria-label="Imagen de mujeres disfrutando en una discoteca, rodeadas de iluminación colorida y un ambiente animado." loading="lazy"></div>
-        <div class="gallery-item"><img src="../assets/img/galeria/8.webp" alt="Un espectáculo en una gran discoteca con chorros de humo y una multitud animada." aria-label="Imagen de un evento en una discoteca con efectos de humo y personas levantando las manos al ritmo de la música." loading="lazy"></div>
-        <div class="gallery-item"><img src="../assets/img/galeria/9.webp" alt="Una multitud bajo un foco dorado y confeti cayendo desde el techo." aria-label="Imagen de una discoteca con una luz dorada dramática y confeti rodeando a los asistentes." loading="lazy"></div>
-        <div class="gallery-item"><img src="../assets/img/galeria/10.webp" alt="Confeti rojo flotando en el aire bajo luces brillantes en una discoteca." aria-label="Imagen de un evento en una discoteca con confeti rojo y luces brillantes creando un ambiente festivo." loading="lazy"></div>
-        <div class="gallery-item"><img src="../assets/img/galeria/11.webp" alt="Bailarinas en el escenario con confeti cayendo y luces brillantes en azul y naranja." aria-label="Imagen de bailarinas actuando bajo luces azules y naranjas, rodeadas de confeti en un escenario." loading="lazy"></div>
-        <div class="gallery-item"><img src="../assets/img/galeria/12.webp" alt="Multitud disfrutando bajo una lluvia de confeti con iluminación morada." aria-label="Imagen de una fiesta animada con confeti cayendo y un público iluminado por luces moradas." loading="lazy"></div>
-        <div class="gallery-item"><img src="../assets/img/galeria/13.webp" alt="Un gran espectáculo en una discoteca con humo y luces intensas." aria-label="Imagen de un evento lleno de efectos de humo, luces brillantes y una multitud animada en una gran discoteca." loading="lazy"></div>
-        <div class="gallery-item"><img src="../assets/img/galeria/14.webp" alt="Manos levantadas en una multitud bajo un cielo lleno de confeti y luces de colores." aria-label="Imagen de asistentes levantando las manos mientras confeti y luces de colores llenan el ambiente." loading="lazy"></div>
-        <div class="gallery-item"><img src="../assets/img/galeria/15.webp" alt="Brindis en la barra de una discoteca con copas brillando bajo luces cálidas." aria-label="Imagen de personas brindando en la barra de una discoteca, rodeadas de un ambiente cálido y elegante." loading="lazy"></div>
-        <div class="gallery-item"><img src="../assets/img/galeria/16.webp" alt="Una fiesta con láseres púrpuras y azules iluminando a la multitud." aria-label="Imagen de una multitud disfrutando de un espectáculo de luces láser púrpuras y azules en una discoteca." loading="lazy"></div>
-        <div class="gallery-item"><img src="../assets/img/galeria/17.webp" alt="Un espectáculo con columnas de humo y una multitud animada en la discoteca." aria-label="Imagen de una discoteca con columnas de humo blancas y asistentes levantando las manos." loading="lazy"></div>
-        <div class="gallery-item"><img src="../assets/img/galeria/18.webp" alt="Un DJ actuando frente a una multitud bajo una lluvia de confeti y luces brillantes." aria-label="Imagen de un DJ dirigiendo un espectáculo mientras el confeti llena el aire y el público disfruta de la música." loading="lazy"></div>
-        <div class="gallery-item"><img src="../assets/img/galeria/19.webp" alt="Primer plano de un grupo de mujeres posando en la barra de una discoteca." aria-label="Imagen de un grupo de amigas disfrutando en una discoteca con un fondo elegante de botellas." loading="lazy"></div>
-        <div class="gallery-item"><img src="../assets/img/galeria/20.webp" alt="Mujer en la barra de una discoteca iluminada por luces cálidas y azules." aria-label="Imagen de una mujer disfrutando del ambiente de la discoteca desde la barra, rodeada de luces elegantes." loading="lazy"></div>
-        <div class="gallery-item"><img src="../assets/img/galeria/21.webp" alt="Vista panorámica de un club nocturno con varias plantas iluminadas." aria-label="Imagen de un club nocturno de múltiples niveles con luces brillantes y una pista de baile en el centro." loading="lazy"></div>
-        <div class="gallery-item"><img src="../assets/img/galeria/22.webp" alt="Rostro de una joven iluminado por luces de colores." aria-label="Una mujer sonriendo mientras la luz de la discoteca proyecta puntos brillantes sobre su cara." loading="lazy"></div>
-        <div class="gallery-item"><img src="../assets/img/galeria/23.webp" alt="Barra de un club nocturno con bebidas y personas disfrutando." aria-label="Imagen de una barra en un club con luces cálidas y personas conversando y pidiendo bebidas." loading="lazy"></div>
-        <div class="gallery-item"><img src="../assets/img/galeria/24.webp" alt="Vaso de cóctel con hielo en un club nocturno." aria-label="Vaso transparente con un cóctel y hielo sobre una barra iluminada en un club nocturno." loading="lazy"></div>
-        <div class="gallery-item"><img src="../assets/img/galeria/25.webp" alt="Bar iluminado con luces de neón y botellas alineadas en estanterías." aria-label="Imagen de un bar con estantes repletos de botellas y luces de colores violetas y azules en un club nocturno." loading="lazy"></div>
-        <div class="gallery-item"><img src="../assets/img/galeria/26.webp" alt="Club nocturno clásico con decoración de madera y una banda tocando en el escenario." aria-label="Interior de un club nocturno decorado en madera con un espectáculo en el escenario central." loading="lazy"></div>
-        <div class="gallery-item"><img src="../assets/img/galeria/27.webp" alt="Multitud de personas disfrutando frente a un DJ con confeti en el aire." aria-label="DJ en el escenario tocando música mientras una multitud celebra con confeti bajo luces de colores." loading="lazy"></div>
-        <div class="gallery-item"><img src="../assets/img/galeria/28.webp" alt="Detalle de un cóctel rojo decorado con flores y hielo seco." aria-label="Un cóctel rojo adornado con flores, emitiendo vapor por el efecto de hielo seco en un club nocturno." loading="lazy"></div>
-        <div class="gallery-item"><img src="../assets/img/galeria/29.webp" alt="Barra circular de un club nocturno con luces violetas y amarillas." aria-label="Vista de una barra redonda rodeada de personas y decorada con luces de neón en un club nocturno." loading="lazy"></div>
-        <div class="gallery-item"><img src="../assets/img/galeria/30.webp" alt="Escenario principal de un club nocturno con luces brillantes y una multitud." aria-label="Imagen del escenario de un club nocturno lleno de personas bajo luces azules y cálidas." loading="lazy"></div>
-        <div class="gallery-item"><img src="../assets/img/galeria/31.webp" alt="Confeti cayendo sobre la pista iluminada del club nocturno." aria-label="Vista del confeti flotando en el aire bajo las luces púrpuras del club nocturno, creando un ambiente festivo." loading="lazy"></div>
-        <div class="gallery-item"><img src="../assets/img/galeria/32.webp" alt="Explosión de espuma y luces brillantes en la pista del club nocturno." aria-label="Escena vibrante en la pista del club nocturno con espuma volando, acompañada de luces de colores que iluminan la multitud." loading="lazy"></div>
-        <div class="gallery-item"><img src="../assets/img/galeria/33.webp" alt="Multitud celebrando bajo un espectáculo de humo y luces verdes en el club nocturno." aria-label="Multitud animada levantando sus bebidas mientras el humo y las luces verdes envuelven el ambiente del club nocturno." loading="lazy"></div>
-        <div class="gallery-item"><img src="../assets/img/galeria/34.webp" alt="Vista desde las alturas del escenario del club nocturno iluminado por luces rojas y azules." aria-label="Perspectiva elevada del escenario principal del club nocturno, con luces intensas iluminando a los asistentes." loading="lazy"></div>
-        <div class="gallery-item"><img src="../assets/img/galeria/35.webp" alt="Barra llena de bebidas y camareros en el club nocturno con iluminación púrpura." aria-label="Camareros preparando bebidas en una barra del club nocturno, iluminada con tonos cálidos y vibrantes." loading="lazy"></div>
-        <div class="gallery-item"><img src="../assets/img/galeria/36.webp" alt="Manos levantadas en la pista con haces de luz y humo en el club nocturno." aria-label="Euforia en la pista del club nocturno, con haces de luz cruzando el humo mientras la gente baila." loading="lazy"></div>
-        <div class="gallery-item"><img src="../assets/img/galeria/37.webp" alt="Vista amplia del club nocturno lleno de asistentes y luces brillantes." aria-label="Perspectiva panorámica del club nocturno mostrando a la multitud disfrutando bajo luces rojas y azules." loading="lazy"></div>
-        <div class="gallery-item"><img src="../assets/img/galeria/38.webp" alt="Clientes disfrutando de cócteles junto a una barra iluminada en tonos cálidos del club nocturno." aria-label="Ambiente sofisticado en el club nocturno con personas disfrutando de bebidas en la barra iluminada." loading="lazy"></div>
-        <div class="gallery-item"><img src="../assets/img/galeria/39.webp" alt="Luces púrpuras y confeti creando un espectáculo visual en el club nocturno." aria-label="Efectos de iluminación púrpura y confeti cayendo mientras la multitud disfruta del espectáculo." loading="lazy"></div>
-        <div class="gallery-item"><img src="../assets/img/galeria/40.webp" alt="Escenario central del club nocturno con luces y efectos especiales, público vibrante al frente." aria-label="Vista de la multitud desde un balcón en el club nocturno, con un espectáculo de luces rosadas y azules." loading="lazy"></div>
-        <div class="gallery-item"><img src="../assets/img/galeria/41.webp" alt="Joven celebrando emocionada bajo luces azules en la pista de baile." aria-label="Mujer levantando los brazos con una sonrisa radiante, rodeada de confeti y luces azules vibrantes en la pista del club nocturno." loading="lazy"></div>
-        <div class="gallery-item"><img src="../assets/img/galeria/42.webp" alt="Grupo de mujeres bailando bajo luces brillantes y efectos de movimiento en la pista." aria-label="Siluetas de mujeres disfrutando la música, bailando con vestidos brillantes mientras las luces crean un efecto dinámico en el club nocturno." loading="lazy"></div>
-        <div class="gallery-item"><img src="../assets/img/galeria/43.webp" alt="Multitud vibrante alzando las manos mientras el escenario brilla con luces naranjas intensas." aria-label="Público entregado disfrutando de un espectáculo en vivo, con una atmósfera cálida de luces doradas y humo en el escenario del club." loading="lazy"></div>
-        <div class="gallery-item"><img src="../assets/img/galeria/44.webp" alt="Espuma brillante llenando el ambiente mientras el público baila bajo luces púrpuras." aria-label="Efectos de espuma y luces púrpuras intensas creando un ambiente festivo y surrealista en el club nocturno." loading="lazy"></div>
-        <div class="gallery-item"><img src="../assets/img/galeria/45.webp" alt="Vista panorámica del club con varios niveles iluminados y un público animado." aria-label="Estructura moderna del club nocturno con varios niveles llenos de gente, luces azules y naranjas destacando el diseño contemporáneo." loading="lazy"></div>
-        <div class="gallery-item"><img src="../assets/img/galeria/46.webp" alt="Escenario principal del club con luces y efectos especiales, público vibrante al frente." aria-label="Público bailando frente al escenario del club, rodeado de luces espectaculares y efectos de humo en una atmósfera llena de energía." loading="lazy"></div>
-        <div class="gallery-item"><img src="../assets/img/galeria/47.webp" alt="Mujer sonriendo en la barra mientras la iluminación cálida destaca el ambiente." aria-label="Mujer disfrutando una bebida en la barra del club nocturno, con luces cálidas y una multitud vibrante al fondo." loading="lazy"></div>
-    </section>
-
-    <footer>
-        <div class="footer-content">
-          <div class="footer-section about-us">
-            <h3>Sobre Nosotros</h3>
-            <p>Nighttime es tu destino nocturno premium, donde la música, el ambiente y la diversión se fusionan para crear
-              experiencias inolvidables. Desde 2010 liderando el entretenimiento nocturno en Madrid.</p>
-          </div>
-    
-          <div class="footer-section schedule">
-            <h3>Horario</h3>
-            <div class="schedule-item">
-              <span class="day">Lunes - Miércoles:</span>
-              <span class="hours">23:00 - 04:00</span>
-            </div>
-            <div class="schedule-item">
-              <span class="day">Jueves:</span>
-              <span class="hours">23:00 - 05:00</span>
-            </div>
-            <div class="schedule-item">
-              <span class="day">Viernes - Sábado:</span>
-              <span class="hours">23:00 - 06:00</span>
-            </div>
-            <div class="schedule-item">
-              <span class="day">Domingo:</span>
-              <span class="hours">Cerrado</span>
-            </div>
-          </div>
-    
-          <div class="footer-section contact">
-            <h3>Visítanos</h3>
-            <div class="contact-item">
-              <i class="fas fa-location-dot"></i>
-              <p>Calle Falsa 123, 28000 Madrid</p>
-            </div>
-            <div class="contact-item">
-              <i class="fas fa-envelope"></i>
-              <a href="mailto:info@nighttime.com">info@nighttime.com</a>
-            </div>
-            <div class="contact-item">
-              <i class="fas fa-phone"></i>
-              <a href="tel:+34912345678">+34 91 234 56 78</a>
-            </div>
-            <div class="contact-item">
-              <i class="fab fa-whatsapp"></i>
-              <a href="https://wa.me/34666123456">+34 666 12 34 56</a>
-            </div>
-          </div>
+        <div class="schedule-item">
+          <span class="day">Viernes - Sábado:</span>
+          <span class="hours">23:00 - 06:00</span>
         </div>
-    
-        <div class="footer-legal">
-            <a href="legal.html">Aviso Legal</a>
+        <div class="schedule-item">
+          <span class="day">Domingo:</span>
+          <span class="hours">Cerrado</span>
         </div>
-    
-        <div class="social-links">
-          <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
-          <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-          <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
+      </div>
+
+      <div class="footer-section contact">
+        <h3>Visítanos</h3>
+        <div class="contact-item">
+          <i class="fas fa-location-dot"></i>
+          <p>Calle Falsa 123, 28000 Madrid</p>
         </div>
-      </footer>
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <a href="mailto:info@nighttime.com">info@nighttime.com</a>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-phone"></i>
+          <a href="tel:+34912345678">+34 91 234 56 78</a>
+        </div>
+        <div class="contact-item">
+          <i class="fab fa-whatsapp"></i>
+          <a href="https://wa.me/34666123456">+34 666 12 34 56</a>
+        </div>
+      </div>
+    </div>
 
-    <script>
-        // Hamburger menu
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
+    <div class="footer-legal">
+      <a href="legal.html">Aviso Legal</a>
+    </div>
 
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navLinks.classList.toggle('active');
-        });
+    <div class="social-links">
+      <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
+    </div>
+  </footer>
 
-        // Unified glow effect
-        const glowElements = document.querySelectorAll('.glow-effect');
+  <script>
+    // Hamburger menu
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
 
-        glowElements.forEach(element => {
-            element.addEventListener('mousemove', (e) => {
-                const rect = element.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navLinks.classList.toggle('active');
+    });
 
-                element.style.setProperty('--mouse-x', `${x}px`);
-                element.style.setProperty('--mouse-y', `${y}px`);
-            });
-        });
+    // Unified glow effect
+    const glowElements = document.querySelectorAll('.glow-effect');
 
-        // Tilt effect on room cards (keeping this separate as it's different functionality)
-        const cards = document.querySelectorAll('.room-card');
+    glowElements.forEach(element => {
+      element.addEventListener('mousemove', (e) => {
+        const rect = element.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
 
-        cards.forEach(card => {
-            let ticking = false;
+        element.style.setProperty('--mouse-x', `${x}px`);
+        element.style.setProperty('--mouse-y', `${y}px`);
+      });
+    });
 
-            card.addEventListener('mousemove', (e) => {
-                if (!ticking) {
-                    requestAnimationFrame(() => {
-                        const rect = card.getBoundingClientRect();
-                        const x = e.clientX - rect.left;
-                        const y = e.clientY - rect.top;
+    // Tilt effect on room cards (keeping this separate as it's different functionality)
+    const cards = document.querySelectorAll('.room-card');
 
-                        const centerX = rect.width / 2;
-                        const centerY = rect.height / 2;
+    cards.forEach(card => {
+      let ticking = false;
 
-                        const rotateX = -((y - centerY) / 20);
-                        const rotateY = ((x - centerX) / 20);
+      card.addEventListener('mousemove', (e) => {
+        if (!ticking) {
+          requestAnimationFrame(() => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
 
-                        card.classList.add('tilt');
-                        card.style.setProperty('--rotateX', `${rotateX}deg`);
-                        card.style.setProperty('--rotateY', `${rotateY}deg`);
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
 
-                        ticking = false;
-                    });
+            const rotateX = -((y - centerY) / 20);
+            const rotateY = ((x - centerX) / 20);
 
-                    ticking = true;
-                }
-            });
+            card.classList.add('tilt');
+            card.style.setProperty('--rotateX', `${rotateX}deg`);
+            card.style.setProperty('--rotateY', `${rotateY}deg`);
 
-            card.addEventListener('mouseleave', () => {
-                card.classList.remove('tilt');
-                card.style.setProperty('--rotateX', '0deg');
-                card.style.setProperty('--rotateY', '0deg');
-            });
-        });
+            ticking = false;
+          });
 
-        // Ensure slider track width is correct
-        const sliderTrack = document.querySelector('.slider-track');
-        const slides = document.querySelectorAll('.slide');
-        const slideWidth = 200; // Match this with your CSS
-        const slideCount = slides.length;
-        const gap = 16; // This should match your $spacing-unit * 2
+          ticking = true;
+        }
+      });
 
-        // Set the track width to accommodate all slides plus gaps
-        sliderTrack.style.width = `${(slideWidth + gap) * slideCount}px`;
-    </script>
+      card.addEventListener('mouseleave', () => {
+        card.classList.remove('tilt');
+        card.style.setProperty('--rotateX', '0deg');
+        card.style.setProperty('--rotateY', '0deg');
+      });
+    });
+
+    // Ensure slider track width is correct
+    const sliderTrack = document.querySelector('.slider-track');
+    const slides = document.querySelectorAll('.slide');
+    const slideWidth = 200; // Match this with your CSS
+    const slideCount = slides.length;
+    const gap = 16; // This should match your $spacing-unit * 2
+
+    // Set the track width to accommodate all slides plus gaps
+    sliderTrack.style.width = `${(slideWidth + gap) * slideCount}px`;
+  </script>
 </body>
 
 </html>
