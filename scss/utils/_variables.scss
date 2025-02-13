@@ -29,6 +29,11 @@ $glass-purple: rgba($deep-purple, 0.8);
 $text-dark: $pure-black;
 $text-light: $pure-white;
 
+// Icon Colors
+i, .fas, .fab, .far {
+  color: $text-light;
+}
+
 // Functional Colors
 $primary-bg: $deep-navy;
 $secondary-bg: $glass-black;
@@ -41,9 +46,39 @@ $nav-gradient: linear-gradient(to bottom, $glass-black, $glass-navy);
 $body-gradient: linear-gradient(to bottom, $deep-navy, $pure-black);
 
 // Spacing
-$spacing-unit: 0.8rem;
+$spacing-unit: 0.8rem; // Remove clamp, use fixed value
 $container-padding: $spacing-unit * 2;
 
 // Borders
-$border-radius: 2rem;
-$border-radius-sm: 0.5rem;
+$border-radius: 2rem; // Remove clamp, use fixed value
+$border-radius-sm: 0.5rem; // Remove clamp, use fixed value
+
+// Form Select Styles
+select {
+  background: rgba($deep-navy, 0.95);
+  border: 1px solid rgba($pure-white, 0.2);
+  border-radius: $border-radius-sm;
+  color: $text-light;
+  font-size: 1.6rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  option {
+    background-color: $deep-navy;
+    color: $text-light;
+    padding: $spacing-unit;
+    font-size: 1.6rem;
+    cursor: pointer;
+  }
+
+  &:focus {
+    outline: none;
+    background: rgba($deep-navy, 0.85);
+    border-color: rgba($pure-white, 0.3);
+    box-shadow: 0 0 15px rgba($accent-primary, 0.3);
+  }
+
+  &:hover {
+    background: rgba($deep-navy, 0.85);
+  }
+}

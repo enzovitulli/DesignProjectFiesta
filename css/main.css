@@ -1,4 +1,34 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cairo:wght@200..1000&family=Genos:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+i, .fas, .fab, .far {
+  color: #FFFFFF;
+}
+
+select {
+  background: rgba(4, 10, 29, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.5rem;
+  color: #FFFFFF;
+  font-size: 1.6rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+select option {
+  background-color: #040a1d;
+  color: #FFFFFF;
+  padding: 0.8rem;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+select:focus {
+  outline: none;
+  background: rgba(4, 10, 29, 0.85);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 15px rgba(0, 170, 255, 0.3);
+}
+select:hover {
+  background: rgba(4, 10, 29, 0.85);
+}
+
 *,
 *::before,
 *::after {
@@ -34,7 +64,7 @@ html {
 }
 
 body {
-  font-size: 1.6rem;
+  font-size: clamp(1.4rem, 1.6vw, 1.6rem);
   font-family: "Roboto", sans-serif;
 }
 
@@ -44,26 +74,224 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 4rem;
+  font-size: clamp(3.2rem, 5vw, 4.8rem);
 }
 
 h2 {
-  font-size: 3.2rem;
+  font-size: clamp(2.8rem, 4vw, 3.6rem);
 }
 
 h3 {
-  font-size: 2.8rem;
+  font-size: clamp(2.4rem, 3.5vw, 3.2rem);
 }
 
 h4 {
-  font-size: 2.4rem;
+  font-size: clamp(2rem, 3vw, 2.8rem);
 }
 
 .logo-text, .navbar .logo-container .title {
   font-family: "Genos";
-  font-size: 4rem;
+  font-size: clamp(3.2rem, 4vw, 4rem);
   font-weight: 300;
-  letter-spacing: 1rem;
+  letter-spacing: clamp(0.5rem, 1vw, 1rem);
+}
+
+.bottle-section {
+  width: 90%;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 3.2rem 5%;
+  margin: 12.8rem auto;
+}
+.bottle-section .bottle-container {
+  background: rgba(255, 255, 255, 0.05);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 2rem;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.1), 0 10px 30px rgba(0, 0, 0, 0.2), inset 0 0 60px rgba(255, 255, 255, 0.05);
+  position: relative;
+  transition: transform 0.3s ease;
+  position: relative;
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 6.4rem;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.7) !important;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 2rem;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+}
+.bottle-section .bottle-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 77, 151, 0.15), transparent 250px);
+  opacity: 0;
+  transition: opacity 1s ease-out;
+  pointer-events: none;
+}
+.bottle-section .bottle-container:hover::before {
+  opacity: 1;
+  transition: opacity 0.3s ease-in;
+}
+.bottle-section .bottle-container:hover {
+  transform: translateY(-5px);
+}
+.bottle-section .bottle-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 77, 151, 0.15), transparent 250px);
+  opacity: 0;
+  transition: opacity 1s ease-out;
+  pointer-events: none;
+}
+.bottle-section .bottle-container:hover::before {
+  opacity: 1;
+  transition: opacity 0.3s ease-in;
+}
+.bottle-section .bottle-container:hover {
+  transform: none;
+}
+.bottle-section .bottle-container h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 4.2rem;
+  color: #FFFFFF;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+  font-size: 5.6rem;
+  margin-bottom: 6.4rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+}
+.bottle-section .vip-bottle-list {
+  margin-bottom: 1.6rem;
+}
+.bottle-section .vip-bottle-list h3 {
+  color: #FFFFFF;
+  font-size: 3.6rem;
+  margin: 4.8rem 0 2.4rem;
+  text-align: center;
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 0.1rem;
+  cursor: pointer;
+  position: relative;
+  padding: 1.6rem;
+  transition: all 0.3s ease;
+}
+.bottle-section .vip-bottle-list h3::after {
+  content: "\f107";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  right: 3.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2.8rem;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.bottle-section .vip-bottle-list h3.active::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+.bottle-section .vip-bottle-list h3:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+.bottle-section .vip-bottle-list .table-container {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(-20px);
+}
+.bottle-section .vip-bottle-list .table-container.active {
+  max-height: 2000px;
+  opacity: 1;
+  transform: translateY(0);
+}
+.bottle-section .vip-bottle-list .table-container table {
+  margin-top: 1.6rem;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  transform: translateY(-10px);
+  transition: transform 0.4s ease;
+}
+.active .bottle-section .vip-bottle-list .table-container table {
+  transform: translateY(0);
+}
+.bottle-section .vip-bottle-list .table-container table tr {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background-color 0.3s ease;
+}
+.bottle-section .vip-bottle-list .table-container table tr:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+.bottle-section .vip-bottle-list .table-container table tr:last-child {
+  border-bottom: none;
+}
+.bottle-section .vip-bottle-list .table-container table th, .bottle-section .vip-bottle-list .table-container table td {
+  padding: 1.6rem;
+  text-align: left;
+  color: #FFFFFF;
+}
+.bottle-section .vip-bottle-list .table-container table th {
+  font-weight: normal;
+  font-size: 2rem;
+}
+.bottle-section .vip-bottle-list .table-container table th strong {
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 0.05rem;
+  font-size: 2.2rem;
+}
+.bottle-section .vip-bottle-list .table-container table td {
+  text-align: right;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2.8rem;
+  color: #FFFFFF;
+  letter-spacing: 0.1rem;
+  min-width: 120px;
+}
+@media (max-width: 999px) {
+  .bottle-section .bottle-container {
+    padding: 3.2rem;
+  }
+  .bottle-section .bottle-container h2 {
+    font-size: 4.2rem;
+  }
+  .bottle-section .vip-bottle-list {
+    margin-bottom: 3.2rem;
+    overflow-x: auto;
+  }
+  .bottle-section .vip-bottle-list h3 {
+    font-size: 2.8rem;
+  }
+  .bottle-section .vip-bottle-list table th {
+    font-size: 1.8rem;
+  }
+  .bottle-section .vip-bottle-list table th strong {
+    font-size: 2rem;
+  }
+  .bottle-section .vip-bottle-list table td {
+    font-size: 2.4rem;
+  }
+  .bottle-section .vip-bottle-list table th, .bottle-section .vip-bottle-list table td {
+    padding: 0.8rem;
+  }
 }
 
 .standard-button {
@@ -81,9 +309,11 @@ h4 {
   justify-content: center;
   border: none;
   color: #FFFFFF;
-  width: 180px;
-  height: 6rem;
-  padding: 1.2rem 1.6rem;
+  cursor: pointer;
+  width: clamp(200px, 30vw, 300px);
+  height: clamp(5rem, 7vh, 7rem);
+  padding: clamp(0.8rem, 1.5vw, 1.6rem);
+  font-size: clamp(2rem, 2.5vw, 2.8rem);
   background: #9030FD;
   margin: 0 auto;
   box-shadow: inset 0 12px 12px -12px rgba(255, 255, 255, 0.6), inset 12px 0 12px -12px rgba(255, 255, 255, 0.6), inset 2px 2px 4px rgba(255, 255, 255, 0.4), inset -4px -4px 8px rgba(0, 0, 0, 0.7), inset -8px -8px 16px rgba(0, 0, 0, 0.5), 2px 2px 4px rgba(0, 0, 0, 0.3), 6px 6px 12px rgba(0, 0, 0, 0.4), 8px 8px 16px rgba(0, 0, 0, 0.3), 12px 12px 24px rgba(0, 0, 0, 0.2);
@@ -103,7 +333,7 @@ h4 {
   gap: 2.4rem;
   justify-content: center;
   width: 100%;
-  max-width: 480px;
+  max-width: min(480px, 90vw);
   margin: 0 auto;
 }
 .cta-buttons .cta-button {
@@ -121,9 +351,12 @@ h4 {
   justify-content: center;
   border: none;
   color: #FFFFFF;
+  cursor: pointer;
   width: 220px;
   height: 7.5rem;
-  padding: 1.44rem 2.4rem;
+  padding: 1.6rem;
+  font-size: 2.4rem;
+  white-space: nowrap;
 }
 .cta-buttons .cta-button.primary {
   background-size: 300% 100%;
@@ -177,7 +410,8 @@ h4 {
   .cta-buttons .cta-button {
     width: 100%;
     height: 7.2rem;
-    padding: 1.44rem 1.6rem;
+    padding: 1.44rem;
+    white-space: nowrap;
   }
 }
 
@@ -191,8 +425,8 @@ h4 {
   position: relative;
   transition: transform 0.3s ease;
   position: relative;
-  padding: 2.4rem;
-  margin-bottom: 3.2rem;
+  padding: clamp(1.6rem, 3vw, 2.4rem);
+  margin-bottom: clamp(2.4rem, 4vw, 3.2rem);
 }
 .card-component::before {
   content: "";
@@ -228,7 +462,7 @@ h4 {
   transform-style: preserve-3d;
   perspective: 800px;
   transition: all 0.1s ease;
-  padding: 2.4rem;
+  padding: clamp(1.6rem, 3vw, 2.4rem);
 }
 .room-card::before {
   content: "";
@@ -277,9 +511,9 @@ h4 {
 .room-card h3 {
   color: #FFFFFF;
   font-family: "Bebas Neue", sans-serif;
-  font-size: 2.4rem;
+  font-size: clamp(2rem, 2.4vw, 2.4rem);
   text-align: center;
-  margin: 0.8rem 0;
+  margin: clamp(0.8rem, 1.5vw, 1.2rem) 0;
   transform: translateZ(20px);
 }
 
@@ -294,9 +528,9 @@ h4 {
   position: relative;
   transition: transform 0.3s ease;
   position: relative;
-  padding: 4.8rem;
+  padding: clamp(3.2rem, 5vw, 4.8rem);
   min-height: 70vh;
-  max-width: 600px;
+  max-width: min(600px, 90vw);
 }
 .form-card::before, .location .container .location-info::before, .registration-section .container .registration-form::before,
 .registration-section .container .spotify-player::before {
@@ -329,7 +563,7 @@ h4 {
   letter-spacing: 0.1rem;
   text-transform: uppercase;
   text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
-  margin-bottom: 3.2rem;
+  margin-bottom: clamp(2.4rem, 4vw, 3.2rem);
   text-align: left;
 }
 
@@ -350,6 +584,229 @@ h4 {
     margin: 0 auto;
   }
 }
+footer {
+  background: #000000;
+  -webkit-backdrop-filter: none;
+          backdrop-filter: none;
+  color: #FFFFFF;
+  font-weight: 300;
+  padding: 3.2rem 5%;
+  width: 100%;
+  border: none;
+}
+footer .footer-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 3.2rem;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+footer .footer-content .footer-section {
+  flex: 1;
+  max-width: 380px;
+  min-width: 280px;
+  text-align: left;
+}
+footer .footer-content .footer-section h3 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 4.2rem;
+  color: #FFFFFF;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+  font-size: 2.5rem;
+  margin-bottom: 1.6rem;
+  position: relative;
+}
+footer .footer-content .footer-section h3::after {
+  content: "";
+  position: absolute;
+  bottom: -0.8rem;
+  left: 0;
+  width: 60px;
+  height: 2px;
+  background: #00aaff;
+}
+footer .footer-content .footer-section p, footer .footer-content .footer-section a, footer .footer-content .footer-section .schedule-item {
+  color: #FFFFFF;
+  opacity: 0.9;
+  font-weight: 300;
+}
+footer .footer-content .footer-section a {
+  color: #FFFFFF;
+  opacity: 0.9;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+footer .footer-content .footer-section a:hover {
+  color: #00aaff;
+  transform: translateY(-3px);
+}
+footer .footer-content .footer-section.about-us {
+  max-width: 380px;
+  min-width: 280px;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  text-align: left;
+}
+footer .footer-content .footer-section.about-us p {
+  line-height: 1.8;
+  margin-bottom: 1.6rem;
+  opacity: 0.9;
+  text-align: left;
+}
+footer .footer-content .footer-section.schedule {
+  flex: 0.6;
+  min-width: 220px;
+  max-width: 300px;
+  margin: 0 auto;
+}
+footer .footer-content .footer-section.schedule .schedule-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.8rem;
+}
+footer .footer-content .footer-section.schedule .schedule-item .day, footer .footer-content .footer-section.schedule .schedule-item .hours {
+  color: #FFFFFF;
+  opacity: 0.9;
+  font-weight: 300;
+}
+footer .footer-content .footer-section.contact {
+  max-width: 2px;
+  margin-left: auto;
+}
+footer .footer-content .footer-section.contact .contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.6rem;
+  max-width: 100%;
+}
+footer .footer-content .footer-section.contact .contact-item i {
+  color: #FFFFFF;
+  font-size: 2rem;
+  margin-right: 1.6rem;
+  width: 2.4rem;
+  text-align: center;
+  opacity: 0.9;
+}
+footer .footer-content .footer-section.contact .contact-item p, footer .footer-content .footer-section.contact .contact-item a {
+  color: #FFFFFF;
+  font-weight: 300;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  opacity: 0.9;
+  max-width: calc(100% - 4rem);
+}
+footer .footer-content .footer-section.contact .contact-item p:hover, footer .footer-content .footer-section.contact .contact-item a:hover {
+  color: #00aaff;
+}
+footer .social-links {
+  margin-top: 3.2rem;
+  padding-top: 2.4rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+footer .social-links a {
+  color: #FFFFFF;
+  opacity: 0.9;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 2.4rem;
+  margin: 0 1.6rem;
+  transition: all 0.3s ease;
+  opacity: 0.9;
+}
+footer .social-links a:hover {
+  color: #00aaff;
+  transform: translateY(-3px);
+}
+footer .social-links a:hover {
+  color: #00aaff;
+  transform: translateY(-3px);
+  text-shadow: 0 0 10px rgba(0, 170, 255, 0.5);
+  opacity: 1;
+}
+footer .footer-legal {
+  text-align: center;
+  padding: 1.6rem 0;
+}
+footer .footer-legal a {
+  color: #FFFFFF;
+  opacity: 0.9;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 1.4rem;
+  opacity: 0.7;
+}
+footer .footer-legal a:hover {
+  color: #00aaff;
+  transform: translateY(-3px);
+}
+footer .footer-legal a:hover {
+  opacity: 1;
+}
+@media (max-width: 999px) {
+  footer .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+  footer .footer-content .footer-section {
+    width: 90%;
+    max-width: 380px;
+    margin: 0 auto 3.2rem;
+    text-align: center;
+  }
+  footer .footer-content .footer-section:last-child {
+    margin-bottom: 0;
+  }
+  footer .footer-content .footer-section h3 {
+    text-align: center;
+  }
+  footer .footer-content .footer-section h3::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  footer .footer-content .footer-section.schedule {
+    margin: 0 auto 3.2rem;
+    width: 90%;
+    max-width: 380px;
+  }
+  footer .footer-content .footer-section.schedule .schedule-item {
+    flex-direction: column;
+    gap: 0.8rem;
+    text-align: center;
+  }
+  footer .footer-content .footer-section.contact {
+    margin: 0 auto 3.2rem;
+    width: 90%;
+    max-width: 380px;
+  }
+  footer .footer-content .footer-section.contact .contact-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  footer .footer-content .footer-section.contact .contact-item i {
+    margin: 0 0 0.8rem;
+  }
+  footer .footer-content .footer-section.contact .contact-item p, footer .footer-content .footer-section.contact .contact-item a {
+    text-align: center;
+  }
+  footer .footer-content .footer-section.about-us p {
+    text-align: center;
+  }
+  footer .social-links {
+    margin-top: 2.4rem;
+  }
+  footer .social-links a {
+    margin: 0.8rem;
+    font-size: 2.8rem;
+  }
+}
+
 .navbar {
   font-family: "Bebas Neue", sans-serif;
   display: flex;
@@ -728,229 +1185,6 @@ h4 {
     }
   }
 }
-footer {
-  background: #000000;
-  -webkit-backdrop-filter: none;
-          backdrop-filter: none;
-  color: #FFFFFF;
-  font-weight: 300;
-  padding: 3.2rem 5%;
-  width: 100%;
-  border: none;
-}
-footer .footer-content {
-  display: flex;
-  justify-content: space-between;
-  gap: 3.2rem;
-  margin: 0 auto;
-  max-width: 1200px;
-}
-footer .footer-content .footer-section {
-  flex: 1;
-  max-width: 380px;
-  min-width: 280px;
-  text-align: left;
-}
-footer .footer-content .footer-section h3 {
-  font-family: "Bebas Neue", sans-serif;
-  font-size: 4.2rem;
-  color: #FFFFFF;
-  letter-spacing: 0.1rem;
-  text-transform: uppercase;
-  text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
-  font-size: 2.5rem;
-  margin-bottom: 1.6rem;
-  position: relative;
-}
-footer .footer-content .footer-section h3::after {
-  content: "";
-  position: absolute;
-  bottom: -0.8rem;
-  left: 0;
-  width: 60px;
-  height: 2px;
-  background: #00aaff;
-}
-footer .footer-content .footer-section p, footer .footer-content .footer-section a, footer .footer-content .footer-section .schedule-item {
-  color: #FFFFFF;
-  opacity: 0.9;
-  font-weight: 300;
-}
-footer .footer-content .footer-section a {
-  color: #FFFFFF;
-  opacity: 0.9;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-footer .footer-content .footer-section a:hover {
-  color: #00aaff;
-  transform: translateY(-3px);
-}
-footer .footer-content .footer-section.about-us {
-  max-width: 380px;
-  min-width: 280px;
-  margin: 0;
-  padding: 0;
-  width: auto;
-  text-align: left;
-}
-footer .footer-content .footer-section.about-us p {
-  line-height: 1.8;
-  margin-bottom: 1.6rem;
-  opacity: 0.9;
-  text-align: left;
-}
-footer .footer-content .footer-section.schedule {
-  flex: 0.6;
-  min-width: 220px;
-  max-width: 300px;
-  margin: 0 auto;
-}
-footer .footer-content .footer-section.schedule .schedule-item {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 0.8rem;
-}
-footer .footer-content .footer-section.schedule .schedule-item .day, footer .footer-content .footer-section.schedule .schedule-item .hours {
-  color: #FFFFFF;
-  opacity: 0.9;
-  font-weight: 300;
-}
-footer .footer-content .footer-section.contact {
-  max-width: 2px;
-  margin-left: auto;
-}
-footer .footer-content .footer-section.contact .contact-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 1.6rem;
-  max-width: 100%;
-}
-footer .footer-content .footer-section.contact .contact-item i {
-  color: #FFFFFF;
-  font-size: 2rem;
-  margin-right: 1.6rem;
-  width: 2.4rem;
-  text-align: center;
-  opacity: 0.9;
-}
-footer .footer-content .footer-section.contact .contact-item p, footer .footer-content .footer-section.contact .contact-item a {
-  color: #FFFFFF;
-  font-weight: 300;
-  text-decoration: none;
-  transition: color 0.3s ease;
-  opacity: 0.9;
-  max-width: calc(100% - 4rem);
-}
-footer .footer-content .footer-section.contact .contact-item p:hover, footer .footer-content .footer-section.contact .contact-item a:hover {
-  color: #00aaff;
-}
-footer .social-links {
-  margin-top: 3.2rem;
-  padding-top: 2.4rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  text-align: center;
-}
-footer .social-links a {
-  color: #FFFFFF;
-  opacity: 0.9;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  font-size: 2.4rem;
-  margin: 0 1.6rem;
-  transition: all 0.3s ease;
-  opacity: 0.9;
-}
-footer .social-links a:hover {
-  color: #00aaff;
-  transform: translateY(-3px);
-}
-footer .social-links a:hover {
-  color: #00aaff;
-  transform: translateY(-3px);
-  text-shadow: 0 0 10px rgba(0, 170, 255, 0.5);
-  opacity: 1;
-}
-footer .footer-legal {
-  text-align: center;
-  padding: 1.6rem 0;
-}
-footer .footer-legal a {
-  color: #FFFFFF;
-  opacity: 0.9;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  font-size: 1.4rem;
-  opacity: 0.7;
-}
-footer .footer-legal a:hover {
-  color: #00aaff;
-  transform: translateY(-3px);
-}
-footer .footer-legal a:hover {
-  opacity: 1;
-}
-@media (max-width: 999px) {
-  footer .footer-content {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-  }
-  footer .footer-content .footer-section {
-    width: 90%;
-    max-width: 380px;
-    margin: 0 auto 3.2rem;
-    text-align: center;
-  }
-  footer .footer-content .footer-section:last-child {
-    margin-bottom: 0;
-  }
-  footer .footer-content .footer-section h3 {
-    text-align: center;
-  }
-  footer .footer-content .footer-section h3::after {
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  footer .footer-content .footer-section.schedule {
-    margin: 0 auto 3.2rem;
-    width: 90%;
-    max-width: 380px;
-  }
-  footer .footer-content .footer-section.schedule .schedule-item {
-    flex-direction: column;
-    gap: 0.8rem;
-    text-align: center;
-  }
-  footer .footer-content .footer-section.contact {
-    margin: 0 auto 3.2rem;
-    width: 90%;
-    max-width: 380px;
-  }
-  footer .footer-content .footer-section.contact .contact-item {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  footer .footer-content .footer-section.contact .contact-item i {
-    margin: 0 0 0.8rem;
-  }
-  footer .footer-content .footer-section.contact .contact-item p, footer .footer-content .footer-section.contact .contact-item a {
-    text-align: center;
-  }
-  footer .footer-content .footer-section.about-us p {
-    text-align: center;
-  }
-  footer .social-links {
-    margin-top: 2.4rem;
-  }
-  footer .social-links a {
-    margin: 0.8rem;
-    font-size: 2.8rem;
-  }
-}
-
 section div img {
   height: auto;
   width: 35%;
@@ -1289,9 +1523,43 @@ h2 {
 .registration-section .container .registration-form .form-group input::placeholder {
   color: rgba(255, 255, 255, 0.5);
 }
+.registration-section .container .registration-form .booking-intro {
+  margin-bottom: 3.2rem;
+}
+.registration-section .container .registration-form .booking-intro p {
+  color: #FFFFFF;
+  font-size: 1.8rem;
+  line-height: 1.6;
+  text-align: center;
+}
+.registration-section .container .registration-form select {
+  width: 100%;
+  padding: 1.2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.5rem;
+  color: #FFFFFF;
+  font-size: 1.6rem;
+  transition: all 0.3s ease;
+}
+.registration-section .container .registration-form select:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 15px rgba(0, 170, 255, 0.3);
+}
+.registration-section .container .registration-form select option {
+  background: #040a1d;
+  color: #FFFFFF;
+}
 .registration-section .container .registration-form .standard-button {
   display: block;
   margin: 0 auto;
+  width: 300px;
+  height: 7rem;
+  font-size: 2.8rem;
+  margin: 4.8rem auto 0;
+  display: block;
 }
 .registration-section .container .spotify-player {
   display: flex;
@@ -1599,5 +1867,936 @@ h2 {
   }
   .legal-section .legal-content .legal-items .legal-item h2 {
     font-size: 2.4rem;
+  }
+}
+
+.payment-section {
+  width: 90%;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 3.2rem 5%;
+  margin: 16rem auto;
+}
+.payment-section .payment-container {
+  background: rgba(255, 255, 255, 0.05);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 2rem;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.1), 0 10px 30px rgba(0, 0, 0, 0.2), inset 0 0 60px rgba(255, 255, 255, 0.05);
+  position: relative;
+  transition: transform 0.3s ease;
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 6.4rem;
+}
+.payment-section .payment-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 77, 151, 0.15), transparent 250px);
+  opacity: 0;
+  transition: opacity 1s ease-out;
+  pointer-events: none;
+}
+.payment-section .payment-container:hover::before {
+  opacity: 1;
+  transition: opacity 0.3s ease-in;
+}
+.payment-section .payment-container:hover {
+  transform: translateY(-5px);
+}
+.payment-section .payment-container h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 4.2rem;
+  color: #FFFFFF;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  margin-bottom: 4.8rem;
+}
+.payment-section .payment-container .booking-summary {
+  margin-bottom: 4.8rem;
+  padding: 3.2rem;
+  border-radius: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+}
+.payment-section .payment-container .booking-summary h3 {
+  color: #FFFFFF;
+  margin-bottom: 2.4rem;
+}
+.payment-section .payment-container .booking-summary p {
+  color: #FFFFFF;
+  font-size: 1.8rem;
+  margin-bottom: 1.6rem;
+}
+.payment-section .payment-container .booking-summary p strong {
+  color: #00aaff;
+}
+.payment-section .payment-container .payment-form {
+  text-align: center;
+}
+.payment-section .payment-container .payment-form h3 {
+  color: #FFFFFF;
+  margin-bottom: 2.4rem;
+}
+.payment-section .payment-container .payment-form p {
+  color: #FFFFFF;
+  font-size: 1.8rem;
+  margin-bottom: 3.2rem;
+}
+.payment-section .payment-container .payment-form .buttons {
+  display: flex;
+  justify-content: center;
+  gap: 2.4rem;
+}
+@media (max-width: 999px) {
+  .payment-section {
+    margin-top: 9.6rem;
+  }
+  .payment-section .payment-container {
+    padding: 3.2rem;
+  }
+}
+
+.tickets-title-section {
+  width: 90%;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 3.2rem 5%;
+  margin: 9.6rem auto;
+  max-width: min(1200px, 95vw);
+  text-align: center;
+}
+.tickets-title-section h1 {
+  margin-bottom: 3.2rem;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(4.2rem, 7vw, 7.2rem);
+  color: #FFFFFF;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+}
+.tickets-title-section p {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-size: clamp(1.6rem, 2vw, 2rem);
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+}
+
+.tickets-intro {
+  width: 90%;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 3.2rem 5%;
+  margin: 9.6rem auto;
+}
+.tickets-intro .intro-content {
+  max-width: min(1000px, 90vw);
+  margin: 0 auto;
+  padding: 6.4rem;
+  background: rgba(255, 255, 255, 0.05);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 2rem;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.1), 0 10px 30px rgba(0, 0, 0, 0.2), inset 0 0 60px rgba(255, 255, 255, 0.05);
+  position: relative;
+  transition: transform 0.3s ease;
+  position: relative;
+  position: relative;
+}
+.tickets-intro .intro-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 77, 151, 0.15), transparent 250px);
+  opacity: 0;
+  transition: opacity 1s ease-out;
+  pointer-events: none;
+}
+.tickets-intro .intro-content:hover::before {
+  opacity: 1;
+  transition: opacity 0.3s ease-in;
+}
+.tickets-intro .intro-content:hover {
+  transform: translateY(-5px);
+}
+.tickets-intro .intro-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 77, 151, 0.15), transparent 250px);
+  opacity: 0;
+  transition: opacity 1s ease-out;
+  pointer-events: none;
+}
+.tickets-intro .intro-content:hover::before {
+  opacity: 1;
+  transition: opacity 0.3s ease-in;
+}
+@media (max-width: 999px) {
+  .tickets-intro .intro-content {
+    max-width: min(500px, 95vw);
+    padding: 3.2rem;
+  }
+}
+.tickets-intro .intro-content p {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.8rem;
+  color: #FFFFFF;
+  line-height: 1.6;
+  margin-bottom: 3.2rem;
+}
+.tickets-intro .intro-content h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 4.2rem;
+  color: #FFFFFF;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+  text-align: left;
+  margin-bottom: 3.2rem;
+}
+.tickets-intro .intro-content .features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3.2rem;
+  margin-top: 4.8rem;
+}
+.tickets-intro .intro-content .features-grid .feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.6rem;
+}
+.tickets-intro .intro-content .features-grid .feature i {
+  font-size: 2.4rem;
+  width: 3rem;
+  text-align: center;
+}
+.tickets-intro .intro-content .features-grid .feature .feature-content h3 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2.4rem;
+  color: #FFFFFF;
+  margin-bottom: 0.8rem;
+}
+.tickets-intro .intro-content .features-grid .feature .feature-content p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+
+.venue-showcase {
+  width: 90%;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 3.2rem 5%;
+  margin: 12.8rem auto;
+}
+.venue-showcase h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 4.2rem;
+  color: #FFFFFF;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  margin-bottom: 6.4rem;
+}
+.venue-showcase .showcase-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6.4rem;
+}
+.venue-showcase .showcase-grid .showcase-item {
+  background: rgba(255, 255, 255, 0.05);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 2rem;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.1), 0 10px 30px rgba(0, 0, 0, 0.2), inset 0 0 60px rgba(255, 255, 255, 0.05);
+  position: relative;
+  transition: transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.venue-showcase .showcase-grid .showcase-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 77, 151, 0.15), transparent 250px);
+  opacity: 0;
+  transition: opacity 1s ease-out;
+  pointer-events: none;
+}
+.venue-showcase .showcase-grid .showcase-item:hover::before {
+  opacity: 1;
+  transition: opacity 0.3s ease-in;
+}
+.venue-showcase .showcase-grid .showcase-item:hover {
+  transform: translateY(-5px);
+}
+.venue-showcase .showcase-grid .showcase-item img {
+  width: 100%;
+  height: 400px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.venue-showcase .showcase-grid .showcase-item .showcase-content {
+  padding: 3.2rem;
+}
+.venue-showcase .showcase-grid .showcase-item .showcase-content h3 {
+  font-size: 3.2rem;
+  margin-bottom: 1.6rem;
+  color: #FFFFFF;
+}
+.venue-showcase .showcase-grid .showcase-item .showcase-content p {
+  font-size: 1.8rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+}
+
+.tickets-purchase {
+  width: 90%;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 3.2rem 5%;
+  margin: 12.8rem auto;
+}
+.tickets-purchase .purchase-container {
+  background: rgba(255, 255, 255, 0.05);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 2rem;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.1), 0 10px 30px rgba(0, 0, 0, 0.2), inset 0 0 60px rgba(255, 255, 255, 0.05);
+  position: relative;
+  transition: transform 0.3s ease;
+  position: relative;
+  max-width: min(800px, 90vw);
+  margin: 0 auto;
+  padding: 6.4rem;
+}
+.tickets-purchase .purchase-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 77, 151, 0.15), transparent 250px);
+  opacity: 0;
+  transition: opacity 1s ease-out;
+  pointer-events: none;
+}
+.tickets-purchase .purchase-container:hover::before {
+  opacity: 1;
+  transition: opacity 0.3s ease-in;
+}
+.tickets-purchase .purchase-container:hover {
+  transform: translateY(-5px);
+}
+.tickets-purchase .purchase-container h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 4.2rem;
+  color: #FFFFFF;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  margin-bottom: 4.8rem;
+}
+.tickets-purchase .purchase-container .ticket-form {
+  display: grid;
+  gap: 3.2rem;
+}
+.tickets-purchase .purchase-container .ticket-form .form-group label {
+  display: block;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2rem;
+  color: #FFFFFF;
+  margin-bottom: 1.6rem;
+}
+.tickets-purchase .purchase-container .ticket-form .form-group input,
+.tickets-purchase .purchase-container .ticket-form .form-group select {
+  width: 100%;
+  padding: 1.6rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.5rem;
+  color: #FFFFFF;
+  font-size: 1.6rem;
+}
+.tickets-purchase .purchase-container .ticket-form .form-group input:focus,
+.tickets-purchase .purchase-container .ticket-form .form-group select:focus {
+  outline: none;
+  border-color: #00aaff;
+  box-shadow: 0 0 15px rgba(0, 170, 255, 0.3);
+}
+
+.tickets-title-section {
+  width: 90%;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 3.2rem 5%;
+  margin: 9.6rem auto;
+  max-width: min(1200px, 95vw);
+  text-align: center;
+}
+.tickets-title-section h1 {
+  text-align: center;
+  margin-bottom: 3.2rem;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(4.2rem, 7vw, 7.2rem);
+  color: #FFFFFF;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+}
+.tickets-title-section p {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: "Roboto", sans-serif;
+  font-size: clamp(1.6rem, 2vw, 2rem);
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+}
+
+.club-features {
+  width: 90%;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 3.2rem 5%;
+  margin: 12.8rem auto;
+  display: flex;
+  gap: 6.4rem;
+  align-items: flex-start;
+}
+.club-features .feature-block {
+  flex: 1;
+  max-width: 500px;
+}
+.club-features .feature-block h3 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 4.2rem;
+  color: #FFFFFF;
+  margin-bottom: 2.4rem;
+  letter-spacing: 0.1rem;
+}
+.club-features .feature-block p {
+  font-size: 1.8rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.9);
+}
+.club-features .feature-images {
+  flex: 1;
+}
+.club-features .feature-images .image-grid {
+  -moz-columns: 2;
+       columns: 2;
+  -moz-column-gap: 1.6rem;
+       column-gap: 1.6rem;
+}
+.club-features .feature-images .image-grid img {
+  width: 100%;
+  margin-bottom: 1.6rem;
+  border-radius: 0.5rem;
+  transition: transform 0.3s ease;
+}
+.club-features .feature-images .image-grid img:hover {
+  transform: translateY(-5px);
+}
+@media (max-width: 999px) {
+  .club-features {
+    flex-direction: column;
+    gap: 4.8rem;
+    margin: 6.4rem auto;
+  }
+  .club-features .feature-block {
+    max-width: 100%;
+    text-align: center;
+  }
+  .club-features .feature-block h3 {
+    font-size: 3.6rem;
+  }
+  .club-features .feature-images .image-grid {
+    -moz-columns: 2;
+         columns: 2;
+    -moz-column-gap: 0.8rem;
+         column-gap: 0.8rem;
+  }
+  .club-features .feature-images .image-grid img {
+    margin-bottom: 0.8rem;
+  }
+}
+
+@media (max-width: 999px) {
+  .tickets-intro {
+    margin: 6.4rem auto;
+  }
+  .tickets-intro .intro-content {
+    padding: 3.2rem;
+  }
+  .tickets-intro .intro-content .features-grid {
+    grid-template-columns: 1fr;
+    gap: 3.2rem;
+  }
+  .venue-showcase {
+    margin: 6.4rem auto;
+  }
+  .venue-showcase .showcase-grid {
+    gap: 3.2rem;
+  }
+  .venue-showcase .showcase-grid .showcase-item img {
+    height: 300px;
+  }
+  .venue-showcase .showcase-grid .showcase-item .showcase-content {
+    padding: 2.4rem;
+  }
+  .tickets-purchase {
+    margin: 6.4rem auto;
+  }
+  .tickets-purchase .purchase-container {
+    padding: 3.2rem;
+  }
+}
+.vip-title-section {
+  width: 90%;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 3.2rem 5%;
+  margin: 9.6rem auto;
+  max-width: min(1200px, 95vw);
+  text-align: center;
+}
+.vip-title-section h1 {
+  margin-bottom: 3.2rem;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(4.2rem, 7vw, 7.2rem);
+  color: #FFFFFF;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+}
+.vip-title-section p {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-size: clamp(1.6rem, 2vw, 2rem);
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+}
+
+.vip-intro {
+  width: 90%;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 3.2rem 5%;
+  margin: 9.6rem auto;
+}
+.vip-intro .intro-content {
+  max-width: min(1000px, 90vw);
+  margin: 0 auto;
+  padding: 6.4rem;
+  background: rgba(255, 255, 255, 0.05);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 2rem;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.1), 0 10px 30px rgba(0, 0, 0, 0.2), inset 0 0 60px rgba(255, 255, 255, 0.05);
+  position: relative;
+  transition: transform 0.3s ease;
+  position: relative;
+  position: relative;
+}
+.vip-intro .intro-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 77, 151, 0.15), transparent 250px);
+  opacity: 0;
+  transition: opacity 1s ease-out;
+  pointer-events: none;
+}
+.vip-intro .intro-content:hover::before {
+  opacity: 1;
+  transition: opacity 0.3s ease-in;
+}
+.vip-intro .intro-content:hover {
+  transform: translateY(-5px);
+}
+.vip-intro .intro-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 77, 151, 0.15), transparent 250px);
+  opacity: 0;
+  transition: opacity 1s ease-out;
+  pointer-events: none;
+}
+.vip-intro .intro-content:hover::before {
+  opacity: 1;
+  transition: opacity 0.3s ease-in;
+}
+@media (max-width: 999px) {
+  .vip-intro .intro-content {
+    max-width: min(500px, 95vw);
+    padding: 3.2rem;
+  }
+}
+.vip-intro .intro-content p {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.8rem;
+  color: #FFFFFF;
+  line-height: 1.6;
+  margin-bottom: 3.2rem;
+}
+.vip-intro .intro-content h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 4.2rem;
+  color: #FFFFFF;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+  text-align: left;
+  margin-bottom: 3.2rem;
+}
+.vip-intro .intro-content .features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3.2rem;
+  margin-top: 4.8rem;
+}
+.vip-intro .intro-content .features-grid .feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.6rem;
+}
+.vip-intro .intro-content .features-grid .feature i {
+  font-size: 2.4rem;
+  width: 3rem;
+  text-align: center;
+}
+.vip-intro .intro-content .features-grid .feature .feature-content h3 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2.4rem;
+  color: #FFFFFF;
+  margin-bottom: 0.8rem;
+}
+.vip-intro .intro-content .features-grid .feature .feature-content p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+
+.vip-rooms {
+  width: 90%;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 3.2rem 5%;
+  margin: 12.8rem auto;
+}
+.vip-rooms h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 4.2rem;
+  color: #FFFFFF;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+  margin-bottom: 6.4rem;
+}
+.vip-rooms .room {
+  display: flex;
+  align-items: center;
+  gap: 6.4rem;
+  margin-bottom: 9.6rem;
+}
+.vip-rooms .room:nth-child(even) {
+  flex-direction: row-reverse;
+}
+.vip-rooms .room .room-content {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.05);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 2rem;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.1), 0 10px 30px rgba(0, 0, 0, 0.2), inset 0 0 60px rgba(255, 255, 255, 0.05);
+  position: relative;
+  transition: transform 0.3s ease;
+  position: relative;
+  padding: 4.8rem;
+  background: rgba(255, 255, 255, 0.05);
+}
+.vip-rooms .room .room-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 77, 151, 0.15), transparent 250px);
+  opacity: 0;
+  transition: opacity 1s ease-out;
+  pointer-events: none;
+}
+.vip-rooms .room .room-content:hover::before {
+  opacity: 1;
+  transition: opacity 0.3s ease-in;
+}
+.vip-rooms .room .room-content:hover {
+  transform: translateY(-5px);
+}
+.vip-rooms .room .room-content h3 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 3.6rem;
+  color: #FFFFFF;
+  margin-bottom: 2.4rem;
+}
+.vip-rooms .room .room-content .room-details {
+  display: grid;
+  gap: 1.6rem;
+  margin-bottom: 2.4rem;
+}
+.vip-rooms .room .room-content .room-details .detail {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+.vip-rooms .room .room-content .room-details .detail i {
+  color: #FFFFFF;
+  font-size: 2rem;
+}
+.vip-rooms .room .room-content .room-details .detail span {
+  color: #FFFFFF;
+  font-size: 1.6rem;
+}
+.vip-rooms .room .room-content .room-description {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.6rem;
+  line-height: 1.8;
+  margin-bottom: 3.2rem;
+}
+.vip-rooms .room .room-image {
+  flex: 1;
+  height: 50vh;
+  border-radius: 2rem;
+  overflow: hidden;
+  background: none;
+  position: relative;
+}
+.vip-rooms .room .room-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  filter: none;
+  mix-blend-mode: normal;
+  opacity: 1;
+  background: none;
+  position: relative;
+  z-index: 1;
+}
+.vip-rooms .room .room-image::before, .vip-rooms .room .room-image::after {
+  display: none;
+  content: none;
+}
+
+.vip-booking {
+  width: 90%;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 3.2rem 5%;
+  margin: 12.8rem auto;
+}
+.vip-booking .registration-form {
+  background: rgba(255, 255, 255, 0.05);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 2rem;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.1), 0 10px 30px rgba(0, 0, 0, 0.2), inset 0 0 60px rgba(255, 255, 255, 0.05);
+  position: relative;
+  transition: transform 0.3s ease;
+  position: relative;
+  width: 100%;
+  max-width: min(800px, 90vw);
+  padding: clamp(3.2rem, 5vw, 6.4rem);
+  margin: 0 auto;
+}
+.vip-booking .registration-form::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 77, 151, 0.15), transparent 250px);
+  opacity: 0;
+  transition: opacity 1s ease-out;
+  pointer-events: none;
+}
+.vip-booking .registration-form:hover::before {
+  opacity: 1;
+  transition: opacity 0.3s ease-in;
+}
+.vip-booking .registration-form:hover {
+  transform: translateY(-5px);
+}
+.vip-booking .registration-form h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 4.2rem;
+  color: #FFFFFF;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+  font-size: clamp(3.2rem, 5vw, 4.8rem);
+  margin-bottom: 3.2rem;
+  text-align: center;
+}
+.vip-booking .registration-form .booking-intro {
+  margin-bottom: 4.8rem;
+}
+.vip-booking .registration-form .booking-intro p {
+  color: #FFFFFF;
+  font-size: 1.8rem;
+  line-height: 1.6;
+  text-align: center;
+}
+.vip-booking .registration-form .form-group {
+  margin-bottom: 3.2rem;
+  width: 100%;
+}
+.vip-booking .registration-form .form-group label {
+  display: block;
+  color: #FFFFFF;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(1.8rem, 2vw, 2.2rem);
+  margin-bottom: 1.2rem;
+}
+.vip-booking .registration-form .form-group input, .vip-booking .registration-form .form-group select {
+  width: 100%;
+  padding: clamp(0.8rem, 1.5vw, 1.6rem);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.5rem;
+  color: #FFFFFF;
+  font-size: clamp(1.6rem, 1.8vw, 1.8rem);
+  transition: all 0.3s ease;
+}
+.vip-booking .registration-form .form-group input:focus, .vip-booking .registration-form .form-group select:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 15px rgba(0, 170, 255, 0.3);
+}
+.vip-booking .registration-form .form-group input::-moz-placeholder, .vip-booking .registration-form .form-group select::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+.vip-booking .registration-form .form-group input::placeholder, .vip-booking .registration-form .form-group select::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+.vip-booking .registration-form button.standard-button {
+  display: block;
+  margin: 4.8rem auto 0;
+  width: clamp(200px, 30vw, 300px);
+  height: clamp(5rem, 7vh, 7rem);
+  font-size: clamp(2rem, 2.5vw, 2.8rem);
+}
+@media (max-width: 999px) {
+  .vip-booking {
+    padding: 1.6rem;
+  }
+  .vip-booking .registration-form {
+    padding: 3.2rem;
+  }
+  .vip-booking .registration-form h2 {
+    font-size: 3.6rem;
+  }
+  .vip-booking .registration-form .form-group {
+    margin-bottom: 2.4rem;
+  }
+  .vip-booking .registration-form .form-group label {
+    font-size: 2rem;
+  }
+  .vip-booking .registration-form .form-group input, .vip-booking .registration-form .form-group select {
+    padding: 1.2rem;
+    font-size: 1.6rem;
+  }
+  .vip-booking .registration-form button.standard-button {
+    width: 100%;
+    margin-top: 3.2rem;
+  }
+}
+
+@media (max-width: 999px) {
+  .vip-title-section {
+    margin-top: 9.6rem;
+  }
+  .vip-title-section h1 {
+    font-size: 4.8rem;
+  }
+  .vip-title-section p {
+    font-size: 1.8rem;
+    padding: 0 1.6rem;
+  }
+  .vip-intro {
+    margin-top: 9.6rem;
+  }
+  .vip-intro .intro-content {
+    padding: 3.2rem;
+  }
+  .vip-intro .intro-content .features-grid {
+    grid-template-columns: 1fr;
+    gap: 2.4rem;
+  }
+  .vip-rooms .room {
+    flex-direction: column !important;
+    gap: 3.2rem;
+    margin-bottom: 6.4rem;
+  }
+  .vip-rooms .room .room-content {
+    order: 1;
+    padding: 3.2rem;
+  }
+  .vip-rooms .room .room-image {
+    order: 2;
+    height: 40vh;
+  }
+  .vip-booking .booking-container {
+    padding: 3.2rem;
+  }
+  .vip-booking .booking-container .booking-form {
+    grid-template-columns: 1fr;
   }
 }/*# sourceMappingURL=main.css.map */

@@ -55,18 +55,111 @@
     </button>
   </header>
 
-    <section class="hero-section">
-        <div class="hero-background">
-            <img src="../assets/img/tickets/tickets-hero.jpg" alt="Buy Tickets">
+<section class="tickets-title-section">
+    <h1>Entradas General</h1>
+    <p>Vive la experiencia Nighttime al completo. Disfruta de nuestra pista principal con el mejor sonido VOID Acoustics, shows de luces espectaculares y un ambiente único. Reserva tu entrada ahora y garantiza tu acceso a la mejor fiesta de Madrid.</p>
+</section>
+
+<section class="tickets-intro">
+  <div class="intro-content glow-effect">
+    <h2>La Mejor Fiesta de Madrid</h2>
+    <p>Vive la experiencia Nighttime en nuestras instalaciones de última generación. Música, luces y ambiente inigualable para hacer de tu noche algo extraordinario.</p>
+
+    <div class="features-grid">
+      <div class="feature">
+        <i class="fas fa-music"></i>
+        <div class="feature-content">
+          <h3>Sound System</h3>
+          <p>Sistema de sonido VOID Acoustics de última generación para una experiencia sonora inmersiva.</p>
         </div>
-        <div class="hero-content">
-            <h1>Compra tus Entradas</h1>
-            <p>Asegura tu noche de fiesta</p>
-            <div class="cta-buttons">
-                <a href="#tickets" class="cta-button primary">Comprar Ahora</a>
-            </div>
+      </div>
+      <div class="feature">
+        <i class="fas fa-lightbulb"></i>
+        <div class="feature-content">
+          <h3>Show de Luces</h3>
+          <p>Espectáculo visual con tecnología LED y láser sincronizado con la música.</p>
         </div>
-    </section>
+      </div>
+      <div class="feature">
+        <i class="fas fa-cocktail"></i>
+        <div class="feature-content">
+          <h3>Barras</h3>
+          <p>Amplia selección de bebidas y cócteles servidos por bartenders profesionales.</p>
+        </div>
+      </div>
+      <div class="feature">
+        <i class="fas fa-fan"></i>
+        <div class="feature-content">
+          <h3>Climatización</h3>
+          <p>Sistema de ventilación avanzado para mantener la temperatura ideal.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="venue-showcase">
+  <h2>Nuestras Instalaciones</h2>
+  <div class="showcase-grid">
+    <div class="showcase-item glow-effect">
+      <img src="https://placehold.co/800x600/111/333?text=Main+Floor" alt="Pista Principal">
+      <div class="showcase-content">
+        <h3>Pista Principal</h3>
+        <p>800m² de pista de baile con sistema de sonido VOID Acoustics y show de luces LED.</p>
+      </div>
+    </div>
+    
+    <div class="showcase-item glow-effect">
+      <img src="https://placehold.co/800x600/111/333?text=Main+Bar" alt="Barra Principal">
+      <div class="showcase-content">
+        <h3>Barra Principal</h3>
+        <p>20 metros de barra con bartenders expertos y amplia selección de bebidas premium.</p>
+      </div>
+    </div>
+
+    <div class="showcase-item glow-effect">
+      <img src="https://placehold.co/800x600/111/333?text=Terrace" alt="Terraza">
+      <div class="showcase-content">
+        <h3>Terraza Chill-Out</h3>
+        <p>Espacio al aire libre para relajarte con música ambiente y servicio de bar completo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="tickets" class="tickets-purchase">
+  <div class="purchase-container glow-effect">
+    <h2>Reserva Tu Entrada</h2>
+    <form class="ticket-form" action="payment.html" method="GET">
+
+      <div class="form-group">
+        <label for="ticket-type">Tipo de Entrada</label>
+        <select id="ticket-type" required>
+          <option value="">Selecciona tipo de entrada</option>
+          <option value="regular">Entrada General (€20)</option>
+          <option value="premium">Acceso Terraza (€30)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="quantity">Cantidad</label>
+        <input type="number" id="quantity" min="1" max="10" required>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Nombre</label>
+        <input type="text" id="name" required placeholder="Tu nombre completo">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" required placeholder="tu@email.com">
+      </div>
+
+      <button type="submit" class="standard-button">Comprar Entradas</button>
+    </form>
+  </div>
+</section>
 
     <footer>
       <div class="footer-content">

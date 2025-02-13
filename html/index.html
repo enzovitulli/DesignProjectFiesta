@@ -65,8 +65,8 @@
       <h1>La Mejor Experiencia Nocturna</h1>
       <p>Vive momentos inolvidables en el corazón de Madrid</p>
       <div class="cta-buttons">
-        <a href="reservas-vip.html" class="cta-button primary">Reserva VIP</a>
-        <a href="entradas.html" class="cta-button secondary">Comprar Entradas</a>
+        <a href="vip.html" class="cta-button primary">Reserva VIP</a>
+        <a href="tickets.html" class="cta-button secondary">Comprar Entradas</a>
       </div>
     </div>
   </section>
@@ -179,12 +179,18 @@
           <input type="tel" id="phone" placeholder="+34 600 000 000">
         </div>
         <div class="form-group">
-          <label for="date">Fecha de Reserva</label>
-          <input type="date" id="date">
-        </div>
-        <div class="form-group">
           <label for="guests">Número de Invitados</label>
           <input type="number" id="guests" placeholder="2" min="1" max="20">
+        </div>
+        <div class="form-group">
+          <label for="room">Selecciona una sala</label>
+          <select id="room" name="room" required>
+            <option value="">Selecciona una sala</option>
+            <option value="gold">Sala Gold (hasta 20 personas)</option>
+            <option value="sapphire">Sala Sapphire (hasta 30 personas)</option>
+            <option value="ruby">Sala Ruby (hasta 30 personas)</option>
+            <option value="diamond">Sala Diamond (hasta 40 personas)</option>
+          </select>
         </div>
         <button type="submit" class="standard-button">Reservar Ahora</button>
       </div>
@@ -246,8 +252,7 @@
           allowfullscreen
           loading="lazy" 
           referrerpolicy="no-referrer-when-downgrade"
-          aria-label="Mapa mostrando la ubicación de Nighttime Club en Calle Falsa 123, Madrid"
-          style="border:0;">
+          aria-label="Mapa mostrando la ubicación de Nighttime Club en Calle Falsa 123, Madrid">
         </iframe>
       </div>
     </div>

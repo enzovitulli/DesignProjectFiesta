@@ -1,9 +1,10 @@
 // Standard Button Style (with 3D effects but no animations)
 .standard-button {
   @include button-3d-base;
-  width: 180px;
-  height: 6rem;
-  padding: $spacing-unit * 1.5 $spacing-unit * 2;
+  width: clamp(200px, 30vw, 300px);
+  height: clamp(5rem, 7vh, 7rem);
+  padding: clamp($spacing-unit, 1.5vw, $spacing-unit * 2);
+  font-size: clamp(2rem, 2.5vw, 2.8rem);
   background: $deep-purple; // Changed back to deep-purple
   margin: 0 auto; // Add this to center the button
   box-shadow: 
@@ -40,14 +41,16 @@
   gap: $spacing-unit * 3;
   justify-content: center;
   width: 100%;
-  max-width: 480px;
+  max-width: min(480px, 90vw);
   margin: 0 auto;
 
   .cta-button {
     @include button-3d-base;
-    width: 220px;
-    height: 7.5rem;
-    padding: $spacing-unit * 1.8 $spacing-unit * 3;
+    width: 220px; // Fixed width instead of clamp
+    height: 7.5rem; // Fixed height
+    padding: $spacing-unit * 2;
+    font-size: 2.4rem; // Fixed font size
+    white-space: nowrap; // Keep text in one line
 
     &.primary {
       background-size: 300% 100%;
@@ -123,7 +126,8 @@
     .cta-button {
       width: 100%;
       height: 7.2rem;
-      padding: $spacing-unit * 1.8 $spacing-unit * 2;
+      padding: $spacing-unit * 1.8;
+      white-space: nowrap;
     }
   }
 }

@@ -1,0 +1,68 @@
+.payment-section {
+  @include section-container;
+  margin: ($spacing-unit * 20) auto;
+  
+  .payment-container {
+    @include card-base;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: $spacing-unit * 8;
+
+    h2 {
+      @include header-text;
+      text-align: center;
+      margin-bottom: $spacing-unit * 6;
+    }
+
+    .booking-summary {
+      margin-bottom: $spacing-unit * 6;
+      padding: $spacing-unit * 4;
+      border-radius: $border-radius;
+      background: rgba($pure-white, 0.05);
+
+      h3 {
+        color: $text-light;
+        margin-bottom: $spacing-unit * 3;
+      }
+
+      p {
+        color: $text-light;
+        font-size: 1.8rem;
+        margin-bottom: $spacing-unit * 2;
+
+        strong {
+          color: $accent-primary;
+        }
+      }
+    }
+
+    .payment-form {
+      text-align: center;
+
+      h3 {
+        color: $text-light;
+        margin-bottom: $spacing-unit * 3;
+      }
+
+      p {
+        color: $text-light;
+        font-size: 1.8rem;
+        margin-bottom: $spacing-unit * 4;
+      }
+
+      .buttons {
+        display: flex;
+        justify-content: center;
+        gap: $spacing-unit * 3;
+      }
+    }
+  }
+
+  @include mobile {
+    margin-top: $spacing-unit * 12;
+    
+    .payment-container {
+      padding: $spacing-unit * 4;
+    }
+  }
+}

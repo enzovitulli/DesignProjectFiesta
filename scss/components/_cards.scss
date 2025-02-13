@@ -1,19 +1,19 @@
 // Base card styles
 .card-component {
   @include card-base;
-  padding: $spacing-unit * 3;
-  margin-bottom: $spacing-unit * 4;
+  padding: clamp($spacing-unit * 2, 3vw, $spacing-unit * 3);
+  margin-bottom: clamp($spacing-unit * 3, 4vw, $spacing-unit * 4);
 }
 
 // Room cards specific styles
 .room-card {
   @include card-base;
   @include card-tilt;
-  padding: $spacing-unit * 3;
+  padding: clamp($spacing-unit * 2, 3vw, $spacing-unit * 3);
   
   .image-container {
     width: 100%;
-    padding-top: 133.33%;
+    padding-top: clamp(100%, 133.33%, 133.33%);
     position: relative;
     margin-bottom: $spacing-unit * 2;
     border-radius: $border-radius;
@@ -33,9 +33,9 @@
   h3 {
     color: $text-light;
     font-family: $header-font;
-    font-size: 2.4rem;
+    font-size: clamp(2rem, 2.4vw, 2.4rem);
     text-align: center;
-    margin: $spacing-unit 0;
+    margin: clamp($spacing-unit, 1.5vw, $spacing-unit * 1.5) 0;
     transform: translateZ(20px);
   }
 }
@@ -43,13 +43,13 @@
 // Form cards specific styles
 .form-card {
   @include card-base;
-  padding: $spacing-unit * 6;
-  min-height: 70vh;
-  max-width: 600px;
+  padding: clamp($spacing-unit * 4, 5vw, $spacing-unit * 6);
+  min-height: clamp(60vh, 70vh, 80vh);
+  max-width: min(600px, 90vw);
   
   h2 {
     @include header-text;
-    margin-bottom: $spacing-unit * 4;
+    margin-bottom: clamp($spacing-unit * 3, 4vw, $spacing-unit * 4);
     text-align: left;
   }
 }
