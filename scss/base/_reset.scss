@@ -12,13 +12,6 @@ html, body {
   overflow-x: hidden;
 }
 
-body {
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  background: $deep-navy; // Simplified background
-  position: relative;
-}
-
 img, picture, video, canvas, svg {
   display: block;
   max-width: 100%;
@@ -26,4 +19,17 @@ img, picture, video, canvas, svg {
 
 input, button, textarea, select {
   font: inherit;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  background: linear-gradient(
+    125deg, 
+    lighten($deep-navy, 5%) 0%,
+    lighten($deep-navy, 2%) 35%,
+    darken($deep-navy, 12%) 100%
+  );
+  background-attachment: fixed; // Keep gradient fixed while scrolling
+  position: relative;
 }
