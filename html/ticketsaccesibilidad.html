@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entradas - Nighttime</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <link rel='stylesheet' type='text/css' media='screen' href="../css/main.css">
+</head>
+<body>
+    <header class="navbar" role="navigation"> <!-- Añadí role="navigation" a la barra de navegación -->
+
+    <div class="logo-container">
+      <a href="index.html" class="logo"><img id="logo" src="../assets/img/logo.png" alt="Nighttime Logo"></a> <!-- Agregué alt="Nighttime Logo" en el logo -->
+
+      <a href="index.html"><h1 class="title">NIGHTTIME</h1></a>
+    </div>
+    <nav class="nav-links">
+
+       <!--  Añadí aria-label en los enlaces de navegación -->
+        <ul>
+            <li><a href="index.html" aria-label="Ir a Inicio">Inicio</a></li>
+            <li><a href="vip.html" aria-label="Ir a VIP">VIP</a></li>
+            <li><a href="tickets.html" aria-label="Ir a Entradas">Entradas</a></li>
+            <li><a href="gallery.html" aria-label="Ir a Galería">Galería</a></li>
+            <li><a href="contact.html" aria-label="Ir a Contacto">Contacto</a></li>
+          </ul>
+          
+      <!-- Mobile-only icons container -->
+      <div class="nav-icons-mobile">
+        <a href="help.html" class="icon-link" aria-label="Preguntas frecuentes">
+          <i class="fas fa-circle-question"></i>
+        </a>
+        <a href="mailto:contact@nighttime.com" class="icon-link" aria-label="Enviar email">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a href="#" class="icon-link" aria-label="Compartir">
+          <i class="fas fa-share-nodes"></i>
+        </a>
+      </div>
+    </nav>
+
+    <!-- Desktop-only icons -->
+    <div class="nav-icons-desktop">
+      <a href="help.html" class="icon-link" aria-label="Preguntas frecuentes">
+        <i class="fas fa-circle-question"></i>
+      </a>
+      <a href="mailto:contact@nighttime.com" class="icon-link" aria-label="Enviar email">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <a href="#" class="icon-link" aria-label="Compartir">
+        <i class="fas fa-share-nodes"></i>
+      </a>
+    </div>
+
+    <button class="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links"> <!-- Mejoré la accesibilidad del menú hamburguesa -->
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+
+  <!-- Añadí role="region" aria-labelledby="section-title" en secciones importantes -->
+  <section class="tickets-title-section" role="region" aria-labelledby="section-title">
+    <h1 id="section-title">Entradas General</h1>
+  
+    <p>Vive la experiencia Nighttime al completo. Disfruta de nuestra pista principal con el mejor sonido VOID Acoustics, shows de luces espectaculares y un ambiente único. Reserva tu entrada ahora y garantiza tu acceso a la mejor fiesta de Madrid.</p>
+</section>
+
+<section class="features-section">
+  <div class="features-block">
+    <div class="feature-text">
+      <h3>Sistema de Sonido VOID Acoustics</h3>
+      <p class="feature-description">Disfruta del mejor sistema de sonido VOID Acoustics de última generación, diseñado específicamente para ofrecerte una experiencia sonora inmersiva. Cada frecuencia está calibrada para envolverte en un mundo de sensaciones únicas.</p>
+    </div>
+    <div class="feature-images">
+      <div class="image-grid">
+        <img src="https://placehold.co/380x300/111/333?text=Sound+1" alt="Sistema de sonido">
+        <img src="https://placehold.co/380x450/111/333?text=Sound+2" alt="Altavoces VOID">
+        <img src="https://placehold.co/380x400/111/333?text=Sound+3" alt="Cabina DJ">
+        <img src="https://placehold.co/380x300/111/333?text=Sound+4" alt="Mezclador">
+      </div>
+    </div>
+  </div>
+
+  <div class="features-block" role="region" aria-label="Bloque de características">
+    <div class="feature-text">
+        <h3>Espectáculo de Luces LED</h3>
+        <p class="feature-description">Nuestro espectáculo visual con tecnología LED de última generación y sistemas láser se sincroniza perfectamente con cada beat, creando una atmósfera envolvente que transformará tu experiencia en algo mágico.</p>
+    </div>
+    <div class="feature-images">
+        <div class="image-grid">
+            <img src="https://placehold.co/380x300/111/333?text=Lights+1" alt="Show de luces con efectos de color">
+            <img src="https://placehold.co/380x300/111/333?text=Lights+2" alt="Láser show creando un ambiente dinámico">
+            <img src="https://placehold.co/380x450/111/333?text=Lights+3" alt="Pared LED mostrando gráficos animados">
+            <img src="https://placehold.co/380x300/111/333?text=Lights+4" alt="Ambiente festivo con iluminación envolvente">
+        </div>
+    </div>
+</div>
+
+
+<div class="features-block" role="region" aria-label="Bloque de características">
+  <div class="feature-text">
+      <h3>Bar Premium y Mixología</h3>
+      <p class="feature-description">Nuestros bartenders profesionales te sorprenderán con una amplia selección de bebidas premium y cócteles artesanales. Cada trago es una obra maestra preparada con los mejores ingredientes y técnicas de mixología.</p>
+  </div>
+  <div class="feature-images">
+      <div class="image-grid">
+          <img src="https://placehold.co/380x300/111/333?text=Bar+1" alt="Barra principal de nuestro bar premium con diversas botellas de licor">
+          <img src="https://placehold.co/380x450/111/333?text=Bar+2" alt="Variedad de cócteles artesanales servidos en la barra">
+          <img src="https://placehold.co/380x400/111/333?text=Bar+3" alt="Bartender preparando un cóctel con técnica de mixología">
+          <img src="https://placehold.co/380x300/111/333?text=Bar+4" alt="Selección de bebidas premium en la barra">
+      </div>
+  </div>
+</div>
+
+
+
+  <div class="features-block">
+    <div class="feature-text">
+      <h3>Climatización y Confort</h3>
+      <p class="feature-description">Mantén el ambiente perfecto toda la noche con nuestro avanzado sistema de climatización. La temperatura ideal y la ventilación constante te permitirán disfrutar al máximo de cada momento sin preocupaciones.</p>
+    </div>
+    <div class="feature-images">
+      <div class="image-grid">
+        <img src="https://placehold.co/380x300/111/333?text=Ambient+1" alt="Climatización">
+        <img src="https://placehold.co/380x300/111/333?text=Ambient+2" alt="Ventilación">
+        <img src="https://placehold.co/380x450/111/333?text=Ambient+3" alt="Ambiente">
+        <img src="https://placehold.co/380x300/111/333?text=Ambient+4" alt="Comfort">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="venue-showcase">
+  <h2>Nuestras Instalaciones</h2>
+  <div class="showcase-grid">
+    <div class="showcase-item glow-effect">
+      <img src="https://placehold.co/800x600/111/333?text=Main+Floor" alt="Pista Principal">
+      <div class="showcase-content">
+        <h3>Pista Principal</h3>
+        <p>800m² de pista de baile con sistema de sonido VOID Acoustics y show de luces LED.</p>
+      </div>
+    </div>
+    
+    <div class="showcase-item glow-effect">
+      <img src="https://placehold.co/800x600/111/333?text=Main+Bar" alt="Barra Principal">
+      <div class="showcase-content">
+        <h3>Barra Principal</h3>
+        <p>20 metros de barra con bartenders expertos y amplia selección de bebidas premium.</p>
+      </div>
+    </div>
+
+    <div class="showcase-item glow-effect">
+      <img src="https://placehold.co/800x600/111/333?text=Terrace" alt="Terraza">
+      <div class="showcase-content">
+        <h3>Terraza Chill-Out</h3>
+        <p>Espacio al aire libre para relajarte con música ambiente y servicio de bar completo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="tickets" class="tickets-purchase" aria-live="polite">
+  <div class="purchase-container glow-effect">
+    <h2>Reserva Tu Entrada</h2>
+    <form class="ticket-form" action="payment.html" method="GET">
+
+      <div class="form-group">
+        <label for="ticket-type">Tipo de Entrada</label>
+        <select id="ticket-type" required aria-required="true" aria-describedby="ticket-help">
+          <option value="">Selecciona tipo de entrada</option>
+          <option value="regular">Entrada General (€20)</option>
+          <option value="premium">Acceso Terraza (€30)</option>
+        </select>
+        <span id="ticket-help" class="sr-only">Selecciona el tipo de entrada que deseas comprar.</span>
+      </div>
+
+      <div class="form-group">
+        <label for="quantity">Cantidad</label>
+        <input type="number" id="quantity" min="1" max="10" required aria-required="true" aria-describedby="quantity-help">
+        <span id="quantity-help" class="sr-only">Selecciona la cantidad de entradas que deseas comprar. Mínimo 1, máximo 10.</span>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Nombre</label>
+        <input type="text" id="name" required placeholder="Tu nombre completo" aria-required="true" aria-describedby="name-help">
+        <span id="name-help" class="sr-only">Introduce tu nombre completo.</span>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" required placeholder="tu@email.com" aria-required="true" aria-describedby="email-help">
+        <span id="email-help" class="sr-only">Introduce tu dirección de correo electrónico.</span>
+      </div>
+
+      <button type="submit" class="standard-button">Comprar Entradas</button>
+    </form>
+  </div>
+</section>
+
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section about-us">
+        <h3>Sobre Nosotros</h3>
+        <p>Nighttime es tu destino nocturno premium, donde la música, el ambiente y la diversión se fusionan para crear
+          experiencias inolvidables. Desde 2010 liderando el entretenimiento nocturno en Madrid.</p>
+      </div>
+
+      <div class="footer-section schedule">
+        <h3>Horario</h3>
+        <div class="schedule-item">
+          <span class="day">Lunes - Miércoles:</span>
+          <span class="hours">23:00 - 04:00</span>
+        </div>
+        <div class="schedule-item">
+          <span class="day">Jueves:</span>
+          <span class="hours">23:00 - 05:00</span>
+        </div>
+        <div class="schedule-item">
+          <span class="day">Viernes - Sábado:</span>
+          <span class="hours">23:00 - 06:00</span>
+        </div>
+        <div class="schedule-item">
+          <span class="day">Domingo:</span>
+          <span class="hours">Cerrado</span>
+        </div>
+      </div>
+
+      <div class="footer-section contact">
+        <h3>Visítanos</h3>
+        <div class="contact-item">
+          <i class="fas fa-location-dot"></i>
+          <p>Calle Falsa 123, 28000 Madrid</p>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <a href="mailto:info@nighttime.com">info@nighttime.com</a>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-phone"></i>
+          <a href="tel:+34912345678">+34 91 234 56 78</a>
+        </div>
+        <div class="contact-item">
+          <i class="fab fa-whatsapp"></i>
+          <a href="https://wa.me/34666123456">+34 666 12 34 56</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-legal">
+        <a href="legal.html">Aviso Legal</a>
+    </div>
+
+    <div class="social-links">ç
+        <!-- Mejoré la accesibilidad en los íconos sociales y botones -->
+        <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        
+    </div>
+  </footer>
+    
+      <script>
+        // Hamburger menu
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+    
+        hamburger.addEventListener('click', () => {
+          hamburger.classList.toggle('active');
+          navLinks.classList.toggle('active');
+        });
+    
+        // Unified glow effect
+        const glowElements = document.querySelectorAll('.glow-effect');
+        
+        glowElements.forEach(element => {
+          element.addEventListener('mousemove', (e) => {
+            const rect = element.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            element.style.setProperty('--mouse-x', `${x}px`);
+            element.style.setProperty('--mouse-y', `${y}px`);
+          });
+        });
+    
+        // Tilt effect on room cards (keeping this separate as it's different functionality)
+        const cards = document.querySelectorAll('.room-card');
+        
+        cards.forEach(card => {
+          let ticking = false;
+    
+          card.addEventListener('mousemove', (e) => {
+            if (!ticking) {
+              requestAnimationFrame(() => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const rotateX = -((y - centerY) / 20);
+                const rotateY = ((x - centerX) / 20);
+                
+                card.classList.add('tilt');
+                card.style.setProperty('--rotateX', `${rotateX}deg`);
+                card.style.setProperty('--rotateY', `${rotateY}deg`);
+                
+                ticking = false;
+              });
+              
+              ticking = true;
+            }
+          });
+    
+          card.addEventListener('mouseleave', () => {
+            card.classList.remove('tilt');
+            card.style.setProperty('--rotateX', '0deg');
+            card.style.setProperty('--rotateY', '0deg');
+          });
+        });
+    
+        // Ensure slider track width is correct
+        const sliderTrack = document.querySelector('.slider-track');
+        const slides = document.querySelectorAll('.slide');
+        const slideWidth = 200; // Match this with your CSS
+        const slideCount = slides.length;
+        const gap = 16; // This should match your $spacing-unit * 2
+    
+        // Set the track width to accommodate all slides plus gaps
+        sliderTrack.style.width = `${(slideWidth + gap) * slideCount}px`;
+      </script>
+</body>
+</html>
