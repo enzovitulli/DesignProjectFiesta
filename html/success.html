@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Confirmación - Nighttime</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/main.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="logo-container">
+        <a href="index.html" class="logo"><img id="logo" src="../assets/img/logo.png" alt="" /></a>
+        <a href="index.html">
+          <h1 class="title">NIGHTTIME</h1>
+        </a>
+      </div>
+      <nav class="nav-links">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="vip.html">VIP</a></li>
+          <li><a href="tickets.html">Entradas</a></li>
+          <li><a href="gallery.html">Galería</a></li>
+          <li><a href="contact.html">Contacto</a></li>
+        </ul>
+        <!-- Mobile-only icons container -->
+        <div class="nav-icons-mobile">
+          <a href="help.html" class="icon-link" aria-label="Preguntas frecuentes">
+            <i class="fas fa-circle-question"></i>
+          </a>
+          <a href="mailto:contact@nighttime.com" class="icon-link" aria-label="Enviar email">
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a href="#" class="icon-link" aria-label="Compartir">
+            <i class="fas fa-share-nodes"></i>
+          </a>
+        </div>
+      </nav>
+
+      <!-- Desktop-only icons -->
+      <div class="nav-icons-desktop">
+        <a href="help.html" class="icon-link" aria-label="Preguntas frecuentes">
+          <i class="fas fa-circle-question"></i>
+        </a>
+        <a href="mailto:contact@nighttime.com" class="icon-link" aria-label="Enviar email">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a href="#" class="icon-link" aria-label="Compartir">
+          <i class="fas fa-share-nodes"></i>
+        </a>
+      </div>
+
+      <button class="hamburger" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </header>
+
+    <section class="success-section">
+      <div class="success-container glow-effect">
+        <div class="success-content">
+          <div class="success-icon">
+            <i class="fas fa-circle-check"></i>
+          </div>
+
+          <h1>¡Compra Confirmada!</h1>
+
+          <div class="confirmation-details">
+            <p class="main-message">
+              <span class="thank-you">Gracias por elegir Nighttime</span>
+              <span class="email-info">Te hemos enviado un email con los detalles de tu compra.</span>
+              <span class="event-date">¡Te esperamos el 12 de Abril de 2025<br>para vivir la noche más espectacular de Madrid!</span>
+            </p>
+
+            <div class="qr-container">
+              <img src="../assets/img/QR.webp" alt="Código QR de acceso" class="qr-code" />
+              <p class="qr-info">Presenta este código QR en la entrada el día del evento</p>
+              <a href="#" class="apple-wallet">
+                <img src="../assets/img/brands/applewallet.svg" alt="Add to Apple Wallet">
+              </a>
+            </div>
+
+            <div class="info-card">
+              <h2>Próximos Pasos</h2>
+              <ul>
+                <li>
+                  <i class="fas fa-envelope"></i>
+                  <span>Revisa tu email para ver el resumen de tu compra</span>
+                </li>
+                <li>
+                  <i class="fas fa-clock"></i>
+                  <span>Llega con 15 minutos de antelación</span>
+                </li>
+                <li>
+                  <i class="fas fa-id-card"></i>
+                  <span>No olvides traer tu identificación</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Only show for VIP reservations -->
+            <div class="vip-options">
+              <h2>Opciones VIP</h2>
+              <p>Personaliza tu experiencia VIP seleccionando tus preferencias con antelación</p>
+              <a href="vip-preferences.html" class="standard-button">Configurar Preferencias</a>
+            </div>
+
+            <div class="action-links">
+              <a href="index.html" class="text-link">
+                <i class="fas fa-house"></i>
+                <span>Volver al Inicio</span>
+              </a>
+              <a href="#" onclick="window.print(); return false;" class="text-link">
+                <i class="fas fa-download"></i>
+                <span>Descargar Entrada</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section about-us">
+          <h3>Sobre Nosotros</h3>
+          <p>
+            Nighttime es tu destino nocturno premium, donde la música, el ambiente y la diversión se fusionan para crear experiencias
+            inolvidables. Desde 2010 liderando el entretenimiento nocturno en Madrid.
+          </p>
+        </div>
+
+        <div class="footer-section schedule">
+          <h3>Horario</h3>
+          <div class="schedule-item">
+            <span class="day">Lunes - Miércoles:</span>
+            <span class="hours">23:00 - 04:00</span>
+          </div>
+          <div class="schedule-item">
+            <span class="day">Jueves:</span>
+            <span class="hours">23:00 - 05:00</span>
+          </div>
+          <div class="schedule-item">
+            <span class="day">Viernes - Sábado:</span>
+            <span class="hours">23:00 - 06:00</span>
+          </div>
+          <div class="schedule-item">
+            <span class="day">Domingo:</span>
+            <span class="hours">Cerrado</span>
+          </div>
+        </div>
+
+        <div class="footer-section contact">
+          <h3>Visítanos</h3>
+          <div class="contact-item">
+            <i class="fas fa-location-dot"></i>
+            <p>Calle Falsa 123, 28000 Madrid</p>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:info@nighttime.com">info@nighttime.com</a>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <a href="tel:+34912345678">+34 91 234 56 78</a>
+          </div>
+          <div class="contact-item">
+            <i class="fab fa-whatsapp"></i>
+            <a href="https://wa.me/34666123456">+34 666 12 34 56</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-legal">
+        <a href="legal.html">Aviso Legal</a>
+      </div>
+
+      <div class="social-links">
+        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+  </body>
+</html>

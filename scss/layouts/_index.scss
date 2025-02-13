@@ -135,11 +135,13 @@ h2 {
 
 // Rooms Section
 .rooms-section {  // Changed from about-us
-  padding: $spacing-unit * 2 0; // Reduced from 4 to 2
-  text-align: left; // Changed from center
-  margin: $spacing-unit * 12 0; // Increased from 2
-  width: 100%; // Changed from 90% to full width
-  max-width: none; // Remove max-width constraint
+  padding: $spacing-unit * 2 0; // Remove horizontal padding
+  margin: $spacing-unit * 12 auto; // Increased from 2
+  width: 100%; // Use full width
+  max-width: 1800px; // Added max-width constraint
+  display: flex;
+  flex-direction: column;
+  align-items: center; // Center all content
   
   .section-intro {
     max-width: 1000px; // Increased from 1400px to match rooms-grid
@@ -197,43 +199,81 @@ h2 {
   }
 
   .rooms-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: $spacing-unit * 3; // Reduced from 4 to 3 for tighter spacing
-    max-width: 1800px; // Increased from 1400px
-    width: 100%; // Increased from 98% for even less margin
+    display: grid;
+    gap: $spacing-unit * 3;
+    width: 90%; // Changed from 95% to be more consistent
     margin: 0 auto;
     padding: 0;
     
-    .room-card {
-      flex: 0 0 calc(25% - #{$spacing-unit * 2.25});
-      width: calc(25% - #{$spacing-unit * 2.25});
-    }
-  }
-
-  @include desktop {
-    .rooms-grid {
-      @media (min-width: 1200px) {
-        gap: $spacing-unit * 5; // Larger gap on very wide screens
-        .room-card {
-          flex: 0 0 calc(25% - #{$spacing-unit * 3.75}); // Adjust for larger gap
-          width: calc(25% - #{$spacing-unit * 3.75}); // Backup width calculation
+    // Large screens - Four cards
+    @media (min-width: 1400px) {
+      grid-template-columns: repeat(4, 1fr);
+      gap: $spacing-unit * 4;
+      
+      .room-card {
+        min-width: 320px; // Slightly bigger minimum
+        max-width: 500px; // Allow cards to grow more
+        
+        .image-container {
+          max-height: 650px; // Higher max-height for large screens
         }
       }
     }
-  }
 
-  @include mobile {
-    .rooms-grid {
-      gap: $spacing-unit * 3;
-      padding: 0 $spacing-unit;
+    // Medium screens - Two cards
+    @media (max-width: 1399px) and (min-width: 999px) { // Changed from 901px to 999px to match mobile mixin
+      grid-template-columns: repeat(2, 1fr);
+      width: min(90%, 1000px); // Control max-width while keeping proportions
+      gap: $spacing-unit * 4;
+      justify-content: center;
       
       .room-card {
-        flex: 0 0 100%; // Force full width on mobile
+        min-width: 300px;
+        max-width: 450px; // Reduced max-width
+        margin: 0; // Remove individual card margins
+        
+        .image-container {
+          max-height: 450px; // Reduced height for medium screens
+        }
+      }
+    }
+
+    // Small screens - Single column (now matches mobile mixin)
+    @media (max-width: 998px) { // Changed from 900px to 998px
+      grid-template-columns: 1fr;
+      width: 95%; // Reduced from 100% to add some margin
+      padding: 0;
+      
+      .room-card {
         width: 100%;
-        max-width: 400px;
+        max-width: 500px; // Maximum width on mobile
+        min-width: 280px;
         margin: 0 auto;
+        padding: $spacing-unit * 2;
+        height: auto; // Remove fixed height
+        
+        .image-container {
+          position: relative;
+          width: 100%;
+          padding-top: 133.33%; // Maintain 4:3 aspect ratio
+          height: auto; // Remove fixed height
+          margin-bottom: $spacing-unit * 2;
+          
+          img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+
+        h3 {
+          margin: $spacing-unit * 2 0;
+          font-size: 2.4rem;
+          text-align: center;
+        }
       }
     }
   }

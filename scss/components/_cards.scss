@@ -10,7 +10,30 @@
   @include card-base;
   @include card-tilt;
   padding: clamp($spacing-unit * 2, 3vw, $spacing-unit * 3);
+  text-decoration: none; // Add this for links
+  color: inherit; // Add this for links
+  cursor: pointer; // Add pointer cursor
+  display: block; // Ensure proper block display as a link
   
+  // Prevent link color change on visited
+  &:visited {
+    color: inherit;
+  }
+
+  // Remove all hover transforms to keep only tilt effect
+  &:hover {
+    transform: none;
+    
+    .image-container img {
+      transform: none; // Remove image zoom effect
+    }
+  }
+
+  // Add specific hover state for tilt
+  &.tilt {
+    transform: perspective(800px) rotateX(var(--rotateX)) rotateY(var(--rotateY));
+  }
+
   .image-container {
     width: 100%;
     padding-top: clamp(100%, 133.33%, 133.33%);
@@ -27,6 +50,7 @@
       height: 100%;
       object-fit: cover;
       border-radius: none;
+      transition: none; // Remove transition since we don't need it anymore
     }
   }
 

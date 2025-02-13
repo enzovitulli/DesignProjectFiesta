@@ -1,11 +1,12 @@
 // Standard Button Style (with 3D effects but no animations)
 .standard-button {
   @include button-3d-base;
-  display: block;
-  width: 300px; // Fixed width
-  height: 7rem; // Fixed height
-  margin: $spacing-unit * 6 auto 0;
-  background: $deep-purple;
+  width: clamp(200px, 30vw, 300px);
+  height: clamp(5rem, 7vh, 7rem);
+  padding: clamp($spacing-unit, 1.5vw, $spacing-unit * 2);
+  font-size: clamp(2rem, 2.5vw, 2.8rem);
+  background: $deep-purple; // Changed back to deep-purple
+  margin: 0 auto; // Add this to center the button
   box-shadow: 
     inset 0 12px 12px -12px rgba(255, 255, 255, 0.6),
     inset 12px 0 12px -12px rgba(255, 255, 255, 0.6),

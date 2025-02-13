@@ -1,0 +1,297 @@
+.success-section {
+    @include section-container;
+    min-height: calc(100vh - 80px);
+    margin: 100px auto 40px;
+    padding: $spacing-unit * 2 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $text-light;
+
+    .success-container {
+        @include card-base;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: $spacing-unit * 6;
+        text-align: center;
+    }
+
+    .success-icon {
+        font-size: 6.4rem;
+        color: $accent-primary;
+        margin-bottom: $spacing-unit * 4;
+        animation: scaleIn 0.5s ease-out;
+
+        i {
+            filter: drop-shadow(0 0 20px rgba($accent-primary, 0.4));
+        }
+    }
+
+    h1 {
+        font-size: 4.2rem;
+        margin-bottom: $spacing-unit * 4;
+        color: $text-light;
+    }
+
+    .main-message {
+        font-family: $body-font;
+        font-size: 2rem;
+        margin-bottom: $spacing-unit * 6;
+        color: rgba($text-light, 0.9);
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-unit * 2;
+
+        .thank-you {
+            font-size: 2.4rem;
+            color: $text-light;
+        }
+
+        .email-info {
+            font-size: 1.8rem;
+            color: rgba($text-light, 0.8);
+        }
+
+        .event-date {
+            margin-top: $spacing-unit * 3;
+            font-family: $header-font;
+            font-size: 2.8rem;
+            line-height: 1.4;
+            color: $accent-primary;
+            text-shadow: 0 0 15px rgba($accent-primary, 0.5);
+        }
+
+        .highlight-text {
+            display: block;
+            margin-top: $spacing-unit * 2;
+            font-family: $header-font;
+            font-size: 2.2rem;
+            color: $accent-primary;
+            text-shadow: 0 0 10px rgba($accent-primary, 0.4);
+        }
+    }
+
+    .qr-container {
+        background: rgba($pure-white, 0.05);
+        padding: $spacing-unit * 4;
+        border-radius: $border-radius;
+        display: inline-block;
+        margin-bottom: $spacing-unit * 6;
+
+        .qr-code {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto $spacing-unit * 2;
+            filter: brightness(0.95) contrast(1.1);
+        }
+
+        .qr-info {
+            font-size: 1.6rem;
+            color: rgba($text-light, 0.8);
+        }
+
+        .wallet-button {
+            margin-top: $spacing-unit * 3;
+            width: auto;
+            min-width: 240px;
+            height: 6rem;
+            padding: 0 $spacing-unit * 3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: $spacing-unit * 2;
+
+            i {
+                font-size: 2.4rem;
+            }
+
+            span {
+                font-size: 2rem;
+            }
+        }
+
+        .apple-wallet {
+            display: flex;
+            justify-content: center;
+            margin-top: $spacing-unit * 4;
+            background: none;
+            border: none;
+            outline: none;
+
+            img {
+                width: 50%; 
+                height: auto;
+                filter: none;
+                border: none; // Explicitly remove border
+                outline: none; // Remove any outline
+                background: none;
+                -webkit-border-radius: 0; // Remove any border radius for webkit
+                -moz-border-radius: 0;
+                border-radius: 0;
+            }
+        }
+    }
+
+    .info-card {
+        background: rgba($pure-black, 0.2);
+        padding: $spacing-unit * 4;
+        border-radius: $border-radius;
+        margin-bottom: $spacing-unit * 6;
+        font-family: $body-font;
+        text-align: left;
+
+        h2 {
+            font-size: 2.8rem;
+            margin-bottom: $spacing-unit * 3;
+            color: $text-light;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+
+            li {
+                display: flex;
+                align-items: center;
+                gap: $spacing-unit * 2;
+                margin-bottom: $spacing-unit * 2;
+                font-size: 2rem;
+                color: rgba($text-light, 0.9);
+
+                i {
+                    font-size: 2.3rem;
+                }
+            }
+        }
+    }
+
+    .vip-options {
+        margin-bottom: $spacing-unit * 6;
+        padding: $spacing-unit * 4;
+        border: 1px solid rgba($accent-primary, 0.3);
+        border-radius: $border-radius;
+        background: rgba($accent-primary, 0.05);
+
+        h2 {
+            font-size: 2.8rem;
+            margin-bottom: $spacing-unit * 2;
+            color: $text-light;
+        }
+
+        p {
+            font-size: 1.8rem;
+            margin-bottom: $spacing-unit * 3;
+            color: rgba($text-light, 0.9);
+        }
+    }
+
+    .action-buttons {
+        display: flex;
+        justify-content: center;
+        gap: $spacing-unit * 4;
+
+        .cta-button {
+            min-width: 220px;
+            
+            i {
+                margin-right: $spacing-unit;
+            }
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: $spacing-unit * 2;
+
+            i {
+                font-size: 2.4rem;
+            }
+
+            span {
+                font-size: 2.2rem;
+            }
+        }
+    }
+
+    .action-links {
+        display: flex;
+        justify-content: center;
+        gap: $spacing-unit * 6;
+        margin-top: $spacing-unit * 4;
+
+        .text-link {
+            font-family: $body-font;
+            font-size: 1.8rem;
+            color: $accent-primary;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: $spacing-unit * 2;
+            transition: all 0.3s ease;
+            text-shadow: 0 0 8px rgba($accent-primary, 0.2);
+
+            i {
+                font-size: 2rem;
+                color: $text-light;
+                filter: drop-shadow(0 0 5px rgba($accent-primary, 0.3));
+            }
+
+            &:hover {
+                color: $hot-pink;
+                text-shadow: 0 0 10px rgba($hot-pink, 0.4);
+
+                i {
+                    filter: drop-shadow(0 0 5px rgba($hot-pink, 0.3));
+                }
+            }
+        }
+    }
+
+    @include mobile {
+        margin-top: 60px;
+        padding: $spacing-unit;
+
+        .success-container {
+            padding: $spacing-unit * 3;
+            margin: 0 $spacing-unit;
+            width: 100%;
+        }
+
+        .qr-container {
+            padding: $spacing-unit * 2;
+            
+            .qr-code {
+                width: 160px;
+                height: 160px;
+            }
+        }
+
+        .action-buttons {
+            flex-direction: column;
+            gap: $spacing-unit * 2;
+
+            .cta-button {
+                width: 100%;
+            }
+        }
+
+        .action-links {
+            flex-direction: column;
+            align-items: center;
+            gap: $spacing-unit * 3;
+        }
+    }
+}
+
+@keyframes scaleIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

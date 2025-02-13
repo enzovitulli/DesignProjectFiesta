@@ -92,7 +92,7 @@
 @mixin card-tilt {
   transform-style: preserve-3d;
   perspective: 800px;
-  transition: all 0.1s ease; // Changed from 0.3s to 0.1s for faster response
+  transition: all 0.1s ease;
   
   &:hover {
     transform: translateY(-5px);

@@ -312,11 +312,12 @@ h4 {
   border: none;
   color: #FFFFFF;
   cursor: pointer;
-  display: block;
-  width: 300px;
-  height: 7rem;
-  margin: 4.8rem auto 0;
+  width: clamp(200px, 30vw, 300px);
+  height: clamp(5rem, 7vh, 7rem);
+  padding: clamp(0.8rem, 1.5vw, 1.6rem);
+  font-size: clamp(2rem, 2.5vw, 2.8rem);
   background: #9030FD;
+  margin: 0 auto;
   box-shadow: inset 0 12px 12px -12px rgba(255, 255, 255, 0.6), inset 12px 0 12px -12px rgba(255, 255, 255, 0.6), inset 2px 2px 4px rgba(255, 255, 255, 0.4), inset -4px -4px 8px rgba(0, 0, 0, 0.7), inset -8px -8px 16px rgba(0, 0, 0, 0.5), 2px 2px 4px rgba(0, 0, 0, 0.3), 6px 6px 12px rgba(0, 0, 0, 0.4), 8px 8px 16px rgba(0, 0, 0, 0.3), 12px 12px 24px rgba(0, 0, 0, 0.2);
   transition: transform 0.1s ease;
 }
@@ -464,6 +465,10 @@ h4 {
   perspective: 800px;
   transition: all 0.1s ease;
   padding: clamp(1.6rem, 3vw, 2.4rem);
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  display: block;
 }
 .room-card::before {
   content: "";
@@ -491,6 +496,18 @@ h4 {
 .room-card.tilt {
   transform: perspective(800px) rotateX(var(--rotateX)) rotateY(var(--rotateY));
 }
+.room-card:visited {
+  color: inherit;
+}
+.room-card:hover {
+  transform: none;
+}
+.room-card:hover .image-container img {
+  transform: none;
+}
+.room-card.tilt {
+  transform: perspective(800px) rotateX(var(--rotateX)) rotateY(var(--rotateY));
+}
 .room-card .image-container {
   width: 100%;
   padding-top: 133.33%;
@@ -508,6 +525,7 @@ h4 {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: none;
+  transition: none;
 }
 .room-card h3 {
   color: #FFFFFF;
@@ -1090,27 +1108,15 @@ footer .footer-legal a:hover {
   padding: 0;
 }
 .slider-container::before, .slider-container::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  width: 300px;
-  height: 100%;
-  z-index: 2;
-  pointer-events: none;
-}
-.slider-container::before {
-  left: 0;
-  background: linear-gradient(to right, #040a1d 0%, rgba(4, 10, 29, 0.9) 20%, rgba(4, 10, 29, 0.7) 40%, rgba(4, 10, 29, 0.2) 80%, transparent 100%);
-}
-.slider-container::after {
-  right: 0;
-  background: linear-gradient(to left, #040a1d 0%, rgba(4, 10, 29, 0.9) 20%, rgba(4, 10, 29, 0.7) 40%, rgba(4, 10, 29, 0.2) 80%, transparent 100%);
+  display: none;
 }
 
 .slider {
   position: relative;
   width: 100%;
   overflow: hidden;
+  -webkit-mask: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+  mask: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
 }
 
 .slider-track {
@@ -2051,10 +2057,12 @@ h2 {
 
 .rooms-section {
   padding: 1.6rem 0;
-  text-align: left;
-  margin: 9.6rem 0;
+  margin: 9.6rem auto;
   width: 100%;
-  max-width: none;
+  max-width: 1800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .rooms-section .section-intro {
   max-width: 1000px;
@@ -2122,38 +2130,75 @@ h2 {
   text-align: left;
 }
 .rooms-section .rooms-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
   gap: 2.4rem;
-  max-width: 1800px;
-  width: 100%;
+  width: 90%;
   margin: 0 auto;
   padding: 0;
 }
-.rooms-section .rooms-grid .room-card {
-  flex: 0 0 calc(25% - 1.8rem);
-  width: calc(25% - 1.8rem);
-}
-@media (min-width: 1000px) and (min-width: 1200px) {
+@media (min-width: 1400px) {
   .rooms-section .rooms-grid {
-    gap: 4rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3.2rem;
   }
   .rooms-section .rooms-grid .room-card {
-    flex: 0 0 calc(25% - 3rem);
-    width: calc(25% - 3rem);
+    min-width: 320px;
+    max-width: 500px;
+  }
+  .rooms-section .rooms-grid .room-card .image-container {
+    max-height: 650px;
   }
 }
-@media (max-width: 999px) {
+@media (max-width: 1399px) and (min-width: 999px) {
   .rooms-section .rooms-grid {
-    gap: 2.4rem;
-    padding: 0 0.8rem;
+    grid-template-columns: repeat(2, 1fr);
+    width: min(90%, 1000px);
+    gap: 3.2rem;
+    justify-content: center;
   }
   .rooms-section .rooms-grid .room-card {
-    flex: 0 0 100%;
+    min-width: 300px;
+    max-width: 450px;
+    margin: 0;
+  }
+  .rooms-section .rooms-grid .room-card .image-container {
+    max-height: 450px;
+  }
+}
+@media (max-width: 998px) {
+  .rooms-section .rooms-grid {
+    grid-template-columns: 1fr;
+    width: 95%;
+    padding: 0;
+  }
+  .rooms-section .rooms-grid .room-card {
     width: 100%;
-    max-width: 400px;
+    max-width: 500px;
+    min-width: 280px;
     margin: 0 auto;
+    padding: 1.6rem;
+    height: auto;
+  }
+  .rooms-section .rooms-grid .room-card .image-container {
+    position: relative;
+    width: 100%;
+    padding-top: 133.33%;
+    height: auto;
+    margin-bottom: 1.6rem;
+  }
+  .rooms-section .rooms-grid .room-card .image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .rooms-section .rooms-grid .room-card h3 {
+    margin: 1.6rem 0;
+    font-size: 2.4rem;
+    text-align: center;
   }
 }
 
@@ -2558,7 +2603,12 @@ h2 {
   max-width: 1800px;
   margin: 0 auto;
   padding: 3.2rem 5%;
-  margin: 16rem auto;
+  min-height: auto;
+  margin: 100px auto 40px;
+  padding: 1.6rem 0;
+  display: flex;
+  align-items: flex-start;
+  color: #FFFFFF;
 }
 .payment-section .payment-container {
   background: rgba(255, 255, 255, 0.05);
@@ -2572,7 +2622,7 @@ h2 {
   position: relative;
   max-width: 800px;
   margin: 0 auto;
-  padding: 6.4rem;
+  padding: 3.2rem;
 }
 .payment-section .payment-container::before {
   content: "";
@@ -2594,60 +2644,606 @@ h2 {
 .payment-section .payment-container:hover {
   transform: translateY(-5px);
 }
-.payment-section .payment-container h2 {
+.payment-section .payment-container h1, .payment-section .payment-container h2, .payment-section .payment-container h3 {
   font-family: "Bebas Neue", sans-serif;
-  font-size: 4.2rem;
   color: #FFFFFF;
-  letter-spacing: 0.1rem;
-  text-transform: uppercase;
-  text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
-  text-align: center;
-  margin-bottom: 4.8rem;
 }
-.payment-section .payment-container .booking-summary {
-  margin-bottom: 4.8rem;
-  padding: 3.2rem;
-  border-radius: 2rem;
-  background: rgba(255, 255, 255, 0.05);
-}
-.payment-section .payment-container .booking-summary h3 {
-  color: #FFFFFF;
-  margin-bottom: 2.4rem;
-}
-.payment-section .payment-container .booking-summary p {
-  color: #FFFFFF;
-  font-size: 1.8rem;
-  margin-bottom: 1.6rem;
-}
-.payment-section .payment-container .booking-summary p strong {
-  color: #00aaff;
-}
-.payment-section .payment-container .payment-form {
+.payment-section .payment-container h1 {
+  font-size: 3.6rem;
+  margin-bottom: 3.2rem;
   text-align: center;
 }
-.payment-section .payment-container .payment-form h3 {
-  color: #FFFFFF;
+.payment-section .payment-container h2 {
+  font-size: 2.8rem;
   margin-bottom: 2.4rem;
 }
-.payment-section .payment-container .payment-form p {
+.payment-section .payment-container h3 {
+  font-size: 2.4rem;
+  margin: 0;
+}
+.payment-section .form-group {
+  margin-bottom: 2.4rem;
+}
+.payment-section .form-group label {
+  display: block;
   color: #FFFFFF;
-  font-size: 1.8rem;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
+  letter-spacing: 0.05rem;
+}
+.payment-section .form-group input {
+  width: 100%;
+  padding: 1.2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.5rem;
+  color: #FFFFFF;
+  font-size: 1.6rem;
+  transition: all 0.3s ease;
+}
+.payment-section .form-group input:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 15px rgba(0, 170, 255, 0.3);
+}
+.payment-section .form-group input::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+.payment-section .form-group input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+.payment-section .form-row {
+  display: flex;
+  gap: 3.2rem;
+}
+.payment-section .form-row .form-group {
+  flex: 1;
+}
+.payment-section .payment-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
   margin-bottom: 3.2rem;
 }
-.payment-section .payment-container .payment-form .buttons {
+.payment-section .payment-accordion .accordion-item {
+  background: rgba(255, 255, 255, 0.05);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 2rem;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.1), 0 10px 30px rgba(0, 0, 0, 0.2), inset 0 0 60px rgba(255, 255, 255, 0.05);
+  position: relative;
+  transition: transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+}
+.payment-section .payment-accordion .accordion-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 77, 151, 0.15), transparent 250px);
+  opacity: 0;
+  transition: opacity 1s ease-out;
+  pointer-events: none;
+}
+.payment-section .payment-accordion .accordion-item:hover::before {
+  opacity: 1;
+  transition: opacity 0.3s ease-in;
+}
+.payment-section .payment-accordion .accordion-item:hover {
+  transform: translateY(-5px);
+}
+.payment-section .payment-accordion .accordion-item .accordion-header {
+  width: 100%;
+  padding: 2.4rem;
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #FFFFFF;
+  position: relative;
+  height: 100px;
+}
+.payment-section .payment-accordion .accordion-item .accordion-header .payment-icons {
+  font-size: 3.2rem;
+  width: 120px;
+  min-width: 100px;
+  display: flex;
+  gap: 0.8rem;
+  color: #FFFFFF;
+  margin-right: 6.4rem;
+  height: 60px;
+  align-items: center;
+  justify-content: center;
+}
+.payment-section .payment-accordion .accordion-item .accordion-header .payment-icons .bizum-logo {
+  width: auto;
+  height: 30px;
+  padding: 0;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-radius: 0;
+  transform: scale(0.9);
+}
+.payment-section .payment-accordion .accordion-item .accordion-header h3 {
+  flex: 0 1 auto;
+  text-align: left;
+  margin-left: auto;
+  padding-right: 50px;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+}
+.payment-section .payment-accordion .accordion-item .accordion-header .fa-chevron-down {
+  position: absolute;
+  right: 2.4rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+.payment-section .payment-accordion .accordion-item .accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  background: rgba(0, 0, 0, 0.3);
+}
+.payment-section .payment-accordion .accordion-item .accordion-content form {
+  padding: 3.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+.payment-section .payment-accordion .accordion-item .accordion-content form .form-group {
+  margin-bottom: 0;
+}
+.payment-section .payment-accordion .accordion-item .accordion-content form .standard-button {
+  margin-top: 3.2rem;
+  align-self: center;
+}
+@media (max-width: 999px) {
+  .payment-section .payment-accordion .accordion-item .accordion-content form {
+    padding: 1.6rem;
+    gap: 0.8rem;
+  }
+}
+.payment-section .payment-accordion .accordion-item.active .accordion-header .fa-chevron-down {
+  transform: translateY(-50%) rotate(180deg);
+}
+.payment-section .payment-accordion .accordion-item.active .accordion-content {
+  max-height: none;
+  height: auto;
+  transition: max-height 0.5s ease-in;
+}
+.payment-section .alternative-payments {
+  text-align: center;
+  margin-top: 3.2rem;
+  padding-top: 2.4rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.payment-section .alternative-payments .payment-buttons {
   display: flex;
   justify-content: center;
-  gap: 2.4rem;
+  gap: 3.2rem;
+  margin: 3.2rem auto 0;
+  width: 100%;
+  max-width: 800px;
+}
+.payment-section .alternative-payments .payment-buttons .payment-button {
+  background: rgba(255, 255, 255, 0.05);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 2rem;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.1), 0 10px 30px rgba(0, 0, 0, 0.2), inset 0 0 60px rgba(255, 255, 255, 0.05);
+  position: relative;
+  transition: transform 0.3s ease;
+  position: relative;
+  flex: 1;
+  min-width: 150px;
+  max-width: 250px;
+  padding: clamp(0.8rem, 3vw, 2.4rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.05);
+  text-decoration: none;
+  border: none;
+}
+.payment-section .alternative-payments .payment-buttons .payment-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 77, 151, 0.15), transparent 250px);
+  opacity: 0;
+  transition: opacity 1s ease-out;
+  pointer-events: none;
+}
+.payment-section .alternative-payments .payment-buttons .payment-button:hover::before {
+  opacity: 1;
+  transition: opacity 0.3s ease-in;
+}
+.payment-section .alternative-payments .payment-buttons .payment-button:hover {
+  transform: translateY(-5px);
+}
+.payment-section .alternative-payments .payment-buttons .payment-button:visited {
+  color: inherit;
+}
+.payment-section .alternative-payments .payment-buttons .payment-button i {
+  font-size: 3.6rem;
+  color: #FFFFFF;
+  min-width: 40px;
+  display: flex;
+  justify-content: center;
+}
+.payment-section .alternative-payments .payment-buttons .payment-button span {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2.4rem;
+  white-space: nowrap;
+  color: #FFFFFF;
+}
+.payment-section .alternative-payments .payment-buttons .payment-button:hover {
+  background: rgba(255, 255, 255, 0.1);
 }
 @media (max-width: 999px) {
   .payment-section {
-    margin-top: 9.6rem;
+    margin: 60px auto 20px;
+    padding: 0.8rem;
   }
   .payment-section .payment-container {
-    padding: 3.2rem;
+    padding: 1.6rem;
+    margin: 0;
+    width: 100%;
+    border-radius: 2rem;
+  }
+  .payment-section .accordion-header {
+    padding: 1.2rem;
+    gap: 0.8rem;
+    height: auto;
+    min-height: 80px;
+  }
+  .payment-section .accordion-header .payment-icons {
+    font-size: 2.4rem !important;
+    width: auto;
+    height: auto;
+    margin-right: 0.8rem;
+    min-width: 90px;
+  }
+  .payment-section .accordion-header h3 {
+    font-size: 1.8rem;
+    padding-right: 40px;
+    margin-right: 0;
+  }
+  .payment-section .accordion-header .fa-chevron-down {
+    right: 1.6rem;
+    width: 20px;
+  }
+  .payment-section .form-row {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  .payment-section .standard-button {
+    width: 100% !important;
+    margin-top: 1.6rem !important;
+  }
+  .payment-section .payment-buttons {
+    flex-direction: column;
+    gap: 1.6rem;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 300px;
+  }
+  .payment-section .payment-buttons .payment-button {
+    width: 100%;
+    max-width: 280px;
+    border-radius: 2rem;
+  }
+  .payment-section .payment-buttons .payment-button i {
+    font-size: 3.2rem;
+  }
+  .payment-section .payment-buttons .payment-button span {
+    font-size: 2rem;
   }
 }
 
+.success-section {
+  width: 90%;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 3.2rem 5%;
+  min-height: calc(100vh - 80px);
+  margin: 100px auto 40px;
+  padding: 1.6rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+}
+.success-section .success-container {
+  background: rgba(255, 255, 255, 0.05);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 2rem;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.1), 0 10px 30px rgba(0, 0, 0, 0.2), inset 0 0 60px rgba(255, 255, 255, 0.05);
+  position: relative;
+  transition: transform 0.3s ease;
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 4.8rem;
+  text-align: center;
+}
+.success-section .success-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 77, 151, 0.15), transparent 250px);
+  opacity: 0;
+  transition: opacity 1s ease-out;
+  pointer-events: none;
+}
+.success-section .success-container:hover::before {
+  opacity: 1;
+  transition: opacity 0.3s ease-in;
+}
+.success-section .success-container:hover {
+  transform: translateY(-5px);
+}
+.success-section .success-icon {
+  font-size: 6.4rem;
+  color: #00aaff;
+  margin-bottom: 3.2rem;
+  animation: scaleIn 0.5s ease-out;
+}
+.success-section .success-icon i {
+  filter: drop-shadow(0 0 20px rgba(0, 170, 255, 0.4));
+}
+.success-section h1 {
+  font-size: 4.2rem;
+  margin-bottom: 3.2rem;
+  color: #FFFFFF;
+}
+.success-section .main-message {
+  font-family: "Roboto", sans-serif;
+  font-size: 2rem;
+  margin-bottom: 4.8rem;
+  color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+.success-section .main-message .thank-you {
+  font-size: 2.4rem;
+  color: #FFFFFF;
+}
+.success-section .main-message .email-info {
+  font-size: 1.8rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+.success-section .main-message .event-date {
+  margin-top: 2.4rem;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2.8rem;
+  line-height: 1.4;
+  color: #00aaff;
+  text-shadow: 0 0 15px rgba(0, 170, 255, 0.5);
+}
+.success-section .main-message .highlight-text {
+  display: block;
+  margin-top: 1.6rem;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2.2rem;
+  color: #00aaff;
+  text-shadow: 0 0 10px rgba(0, 170, 255, 0.4);
+}
+.success-section .qr-container {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 3.2rem;
+  border-radius: 2rem;
+  display: inline-block;
+  margin-bottom: 4.8rem;
+}
+.success-section .qr-container .qr-code {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 1.6rem;
+  filter: brightness(0.95) contrast(1.1);
+}
+.success-section .qr-container .qr-info {
+  font-size: 1.6rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+.success-section .qr-container .wallet-button {
+  margin-top: 2.4rem;
+  width: auto;
+  min-width: 240px;
+  height: 6rem;
+  padding: 0 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+}
+.success-section .qr-container .wallet-button i {
+  font-size: 2.4rem;
+}
+.success-section .qr-container .wallet-button span {
+  font-size: 2rem;
+}
+.success-section .qr-container .apple-wallet {
+  display: flex;
+  justify-content: center;
+  margin-top: 3.2rem;
+  background: none;
+  border: none;
+  outline: none;
+}
+.success-section .qr-container .apple-wallet img {
+  width: 50%;
+  height: auto;
+  filter: none;
+  border: none;
+  outline: none;
+  background: none;
+  border-radius: 0;
+}
+.success-section .info-card {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 3.2rem;
+  border-radius: 2rem;
+  margin-bottom: 4.8rem;
+  font-family: "Roboto", sans-serif;
+  text-align: left;
+}
+.success-section .info-card h2 {
+  font-size: 2.8rem;
+  margin-bottom: 2.4rem;
+  color: #FFFFFF;
+}
+.success-section .info-card ul {
+  list-style: none;
+  padding: 0;
+}
+.success-section .info-card ul li {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  margin-bottom: 1.6rem;
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+.success-section .info-card ul li i {
+  font-size: 2.3rem;
+}
+.success-section .vip-options {
+  margin-bottom: 4.8rem;
+  padding: 3.2rem;
+  border: 1px solid rgba(0, 170, 255, 0.3);
+  border-radius: 2rem;
+  background: rgba(0, 170, 255, 0.05);
+}
+.success-section .vip-options h2 {
+  font-size: 2.8rem;
+  margin-bottom: 1.6rem;
+  color: #FFFFFF;
+}
+.success-section .vip-options p {
+  font-size: 1.8rem;
+  margin-bottom: 2.4rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+.success-section .action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 3.2rem;
+}
+.success-section .action-buttons .cta-button {
+  min-width: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+}
+.success-section .action-buttons .cta-button i {
+  margin-right: 0.8rem;
+}
+.success-section .action-buttons .cta-button i {
+  font-size: 2.4rem;
+}
+.success-section .action-buttons .cta-button span {
+  font-size: 2.2rem;
+}
+.success-section .action-links {
+  display: flex;
+  justify-content: center;
+  gap: 4.8rem;
+  margin-top: 3.2rem;
+}
+.success-section .action-links .text-link {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.8rem;
+  color: #00aaff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 8px rgba(0, 170, 255, 0.2);
+}
+.success-section .action-links .text-link i {
+  font-size: 2rem;
+  color: #FFFFFF;
+  filter: drop-shadow(0 0 5px rgba(0, 170, 255, 0.3));
+}
+.success-section .action-links .text-link:hover {
+  color: #ff4d97;
+  text-shadow: 0 0 10px rgba(255, 77, 151, 0.4);
+}
+.success-section .action-links .text-link:hover i {
+  filter: drop-shadow(0 0 5px rgba(255, 77, 151, 0.3));
+}
+@media (max-width: 999px) {
+  .success-section {
+    margin-top: 60px;
+    padding: 0.8rem;
+  }
+  .success-section .success-container {
+    padding: 2.4rem;
+    margin: 0 0.8rem;
+    width: 100%;
+  }
+  .success-section .qr-container {
+    padding: 1.6rem;
+  }
+  .success-section .qr-container .qr-code {
+    width: 160px;
+    height: 160px;
+  }
+  .success-section .action-buttons {
+    flex-direction: column;
+    gap: 1.6rem;
+  }
+  .success-section .action-buttons .cta-button {
+    width: 100%;
+  }
+  .success-section .action-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 2.4rem;
+  }
+}
+
+@keyframes scaleIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
 .tickets-title-section {
   width: 90%;
   max-width: 1800px;

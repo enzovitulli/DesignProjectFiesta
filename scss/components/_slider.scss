@@ -12,39 +12,10 @@
   margin: 0;        // Removed margin
   padding: 0;       // Removed padding
   
+  // Remove the fade effects completely
   &::before,
   &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    width: 300px;  // Increased fade width significantly
-    height: 100%;
-    z-index: 2;
-    pointer-events: none;
-  }
-
-  &::before {
-    left: 0;
-    background: linear-gradient(
-      to right,
-      $deep-navy 0%,
-      rgba($deep-navy, 0.9) 20%,
-      rgba($deep-navy, 0.7) 40%,
-      rgba($deep-navy, 0.2) 80%,
-      transparent 100%
-    );
-  }
-
-  &::after {
-    right: 0;
-    background: linear-gradient(
-      to left,
-      $deep-navy 0%,
-      rgba($deep-navy, 0.9) 20%,
-      rgba($deep-navy, 0.7) 40%,
-      rgba($deep-navy, 0.2) 80%,
-      transparent 100%
-    );
+    display: none; // This removes the fade effects
   }
 }
 
@@ -52,6 +23,20 @@
   position: relative;
   width: 100%;
   overflow: hidden;
+  -webkit-mask: linear-gradient(
+    90deg,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+  mask: linear-gradient(
+    90deg,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
 }
 
 .slider-track {

@@ -1,68 +1,316 @@
 .payment-section {
   @include section-container;
-  margin: ($spacing-unit * 20) auto;
-  
+  min-height: auto;
+  margin: 100px auto 40px;
+  padding: $spacing-unit * 2 0;
+  display: flex;
+  align-items: flex-start;
+  color: $text-light;
+
   .payment-container {
     @include card-base;
     max-width: 800px;
     margin: 0 auto;
-    padding: $spacing-unit * 8;
+    padding: $spacing-unit * 4;
 
-    h2 {
-      @include header-text;
-      text-align: center;
-      margin-bottom: $spacing-unit * 6;
+    // Typography styles
+    h1, h2, h3 {
+      font-family: $header-font;
+      color: $text-light;
     }
 
-    .booking-summary {
-      margin-bottom: $spacing-unit * 6;
-      padding: $spacing-unit * 4;
-      border-radius: $border-radius;
-      background: rgba($pure-white, 0.05);
+    h1 {
+      font-size: 3.6rem;
+      margin-bottom: $spacing-unit * 4;
+      text-align: center;
+    }
 
-      h3 {
-        color: $text-light;
-        margin-bottom: $spacing-unit * 3;
+    h2 {
+      font-size: 2.8rem;
+      margin-bottom: $spacing-unit * 3;
+    }
+
+    h3 {
+      font-size: 2.4rem;
+      margin: 0;
+    }
+  }
+
+  // Form common styles
+  .form-group {
+    margin-bottom: $spacing-unit * 3;
+
+    label {
+      display: block;
+      color: $text-light;
+      font-family: $header-font;
+      font-size: 2rem;
+      margin-bottom: $spacing-unit;
+      letter-spacing: 0.05rem;
+    }
+
+    input {
+      width: 100%;
+      padding: $spacing-unit * 1.5;
+      background: rgba($pure-white, 0.1);
+      border: 1px solid rgba($pure-white, 0.2);
+      border-radius: $border-radius-sm;
+      color: $text-light;
+      font-size: 1.6rem;
+      transition: all 0.3s ease;
+
+      &:focus {
+        outline: none;
+        background: rgba($pure-white, 0.15);
+        border-color: rgba($pure-white, 0.3);
+        box-shadow: 0 0 15px rgba($accent-primary, 0.3);
       }
 
-      p {
-        color: $text-light;
-        font-size: 1.8rem;
-        margin-bottom: $spacing-unit * 2;
+      &::placeholder {
+        color: rgba($text-light, 0.5);
+      }
+    }
+  }
 
-        strong {
-          color: $accent-primary;
+  .form-row {
+    display: flex;
+    gap: $spacing-unit * 4;
+    
+    .form-group {
+      flex: 1;
+    }
+  }
+
+  // Accordion styles
+  .payment-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-unit * 2;
+    margin-bottom: $spacing-unit * 4;
+
+    .accordion-item {
+      @include card-base;
+      overflow: hidden;
+      background: rgba($pure-white, 0.05);
+
+      .accordion-header {
+        width: 100%;
+        padding: $spacing-unit * 3;
+        display: flex;
+        align-items: center;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: $text-light;
+        position: relative; // Added for absolute positioning of arrow
+        height: 100px; // Fixed height for all headers
+
+        .payment-icons {
+          font-size: 3.2rem; // Reduced from 4.2rem
+          width: 120px; // Reduced from 180px
+          min-width: 100px; // Reduced from 120px
+          display: flex;
+          gap: $spacing-unit; // Reduced gap between icons
+          color: $text-light;
+          margin-right: $spacing-unit * 8; // Increased from *2 to *8
+          height: 60px; // Fixed height for icon container
+          align-items: center;
+          justify-content: center;
+
+          .bizum-logo {
+            width: auto; // Let width be automatic
+            height: 30px; // Slightly smaller fixed height
+            padding: 0; // Remove padding
+            object-fit: contain;
+            border-radius: 0; // Remove any border radius
+            transform: scale(0.9); // Slightly scale down to prevent any edge touching
+          }
+        }
+
+        h3 {
+          flex: 0 1 auto; // Don't grow, allow shrink, auto base size
+          text-align: left;
+          margin-left: auto; // Push text to the right
+          padding-right: 50px; // Fixed space for arrow, instead of margin
+          font-size: clamp(1.8rem, 3vw, 2.4rem); // Responsive font size
+        }
+
+        .fa-chevron-down {
+          position: absolute;
+          right: $spacing-unit * 3;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 24px; // Fixed width for icon
+          text-align: center; // Center the icon
+          transition: transform 0.3s ease;
+        }
+      }
+
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+        background: rgba($pure-black, 0.3);
+
+        form {
+          padding: $spacing-unit * 4;
+          display: flex;
+          flex-direction: column;
+          gap: $spacing-unit * 2; // Consistent gap between elements
+          
+          // Common form styles
+          .form-group {
+            margin-bottom: 0; // Remove margin, using gap instead
+          }
+
+          .standard-button {
+            margin-top: $spacing-unit * 4;
+            align-self: center;
+          }
+
+          @include mobile {
+            padding: $spacing-unit * 2;
+            gap: $spacing-unit;
+          }
+        }
+      }
+
+      &.active {
+        .accordion-header .fa-chevron-down {
+          transform: translateY(-50%) rotate(180deg);
+        }
+
+        .accordion-content {
+          max-height: none; // Remove fixed height
+          height: auto; // Allow content to determine height
+          transition: max-height 0.5s ease-in;
         }
       }
     }
+  }
 
-    .payment-form {
-      text-align: center;
+  // Alternative payment buttons
+  .alternative-payments {
+    text-align: center;
+    margin-top: $spacing-unit * 4;
+    padding-top: $spacing-unit * 3;
+    border-top: 1px solid rgba($text-light, 0.1);
 
-      h3 {
-        color: $text-light;
-        margin-bottom: $spacing-unit * 3;
-      }
+    .payment-buttons {
+      display: flex;
+      justify-content: center;
+      gap: $spacing-unit * 4;
+      margin: $spacing-unit * 4 auto 0;
+      width: 100%;
+      max-width: 800px;
 
-      p {
-        color: $text-light;
-        font-size: 1.8rem;
-        margin-bottom: $spacing-unit * 4;
-      }
-
-      .buttons {
+      .payment-button {
+        @include card-base;
+        flex: 1;
+        min-width: 150px; // Reduced minimum width
+        max-width: 250px; // Reduced maximum width
+        padding: clamp($spacing-unit, 3vw, $spacing-unit * 3);
         display: flex;
+        align-items: center;
         justify-content: center;
-        gap: $spacing-unit * 3;
+        gap: $spacing-unit * 2;
+        cursor: pointer;
+        background: rgba($pure-white, 0.05);
+        text-decoration: none; // Remove link styling
+        border: none; // Remove any potential border
+
+        &:visited {
+          color: inherit; // Ensure visited links maintain color
+        }
+
+        i {
+          font-size: 3.6rem; // Fixed size instead of clamp
+          color: $text-light;
+          min-width: 40px; // Prevent icon shrinking
+          display: flex;
+          justify-content: center;
+        }
+
+        span {
+          font-family: $header-font; // Added header font
+          font-size: 2.4rem; // Fixed size instead of clamp
+          white-space: nowrap;
+          color: $text-light;
+        }
+
+        &:hover {
+          background: rgba($pure-white, 0.1);
+        }
       }
     }
   }
 
   @include mobile {
-    margin-top: $spacing-unit * 12;
-    
+    margin: 60px auto 20px; // Reduced top margin
+    padding: $spacing-unit;
+
     .payment-container {
-      padding: $spacing-unit * 4;
+      padding: $spacing-unit * 2;
+      margin: 0;
+      width: 100%;
+      border-radius: $border-radius; // Changed from border-radius-sm to match parent
+    }
+
+    .accordion-header {
+      padding: $spacing-unit * 1.5;
+      gap: $spacing-unit;
+      height: auto; // Remove fixed height
+      min-height: 80px; // Set minimum height instead
+      
+      .payment-icons {
+        font-size: 2.4rem !important; // Increased from 2rem
+        width: auto; // Allow width to adjust
+        height: auto; // Remove fixed height
+        margin-right: $spacing-unit;
+        min-width: 90px; // Increased from 80px
+      }
+
+      h3 {
+        font-size: 1.8rem; // Smaller font on mobile
+        padding-right: 40px; // Slightly reduced but still maintaining space
+        margin-right: 0; // Remove margin since we're using padding
+      }
+
+      .fa-chevron-down {
+        right: $spacing-unit * 2;
+        width: 20px; // Slightly smaller fixed width for mobile
+      }
+    }
+
+    .form-row {
+      flex-direction: column; // Stack inputs on mobile
+      gap: $spacing-unit;
+    }
+
+    .standard-button {
+      width: 100% !important; // Override any other width settings
+      margin-top: $spacing-unit * 2 !important;
+    }
+
+    .payment-buttons {
+      flex-direction: column; // Stack buttons on very small screens
+      gap: $spacing-unit * 2;
+      align-items: center; // Center buttons horizontally
+      margin: 0 auto;
+      max-width: 300px; // Limit maximum width on mobile
+
+      .payment-button {
+        width: 100%;
+        max-width: 280px; // Slightly smaller max-width
+        border-radius: $border-radius; // Added to match parent container
+        i {
+          font-size: 3.2rem; // Slightly smaller but still substantial on mobile
+        }
+
+        span {
+          font-size: 2rem; // Adjusted for mobile
+        }
+      }
     }
   }
 }

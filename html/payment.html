@@ -1,35 +1,216 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pago - Nighttime</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
-    <link rel='stylesheet' type='text/css' media='screen' href="../css/main.css">
-</head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/main.css" />
+  </head>
 
-<body>
-    <!-- Copy the header from other pages -->
+  <body>
     <header class="navbar">
-        <!-- ...existing navbar code... -->
+      <div class="logo-container">
+        <a href="index.html" class="logo"><img id="logo" src="../assets/img/logo.png" alt="" /></a>
+        <a href="index.html">
+          <h1 class="title">NIGHTTIME</h1>
+        </a>
+      </div>
+      <nav class="nav-links">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="vip.html">VIP</a></li>
+          <li><a href="tickets.html">Entradas</a></li>
+          <li><a href="gallery.html">Galería</a></li>
+          <li><a href="contact.html">Contacto</a></li>
+        </ul>
+        <!-- Mobile-only icons container -->
+        <div class="nav-icons-mobile">
+          <a href="help.html" class="icon-link" aria-label="Preguntas frecuentes">
+            <i class="fas fa-circle-question"></i>
+          </a>
+          <a href="mailto:contact@nighttime.com" class="icon-link" aria-label="Enviar email">
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a href="#" class="icon-link" aria-label="Compartir">
+            <i class="fas fa-share-nodes"></i>
+          </a>
+        </div>
+      </nav>
+
+      <!-- Desktop-only icons -->
+      <div class="nav-icons-desktop">
+        <a href="help.html" class="icon-link" aria-label="Preguntas frecuentes">
+          <i class="fas fa-circle-question"></i>
+        </a>
+        <a href="mailto:contact@nighttime.com" class="icon-link" aria-label="Enviar email">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a href="#" class="icon-link" aria-label="Compartir">
+          <i class="fas fa-share-nodes"></i>
+        </a>
+      </div>
+
+      <button class="hamburger" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </header>
 
     <section class="payment-section">
-        <div class="payment-container glow-effect">
-            <h2>Finalizar Reserva</h2>
-            <div class="booking-summary"></div>
-            <div class="payment-form">
-                <h3>Detalles del Pago</h3>
-                <p>Página en construcción. El sistema de pago estará disponible próximamente.</p>
-                <div class="buttons"> <a href="javascript:history.back()" class="standard-button secondary">Volver</a>
-                </div>
-            </div>
+      <div class="payment-container glow-effect">
+        <h1>Finalizar Compra</h1>
+        
+        <div class="booking-summary glow-effect">
+          <h2>Resumen de tu pedido</h2>
+          <!-- This will be populated by JS -->
         </div>
+
+        <div class="payment-methods">
+          <h2>Método de pago</h2>
+          
+          <div class="payment-accordion">
+            <!-- Credit Card Option -->
+            <div class="accordion-item">
+              <button class="accordion-header">
+                <div class="payment-icons">
+                  <i class="fab fa-cc-visa"></i>
+                  <i class="fab fa-cc-mastercard"></i>
+                  <i class="fab fa-cc-amex"></i>
+                </div>
+                <h3>Tarjeta</h3>
+                <i class="fas fa-chevron-down"></i>
+              </button>
+              <div class="accordion-content">
+                <form class="card-payment-form" action="success.html">
+                  <div class="form-group">
+                    <label for="card-number">Número de tarjeta</label>
+                    <input type="text" id="card-number" placeholder="1234 5678 9012 3456" required>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="expiry">Caducidad</label>
+                      <input type="text" id="expiry" placeholder="MM/YY" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="cvv">CVV</label>
+                      <input type="text" id="cvv" placeholder="123" required>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="card-name">Titular de la tarjeta</label>
+                    <input type="text" id="card-name" placeholder="Nombre como aparece en la tarjeta" required>
+                  </div>
+                  <button type="submit" class="standard-button">Pagar ahora</button>
+                </form>
+              </div>
+            </div>
+
+            <!-- Bizum Option -->
+            <div class="accordion-item">
+              <button class="accordion-header">
+                <div class="payment-icons">
+                  <img src="../assets/img/brands/bizum-logo.png" alt="" class="bizum-logo">
+                </div>
+                <h3>Bizum</h3>
+                <i class="fas fa-chevron-down"></i>
+              </button>
+              <div class="accordion-content">
+                <form class="bizum-payment-form" action="success.html">
+                  <div class="form-group">
+                    <label for="phone">Número de teléfono</label>
+                    <input type="tel" id="phone" placeholder="+34 600 000 000" required>
+                  </div>
+                  <button type="submit" class="standard-button">Pagar con Bizum</button>
+                </form>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Alternative Payment Methods -->
+          <div class="alternative-payments">
+            <h3>Otros métodos de pago</h3>
+            <div class="payment-buttons">
+              <a href="success.html" class="payment-button">
+                <i class="fab fa-apple-pay"></i>
+                <span>Apple Pay</span>
+              </a>
+              <a href="success.html" class="payment-button">
+                <i class="fab fa-paypal"></i>
+                <span>PayPal</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section about-us">
+          <h3>Sobre Nosotros</h3>
+          <p>
+            Nighttime es tu destino nocturno premium, donde la música, el ambiente y la diversión se fusionan para crear experiencias
+            inolvidables. Desde 2010 liderando el entretenimiento nocturno en Madrid.
+          </p>
+        </div>
+
+        <div class="footer-section schedule">
+          <h3>Horario</h3>
+          <div class="schedule-item">
+            <span class="day">Lunes - Miércoles:</span>
+            <span class="hours">23:00 - 04:00</span>
+          </div>
+          <div class="schedule-item">
+            <span class="day">Jueves:</span>
+            <span class="hours">23:00 - 05:00</span>
+          </div>
+          <div class="schedule-item">
+            <span class="day">Viernes - Sábado:</span>
+            <span class="hours">23:00 - 06:00</span>
+          </div>
+          <div class="schedule-item">
+            <span class="day">Domingo:</span>
+            <span class="hours">Cerrado</span>
+          </div>
+        </div>
+
+        <div class="footer-section contact">
+          <h3>Visítanos</h3>
+          <div class="contact-item">
+            <i class="fas fa-location-dot"></i>
+            <p>Calle Falsa 123, 28000 Madrid</p>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:info@nighttime.com">info@nighttime.com</a>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <a href="tel:+34912345678">+34 91 234 56 78</a>
+          </div>
+          <div class="contact-item">
+            <i class="fab fa-whatsapp"></i>
+            <a href="https://wa.me/34666123456">+34 666 12 34 56</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-legal">
+        <a href="legal.html">Aviso Legal</a>
+      </div>
+
+      <div class="social-links">
+        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </footer>
 
     <script src="../js/main.js"></script>
-</body>
-
+    <script src="../js/payment-accordeon.js"></script>
+  </body>
 </html>
