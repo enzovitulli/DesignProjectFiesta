@@ -1185,6 +1185,67 @@ footer .footer-legal a:hover {
     }
   }
 }
+.gallery-full {
+  width: 95%;
+  max-width: 1920px;
+  margin: 6.4rem auto;
+  -moz-columns: 400px;
+       columns: 400px;
+  -moz-column-gap: 4rem;
+       column-gap: 4rem;
+  padding: 6.4rem 0;
+}
+.gallery-full .gallery-item {
+  -moz-column-break-inside: avoid;
+       break-inside: avoid;
+  margin-bottom: 3.2rem;
+  position: relative;
+  overflow: hidden;
+  position: relative;
+}
+.gallery-full .gallery-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 77, 151, 0.15), transparent 250px);
+  opacity: 0;
+  transition: opacity 1s ease-out;
+  pointer-events: none;
+}
+.gallery-full .gallery-item:hover::before {
+  opacity: 1;
+  transition: opacity 0.3s ease-in;
+}
+.gallery-full .gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0;
+  transition: transform 0.3s ease;
+}
+.gallery-full .gallery-item:hover img {
+  transform: scale(1.05);
+}
+@media (max-width: 999px) {
+  .gallery-full {
+    width: 90%;
+    -moz-columns: 1;
+         columns: 1;
+    gap: 1.6rem;
+    padding: 1.6rem;
+  }
+}
+@media (min-width: 1600px) {
+  .gallery-full {
+    -moz-columns: 500px;
+         columns: 500px;
+  }
+}
+
 section div img {
   height: auto;
   width: 35%;
@@ -1721,67 +1782,6 @@ h2 {
     margin: 6.4rem auto;
   }
 }
-.gallery-full {
-  width: 95%;
-  max-width: 1920px;
-  margin: 6.4rem auto;
-  -moz-columns: 400px;
-       columns: 400px;
-  -moz-column-gap: 4rem;
-       column-gap: 4rem;
-  padding: 6.4rem 0;
-}
-.gallery-full .gallery-item {
-  -moz-column-break-inside: avoid;
-       break-inside: avoid;
-  margin-bottom: 3.2rem;
-  position: relative;
-  overflow: hidden;
-  position: relative;
-}
-.gallery-full .gallery-item::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 77, 151, 0.15), transparent 250px);
-  opacity: 0;
-  transition: opacity 1s ease-out;
-  pointer-events: none;
-}
-.gallery-full .gallery-item:hover::before {
-  opacity: 1;
-  transition: opacity 0.3s ease-in;
-}
-.gallery-full .gallery-item img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 0;
-  transition: transform 0.3s ease;
-}
-.gallery-full .gallery-item:hover img {
-  transform: scale(1.05);
-}
-@media (max-width: 999px) {
-  .gallery-full {
-    width: 90%;
-    -moz-columns: 1;
-         columns: 1;
-    gap: 1.6rem;
-    padding: 1.6rem;
-  }
-}
-@media (min-width: 1600px) {
-  .gallery-full {
-    -moz-columns: 500px;
-         columns: 500px;
-  }
-}
-
 .legal-section {
   padding: calc(0.8rem * 15) 5% 6.4rem;
   min-height: 100vh;
@@ -1991,114 +1991,107 @@ h2 {
   line-height: 1.6;
 }
 
-.tickets-intro {
+.features-section {
   width: 90%;
   max-width: 1800px;
   margin: 0 auto;
   padding: 3.2rem 5%;
-  margin: 9.6rem auto;
+  margin: 12.8rem auto;
 }
-.tickets-intro .intro-content {
-  max-width: min(1000px, 90vw);
-  margin: 0 auto;
-  padding: 6.4rem;
-  background: rgba(255, 255, 255, 0.05);
-  -webkit-backdrop-filter: blur(20px);
-          backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 2rem;
-  box-shadow: 0 0 40px rgba(0, 0, 0, 0.1), 0 10px 30px rgba(0, 0, 0, 0.2), inset 0 0 60px rgba(255, 255, 255, 0.05);
-  position: relative;
-  transition: transform 0.3s ease;
-  position: relative;
-  position: relative;
+.features-section .features-block {
+  display: flex;
+  gap: 6.4rem;
+  margin-bottom: 12.8rem;
+  align-items: center;
+  justify-content: space-between;
 }
-.tickets-intro .intro-content::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 77, 151, 0.15), transparent 250px);
-  opacity: 0;
-  transition: opacity 1s ease-out;
-  pointer-events: none;
+.features-section .features-block .feature-text {
+  flex: 0 1 45%;
+  margin-right: auto;
+  padding: 3.2rem 0;
 }
-.tickets-intro .intro-content:hover::before {
-  opacity: 1;
-  transition: opacity 0.3s ease-in;
-}
-.tickets-intro .intro-content:hover {
-  transform: translateY(-5px);
-}
-.tickets-intro .intro-content::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 77, 151, 0.15), transparent 250px);
-  opacity: 0;
-  transition: opacity 1s ease-out;
-  pointer-events: none;
-}
-.tickets-intro .intro-content:hover::before {
-  opacity: 1;
-  transition: opacity 0.3s ease-in;
-}
-@media (max-width: 999px) {
-  .tickets-intro .intro-content {
-    max-width: min(500px, 95vw);
-    padding: 3.2rem;
-  }
-}
-.tickets-intro .intro-content p {
-  font-family: "Roboto", sans-serif;
-  font-size: 1.8rem;
-  color: #FFFFFF;
-  line-height: 1.6;
-  margin-bottom: 3.2rem;
-}
-.tickets-intro .intro-content h2 {
+.features-section .features-block .feature-text h3 {
   font-family: "Bebas Neue", sans-serif;
-  font-size: 4.2rem;
+  font-size: 3.6rem;
   color: #FFFFFF;
+  margin-bottom: 2.4rem;
   letter-spacing: 0.1rem;
   text-transform: uppercase;
-  text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
-  text-align: left;
-  margin-bottom: 3.2rem;
 }
-.tickets-intro .intro-content .features-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 3.2rem;
-  margin-top: 4.8rem;
+.features-section .features-block .feature-text .feature-description {
+  font-size: 2rem;
+  line-height: 1.8;
+  color: #FFFFFF;
 }
-.tickets-intro .intro-content .features-grid .feature {
+.features-section .features-block .feature-images {
+  flex: 0 1 45%;
+  margin-left: auto;
   display: flex;
-  align-items: flex-start;
-  gap: 1.6rem;
+  justify-content: flex-end;
+  align-self: flex-start;
 }
-.tickets-intro .intro-content .features-grid .feature i {
-  font-size: 2.4rem;
-  width: 3rem;
+.features-section .features-block .feature-images .image-grid {
+  width: 100%;
+  margin: 0 auto;
+  -moz-columns: 2;
+       columns: 2;
+  -moz-column-gap: 1.6rem;
+       column-gap: 1.6rem;
   text-align: center;
 }
-.tickets-intro .intro-content .features-grid .feature .feature-content h3 {
-  font-family: "Bebas Neue", sans-serif;
-  font-size: 2.4rem;
-  color: #FFFFFF;
-  margin-bottom: 0.8rem;
+.features-section .features-block .feature-images .image-grid img {
+  width: 100%;
+  display: inline-block;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-bottom: 1.6rem;
+  border-radius: 0.5rem;
+  transition: transform 0.3s ease;
 }
-.tickets-intro .intro-content .features-grid .feature .feature-content p {
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 1.6rem;
-  line-height: 1.6;
+.features-section .features-block .feature-images .image-grid img:hover {
+  transform: translateY(-5px);
+}
+@media (max-width: 999px) {
+  .features-section {
+    margin: 6.4rem auto;
+    text-align: center;
+  }
+  .features-section .features-block {
+    flex-direction: column;
+    gap: 3.2rem;
+    margin-bottom: 6.4rem;
+    justify-content: center;
+    align-items: center;
+  }
+  .features-section .features-block .feature-text {
+    max-width: 100%;
+    order: 1;
+  }
+  .features-section .features-block .feature-text h3 {
+    text-align: center;
+    font-size: 2.8rem;
+    margin-bottom: 1.6rem;
+  }
+  .features-section .features-block .feature-text .feature-description {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+  .features-section .features-block .feature-images {
+    margin: 0 auto;
+    max-width: 100%;
+  }
+  .features-section .features-block .feature-images .image-grid {
+    margin: 0 auto;
+    max-width: 500px;
+    -moz-columns: 2;
+         columns: 2;
+    -moz-column-gap: 0.8rem;
+         column-gap: 0.8rem;
+  }
+  .features-section .features-block .feature-images .image-grid img {
+    margin-bottom: 0.8rem;
+    max-height: 250px;
+  }
 }
 
 .venue-showcase {
@@ -2352,16 +2345,6 @@ h2 {
 }
 
 @media (max-width: 999px) {
-  .tickets-intro {
-    margin: 6.4rem auto;
-  }
-  .tickets-intro .intro-content {
-    padding: 3.2rem;
-  }
-  .tickets-intro .intro-content .features-grid {
-    grid-template-columns: 1fr;
-    gap: 3.2rem;
-  }
   .venue-showcase {
     margin: 6.4rem auto;
   }

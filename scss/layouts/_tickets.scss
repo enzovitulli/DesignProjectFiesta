@@ -23,65 +23,108 @@
   }
 }
 
-.tickets-intro {
+.features-section {
   @include section-container;
-  margin: $spacing-unit * 12 auto;
+  margin: $spacing-unit * 16 auto;
 
-  .intro-content {
-    max-width: min(1000px, 90vw); // Increased from 500px to match index.html's section-intro
-    margin: 0 auto;
-    padding: $spacing-unit * 8;
-    @include card-base;
-    @include glow-effect;
+  .features-block {
+    display: flex;
+    gap: $spacing-unit * 8;
+    margin-bottom: $spacing-unit * 16;
+    align-items: center; // Change from flex-start to center for vertical alignment
+    justify-content: space-between; // Add this to create space between text and images
 
-    @include mobile {
-      max-width: min(500px, 95vw); // Narrower on mobile
-      padding: $spacing-unit * 4;
+    .feature-text {
+      flex: 0 1 45%; // Change from flex: 1 to specific width
+      margin-right: auto; // Push text to the left
+      padding: $spacing-unit * 4 0; // Add some padding to ensure proper spacing
+
+      h3 {
+        font-family: $header-font;
+        font-size: 3.6rem;
+        color: $text-light;
+        margin-bottom: $spacing-unit * 3;
+        letter-spacing: 0.1rem;
+        text-transform: uppercase;
+      }
+
+      .feature-description {
+        font-size: 2rem;
+        line-height: 1.8;
+        color: $text-light;
+      }
     }
 
-    p {
-      font-family: $body-font; // Added explicit font-family
-      font-size: 1.8rem;
-      color: $text-light; // Fixed text color
-      line-height: 1.6;
-      margin-bottom: $spacing-unit * 4;
+    .feature-images {
+      flex: 0 1 45%; // Change from flex: 1 to specific width
+      margin-left: auto; // Push images to the right
+      display: flex;
+      justify-content: flex-end; // Align images to the end
+      align-self: flex-start; // Keep images at the top
+      
+      .image-grid {
+        width: 100%;
+        margin: 0 auto;
+        columns: 2;
+        column-gap: $spacing-unit * 2;
+        text-align: center;
+        
+        img {
+          width: 100%;
+          display: inline-block; // Make images inline-block
+          object-fit: cover;
+          margin-bottom: $spacing-unit * 2;
+          border-radius: $border-radius-sm;
+          transition: transform 0.3s ease;
+          
+          &:hover {
+            transform: translateY(-5px);
+          }
+        }
+      }
     }
+  }
 
-    h2 {
-      @include header-text;
-      text-align: left;
-      margin-bottom: $spacing-unit * 4;
-    }
+  @include mobile {
+    margin: $spacing-unit * 8 auto;
+    text-align: center; // Add this to center all content
 
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
+    .features-block {
+      flex-direction: column;
       gap: $spacing-unit * 4;
-      margin-top: $spacing-unit * 6;
+      margin-bottom: $spacing-unit * 8;
+      justify-content: center; // Change from space-between to center
+      align-items: center; // Add this to center blocks
 
-      .feature {
-        display: flex;
-        align-items: flex-start;
-        gap: $spacing-unit * 2;
+      .feature-text {
+        max-width: 100%;
+        order: 1;
 
-        i {
-          font-size: 2.4rem;
-          width: 3rem;
+        h3 {
           text-align: center;
+          font-size: 2.8rem;
+          margin-bottom: $spacing-unit * 2;
         }
 
-        .feature-content {
-          h3 {
-            font-family: $header-font;
-            font-size: 2.4rem;
-            color: $text-light;
-            margin-bottom: $spacing-unit;
-          }
+        .feature-description {
+          font-size: 1.8rem;
+          text-align: center;
+        }
+      }
 
-          p {
-            color: rgba($text-light, 0.9);
-            font-size: 1.6rem;
-            line-height: 1.6;
+      .feature-images {
+        margin: 0 auto; // Center the images container
+        max-width: 100%; // Full width on mobile
+        
+        .image-grid {
+          margin: 0 auto;
+          max-width: 500px; // Slightly smaller on mobile
+          columns: 2;
+          column-gap: $spacing-unit;
+          
+          img {
+            margin-bottom: $spacing-unit;
+            max-height: 250px; // Increased from 200px for mobile
           }
         }
       }
@@ -283,19 +326,6 @@
 }
 
 @include mobile {
-  .tickets-intro {
-    margin: $spacing-unit * 8 auto;
-
-    .intro-content {
-      padding: $spacing-unit * 4;
-
-      .features-grid {
-        grid-template-columns: 1fr;
-        gap: $spacing-unit * 4;
-      }
-    }
-  }
-
   .venue-showcase {
     margin: $spacing-unit * 8 auto;
 
