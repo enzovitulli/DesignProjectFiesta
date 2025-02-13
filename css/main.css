@@ -312,12 +312,11 @@ h4 {
   border: none;
   color: #FFFFFF;
   cursor: pointer;
-  width: clamp(200px, 30vw, 300px);
-  height: clamp(5rem, 7vh, 7rem);
-  padding: clamp(0.8rem, 1.5vw, 1.6rem);
-  font-size: clamp(2rem, 2.5vw, 2.8rem);
+  display: block;
+  width: 300px;
+  height: 7rem;
+  margin: 4.8rem auto 0;
   background: #9030FD;
-  margin: 0 auto;
   box-shadow: inset 0 12px 12px -12px rgba(255, 255, 255, 0.6), inset 12px 0 12px -12px rgba(255, 255, 255, 0.6), inset 2px 2px 4px rgba(255, 255, 255, 0.4), inset -4px -4px 8px rgba(0, 0, 0, 0.7), inset -8px -8px 16px rgba(0, 0, 0, 0.5), 2px 2px 4px rgba(0, 0, 0, 0.3), 6px 6px 12px rgba(0, 0, 0, 0.4), 8px 8px 16px rgba(0, 0, 0, 0.3), 12px 12px 24px rgba(0, 0, 0, 0.2);
   transition: transform 0.1s ease;
 }
@@ -1334,6 +1333,23 @@ footer .footer-legal a:hover {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 3.2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+@media (min-width: 1200px) {
+  .contact-section .transport-options .transport-grid > *:nth-child(odd) {
+    justify-self: flex-end;
+    padding-right: 3.2rem;
+  }
+  .contact-section .transport-options .transport-grid > *:nth-child(even) {
+    justify-self: flex-start;
+    padding-left: 3.2rem;
+  }
+}
+.contact-section .transport-options .transport-grid .transport-item {
+  width: 100%;
+  max-width: 450px;
 }
 .contact-section .transport-options .transport-grid .transport-item h3 {
   display: flex;
@@ -1442,6 +1458,109 @@ footer .footer-legal a:hover {
   }
   .contact-section .inquiry-form .form-grid .form-group.full-width {
     grid-column: 1;
+  }
+}
+
+.newsletter-section {
+  width: 90%;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 3.2rem 5%;
+  margin: 6.4rem auto;
+}
+.newsletter-section .newsletter-container {
+  background: rgba(255, 255, 255, 0.05);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 2rem;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.1), 0 10px 30px rgba(0, 0, 0, 0.2), inset 0 0 60px rgba(255, 255, 255, 0.05);
+  position: relative;
+  transition: transform 0.3s ease;
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 4.8rem;
+  text-align: center;
+}
+.newsletter-section .newsletter-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 77, 151, 0.15), transparent 250px);
+  opacity: 0;
+  transition: opacity 1s ease-out;
+  pointer-events: none;
+}
+.newsletter-section .newsletter-container:hover::before {
+  opacity: 1;
+  transition: opacity 0.3s ease-in;
+}
+.newsletter-section .newsletter-container:hover {
+  transform: translateY(-5px);
+}
+.newsletter-section .newsletter-container h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 4.2rem;
+  color: #FFFFFF;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+  margin-bottom: 2.4rem;
+}
+.newsletter-section .newsletter-container p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.8rem;
+  line-height: 1.6;
+  margin-bottom: 3.2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.newsletter-section .newsletter-container .newsletter-form .form-group {
+  display: flex;
+  gap: 1.6rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+.newsletter-section .newsletter-container .newsletter-form .form-group input {
+  flex: 1;
+  padding: 1.2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.5rem;
+  color: #FFFFFF;
+  font-size: 1.6rem;
+  transition: all 0.3s ease;
+}
+.newsletter-section .newsletter-container .newsletter-form .form-group input:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 15px rgba(0, 170, 255, 0.3);
+}
+.newsletter-section .newsletter-container .newsletter-form .form-group .standard-button {
+  width: auto;
+  padding: 0 2.4rem;
+  margin: 0;
+}
+@media (max-width: 999px) {
+  .newsletter-section {
+    margin: 6.4rem auto;
+  }
+  .newsletter-section .newsletter-container {
+    padding: 3.2rem;
+  }
+  .newsletter-section .newsletter-container .newsletter-form .form-group {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  .newsletter-section .newsletter-container .newsletter-form .form-group .standard-button {
+    width: 100%;
   }
 }
 
@@ -1669,6 +1788,11 @@ footer .footer-legal a:hover {
 .help-additional .help-card:hover {
   transform: translateY(-5px);
 }
+.help-additional .help-card:last-child {
+  height: -moz-fit-content;
+  height: fit-content;
+  min-height: auto;
+}
 .help-additional .help-card h2 {
   font-family: "Bebas Neue", sans-serif;
   font-size: 4.2rem;
@@ -1678,37 +1802,14 @@ footer .footer-legal a:hover {
   text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
   font-size: 3.6rem;
   margin-bottom: 3.2rem;
-  text-align: left;
 }
-.help-additional .help-card .form-group {
-  margin-bottom: 2.4rem;
-}
-.help-additional .help-card .form-group label {
-  display: block;
+.help-additional .help-card .form-intro {
   color: #FFFFFF;
-  font-family: "Bebas Neue", sans-serif;
-  font-size: 2rem;
-  margin-bottom: 0.8rem;
-}
-.help-additional .help-card .form-group input, .help-additional .help-card .form-group textarea {
-  width: 100%;
-  padding: 1.2rem;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 0.5rem;
-  color: #FFFFFF;
-  font-size: 1.6rem;
-  transition: all 0.3s ease;
-}
-.help-additional .help-card .form-group input:focus, .help-additional .help-card .form-group textarea:focus {
-  outline: none;
-  background: rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 0 15px rgba(0, 170, 255, 0.3);
-}
-.help-additional .help-card .form-group textarea {
-  min-height: 150px;
-  resize: vertical;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.8rem;
+  line-height: 1.6;
+  margin-bottom: 3.2rem;
+  opacity: 0.9;
 }
 .help-additional .help-card .contact-methods {
   margin-top: 3.2rem;
@@ -1792,14 +1893,13 @@ footer .footer-legal a:hover {
   font-size: 2.4rem;
   width: 3rem;
   text-align: center;
-  color: #00aaff;
 }
-.help-additional .help-card .quick-links .quick-link span {
+.help-additional .help-card .quick-links span {
   font-size: 1.8rem;
   font-family: "Bebas Neue", sans-serif;
   letter-spacing: 0.05rem;
 }
-.help-additional .help-card .quick-links .quick-link:hover {
+.help-additional .help-card .quick-links:hover {
   background: rgba(255, 255, 255, 0.1);
   transform: translateX(0.8rem);
 }
@@ -1834,25 +1934,6 @@ section div .content-box {
   padding: 6%;
   border-radius: 2rem;
   border: none;
-}
-section div .content-box button {
-  width: 100%;
-  height: 3em;
-  border: none;
-  background: #9030FD;
-  color: #FFFFFF;
-  transition: background-color 0.3s ease, text-shadow 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-}
-section div .content-box button:hover {
-  background-color: #00B4D8;
-}
-section div .content-box button:active {
-  background-color: #9030FD;
-  color: #FFFFFF;
-  box-shadow: 5px 5px 5px #040a1d inset;
-  transition: none;
 }
 
 h2 {
@@ -2192,12 +2273,9 @@ h2 {
 }
 .registration-section .container .registration-form .standard-button {
   display: block;
-  margin: 0 auto;
   width: 300px;
   height: 7rem;
-  font-size: 2.8rem;
   margin: 4.8rem auto 0;
-  display: block;
 }
 .registration-section .container .spotify-player {
   display: flex;

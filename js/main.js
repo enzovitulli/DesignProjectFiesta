@@ -70,29 +70,7 @@ const gap = 16; // This should match your $spacing-unit * 2
 
 // Set the track width to accommodate all slides plus gaps
 sliderTrack.style.width = `${(slideWidth + gap) * slideCount}px`;
-
-
-// Accordion functionality for bottle lists on vip.html
-document.querySelectorAll(".vip-bottle-list h3").forEach((header) => {
-  header.addEventListener("click", () => {
-    // Close all other sections
-    document.querySelectorAll(".vip-bottle-list .table-container.active").forEach((container) => {
-      if (container !== header.nextElementSibling) {
-        container.classList.remove("active");
-        container.previousElementSibling.classList.remove("active");
-      }
-    });
-
-    // Toggle current section
-    header.classList.toggle("active");
-    const container = header.nextElementSibling;
-    container.classList.toggle("active");
-  });
-});
-
-// Open first category by default
-document.querySelector(".vip-bottle-list h3").click();
-
+sliderTrack.style.width = `${(slideWidth + gap) * slideCount}px`;
 
 // Get URL parameters to show booking summary in the payment.html form
 //Not sure if using these
@@ -112,23 +90,3 @@ if (params.has("room")) {
       `;
   summaryDiv.innerHTML = summary;
 }
-
-// FAQ Accordion functionality
-document.querySelectorAll('.faq-item h3').forEach(header => {
-    header.addEventListener('click', () => {
-        const answer = header.nextElementSibling;
-        const isActive = header.classList.contains('active');
-
-        // Close all other answers
-        document.querySelectorAll('.faq-item h3.active').forEach(activeHeader => {
-            if (activeHeader !== header) {
-                activeHeader.classList.remove('active');
-                activeHeader.nextElementSibling.classList.remove('active');
-            }
-        });
-
-        // Toggle current answer
-        header.classList.toggle('active');
-        answer.classList.toggle('active');
-    });
-});
