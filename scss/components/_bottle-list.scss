@@ -1,0 +1,173 @@
+.bottle-section {
+  @include section-container;
+  margin: $spacing-unit * 16 auto;
+
+  .bottle-container {
+    @include card-base; // Use the base card styling first
+    @include glow-effect;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: $spacing-unit * 8;
+    text-align: center;
+    
+    // Override the background to be pure black with transparency
+    background: rgba(0, 0, 0, 0.7) !important; // Changed from 0.3 to 0.7 for darker background
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba($pure-white, 0.1);
+    border-radius: $border-radius;
+    box-shadow: 0 0 40px rgba($pure-black, 0.5);
+    
+    &:hover {
+      transform: none; // Override the card-base transform to prevent lifting
+    }
+
+    h2 {
+      @include header-text;
+      font-size: 5.6rem; // Increased from 4.2rem
+      margin-bottom: $spacing-unit * 8;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.15rem;
+    }
+  }
+
+  .vip-bottle-list {
+    margin-bottom: $spacing-unit * 2; // Reduced spacing between categories
+    
+    h3 {
+      color: $text-light; // Changed to white
+      font-size: 3.6rem; // Decreased from 4.2rem
+      margin: $spacing-unit * 6 0 $spacing-unit * 3;
+      text-align: center;
+      font-family: $header-font;
+      letter-spacing: 0.1rem;
+      cursor: pointer;
+      position: relative;
+      padding: $spacing-unit * 2;
+      transition: all 0.3s ease;
+      
+      &::after {
+        content: '\f107'; // FontAwesome chevron-down icon
+        font-family: 'Font Awesome 6 Free';
+        font-weight: 900;
+        position: absolute;
+        right: $spacing-unit * 4;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 2.8rem;
+        transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      &.active::after {
+        transform: translateY(-50%) rotate(180deg);
+      }
+
+      &:hover {
+        background: rgba($pure-white, 0.05);
+      }
+    }
+
+    .table-container {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: 
+        max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 0.3s ease,
+        transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      transform: translateY(-20px);
+      
+      &.active {
+        max-height: 2000px; // Large enough to fit any content
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      table {
+        margin-top: $spacing-unit * 2;
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+        border-collapse: collapse;
+        transform: translateY(-10px);
+        transition: transform 0.4s ease;
+        
+        .active & {
+          transform: translateY(0);
+        }
+
+        tr {
+          border-bottom: 1px solid rgba($pure-white, 0.1);
+          transition: background-color 0.3s ease;
+
+          &:hover {
+            background: rgba($pure-white, 0.08); // Slightly stronger hover effect
+          }
+
+          &:last-child {
+            border-bottom: none;
+          }
+        }
+
+        th, td {
+          padding: $spacing-unit * 2;
+          text-align: left;
+          color: $text-light;
+        }
+
+        th {
+          font-weight: normal;
+          font-size: 2rem; // Increased from 1.8rem
+          strong {
+            font-family: $header-font;
+            letter-spacing: 0.05rem;
+            font-size: 2.2rem; // Added explicit size for product names
+          }
+        }
+
+        td {
+          text-align: right;
+          font-family: $header-font;
+          font-size: 2.8rem; // Increased from 2.4rem
+          color: $text-light; // Changed to white
+          letter-spacing: 0.1rem;
+          min-width: 120px;
+        }
+      }
+    }
+  }
+
+  @include mobile {
+    .bottle-container {
+      padding: $spacing-unit * 4;
+
+      h2 {
+        font-size: 4.2rem; // Adjusted for mobile
+      }
+    }
+
+    .vip-bottle-list {
+      margin-bottom: $spacing-unit * 4;
+      overflow-x: auto;
+      
+      h3 {
+        font-size: 2.8rem; // Adjusted for mobile
+      }
+
+      table {
+        th {
+          font-size: 1.8rem; // Increased from 1.6rem
+          strong {
+            font-size: 2rem; // Added explicit mobile size
+          }
+        }
+        td {
+          font-size: 2.4rem; // Increased from 2rem
+        }
+        th, td {
+          padding: $spacing-unit;
+        }
+      }
+    }
+  }
+}

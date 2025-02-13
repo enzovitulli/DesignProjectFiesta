@@ -7,13 +7,17 @@
 @import 'base/typography';
 
 // 3. Components (standalone items)
+@import 'components/bottle-list';
 @import 'components/buttons';
 @import 'components/cards';  // Added new cards component
+@import 'components/footer';
 @import 'components/navbar';
 @import 'components/slider';
-@import 'components/footer';
 
 // 4. Layouts (page sections)
 @import 'layouts/index';
 @import 'layouts/gallery';
-@import 'layouts/legal';  // Add this line
+@import 'layouts/legal';
+@import 'layouts/payment';
+@import 'layouts/tickets';
+@import 'layouts/vip';

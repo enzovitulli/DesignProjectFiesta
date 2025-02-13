@@ -349,9 +349,47 @@ h2 {
         }
       }
 
+      .booking-intro {
+        margin-bottom: $spacing-unit * 4;
+        p {
+          color: $text-light;
+          font-size: 1.8rem;
+          line-height: 1.6;
+          text-align: center;
+        }
+      }
+
+      select {
+        width: 100%;
+        padding: $spacing-unit * 1.5;
+        background: rgba($pure-white, 0.1);
+        border: 1px solid rgba($pure-white, 0.2);
+        border-radius: $border-radius-sm;
+        color: $text-light;
+        font-size: 1.6rem;
+        transition: all 0.3s ease;
+
+        &:focus {
+          outline: none;
+          background: rgba($pure-white, 0.15);
+          border-color: rgba($pure-white, 0.3);
+          box-shadow: 0 0 15px rgba($accent-primary, 0.3);
+        }
+
+        option {
+          background: $deep-navy;
+          color: $text-light;
+        }
+      }
+
       .standard-button {
         display: block; // Add this to ensure centering works
         margin: 0 auto; // Add this to center the button
+        width: 300px; // Match VIP page button width
+        height: 7rem; // Match VIP page button height
+        font-size: 2.8rem; // Match VIP page button font size
+        margin: $spacing-unit * 6 auto 0; // Center the button and add top margin
+        display: block; // Ensure block display for margin auto to work
       }
     }
 

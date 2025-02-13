@@ -27,6 +27,7 @@
   justify-content: center;
   border: none;
   color: $text-light;
+  cursor: pointer; // Add this line
 }
 
 @mixin button-3d-shadow {
@@ -151,6 +152,7 @@
   transition: transform 0.3s ease;
   @include glow-effect;
 
+  // Remove any color definitions here
   &:hover {
     transform: translateY(-5px);
   }

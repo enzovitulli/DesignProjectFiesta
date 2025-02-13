@@ -1,0 +1,324 @@
+.tickets-title-section {
+  @include section-container;
+  margin: $spacing-unit * 12 auto;
+  max-width: min(1200px, 95vw); // Wider container
+  text-align: center;
+
+  h1 {
+    margin-bottom: $spacing-unit * 4;
+    font-family: $header-font;
+    font-size: clamp(4.2rem, 7vw, 7.2rem);
+    color: $text-light;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    text-shadow: 2px 4px 8px rgba($pure-black, 0.3);
+  }
+
+  p {
+    margin: 0;
+    font-family: $body-font;
+    font-size: clamp(1.6rem, 2vw, 2rem);
+    color: rgba($text-light, 0.9);
+    line-height: 1.6;
+  }
+}
+
+.tickets-intro {
+  @include section-container;
+  margin: $spacing-unit * 12 auto;
+
+  .intro-content {
+    max-width: min(1000px, 90vw); // Increased from 500px to match index.html's section-intro
+    margin: 0 auto;
+    padding: $spacing-unit * 8;
+    @include card-base;
+    @include glow-effect;
+
+    @include mobile {
+      max-width: min(500px, 95vw); // Narrower on mobile
+      padding: $spacing-unit * 4;
+    }
+
+    p {
+      font-family: $body-font; // Added explicit font-family
+      font-size: 1.8rem;
+      color: $text-light; // Fixed text color
+      line-height: 1.6;
+      margin-bottom: $spacing-unit * 4;
+    }
+
+    h2 {
+      @include header-text;
+      text-align: left;
+      margin-bottom: $spacing-unit * 4;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: $spacing-unit * 4;
+      margin-top: $spacing-unit * 6;
+
+      .feature {
+        display: flex;
+        align-items: flex-start;
+        gap: $spacing-unit * 2;
+
+        i {
+          font-size: 2.4rem;
+          width: 3rem;
+          text-align: center;
+        }
+
+        .feature-content {
+          h3 {
+            font-family: $header-font;
+            font-size: 2.4rem;
+            color: $text-light;
+            margin-bottom: $spacing-unit;
+          }
+
+          p {
+            color: rgba($text-light, 0.9);
+            font-size: 1.6rem;
+            line-height: 1.6;
+          }
+        }
+      }
+    }
+  }
+}
+
+.venue-showcase {
+  @include section-container;
+  margin: $spacing-unit * 16 auto;
+
+  h2 {
+    @include header-text;
+    text-align: center;
+    margin-bottom: $spacing-unit * 8;
+  }
+
+  .showcase-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-unit * 8;
+
+    .showcase-item {
+      @include card-base;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+      }
+
+      .showcase-content {
+        padding: $spacing-unit * 4;
+
+        h3 {
+          font-size: 3.2rem;
+          margin-bottom: $spacing-unit * 2;
+          color: $text-light;
+        }
+
+        p {
+          font-size: 1.8rem;
+          color: rgba($text-light, 0.9);
+          line-height: 1.6;
+        }
+      }
+    }
+  }
+}
+
+.tickets-purchase {
+  @include section-container;
+  margin: $spacing-unit * 16 auto;
+
+  .purchase-container {
+    @include card-base;
+    max-width: min(800px, 90vw);
+    margin: 0 auto;
+    padding: $spacing-unit * 8;
+
+    h2 {
+      @include header-text;
+      text-align: center;
+      margin-bottom: $spacing-unit * 6;
+    }
+
+    .ticket-form {
+      display: grid;
+      gap: $spacing-unit * 4;
+
+      .form-group {
+        label {
+          display: block;
+          font-family: $header-font;
+          font-size: 2rem;
+          color: $text-light;
+          margin-bottom: $spacing-unit * 2;
+        }
+
+        input,
+        select {
+          width: 100%;
+          padding: $spacing-unit * 2;
+          background: rgba($pure-white, 0.1);
+          border: 1px solid rgba($pure-white, 0.2);
+          border-radius: $border-radius-sm;
+          color: $text-light;
+          font-size: 1.6rem;
+
+          &:focus {
+            outline: none;
+            border-color: $accent-primary;
+            box-shadow: 0 0 15px rgba($accent-primary, 0.3);
+          }
+        }
+      }
+    }
+  }
+}
+
+.tickets-title-section {
+  @include section-container;
+  margin: $spacing-unit * 12 auto;
+  max-width: min(1200px, 95vw);
+  text-align: center; // Keep center alignment for the container
+
+  h1 {
+    text-align: center; // Explicitly center the heading
+    margin-bottom: $spacing-unit * 4;
+    font-family: $header-font;
+    font-size: clamp(4.2rem, 7vw, 7.2rem);
+    color: $text-light;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    text-shadow: 2px 4px 8px rgba($pure-black, 0.3);
+  }
+
+  p {
+    text-align: center; // Change from justify to center
+    max-width: 800px; // Add max-width for better readability
+    margin: 0 auto; // Center the paragraph
+    font-family: $body-font;
+    font-size: clamp(1.6rem, 2vw, 2rem);
+    color: rgba($text-light, 0.9);
+    line-height: 1.6;
+  }
+}
+
+.club-features {
+  @include section-container;
+  margin: $spacing-unit * 16 auto;
+  display: flex;
+  gap: $spacing-unit * 8;
+  align-items: flex-start;
+
+  .feature-block {
+    flex: 1;
+    max-width: 500px;
+
+    h3 {
+      font-family: $header-font;
+      font-size: 4.2rem;
+      color: $text-light;
+      margin-bottom: $spacing-unit * 3;
+      letter-spacing: 0.1rem;
+    }
+
+    p {
+      font-size: 1.8rem;
+      line-height: 1.8;
+      color: rgba($text-light, 0.9);
+    }
+  }
+
+  .feature-images {
+    flex: 1;
+
+    .image-grid {
+      columns: 2;
+      column-gap: $spacing-unit * 2;
+      
+      img {
+        width: 100%;
+        margin-bottom: $spacing-unit * 2;
+        border-radius: $border-radius-sm;
+        transition: transform 0.3s ease;
+        
+        &:hover {
+          transform: translateY(-5px);
+        }
+      }
+    }
+  }
+
+  @include mobile {
+    flex-direction: column;
+    gap: $spacing-unit * 6;
+    margin: $spacing-unit * 8 auto;
+
+    .feature-block {
+      max-width: 100%;
+      text-align: center;
+
+      h3 {
+        font-size: 3.6rem;
+      }
+    }
+
+    .feature-images .image-grid {
+      columns: 2;
+      column-gap: $spacing-unit;
+      
+      img {
+        margin-bottom: $spacing-unit;
+      }
+    }
+  }
+}
+
+@include mobile {
+  .tickets-intro {
+    margin: $spacing-unit * 8 auto;
+
+    .intro-content {
+      padding: $spacing-unit * 4;
+
+      .features-grid {
+        grid-template-columns: 1fr;
+        gap: $spacing-unit * 4;
+      }
+    }
+  }
+
+  .venue-showcase {
+    margin: $spacing-unit * 8 auto;
+
+    .showcase-grid {
+      gap: $spacing-unit * 4;
+
+      .showcase-item {
+        img {
+          height: 300px;
+        }
+
+        .showcase-content {
+          padding: $spacing-unit * 3;
+        }
+      }
+    }
+  }
+
+  .tickets-purchase {
+    margin: $spacing-unit * 8 auto;
+
+    .purchase-container {
+      padding: $spacing-unit * 4;
+    }
+  }
+}
