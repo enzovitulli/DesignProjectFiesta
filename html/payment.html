@@ -9,7 +9,10 @@
   </head>
 
   <body>
-    <header class="navbar">
+    <!-- Add skip to content link -->
+    <a href="#main-content" class="skip-to-content">Saltar al contenido principal</a>
+
+    <header class="navbar" role="banner">
       <div class="logo-container">
         <a href="index.html" class="logo"><img id="logo" src="../assets/img/logo.png" alt="" /></a>
         <a href="index.html">
@@ -58,96 +61,99 @@
       </button>
     </header>
 
-    <section class="payment-section">
-      <div class="payment-container glow-effect">
-        <h1>Finalizar Compra</h1>
-        
-        <div class="booking-summary glow-effect">
-          <h2>Resumen de tu pedido</h2>
-          <!-- This will be populated by JS -->
-        </div>
-
-        <div class="payment-methods">
-          <h2>Método de pago</h2>
+    <main id="main-content">
+      <section class="payment-section">
+        <div class="payment-container glow-effect">
+          <h1>Finalizar Compra</h1>
           
-          <div class="payment-accordion">
-            <!-- Credit Card Option -->
-            <div class="accordion-item">
-              <button class="accordion-header">
-                <div class="payment-icons">
-                  <i class="fab fa-cc-visa"></i>
-                  <i class="fab fa-cc-mastercard"></i>
-                  <i class="fab fa-cc-amex"></i>
-                </div>
-                <h3>Tarjeta</h3>
-                <i class="fas fa-chevron-down"></i>
-              </button>
-              <div class="accordion-content">
-                <form class="card-payment-form" action="success.html">
-                  <div class="form-group">
-                    <label for="card-number">Número de tarjeta</label>
-                    <input type="text" id="card-number" placeholder="1234 5678 9012 3456" required>
-                  </div>
-                  <div class="form-row">
-                    <div class="form-group">
-                      <label for="expiry">Caducidad</label>
-                      <input type="text" id="expiry" placeholder="MM/YY" required>
-                    </div>
-                    <div class="form-group">
-                      <label for="cvv">CVV</label>
-                      <input type="text" id="cvv" placeholder="123" required>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="card-name">Titular de la tarjeta</label>
-                    <input type="text" id="card-name" placeholder="Nombre como aparece en la tarjeta" required>
-                  </div>
-                  <button type="submit" class="standard-button">Pagar ahora</button>
-                </form>
-              </div>
-            </div>
-
-            <!-- Bizum Option -->
-            <div class="accordion-item">
-              <button class="accordion-header">
-                <div class="payment-icons">
-                  <img src="../assets/img/brands/bizum-logo.png" alt="" class="bizum-logo">
-                </div>
-                <h3>Bizum</h3>
-                <i class="fas fa-chevron-down"></i>
-              </button>
-              <div class="accordion-content">
-                <form class="bizum-payment-form" action="success.html">
-                  <div class="form-group">
-                    <label for="phone">Número de teléfono</label>
-                    <input type="tel" id="phone" placeholder="+34 600 000 000" required>
-                  </div>
-                  <button type="submit" class="standard-button">Pagar con Bizum</button>
-                </form>
-              </div>
-            </div>
-
+          <!-- Add ARIA live region -->
+          <div class="booking-summary glow-effect" role="region" aria-live="polite">
+            <h2>Resumen de tu pedido</h2>
+            <!-- This will be populated by JS -->
           </div>
 
-          <!-- Alternative Payment Methods -->
-          <div class="alternative-payments">
-            <h3>Otros métodos de pago</h3>
-            <div class="payment-buttons">
-              <a href="success.html" class="payment-button">
-                <i class="fab fa-apple-pay"></i>
-                <span>Apple Pay</span>
-              </a>
-              <a href="success.html" class="payment-button">
-                <i class="fab fa-paypal"></i>
-                <span>PayPal</span>
-              </a>
+          <div class="payment-methods">
+            <h2>Método de pago</h2>
+            
+            <div class="payment-accordion">
+              <!-- Credit Card Option -->
+              <div class="accordion-item">
+                <button class="accordion-header">
+                  <div class="payment-icons">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-amex"></i>
+                  </div>
+                  <h3>Tarjeta</h3>
+                  <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="accordion-content">
+                  <form class="card-payment-form" action="success.html">
+                    <div class="form-group">
+                      <label for="card-number">Número de tarjeta</label>
+                      <input type="text" id="card-number" placeholder="1234 5678 9012 3456" required>
+                    </div>
+                    <div class="form-row">
+                      <div class="form-group">
+                        <label for="expiry">Caducidad</label>
+                        <input type="text" id="expiry" placeholder="MM/YY" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="cvv">CVV</label>
+                        <input type="text" id="cvv" placeholder="123" required>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="card-name">Titular de la tarjeta</label>
+                      <input type="text" id="card-name" placeholder="Nombre como aparece en la tarjeta" required>
+                    </div>
+                    <button type="submit" class="standard-button">Pagar ahora</button>
+                  </form>
+                </div>
+              </div>
+
+              <!-- Bizum Option -->
+              <div class="accordion-item">
+                <button class="accordion-header">
+                  <div class="payment-icons">
+                    <img src="../assets/img/brands/bizum-logo.png" alt="" class="bizum-logo">
+                  </div>
+                  <h3>Bizum</h3>
+                  <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="accordion-content">
+                  <form class="bizum-payment-form" action="success.html">
+                    <div class="form-group">
+                      <label for="phone">Número de teléfono</label>
+                      <input type="tel" id="phone" placeholder="+34 600 000 000" required>
+                    </div>
+                    <button type="submit" class="standard-button">Pagar con Bizum</button>
+                  </form>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Alternative Payment Methods -->
+            <div class="alternative-payments">
+              <h3>Otros métodos de pago</h3>
+              <div class="payment-buttons">
+                <a href="success.html" class="payment-button">
+                  <i class="fab fa-apple-pay"></i>
+                  <span>Apple Pay</span>
+                </a>
+                <a href="success.html" class="payment-button">
+                  <i class="fab fa-paypal"></i>
+                  <span>PayPal</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
-    <footer>
+    <footer role="contentinfo">
       <div class="footer-content">
         <div class="footer-section about-us">
           <h3>Sobre Nosotros</h3>
@@ -212,5 +218,25 @@
 
     <script src="../js/main.js"></script>
     <script src="../js/payment-accordeon.js"></script>
+
+    <script>
+      // Add ARIA labels to dynamically generated content
+      const params = new URLSearchParams(window.location.search);
+      const summaryDiv = document.querySelector('.booking-summary');
+      
+      if(params.has('room')) {
+          const summary = `
+              <div class="summary-details" role="region" aria-label="Resumen de la reserva">
+                  <h3>Resumen de la Reserva</h3>
+                  <p><strong>Nombre:</strong> ${params.get('name')}</p>
+                  <p><strong>Email:</strong> ${params.get('email')}</p>
+                  <p><strong>Teléfono:</strong> ${params.get('phone')}</p>
+                  <p><strong>Sala:</strong> ${params.get('room')}</p>
+                  <p><strong>Invitados:</strong> ${params.get('guests')}</p>
+              </div>
+          `;
+          summaryDiv.innerHTML = summary;
+      }
+    </script>
   </body>
 </html>
