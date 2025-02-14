@@ -65,7 +65,7 @@
       <section class="payment-section">
         <div class="payment-container glow-effect">
           <h1>Finalizar Compra</h1>
-          
+
           <!-- Add ARIA live region -->
           <div class="booking-summary glow-effect" role="region" aria-live="polite">
             <h2>Resumen de tu pedido</h2>
@@ -74,7 +74,7 @@
 
           <div class="payment-methods">
             <h2>Método de pago</h2>
-            
+
             <div class="payment-accordion">
               <!-- Credit Card Option -->
               <div class="accordion-item">
@@ -91,21 +91,21 @@
                   <form class="card-payment-form" action="success.html">
                     <div class="form-group">
                       <label for="card-number">Número de tarjeta</label>
-                      <input type="text" id="card-number" placeholder="1234 5678 9012 3456" required>
+                      <input type="text" id="card-number" placeholder="1234 5678 9012 3456" required />
                     </div>
                     <div class="form-row">
                       <div class="form-group">
                         <label for="expiry">Caducidad</label>
-                        <input type="text" id="expiry" placeholder="MM/YY" required>
+                        <input type="text" id="expiry" placeholder="MM/YY" required />
                       </div>
                       <div class="form-group">
                         <label for="cvv">CVV</label>
-                        <input type="text" id="cvv" placeholder="123" required>
+                        <input type="text" id="cvv" placeholder="123" required />
                       </div>
                     </div>
                     <div class="form-group">
                       <label for="card-name">Titular de la tarjeta</label>
-                      <input type="text" id="card-name" placeholder="Nombre como aparece en la tarjeta" required>
+                      <input type="text" id="card-name" placeholder="Nombre como aparece en la tarjeta" required />
                     </div>
                     <button type="submit" class="standard-button">Pagar ahora</button>
                   </form>
@@ -116,7 +116,7 @@
               <div class="accordion-item">
                 <button class="accordion-header">
                   <div class="payment-icons">
-                    <img src="../assets/img/brands/bizum-logo.png" alt="" class="bizum-logo">
+                    <img src="../assets/img/brands/bizum-logo.png" alt="" class="bizum-logo" />
                   </div>
                   <h3>Bizum</h3>
                   <i class="fas fa-chevron-down"></i>
@@ -125,13 +125,12 @@
                   <form class="bizum-payment-form" action="success.html">
                     <div class="form-group">
                       <label for="phone">Número de teléfono</label>
-                      <input type="tel" id="phone" placeholder="+34 600 000 000" required>
+                      <input type="tel" id="phone" placeholder="+34 600 000 000" required />
                     </div>
                     <button type="submit" class="standard-button">Pagar con Bizum</button>
                   </form>
                 </div>
               </div>
-
             </div>
 
             <!-- Alternative Payment Methods -->
@@ -222,20 +221,20 @@
     <script>
       // Add ARIA labels to dynamically generated content
       const params = new URLSearchParams(window.location.search);
-      const summaryDiv = document.querySelector('.booking-summary');
-      
-      if(params.has('room')) {
-          const summary = `
+      const summaryDiv = document.querySelector(".booking-summary");
+
+      if (params.has("room")) {
+        const summary = `
               <div class="summary-details" role="region" aria-label="Resumen de la reserva">
                   <h3>Resumen de la Reserva</h3>
-                  <p><strong>Nombre:</strong> ${params.get('name')}</p>
-                  <p><strong>Email:</strong> ${params.get('email')}</p>
-                  <p><strong>Teléfono:</strong> ${params.get('phone')}</p>
-                  <p><strong>Sala:</strong> ${params.get('room')}</p>
-                  <p><strong>Invitados:</strong> ${params.get('guests')}</p>
+                  <p><strong>Nombre:</strong> ${params.get("name")}</p>
+                  <p><strong>Email:</strong> ${params.get("email")}</p>
+                  <p><strong>Teléfono:</strong> ${params.get("phone")}</p>
+                  <p><strong>Sala:</strong> ${params.get("room")}</p>
+                  <p><strong>Invitados:</strong> ${params.get("guests")}</p>
               </div>
           `;
-          summaryDiv.innerHTML = summary;
+        summaryDiv.innerHTML = summary;
       }
     </script>
   </body>

@@ -1,32 +1,47 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacto - Nighttime</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/main.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contacto - Nighttime</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
-  <link rel='stylesheet' type='text/css' media='screen' href="../css/main.css">
-</head>
+  <body>
+    <header class="navbar" role="banner">
+      <div class="logo-container">
+        <a href="index.html" class="logo" aria-label="Ir a la página de inicio"
+          ><img id="logo" src="../assets/img/logo.png" alt="Logotipo de Nighttime"
+        /></a>
+        <a href="index.html">
+          <h1 class="title">NIGHTTIME</h1>
+        </a>
+      </div>
+      <nav class="nav-links" role="navigation" aria-label="Menú principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="vip.html">VIP</a></li>
+          <li><a href="tickets.html">Entradas</a></li>
+          <li><a href="gallery.html">Galería</a></li>
+          <li><a href="contact.html">Contacto</a></li>
+        </ul>
+        <!-- Mobile-only icons container -->
+        <div class="nav-icons-mobile">
+          <a href="help.html" class="icon-link" aria-label="Preguntas frecuentes">
+            <i class="fas fa-circle-question" aria-hidden="true"></i>
+          </a>
+          <a href="mailto:contact@nighttime.com" class="icon-link" aria-label="Enviar email">
+            <i class="fas fa-envelope" aria-hidden="true"></i>
+          </a>
+          <a href="#" class="icon-link" aria-label="Compartir">
+            <i class="fas fa-share-nodes" aria-hidden="true"></i>
+          </a>
+        </div>
+      </nav>
 
-<body>
-  <header class="navbar" role="banner">
-    <div class="logo-container">
-      <a href="index.html" class="logo" aria-label="Ir a la página de inicio"><img id="logo" src="../assets/img/logo.png" alt="Logotipo de Nighttime"></a>
-      <a href="index.html">
-        <h1 class="title">NIGHTTIME</h1>
-      </a>
-    </div>
-    <nav class="nav-links" role="navigation" aria-label="Menú principal">
-      <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="vip.html">VIP</a></li>
-        <li><a href="tickets.html">Entradas</a></li>
-        <li><a href="gallery.html">Galería</a></li>
-        <li><a href="contact.html">Contacto</a></li>
-      </ul>
-      <!-- Mobile-only icons container -->
-      <div class="nav-icons-mobile">
+      <!-- Desktop-only icons -->
+      <div class="nav-icons-desktop">
         <a href="help.html" class="icon-link" aria-label="Preguntas frecuentes">
           <i class="fas fa-circle-question" aria-hidden="true"></i>
         </a>
@@ -37,235 +52,231 @@
           <i class="fas fa-share-nodes" aria-hidden="true"></i>
         </a>
       </div>
-    </nav>
 
-    <!-- Desktop-only icons -->
-    <div class="nav-icons-desktop">
-      <a href="help.html" class="icon-link" aria-label="Preguntas frecuentes">
-        <i class="fas fa-circle-question" aria-hidden="true"></i>
-      </a>
-      <a href="mailto:contact@nighttime.com" class="icon-link" aria-label="Enviar email">
-        <i class="fas fa-envelope" aria-hidden="true"></i>
-      </a>
-      <a href="#" class="icon-link" aria-label="Compartir">
-        <i class="fas fa-share-nodes" aria-hidden="true"></i>
-      </a>
+      <button class="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </header>
+
+    <div class="contact-section" role="main">
+      <div class="contact-block glow-effect" role="region" aria-labelledby="location-title">
+        <h2 id="location-title">Ubicación y Contacto</h2>
+        <div class="contact-content">
+          <div class="info-text">
+            <p>
+              Situados en el corazón del prestigioso Barrio de Salamanca, Nighttime te ofrece una experiencia única en una de las zonas más
+              exclusivas de Madrid. Fácilmente accesible y rodeado de las mejores opciones de ocio de la ciudad.
+            </p>
+
+            <div class="contact-detail">
+              <i class="fas fa-location-dot" aria-hidden="true"></i>
+              <span>Calle Falsa 123, 28000 Madrid<br />Barrio Salamanca</span>
+            </div>
+
+            <div class="contact-detail">
+              <i class="fas fa-phone" aria-hidden="true"></i>
+              <a href="tel:+34912345678">+34 91 234 56 78</a>
+            </div>
+
+            <div class="contact-detail">
+              <i class="fab fa-whatsapp" aria-hidden="true"></i>
+              <a href="https://wa.me/34666123456">+34 666 12 34 56</a>
+            </div>
+
+            <div class="contact-detail">
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+              <a href="mailto:info@nighttime.com">info@nighttime.com</a>
+            </div>
+
+            <div class="contact-detail">
+              <p>
+                (Horario de atención telefónica: <br />
+                Lunes a Sábado 17:00 - 06:00)
+              </p>
+            </div>
+          </div>
+
+          <div class="map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3037.3053671185383!2d-3.6860973!3d40.4273305!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4228a1aaa7a857%3A0xaa99c4b026826b88!2sBarrio%20de%20Salamanca%2C%20Madrid!5e0!3m2!1ses!2ses!4v1672909234567!5m2!1ses!2ses"
+              title="Ubicación de Nighttime Club en Madrid"
+              allowfullscreen
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              aria-label="Mapa mostrando la ubicación de Nighttime Club en Calle Falsa 123, Madrid"
+            >
+            </iframe>
+          </div>
+        </div>
+      </div>
+
+      <div class="transport-options glow-effect" role="region" aria-labelledby="transport-title">
+        <h2 id="transport-title">Cómo Llegar</h2>
+        <div class="transport-grid">
+          <div class="transport-item">
+            <h3><i class="fas fa-train-subway"></i>Metro</h3>
+            <p>A escasos minutos de las estaciones:</p>
+            <ul>
+              <li>Línea 4 - Serrano (2 min)</li>
+              <li>Línea 4 - Velázquez (5 min)</li>
+              <li>Línea 2/4 - Goya (7 min)</li>
+            </ul>
+          </div>
+
+          <div class="transport-item">
+            <h3><i class="fas fa-bus"></i>Autobús</h3>
+            <p>Líneas nocturnas disponibles:</p>
+            <ul>
+              <li>N2 - Parada Serrano/Goya</li>
+              <li>N4 - Parada Velázquez</li>
+              <li>N6 - Parada Jorge Juan</li>
+            </ul>
+          </div>
+
+          <div class="transport-item">
+            <h3><i class="fas fa-car"></i>Parking</h3>
+            <p>Parkings públicos cercanos:</p>
+            <ul>
+              <li>Parking Serrano (24h)</li>
+              <li>Parking Jorge Juan (24h)</li>
+              <li>Parking Centro Comercial ABC (24h)</li>
+            </ul>
+          </div>
+
+          <div class="transport-item">
+            <h3><i class="fas fa-taxi"></i>Taxi y VTC</h3>
+            <p>Parada de taxi permanente en la puerta.</p>
+            <ul>
+              <li>Parada oficial 24h</li>
+              <li>Uber y Cabify disponibles</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="inquiry-form glow-effect" id="contact-form" role="region" aria-labelledby="form-title">
+        <h2 id="form-title">Envíanos tu Consulta</h2>
+        <form action="#" method="POST" class="form-grid">
+          <div class="form-group">
+            <label for="name">Nombre *</label>
+            <input type="text" id="name" name="name" required aria-required="true" placeholder="Tu nombre completo" />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required aria-required="true" placeholder="tu@email.com" />
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Teléfono</label>
+            <input type="tel" id="phone" name="phone" placeholder="+34 600 000 000" />
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Asunto *</label>
+            <select id="subject" name="subject" required aria-required="true">
+              <option value="">Selecciona un asunto</option>
+              <option value="reserva">Reserva de mesa</option>
+              <option value="evento">Organizar evento</option>
+              <option value="info">Información general</option>
+              <option value="trabajo">Trabajar con nosotros</option>
+              <option value="otro">Otro</option>
+            </select>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="message">Mensaje *</label>
+            <textarea id="message" name="message" required aria-required="true" placeholder="Escribe tu mensaje aquí..."></textarea>
+          </div>
+
+          <div class="form-group full-width button-container">
+            <button type="submit" class="standard-button">Enviar Mensaje</button>
+          </div>
+        </form>
+      </div>
     </div>
 
-    <button class="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </header>
+    <section class="newsletter-section" id="newsletter" role="region" aria-labelledby="newsletter-title">
+      <div class="newsletter-container glow-effect">
+        <h2 id="newsletter-title">Mantente Informado</h2>
+        <p>
+          Suscríbete a nuestro boletín para recibir las últimas novedades, promociones exclusivas y noticias sobre próximos eventos. Sé el
+          primero en enterarte de todo lo que sucede en Nighttime.
+        </p>
+        <form class="newsletter-form">
+          <div class="form-group">
+            <input type="email" id="newsletter-email" placeholder="tu@email.com" required />
+            <button type="submit" class="standard-button">Suscribirse</button>
+          </div>
+        </form>
+      </div>
+    </section>
 
-  <div class="contact-section" role="main">
-    <div class="contact-block glow-effect" role="region" aria-labelledby="location-title">
-      <h2 id="location-title">Ubicación y Contacto</h2>
-      <div class="contact-content">
-        <div class="info-text">
-          <p>Situados en el corazón del prestigioso Barrio de Salamanca, Nighttime te ofrece una experiencia única en
-            una de las zonas más exclusivas de Madrid. Fácilmente accesible y rodeado de las mejores opciones de ocio de
-            la ciudad.</p>
+    <footer role="contentinfo">
+      <div class="footer-content">
+        <div class="footer-section about-us">
+          <h3>Sobre Nosotros</h3>
+          <p>
+            Nighttime es tu destino nocturno premium, donde la música, el ambiente y la diversión se fusionan para crear experiencias
+            inolvidables. Desde 2010 liderando el entretenimiento nocturno en Madrid.
+          </p>
+        </div>
 
-          <div class="contact-detail">
+        <div class="footer-section schedule">
+          <h3>Horario</h3>
+          <div class="schedule-item">
+            <span class="day">Lunes - Miércoles:</span>
+            <span class="hours">23:00 - 04:00</span>
+          </div>
+          <div class="schedule-item">
+            <span class="day">Jueves:</span>
+            <span class="hours">23:00 - 05:00</span>
+          </div>
+          <div class="schedule-item">
+            <span class="day">Viernes - Sábado:</span>
+            <span class="hours">23:00 - 06:00</span>
+          </div>
+          <div class="schedule-item">
+            <span class="day">Domingo:</span>
+            <span class="hours">Cerrado</span>
+          </div>
+        </div>
+
+        <div class="footer-section contact">
+          <h3>Visítanos</h3>
+          <div class="contact-item">
             <i class="fas fa-location-dot" aria-hidden="true"></i>
-            <span>Calle Falsa 123, 28000 Madrid<br>Barrio Salamanca</span>
+            <p>Calle Falsa 123, 28000 Madrid</p>
           </div>
-
-          <div class="contact-detail">
-            <i class="fas fa-phone" aria-hidden="true"></i>
-            <a href="tel:+34912345678">+34 91 234 56 78</a>
-          </div>
-
-          <div class="contact-detail">
-            <i class="fab fa-whatsapp" aria-hidden="true"></i>
-            <a href="https://wa.me/34666123456">+34 666 12 34 56</a>
-          </div>
-
-          <div class="contact-detail">
+          <div class="contact-item">
             <i class="fas fa-envelope" aria-hidden="true"></i>
             <a href="mailto:info@nighttime.com">info@nighttime.com</a>
           </div>
-
-          <div class="contact-detail">
-            <p>(Horario de atención telefónica: <br> Lunes a Sábado 17:00 - 06:00)</p>
+          <div class="contact-item">
+            <i class="fas fa-phone" aria-hidden="true"></i>
+            <a href="tel:+34912345678">+34 91 234 56 78</a>
+          </div>
+          <div class="contact-item">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+            <a href="https://wa.me/34666123456">+34 666 12 34 56</a>
           </div>
         </div>
-
-        <div class="map-container">
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3037.3053671185383!2d-3.6860973!3d40.4273305!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4228a1aaa7a857%3A0xaa99c4b026826b88!2sBarrio%20de%20Salamanca%2C%20Madrid!5e0!3m2!1ses!2ses!4v1672909234567!5m2!1ses!2ses"
-            title="Ubicación de Nighttime Club en Madrid"
-            allowfullscreen
-            loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade"
-            aria-label="Mapa mostrando la ubicación de Nighttime Club en Calle Falsa 123, Madrid">
-          </iframe>
-        </div>
-      </div>
-    </div>
-
-    <div class="transport-options glow-effect" role="region" aria-labelledby="transport-title">
-      <h2 id="transport-title">Cómo Llegar</h2>
-      <div class="transport-grid">
-        <div class="transport-item">
-          <h3><i class="fas fa-train-subway"></i>Metro</h3>
-          <p>A escasos minutos de las estaciones:</p>
-          <ul>
-            <li>Línea 4 - Serrano (2 min)</li>
-            <li>Línea 4 - Velázquez (5 min)</li>
-            <li>Línea 2/4 - Goya (7 min)</li>
-          </ul>
-        </div>
-
-        <div class="transport-item">
-          <h3><i class="fas fa-bus"></i>Autobús</h3>
-          <p>Líneas nocturnas disponibles:</p>
-          <ul>
-            <li>N2 - Parada Serrano/Goya</li>
-            <li>N4 - Parada Velázquez</li>
-            <li>N6 - Parada Jorge Juan</li>
-          </ul>
-        </div>
-
-        <div class="transport-item">
-          <h3><i class="fas fa-car"></i>Parking</h3>
-          <p>Parkings públicos cercanos:</p>
-          <ul>
-            <li>Parking Serrano (24h)</li>
-            <li>Parking Jorge Juan (24h)</li>
-            <li>Parking Centro Comercial ABC (24h)</li>
-          </ul>
-        </div>
-
-        <div class="transport-item">
-          <h3><i class="fas fa-taxi"></i>Taxi y VTC</h3>
-          <p>Parada de taxi permanente en la puerta.</p>
-          <ul>
-            <li>Parada oficial 24h</li>
-            <li>Uber y Cabify disponibles</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <div class="inquiry-form glow-effect" id="contact-form" role="region" aria-labelledby="form-title">
-      <h2 id="form-title">Envíanos tu Consulta</h2>
-      <form action="#" method="POST" class="form-grid">
-        <div class="form-group">
-          <label for="name">Nombre *</label>
-          <input type="text" id="name" name="name" required aria-required="true" placeholder="Tu nombre completo">
-        </div>
-
-        <div class="form-group">
-          <label for="email">Email *</label>
-          <input type="email" id="email" name="email" required aria-required="true" placeholder="tu@email.com">
-        </div>
-
-        <div class="form-group">
-          <label for="phone">Teléfono</label>
-          <input type="tel" id="phone" name="phone" placeholder="+34 600 000 000">
-        </div>
-
-        <div class="form-group">
-          <label for="subject">Asunto *</label>
-          <select id="subject" name="subject" required aria-required="true">
-            <option value="">Selecciona un asunto</option>
-            <option value="reserva">Reserva de mesa</option>
-            <option value="evento">Organizar evento</option>
-            <option value="info">Información general</option>
-            <option value="trabajo">Trabajar con nosotros</option>
-            <option value="otro">Otro</option>
-          </select>
-        </div>
-
-        <div class="form-group full-width">
-          <label for="message">Mensaje *</label>
-          <textarea id="message" name="message" required aria-required="true" placeholder="Escribe tu mensaje aquí..."></textarea>
-        </div>
-
-        <div class="form-group full-width button-container">
-          <button type="submit" class="standard-button">Enviar Mensaje</button>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <section class="newsletter-section" id="newsletter" role="region" aria-labelledby="newsletter-title">
-    <div class="newsletter-container glow-effect">
-      <h2 id="newsletter-title">Mantente Informado</h2>
-      <p>Suscríbete a nuestro boletín para recibir las últimas novedades, promociones exclusivas y noticias sobre próximos eventos. Sé el primero en enterarte de todo lo que sucede en Nighttime.</p>
-      <form class="newsletter-form">
-        <div class="form-group">
-          <input type="email" id="newsletter-email" placeholder="tu@email.com" required>
-          <button type="submit" class="standard-button">Suscribirse</button>
-        </div>
-      </form>
-    </div>
-  </section>
-
-  <footer role="contentinfo">
-    <div class="footer-content">
-      <div class="footer-section about-us">
-        <h3>Sobre Nosotros</h3>
-        <p>Nighttime es tu destino nocturno premium, donde la música, el ambiente y la diversión se fusionan para crear
-          experiencias inolvidables. Desde 2010 liderando el entretenimiento nocturno en Madrid.</p>
       </div>
 
-      <div class="footer-section schedule">
-        <h3>Horario</h3>
-        <div class="schedule-item">
-          <span class="day">Lunes - Miércoles:</span>
-          <span class="hours">23:00 - 04:00</span>
-        </div>
-        <div class="schedule-item">
-          <span class="day">Jueves:</span>
-          <span class="hours">23:00 - 05:00</span>
-        </div>
-        <div class="schedule-item">
-          <span class="day">Viernes - Sábado:</span>
-          <span class="hours">23:00 - 06:00</span>
-        </div>
-        <div class="schedule-item">
-          <span class="day">Domingo:</span>
-          <span class="hours">Cerrado</span>
-        </div>
-      </div>
-
-      <div class="footer-section contact">
-        <h3>Visítanos</h3>
-        <div class="contact-item">
-          <i class="fas fa-location-dot" aria-hidden="true"></i>
-          <p>Calle Falsa 123, 28000 Madrid</p>
-        </div>
-        <div class="contact-item">
-          <i class="fas fa-envelope" aria-hidden="true"></i>
-          <a href="mailto:info@nighttime.com">info@nighttime.com</a>
-        </div>
-        <div class="contact-item">
-          <i class="fas fa-phone" aria-hidden="true"></i>
-          <a href="tel:+34912345678">+34 91 234 56 78</a>
-        </div>
-        <div class="contact-item">
-          <i class="fab fa-whatsapp" aria-hidden="true"></i>
-          <a href="https://wa.me/34666123456">+34 666 12 34 56</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="footer-legal">
+      <div class="footer-legal">
         <a href="legal.html">Aviso Legal</a>
-    </div>
+      </div>
 
-    <div class="social-links">
-      <a href="#" target="_blank" aria-label="Visítanos en Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
-      <a href="#" target="_blank" aria-label="Síguenos en Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-      <a href="#" target="_blank" aria-label="Síguenos en Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-      <a href="#" target="_blank" aria-label="Míranos en TikTok"><i class="fab fa-tiktok" aria-hidden="true"></i></a>
-    </div>
-  </footer>
+      <div class="social-links">
+        <a href="#" target="_blank" aria-label="Visítanos en Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+        <a href="#" target="_blank" aria-label="Síguenos en Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+        <a href="#" target="_blank" aria-label="Síguenos en Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+        <a href="#" target="_blank" aria-label="Míranos en TikTok"><i class="fab fa-tiktok" aria-hidden="true"></i></a>
+      </div>
+    </footer>
 
-  <script src="../js/main.js"></script>
-</body>
+    <script src="../js/main.js"></script>
+  </body>
 </html>
