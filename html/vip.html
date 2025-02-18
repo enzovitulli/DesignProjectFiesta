@@ -11,17 +11,19 @@
   <body>
     <header class="navbar" role="banner">
       <div class="logo-container">
-        <a href="index.html" class="logo" aria-label="Ir a la página de inicio"
-          ><img id="logo" src="../assets/img/logo.png" alt="Logotipo de Nighttime"
-        /></a>
-        <a href="index.html">
-          <h1 class="title">NIGHTTIME</h1>
-        </a>
+        <div class="logo-wrapper">
+          <a href="index.html" aria-label="Ir a pagina de Inicio">
+            <div class="logo"></div>
+          </a>
+        </div>
+        <div class="title-wrapper">
+          <a href="index.html"><h1 class="title">NIGHTTIME</h1></a>
+        </div>
       </div>
       <nav class="nav-links" role="navigation" aria-label="Menú principal">
         <ul>
           <li><a href="index.html">Inicio</a></li>
-          <li><a href="vip.html">VIP</a></li>
+          <li><a href="vip.html" aria-current="page">VIP</a></li>
           <li><a href="tickets.html">Entradas</a></li>
           <li><a href="gallery.html">Galería</a></li>
           <li><a href="contact.html">Contacto</a></li>
@@ -39,7 +41,6 @@
           </a>
         </div>
       </nav>
-
       <!-- Desktop-only icons -->
       <div class="nav-icons-desktop">
         <a href="help.html" class="icon-link" aria-label="Preguntas frecuentes">
@@ -52,7 +53,7 @@
           <i class="fas fa-share-nodes" aria-hidden="true"></i>
         </a>
       </div>
-
+      <!-- Hamburger menu toggle -->
       <button class="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
         <span></span>
         <span></span>

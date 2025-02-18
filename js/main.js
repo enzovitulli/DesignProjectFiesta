@@ -22,6 +22,29 @@ glowElements.forEach((element) => {
   });
 });
 
+// Logo sprite animation
+document.addEventListener("DOMContentLoaded", () => {
+  const logo = document.querySelector(".logo");
+
+  logo.addEventListener("mouseenter", () => {
+      if (!logo.classList.contains("animating")) {
+          logo.classList.add("animating");
+          let frame = 0;
+          const totalFrames = 11;
+          const frameWidth = 1200; // Each frame width
+          const interval = setInterval(() => {
+              frame++;
+              if (frame >= totalFrames) {
+                  clearInterval(interval);
+                  logo.style.backgroundPosition = "0 0"; // Reset to initial frame
+                  logo.classList.remove("animating");
+              } else {
+                  logo.style.backgroundPosition = `-${frame * frameWidth}px 0`;
+              }
+          }, 100); // Adjust speed of animation
+      }
+  });
+});
 
 // Tilt effect on room cards (keeping this separate as it's different functionality)
 const cards = document.querySelectorAll(".room-card");
@@ -71,6 +94,7 @@ const gap = 16; // This should match your $spacing-unit * 2
 // Set the track width to accommodate all slides plus gaps
 sliderTrack.style.width = `${(slideWidth + gap) * slideCount}px`;
 sliderTrack.style.width = `${(slideWidth + gap) * slideCount}px`;
+
 
 // Get URL parameters to show booking summary in the payment.html form
 //Not sure if using these

@@ -18,53 +18,90 @@
     display: flex;
     align-items: center;
     gap: $spacing-unit * 1.5;
+    min-width: auto; // Remove fixed min-width
+    flex-shrink: 0; // Prevent container from shrinking
 
-    // Sprite styles
-    .logo {
+    .logo-wrapper {
+      width: 4rem;
+      height: 4rem;
       flex-shrink: 0; // Prevent logo from shrinking
-      text-decoration: none;
-      transition: transform 0.3s ease;
-
-      img {
-        height: 4rem;
-        width: 4rem;
-        object-fit: none;
-        object-position: 0 0; // Start from top
-        filter: brightness(0) invert(1);
-        transition: all 0.3s ease; // Add transition for non-animation state
-
-        &:hover {
-          animation: playSpriteVerticalDown 0.8s steps(8) forwards;
+      
+      a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        
+        .logo {
+          width: 100%;
+          height: 100%;
+          background: url('../assets/img/sprite-logo/disco-ball-spritesheet.png') 0 0;
+          background-size: 1100% 100%;
+          filter: invert(1);
         }
       }
     }
 
-    .title {
-      @extend .logo-text;
-      color: $text-light;
+    .title-wrapper {
       position: relative;
-      display: inline-block; 
-      transition: all 0.5s ease;
+      padding: 0;
+      margin: 0 2rem 0 1rem;
+      flex-shrink: 0;
       
-      &:hover {
-        letter-spacing: 1.5rem;
-        text-shadow: 
-          0 0 10px rgba($accent-primary, 0.5),
-          0 0 20px rgba($accent-primary, 0.3),
-          0 0 30px rgba($accent-primary, 0.1);
-        color: mix($text-light, $accent-primary, 85%);
+      a {
+        text-decoration: none;
+        
+        .title {
+          @extend .logo-text;
+          color: $text-light;
+          position: relative;
+          display: inline-block; 
+          letter-spacing: 1rem; // Fixed letter spacing for brand consistency
+          transition: all 0.5s ease;
+          transform-origin: left; // Ensure expansion starts from left
+          white-space: nowrap; // Prevent text wrapping
+          font-size: 4rem; // Base size
+          
+          &:hover {
+            letter-spacing: 1rem; // Keep consistent
+            transform: scale(1.1); // Scale up instead of changing letter-spacing
+            text-shadow: 
+              0 0 10px rgba($accent-primary, 0.5),
+              0 0 20px rgba($accent-primary, 0.3),
+              0 0 30px rgba($accent-primary, 0.1);
+            color: mix($text-light, $accent-primary, 85%);
+          }
+
+          @include mobile {
+            font-size: 3.2rem; // Larger font size for mobile
+            letter-spacing: 1rem; // Keep consistent letter spacing
+          }
+        }
       }
     }
   }
 
   .nav-links {
-    margin: 0 auto; // Center the nav-links instead of pushing to right
-    padding: 0 $spacing-unit * 4; // Increased padding
+    margin: 0 2rem; // Changed from auto to fixed margin
+    padding: 0;
+    flex-shrink: 1; // Allow shrinking
 
     ul {
       display: flex;
       list-style: none;
       gap: $spacing-unit * 10; // Increased gap from 6 to 10 units
+
+      @media (max-width: 1200px) {
+        gap: $spacing-unit * 5; // Reduced gap at smaller screens
+      }
+
+      @media (max-width: 1100px) {
+        gap: $spacing-unit * 3; // Further reduced gap
+        
+        a {
+          font-size: 2.2rem; // Slightly smaller font
+        }
+      }
 
       a {
         @include link-base; // Replace duplicate link styles
@@ -118,8 +155,17 @@
   .nav-icons-desktop {
     display: flex;
     gap: $spacing-unit * 4;
-    margin-left: auto;
-    padding-left: $spacing-unit * 3;
+    margin-left: 0; // Remove auto margin
+    padding-left: 2rem;
+    flex-shrink: 0; // Prevent icons from shrinking
+
+    @media (max-width: 1100px) {
+      gap: $spacing-unit * 2; // Reduced gap between icons
+      
+      .icon-link {
+        font-size: 1.8rem; // Slightly smaller icons
+      }
+    }
 
     .icon-link {
       @include link-base; // Replace duplicate link styles
@@ -262,24 +308,24 @@
       z-index: 1001;
     }
   }
+
+  @media (max-width: 1000px) {
+    // Switch to mobile layout just before icons get cropped
+    .nav-icons-desktop {
+      display: none;
+    }
+    .hamburger {
+      display: block;
+    }
+  }
 }
 
-// Replace horizontal sprite animation with vertical
-@keyframes playSpriteVertical {
+// Remove old animations and keep only the new one
+@keyframes sparkleDiscoBall {
   from {
-    object-position: 0 -320px; // Start from bottom
+    object-position: 0 0;
   }
   to {
-    object-position: 0 0; // Move to top
-  }
-}
-
-// Update sprite animation to pan downward
-@keyframes playSpriteVerticalDown {
-  from {
-    object-position: 0 0; // Start from top
-  }
-  to {
-    object-position: 0 -320px; // Move to bottom
+    object-position: -13200px 0; // Full width of sprite sheet
   }
 }

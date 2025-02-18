@@ -53,7 +53,12 @@ $accent-highlight: $hot-pink;
 
 // Gradients
 $nav-gradient: linear-gradient(to bottom, $glass-black, $glass-navy);
-$body-gradient: linear-gradient(to bottom, $deep-navy, $pure-black);
+$body-gradient: linear-gradient(
+  125deg, 
+  lighten($deep-navy, 5%) 0%,
+  lighten($deep-navy, 2%) 35%,
+  darken($deep-navy, 12%) 100%
+);
 
 // Spacing
 $spacing-unit: 0.8rem; // Remove clamp, use fixed value
