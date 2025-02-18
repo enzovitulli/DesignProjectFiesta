@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nighttime Style Guide - Buttons</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <style>
+        .style-section {
+            padding: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            color: #fff;
+        }
+
+        .button-group {
+            margin: 4rem 0;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+        }
+
+        .button-row {
+            display: flex;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .button-info {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .state-label {
+            display: block;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 1rem;
+        }
+
+        .code-example {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 2rem;
+            border-radius: 0.5rem;
+            margin-top: 2rem;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 1.4rem;
+            color: #00aaff;
+        }
+    </style>
+</head>
+<body>
+    <div class="style-section">
+        <h1 class="section-title">Buttons</h1>
+
+        <!-- Standard Button -->
+        <div class="button-group">
+            <div class="button-info">
+                <h2>Standard Button</h2>
+                <p>Default button style with 3D effect</p>
+            </div>
+            <div class="button-row">
+                <div>
+                    <span class="state-label">Default</span>
+                    <button class="standard-button">Book Now</button>
+                </div>
+                <div>
+                    <span class="state-label">Hover</span>
+                    <button class="standard-button" style="transform: translateY(-2px);">Book Now</button>
+                </div>
+                <div>
+                    <span class="state-label">Active</span>
+                    <button class="standard-button" style="transform: translateY(1px);">Book Now</button>
+                </div>
+            </div>
+            <div class="code-example">
+                <pre>&lt;button class="standard-button"&gt;Book Now&lt;/button&gt;</pre>
+            </div>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="button-group">
+            <div class="button-info">
+                <h2>CTA Buttons</h2>
+                <p>Primary and secondary call-to-action buttons</p>
+            </div>
+            <div class="button-row">
+                <div>
+                    <span class="state-label">Primary CTA</span>
+                    <a href="#" class="cta-button primary">Reserva VIP</a>
+                </div>
+                <div>
+                    <span class="state-label">Secondary CTA</span>
+                    <a href="#" class="cta-button secondary">Comprar Entradas</a>
+                </div>
+            </div>
+            <div class="code-example">
+                <pre>&lt;div class="cta-buttons"&gt;
+    &lt;a href="#" class="cta-button primary"&gt;Reserva VIP&lt;/a&gt;
+    &lt;a href="#" class="cta-button secondary"&gt;Comprar Entradas&lt;/a&gt;
+&lt;/div&gt;</pre>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

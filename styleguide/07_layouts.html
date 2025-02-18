@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nighttime Style Guide - Layout Patterns</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <style>
+        .style-section {
+            padding: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            color: #fff;
+        }
+
+        .layout-example {
+            margin: 4rem 0;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+        }
+
+        .demo-area {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 3rem;
+            border-radius: 1rem;
+            margin: 2rem 0;
+            min-height: 300px;
+        }
+
+        .placeholder {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        .grid-demo {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .flex-demo {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .code-example {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 2rem;
+            border-radius: 0.5rem;
+            margin-top: 2rem;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 1.4rem;
+            color: #00aaff;
+        }
+    </style>
+</head>
+<body>
+    <div class="style-section">
+        <h1 class="section-title">Layout Patterns</h1>
+
+        <!-- Grid Layout -->
+        <div class="layout-example">
+            <h2>Room Grid Layout</h2>
+            <div class="demo-area">
+                <div class="rooms-grid">
+                    <div class="room-card">
+                        <div class="image-container">
+                            <div class="placeholder">Image</div>
+                        </div>
+                        <h3>Room Title</h3>
+                    </div>
+                    <div class="room-card">
+                        <div class="image-container">
+                            <div class="placeholder">Image</div>
+                        </div>
+                        <h3>Room Title</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="code-example">
+                <pre>.rooms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}</pre>
+            </div>
+        </div>
+
+        <!-- Split Layout -->
+        <div class="layout-example">
+            <h2>Split Content Layout</h2>
+            <div class="demo-area">
+                <div class="container">
+                    <div class="registration-form">
+                        <div class="placeholder">Form Content</div>
+                    </div>
+                    <div class="spotify-player">
+                        <div class="placeholder">Media Content</div>
+                    </div>
+                </div>
+            </div>
+            <div class="code-example">
+                <pre>.container {
+    display: flex;
+    gap: 3rem;
+    justify-content: space-between;
+}</pre>
+            </div>
+        </div>
+
+        <!-- Hero Layout -->
+        <div class="layout-example">
+            <h2>Hero Section Layout</h2>
+            <div class="demo-area">
+                <div class="hero-section" style="min-height: 200px">
+                    <div class="hero-content">
+                        <h1>Main Title</h1>
+                        <p>Subtitle text</p>
+                        <div class="cta-buttons">
+                            <a href="#" class="cta-button primary">Primary CTA</a>
+                            <a href="#" class="cta-button secondary">Secondary CTA</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="code-example">
+                <pre>.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}</pre>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

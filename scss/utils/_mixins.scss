@@ -79,14 +79,14 @@
 }
 
 @mixin frosted-glass {
-  background: rgba($pure-white, 0.05);
+  background: $glass-white; // Changed from rgba($pure-white, 0.05)
   backdrop-filter: blur(20px);
   border: 1px solid rgba($pure-white, 0.2);
   border-radius: $border-radius;
   box-shadow: 
     0 0 40px rgba($pure-black, 0.1),
     0 10px 30px rgba($pure-black, 0.2),
-    inset 0 0 60px rgba($pure-white, 0.05);
+    inset 0 0 60px $glass-white; // Changed from rgba($pure-white, 0.05)
 }
 
 @mixin card-tilt {

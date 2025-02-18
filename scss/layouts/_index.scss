@@ -170,16 +170,9 @@ h2 {
     max-width: 1000px; // Increased from 1400px to match rooms-grid
     margin: 0 auto $spacing-unit * 4; // Reduced from 6 to 4
     padding: $spacing-unit * 8; // Increased padding for better text width
-    border: 1px solid rgba($pure-white, 0.2);
-    border-radius: $border-radius;
-    background: rgba($pure-white, 0.05);
-    backdrop-filter: blur(20px);
+    @include frosted-glass; // Added this mixin
     position: relative;
     transition: transform 0.3s ease;
-    box-shadow: 
-      0 0 40px rgba($pure-black, 0.1),
-      0 10px 30px rgba($pure-black, 0.2),
-      inset 0 0 60px rgba($pure-white, 0.05);
     overflow: hidden;
     text-align: left; // Added explicit left alignment
     @include glow-effect;

@@ -7,7 +7,7 @@
 }
 
 // Imported Fonts (Genos and Roboto)
-@import url('https://fonts.googleapis.com/css2?family=Genos:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Genos:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900&display=swap');
 
 $title-font: 'Genos';
 $header-font: 'Bebas Neue', sans-serif;
@@ -16,21 +16,23 @@ $body-font: 'Roboto', sans-serif;
 // Base Colors
 $pure-white: #FFFFFF;
 $pure-black: #000000;
+
+// Dimmed Base Colors for texts
 $dimmed-white: #F2F2F2;
 $dimmed-black: #111111;
 
 // Primary Colors
-$neon-blue: #00aaff;  // Changed from #00d8ff to a more saturated blue
-$deep-purple: #9030FD; // Brighter version of purple for better visibility
-$hot-pink: #ff4d97;    // Changed from #FF0080 to be less saturated
+$neon-blue: #00aaff;
+$deep-navy: #040a1d;
 
 // Secondary Colors
-$deep-navy: #040a1d;   // Changed back to original color
-$cyber-teal: #00B4D8;  // Secondary accent
+$hot-pink: #ff4d97;
+$deep-purple: #9030FD;
 
 // Opacity 'Glass' Variants
-$glass-black: rgba($pure-black, 0.95); // More opaque black
-$glass-navy: rgba($deep-navy, 0.95);   // More opaque navy
+$glass-white: rgba($pure-white, 0.05); // Added new glass variant
+$glass-black: rgba($pure-black, 0.95);
+$glass-navy: rgba($deep-navy, 0.95);
 $glass-purple: rgba($deep-purple, 0.8);
 
 // Text Colors

@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Genos:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Genos:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900&display=swap");
 @font-face {
   font-family: "Bebas Neue";
   src: url("../../assets/fonts/Bebas_Neue/BebasNeue-Regular.ttf") format("truetype");
@@ -861,8 +861,16 @@ footer .footer-legal a:hover {
 }
 .navbar .logo-container .logo img {
   height: 4rem;
-  width: auto;
+  width: 4rem;
+  -o-object-fit: none;
+     object-fit: none;
+  -o-object-position: 0 0;
+     object-position: 0 0;
   filter: brightness(0) invert(1);
+  transition: all 0.3s ease;
+}
+.navbar .logo-container .logo img:hover {
+  animation: playSpriteVerticalDown 0.8s steps(8) forwards;
 }
 .navbar .logo-container .title {
   color: #FFFFFF;
@@ -1099,6 +1107,26 @@ footer .footer-legal a:hover {
   }
 }
 
+@keyframes playSpriteVertical {
+  from {
+    -o-object-position: 0 -320px;
+       object-position: 0 -320px;
+  }
+  to {
+    -o-object-position: 0 0;
+       object-position: 0 0;
+  }
+}
+@keyframes playSpriteVerticalDown {
+  from {
+    -o-object-position: 0 0;
+       object-position: 0 0;
+  }
+  to {
+    -o-object-position: 0 -320px;
+       object-position: 0 -320px;
+  }
+}
 .slider-section {
   width: 100%;
   padding: 0;
@@ -2090,14 +2118,14 @@ h2 {
   max-width: 1000px;
   margin: 0 auto 3.2rem;
   padding: 6.4rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 2rem;
   background: rgba(255, 255, 255, 0.05);
   -webkit-backdrop-filter: blur(20px);
           backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 2rem;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.1), 0 10px 30px rgba(0, 0, 0, 0.2), inset 0 0 60px rgba(255, 255, 255, 0.05);
   position: relative;
   transition: transform 0.3s ease;
-  box-shadow: 0 0 40px rgba(0, 0, 0, 0.1), 0 10px 30px rgba(0, 0, 0, 0.2), inset 0 0 60px rgba(255, 255, 255, 0.05);
   overflow: hidden;
   text-align: left;
   position: relative;

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nighttime Style Guide - Interactive Components</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <style>
+        .style-section {
+            padding: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            color: #fff;
+        }
+
+        .component-section {
+            margin: 4rem 0;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+        }
+
+        .demo-area {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 3rem;
+            border-radius: 1rem;
+            margin: 2rem 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .code-example {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 2rem;
+            border-radius: 0.5rem;
+            margin-top: 2rem;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 1.4rem;
+            color: #00aaff;
+        }
+
+        .state-demo {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .state-label {
+            display: block;
+            margin-bottom: 1rem;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .interaction-notes {
+            margin-top: 2rem;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 0.5rem;
+        }
+
+        .interaction-notes h3 {
+            color: #00aaff;
+            margin-bottom: 1rem;
+        }
+
+        .interaction-notes ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .interaction-notes li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .interaction-notes li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #00aaff;
+        }
+    </style>
+</head>
+<body>
+    <div class="style-section">
+        <h1 class="section-title">Interactive Components</h1>
+
+        <!-- Buttons -->
+        <section class="component-section">
+            <h2>Button States & Interactions</h2>
+            <div class="demo-area">
+                <div class="state-demo">
+                    <span class="state-label">Default</span>
+                    <button class="standard-button">Book Now</button>
+                </div>
+                <div class="state-demo">
+                    <span class="state-label">Hover</span>
+                    <button class="standard-button" style="transform: translateY(-2px);">Book Now</button>
+                </div>
+                <div class="state-demo">
+                    <span class="state-label">Active</span>
+                    <button class="standard-button" style="transform: translateY(1px);">Book Now</button>
+                </div>
+            </div>
+            <div class="interaction-notes">
+                <h3>Interaction Guidelines</h3>
+                <ul>
+                    <li>Use hover state to indicate interactivity</li>
+                    <li>Provide visual feedback on click/tap</li>
+                    <li>Maintain consistent timing for animations</li>
+                    <li>Ensure sufficient touch target size (minimum 44x44px)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Cards -->
+        <section class="component-section">
+            <h2>Card Interactions</h2>
+            <div class="demo-area">
+                <div class="room-card">
+                    <div class="image-container">
+                        <div style="width: 100%; height: 200px; background: rgba(255,255,255,0.1);"></div>
+                    </div>
+                    <h3>Interactive Card</h3>
+                </div>
+            </div>
+            <div class="interaction-notes">
+                <h3>Card Features</h3>
+                <ul>
+                    <li>Tilt effect on mouse move</li>
+                    <li>Glow effect on hover</li>
+                    <li>Smooth transitions between states</li>
+                    <li>Proper focus states for keyboard navigation</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Forms -->
+        <section class="component-section">
+            <h2>Form Interactions</h2>
+            <div class="demo-area">
+                <div class="form-group">
+                    <label for="demo-input">Interactive Input</label>
+                    <input type="text" id="demo-input" placeholder="Type something...">
+                </div>
+            </div>
+            <div class="interaction-notes">
+                <h3>Form Guidelines</h3>
+                <ul>
+                    <li>Clear focus states</li>
+                    <li>Immediate validation feedback</li>
+                    <li>Error states with helpful messages</li>
+                    <li>Consistent styling across form elements</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Add tilt effect demo
+        document.querySelectorAll('.room-card').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const rotateX = (y - centerY) / 10;
+                const rotateY = (centerX - x) / 10;
+                
+                card.style.setProperty('--rotateX', rotateX + 'deg');
+                card.style.setProperty('--rotateY', rotateY + 'deg');
+                card.classList.add('tilt');
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.classList.remove('tilt');
+            });
+        });
+    </script>
+</body>
+</html>

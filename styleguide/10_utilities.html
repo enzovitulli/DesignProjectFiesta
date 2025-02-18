@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nighttime Style Guide - Helper Classes & Utilities</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <style>
+        .style-section {
+            padding: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            color: #fff;
+        }
+
+        .utility-section {
+            margin: 4rem 0;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+        }
+
+        .demo-area {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 3rem;
+            border-radius: 1rem;
+            margin: 2rem 0;
+        }
+
+        .code-example {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 2rem;
+            border-radius: 0.5rem;
+            margin-top: 2rem;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 1.4rem;
+            color: #00aaff;
+        }
+    </style>
+</head>
+<body>
+    <div class="style-section">
+        <h1 class="section-title">Helper Classes & Utilities</h1>
+
+        <!-- Mixins -->
+        <section class="utility-section">
+            <h2>Common Mixins</h2>
+            <div class="code-example">
+                <pre>// Responsive Breakpoints
+@mixin mobile {
+    @media (max-width: 999px) { @content; }
+}
+
+@mixin desktop {
+    @media (min-width: 1000px) { @content; }
+}
+
+// Flexbox Center
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+// Link Base Styles
+@mixin link-base {
+    color: $text-light;
+    opacity: 0.9;
+    text-decoration: none;
+    @include hover-transition;
+}</pre>
+            </div>
+        </section>
+
+        <!-- Effects -->
+        <section class="utility-section">
+            <h2>Effect Utilities</h2>
+            <div class="demo-area">
+                <div class="glow-effect">Hover for glow effect</div>
+            </div>
+            <div class="code-example">
+                <pre>@mixin glow-effect {
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        background: radial-gradient(...);
+    }
+}</pre>
+            </div>
+        </section>
+
+        <!-- Layout Helpers -->
+        <section class="utility-section">
+            <h2>Layout Helpers</h2>
+            <div class="code-example">
+                <pre>@mixin section-container {
+    width: 90%;
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: $spacing-unit * 4 5%;
+}
+
+@mixin mobile-section {
+    padding: $spacing-unit * 2;
+    width: 95%;
+    margin: $spacing-unit * 2 auto;
+}</pre>
+            </div>
+        </section>
+
+        <!-- Text Styles -->
+        <section class="utility-section">
+            <h2>Typography Helpers</h2>
+            <div class="code-example">
+                <pre>@mixin header-text {
+    font-family: $header-font;
+    font-size: 4.2rem;
+    color: $text-light;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    text-shadow: 2px 4px 8px rgba($pure-black, 0.3);
+}</pre>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

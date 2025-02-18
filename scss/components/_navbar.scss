@@ -19,6 +19,7 @@
     align-items: center;
     gap: $spacing-unit * 1.5;
 
+    // Sprite styles
     .logo {
       flex-shrink: 0; // Prevent logo from shrinking
       text-decoration: none;
@@ -26,8 +27,15 @@
 
       img {
         height: 4rem;
-        width: auto;
+        width: 4rem;
+        object-fit: none;
+        object-position: 0 0; // Start from top
         filter: brightness(0) invert(1);
+        transition: all 0.3s ease; // Add transition for non-animation state
+
+        &:hover {
+          animation: playSpriteVerticalDown 0.8s steps(8) forwards;
+        }
       }
     }
 
@@ -253,5 +261,25 @@
       display: block;
       z-index: 1001;
     }
+  }
+}
+
+// Replace horizontal sprite animation with vertical
+@keyframes playSpriteVertical {
+  from {
+    object-position: 0 -320px; // Start from bottom
+  }
+  to {
+    object-position: 0 0; // Move to top
+  }
+}
+
+// Update sprite animation to pan downward
+@keyframes playSpriteVerticalDown {
+  from {
+    object-position: 0 0; // Start from top
+  }
+  to {
+    object-position: 0 -320px; // Move to bottom
   }
 }
