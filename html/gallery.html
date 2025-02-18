@@ -12,7 +12,8 @@
 <body>
   <header class="navbar">
     <div class="logo-container">
-      <a href="index.html" class="logo" aria-label="Logo de NightTime"><img id="logo" src="../assets/img/logo.png" alt=""></a>
+      <a href="index.html" class="logo tooltip" aria-label="Logo de NightTime"><img id="logo" src="../assets/img/logo.png"
+          alt=""></a>
       <a href="index.html">
         <h1 class="title">NIGHTTIME</h1>
       </a>
@@ -27,31 +28,36 @@
       </ul>
     </nav>
 
-    <!-- Mobile-only icons container -->
-    <div class="nav-icons-mobile" role="navigation" aria-label="Iconos de navegación móvil">
-      <a href="help.html" class="icon-link" aria-label="Ir a la sección de Preguntas frecuentes">
-        <i class="fas fa-circle-question" aria-hidden="true"></i>
+    <div class="nav-icons-mobile">
+      <a href="help.html" class="icon-link tooltip" aria-label="Preguntas frecuentes">
+        <i class="fas fa-circle-question tooltip" aria-hidden="true"></i>
+        <span class="tooltiptext">Ayuda</span>
       </a>
-      <a href="mailto:contact@nighttime.com" class="icon-link" aria-label="Enviar un correo a Nighttime">
+      <a href="mailto:contact@nighttime.com" class="icon-link tooltip" aria-label="Enviar email">
         <i class="fas fa-envelope" aria-hidden="true"></i>
+        <span class="tooltiptext">Correo</span>
       </a>
-      <a href="#" class="icon-link" aria-label="Compartir contenido">
-        <i class="fas fa-share-nodes" aria-hidden="true"></i>
+      <a href="#" class="icon-link tooltip" aria-label="Compartir">
+        <i class="fas fa-share-nodes tooltip" aria-hidden="true"></i>
+        <span class="tooltiptext">Compartir</span>
       </a>
     </div>
-
-  <!-- Desktop-only icons -->
-<div class="nav-icons-desktop" role="navigation" aria-label="Iconos de navegación para escritorio">
-  <a href="help.html" class="icon-link" aria-label="Ir a la sección de Preguntas frecuentes">
-    <i class="fas fa-circle-question" aria-hidden="true"></i>
-  </a>
-  <a href="mailto:contact@nighttime.com" class="icon-link" aria-label="Enviar un correo a Nighttime">
-    <i class="fas fa-envelope" aria-hidden="true"></i>
-  </a>
-  <a href="#" class="icon-link" aria-label="Compartir contenido">
-    <i class="fas fa-share-nodes" aria-hidden="true"></i>
-  </a>
-</div>
+    </nav>
+    <!-- Desktop-only icons -->
+    <div class="nav-icons-desktop ">
+      <a href="help.html" class="icon-link tooltip" aria-label="Preguntas frecuentes">
+        <span class="tooltiptext">Ayuda</span>
+        <i class="fas fa-circle-question" aria-hidden="true"></i>
+      </a>
+      <a href="mailto:contact@nighttime.com" class="icon-link tooltip" aria-label="Enviar email">
+        <i class="fas fa-envelope" aria-hidden="true"></i>
+        <span class="tooltiptext">Correo</span>
+      </a>
+      <a href="#" class="icon-link tooltip" aria-label="Compartir">
+        <i class="fas fa-share-nodes" aria-hidden="true"></i>
+        <span class="tooltiptext">Compartir</span>
+      </a>
+    </div>
 
 
     <button class="hamburger" aria-label="Abrir menú">
@@ -315,4 +321,5 @@
 
   <script src="../js/main.js"></script>
 </body>
+
 </html>
