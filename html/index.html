@@ -11,14 +11,14 @@
   <body>
     <header class="navbar" role="banner">
       <div class="logo-container">
-        <a href="index.html" class="logo" aria-label="Ir a pagina de Inicio"
-          ><img id="logo" src="../assets/img/logo.png" alt="Logo de NightTime"
-        /></a>
+        <a href="index.html" class="logo" aria-label="Ir a pagina de Inicio">
+          <img id="logo" src="../assets/img/logo.png" alt="Logo de NightTime"/>
+        </a>
         <a href="index.html"><h1 class="title">NIGHTTIME</h1></a>
       </div>
       <nav class="nav-links" role="navigation" aria-label="Menú principal">
         <ul>
-          <li><a href="index.html">Inicio</a></li>
+          <li><a href="index.html" aria-current="page">Inicio</a></li>
           <li><a href="vip.html">VIP</a></li>
           <li><a href="tickets.html">Entradas</a></li>
           <li><a href="gallery.html">Galería</a></li>
@@ -37,7 +37,6 @@
           </a>
         </div>
       </nav>
-
       <!-- Desktop-only icons -->
       <div class="nav-icons-desktop">
         <a href="help.html" class="icon-link" aria-label="Preguntas frecuentes">
@@ -50,7 +49,7 @@
           <i class="fas fa-share-nodes" aria-hidden="true"></i>
         </a>
       </div>
-
+      <!-- Hamburger menu toggle -->
       <button class="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
         <span></span>
         <span></span>
@@ -146,6 +145,20 @@
         loading="lazy"
       />
       <img
+      src="../assets/img/galeria/5.webp"
+      class="gallery-img"
+      alt="Una discoteca llena de luces láser púrpuras y siluetas de personas bailando."
+      aria-label="Imagen de una fiesta con luces láser púrpuras y una multitud disfrutando del ambiente vibrante."
+      loading="lazy"
+      />
+      <img
+      src="../assets/img/galeria/7.webp"
+      class="gallery-img"
+      alt="Primer plano de un grupo de mujeres posando en una discoteca con luces brillantes."
+      aria-label="Imagen de mujeres disfrutando en una discoteca, rodeadas de iluminación colorida y un ambiente animado."
+      loading="lazy"
+      />
+      <img
         src="../assets/img/galeria/32.webp"
         class="gallery-img"
         alt="Explosión de espuma y luces brillantes en la pista del club nocturno."
@@ -153,39 +166,11 @@
         loading="lazy"
       />
       <img
-        src="../assets/img/galeria/23.webp"
-        class="gallery-img"
-        alt="Barra de un club nocturno con bebidas y personas disfrutando."
-        aria-label="Imagen de una barra en un club con luces cálidas y personas conversando y pidiendo bebidas."
-        loading="lazy"
-      />
-      <img
-        src="../assets/img/galeria/28.webp"
-        class="gallery-img"
-        alt="Detalle de un cóctel rojo decorado con flores y hielo seco."
-        aria-label="Un cóctel rojo adornado con flores, emitiendo vapor por el efecto de hielo seco en un club nocturno."
-        loading="lazy"
-      />
-      <img
-        src="../assets/img/galeria/7.webp"
-        class="gallery-img"
-        alt="Primer plano de un grupo de mujeres posando en una discoteca con luces brillantes."
-        aria-label="Imagen de mujeres disfrutando en una discoteca, rodeadas de iluminación colorida y un ambiente animado."
-        loading="lazy"
-      />
-      <img
-        src="../assets/img/galeria/5.webp"
-        class="gallery-img"
-        alt="Una discoteca llena de luces láser púrpuras y siluetas de personas bailando."
-        aria-label="Imagen de una fiesta con luces láser púrpuras y una multitud disfrutando del ambiente vibrante."
-        loading="lazy"
-      />
-      <img
-        src="../assets/img/galeria/37.webp"
-        class="gallery-img"
-        alt="Vista amplia del club nocturno lleno de asistentes y luces brillantes."
-        aria-label="Perspectiva panorámica del club nocturno mostrando a la multitud disfrutando bajo luces rojas y azules."
-        loading="lazy"
+      src="../assets/img/galeria/37.webp"
+      class="gallery-img"
+      alt="Vista amplia del club nocturno lleno de asistentes y luces brillantes."
+      aria-label="Perspectiva panorámica del club nocturno mostrando a la multitud disfrutando bajo luces rojas y azules."
+      loading="lazy"
       />
     </section>
 
@@ -286,35 +271,68 @@
       </div>
     </section>
 
-    <section class="slider-section" aria-label="Marcas colaboradoras">  <!-- Agregar salto al slider para pantallas-->
+    <section class="slider-section" aria-label="Marcas colaboradoras">
+      <!-- Agregar salto al slider para pantallas-->
       <div class="slider-container">
         <div class="slider">
           <div class="slider-track">
             <!-- Original set -->
-            <div class="slide"><img src="../assets/img/brands/coca-cola-logo-black-and-white.png" alt="Logo de Coca Cola" class="logos" /></div>
-            <div class="slide"><img src="../assets/img/brands/heineken-logo-black-and-white.png" alt="Logo de Heineken" class="logos" /></div>
-            <div class="slide"><img src="../assets/img/brands/jose-cuervo-logo-black-and-white.png" alt="Logo de Jose Cuervo" class="logos" /></div>
+            <div class="slide">
+              <img src="../assets/img/brands/coca-cola-logo-black-and-white.png" alt="Logo de Coca Cola" class="logos" />
+            </div>
+            <div class="slide">
+              <img src="../assets/img/brands/heineken-logo-black-and-white.png" alt="Logo de Heineken" class="logos" />
+            </div>
+            <div class="slide">
+              <img src="../assets/img/brands/jose-cuervo-logo-black-and-white.png" alt="Logo de Jose Cuervo" class="logos" />
+            </div>
             <div class="slide"><img src="../assets/img/brands/redbull-logo-black-and-white.png" alt="Logo de Redbull" class="logos" /></div>
-            <div class="slide"><img src="../assets/img/brands/johnnie-walker-logo-black-and-white.png" alt="Logo de Johnnie Walker" class="logos" /></div>
-            <div class="slide"><img src="../assets/img/brands/smirnoff-logo-black-and-white.png" alt="Logo de Smirnoff" class="logos" /></div>
+            <div class="slide">
+              <img src="../assets/img/brands/johnnie-walker-logo-black-and-white.png" alt="Logo de Johnnie Walker" class="logos" />
+            </div>
+            <div class="slide">
+              <img src="../assets/img/brands/smirnoff-logo-black-and-white.png" alt="Logo de Smirnoff" class="logos" />
+            </div>
             <div class="slide"><img src="../assets/img/brands/absolut-logo-black-and-white.png" alt="Logo de Absolut" class="logos" /></div>
             <div class="slide"><img src="../assets/img/brands/bacardi-logo-black-and-white.png" alt="Logo de Bacardi" class="logos" /></div>
-            <div class="slide"><img src="../assets/img/brands/jagermeister-logo-black-and-white.png" alt="Logo de Jagermeister" class="logos" /></div>
-            <div class="slide"><img src="../assets/img/brands/schweppes-logo-black-and-white.png" alt="Logo de Schweppes" class="logos" /></div>
-            <div class="slide"><img src="../assets/img/brands/hennessy-cognac-logo-black-and-white.png" alt="Logo de Hennessy" class="logos" /></div>
+            <div class="slide">
+              <img src="../assets/img/brands/jagermeister-logo-black-and-white.png" alt="Logo de Jagermeister" class="logos" />
+            </div>
+            <div class="slide">
+              <img src="../assets/img/brands/schweppes-logo-black-and-white.png" alt="Logo de Schweppes" class="logos" />
+            </div>
+            <div class="slide">
+              <img src="../assets/img/brands/hennessy-cognac-logo-black-and-white.png" alt="Logo de Hennessy" class="logos" />
+            </div>
             <div class="slide"><img src="../assets/img/brands/barcelo-logo-black-and-white.png" alt="Logo de Barceló" class="logos" /></div>
             <!-- Duplicate set -->
-            <div class="slide"><img src="../assets/img/brands/coca-cola-logo-black-and-white.png" alt="Logo de Coca Cola" class="logos" /></div>
-            <div class="slide"><img src="../assets/img/brands/heineken-logo-black-and-white.png" alt="Logo de Heineken" class="logos" /></div>
-            <div class="slide"><img src="../assets/img/brands/jose-cuervo-logo-black-and-white.png" alt="Logo de Jose Cuervo" class="logos" /></div>
+            <div class="slide">
+              <img src="../assets/img/brands/coca-cola-logo-black-and-white.png" alt="Logo de Coca Cola" class="logos" />
+            </div>
+            <div class="slide">
+              <img src="../assets/img/brands/heineken-logo-black-and-white.png" alt="Logo de Heineken" class="logos" />
+            </div>
+            <div class="slide">
+              <img src="../assets/img/brands/jose-cuervo-logo-black-and-white.png" alt="Logo de Jose Cuervo" class="logos" />
+            </div>
             <div class="slide"><img src="../assets/img/brands/redbull-logo-black-and-white.png" alt="Logo de Redbull" class="logos" /></div>
-            <div class="slide"><img src="../assets/img/brands/johnnie-walker-logo-black-and-white.png" alt="Logo de Johnnie Walker" class="logos" /></div>
-            <div class="slide"><img src="../assets/img/brands/smirnoff-logo-black-and-white.png" alt="Logo de Smirnoff" class="logos" /></div>
+            <div class="slide">
+              <img src="../assets/img/brands/johnnie-walker-logo-black-and-white.png" alt="Logo de Johnnie Walker" class="logos" />
+            </div>
+            <div class="slide">
+              <img src="../assets/img/brands/smirnoff-logo-black-and-white.png" alt="Logo de Smirnoff" class="logos" />
+            </div>
             <div class="slide"><img src="../assets/img/brands/absolut-logo-black-and-white.png" alt="Logo de Absolut" class="logos" /></div>
             <div class="slide"><img src="../assets/img/brands/bacardi-logo-black-and-white.png" alt="Logo de Bacardi" class="logos" /></div>
-            <div class="slide"><img src="../assets/img/brands/jagermeister-logo-black-and-white.png" alt="Logo de Jagermeister" class="logos" /></div>
-            <div class="slide"><img src="../assets/img/brands/schweppes-logo-black-and-white.png" alt="Logo de Schweppes" class="logos" /></div>
-            <div class="slide"><img src="../assets/img/brands/hennessy-cognac-logo-black-and-white.png" alt="Logo de Hennessy" class="logos" /></div>
+            <div class="slide">
+              <img src="../assets/img/brands/jagermeister-logo-black-and-white.png" alt="Logo de Jagermeister" class="logos" />
+            </div>
+            <div class="slide">
+              <img src="../assets/img/brands/schweppes-logo-black-and-white.png" alt="Logo de Schweppes" class="logos" />
+            </div>
+            <div class="slide">
+              <img src="../assets/img/brands/hennessy-cognac-logo-black-and-white.png" alt="Logo de Hennessy" class="logos" />
+            </div>
             <div class="slide"><img src="../assets/img/brands/barcelo-logo-black-and-white.png" alt="Logo de Barceló" class="logos" /></div>
           </div>
         </div>
