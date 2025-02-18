@@ -4086,6 +4086,50 @@ h2 {
   height: clamp(5rem, 7vh, 7rem);
   font-size: clamp(2rem, 2.5vw, 2.8rem);
 }
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #ffffff80;
+  border-color: black;
+  color: #fff;  
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  position: absolute;
+  z-index: 1;
+  top: 100%; /* Se muestra justo debajo del elemento */
+  left: 50%; /* Centrado horizontalmente */
+  transform: translateX(-50%); /* Ajuste del centrado */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 50%;  /* Cambiado de top: 100% a top: 50% */
+  right: 100%;  /* Cambiado de left: 50% a right: 100% */
+  margin-top: -5px;  /* Ajustado para centrar verticalmente */
+  border-width: 5px;
+  border-style: solid;
+  border-color:  transparent transparent transparent transparent ;  /*Apuntado de la flecha*/
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+
 @media (max-width: 999px) {
   .vip-booking {
     padding: 1.6rem;
