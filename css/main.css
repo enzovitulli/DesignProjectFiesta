@@ -4037,7 +4037,7 @@ h2 {
   visibility: hidden;
   width: 120px;
   background-color: #ffffff80;
-  border-color:black;
+  border-color: black;
   color: #fff;  
   text-align: center;
   padding: 5px 0;
@@ -4045,14 +4045,13 @@ h2 {
 
   position: absolute;
   z-index: 1;
-  top: 100%;  /* Cambiado de bottom: 125% a top: 100% */
-  left: 0%;  /* Cambiado de left: 50% a left: 100% */
-  margin-left: 10px;  /* Ajustado para dar un poco de espacio */
-  margin-top: 5px;  /* Añadido para dar un poco de espacio vertical */
-
+  top: 100%; /* Se muestra justo debajo del elemento */
+  left: 50%; /* Centrado horizontalmente */
+  transform: translateX(-50%); /* Ajuste del centrado */
   opacity: 0;
   transition: opacity 0.3s;
 }
+
 
 .tooltip .tooltiptext::after {
   content: "";
@@ -4062,13 +4061,14 @@ h2 {
   margin-top: -5px;  /* Ajustado para centrar verticalmente */
   border-width: 5px;
   border-style: solid;
-  border-color:  transparent transparent transparent transparent ;  /* Ajustado para que la flecha apunte a la izquierda */
+  border-color:  transparent transparent transparent transparent ;  /*Apuntado de la flecha*/
 }
 
 .tooltip:hover .tooltiptext {
   visibility: visible;
   opacity: 1;
 }
+
 
 
 @media (max-width: 999px) {
