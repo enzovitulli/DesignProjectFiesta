@@ -134,7 +134,7 @@
       flex: 1;
       @include card-base;
       padding: $spacing-unit * 6;
-      background: rgba($pure-white, 0.05); // Explicitly set transparent background
+      background: $glass-white;
 
       h3 {
         font-family: $header-font;
@@ -265,12 +265,9 @@
       }
     }
 
-    button.standard-button {
+    .standard-button {
       display: block;
       margin: $spacing-unit * 6 auto 0;
-      width: clamp(200px, 30vw, 300px);
-      height: clamp(5rem, 7vh, 7rem);
-      font-size: clamp(2rem, 2.5vw, 2.8rem);
     }
   }
 
@@ -297,8 +294,8 @@
         }
       }
       
-      button.standard-button {
-        width: 100%;
+      .standard-button {
+        width: 100%; // Only override for mobile
         margin-top: $spacing-unit * 4;
       }
     }
@@ -320,7 +317,7 @@
   }
 
   .vip-intro {
-    margin-top: $spacing-unit * 12; // Adjusted for mobile
+    margin-top: $spacing-unit * 12;
 
     .intro-content {
       padding: $spacing-unit * 4;
@@ -339,7 +336,7 @@
       margin-bottom: $spacing-unit * 8;
 
       .room-content {
-        order: 1; // Ensure content always comes first
+        order: 1; // Content always comes first
         padding: $spacing-unit * 4;
       }
 

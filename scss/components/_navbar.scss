@@ -56,15 +56,14 @@
           color: $text-light;
           position: relative;
           display: inline-block; 
-          letter-spacing: 1rem; // Fixed letter spacing for brand consistency
-          transition: all 0.5s ease;
-          transform-origin: left; // Ensure expansion starts from left
+          transition: all 0.3s ease;
+          transform-origin: left; // Keep this to ensure expansion from left
           white-space: nowrap; // Prevent text wrapping
           font-size: 4rem; // Base size
           
           &:hover {
-            letter-spacing: 1rem; // Keep consistent
-            transform: scale(1.1); // Scale up instead of changing letter-spacing
+            letter-spacing: 1.25rem;
+            transform: none;
             text-shadow: 
               0 0 10px rgba($accent-primary, 0.5),
               0 0 20px rgba($accent-primary, 0.3),
@@ -74,7 +73,6 @@
 
           @include mobile {
             font-size: 3.2rem; // Larger font size for mobile
-            letter-spacing: 1rem; // Keep consistent letter spacing
           }
         }
       }
@@ -245,13 +243,14 @@
       right: -100%;
       height: 100vh;
       width: 70%;
+      margin: 0; // Remove any margin
+      padding: $spacing-unit * 8 $spacing-unit * 3;
       background: $glass-black;
       backdrop-filter: blur(15px);
       transition: right 0.3s ease;
-      padding: $spacing-unit * 8 $spacing-unit * 3;
 
       &.active {
-        right: 0;
+        right: 0; // Ensure it touches the right edge
       }
 
       ul {

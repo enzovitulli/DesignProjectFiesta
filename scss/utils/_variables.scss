@@ -30,7 +30,7 @@ $hot-pink: #ff4d97;
 $deep-purple: #9030FD;
 
 // Opacity 'Glass' Variants
-$glass-white: rgba($pure-white, 0.05); // Added new glass variant
+$glass-white: rgba($pure-white, 0.05);
 $glass-black: rgba($pure-black, 0.95);
 $glass-navy: rgba($deep-navy, 0.95);
 $glass-purple: rgba($deep-purple, 0.8);
@@ -61,7 +61,7 @@ $body-gradient: linear-gradient(
 );
 
 // Spacing
-$spacing-unit: 0.8rem; // Remove clamp, use fixed value
+$spacing-unit: 0.8rem;
 $container-padding: $spacing-unit * 2;
 
 // Borders

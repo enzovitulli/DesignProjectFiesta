@@ -121,10 +121,12 @@ h2 {
   .video-container {
     position: relative;
     width: 100%;
-    height: 100%; // Take full height of parent
-    max-height: 80vh; // Limit maximum height
+    height: 0; // Change to 0 to use padding-bottom for aspect ratio
+    padding-bottom: 56.25%; // 16:9 aspect ratio (9/16 * 100)
+    max-height: none; // Remove max-height constraint
     border-radius: $border-radius;
     overflow: hidden;
+    background: $pure-black; // Add black background
     
     iframe {
       position: absolute;
@@ -133,6 +135,20 @@ h2 {
       width: 100%;
       height: 100%;
       object-fit: cover;
+    }
+
+    video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain; // Change from cover to contain
+      background: $pure-black; // Add black background to video element
+      
+      &::-webkit-media-controls-poster {
+        background: $pure-black; // Ensure poster background is black
+      }
     }
   }
 
@@ -147,11 +163,11 @@ h2 {
   }
 
   @include mobile {
-    height: 60vh;
+    height: auto; // Remove fixed height on mobile
     padding: $spacing-unit * 2 5%;
     
     .video-container {
-      max-height: 55vh;
+      padding-bottom: 56.25%; // Maintain aspect ratio on mobile
     }
   }
 }
