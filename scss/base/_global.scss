@@ -28,3 +28,27 @@ body {
   background-attachment: fixed; // Keep gradient fixed while scrolling
   position: relative;
 }
+
+// Skip to content link for accessibility
+.skip-to-content {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background: $accent-primary;
+  color: $text-light;
+  padding: 0.5rem 1rem;
+  z-index: 9999;
+  text-decoration: none;
+  border-radius: 0 0 0.5rem 0.5rem;
+  
+  // Initially hidden
+  top: -100px;
+  opacity: 0;
+  
+  // Show on focus
+  &:focus {
+    top: 0;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+  }
+}
