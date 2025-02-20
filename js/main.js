@@ -1,7 +1,14 @@
 // Hamburger menu
 const hamburger = document.querySelector(".hamburger");
 const navLinks = document.querySelector(".nav-links");
-
+document.querySelector(".dropbtn").addEventListener("click", function() {
+    document.querySelector(".dropdown-content").classList.toggle("show");
+});
+window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+        document.querySelector(".dropdown-content").classList.remove("show");
+    }
+}
 hamburger.addEventListener("click", () => {
   hamburger.classList.toggle("active");
   navLinks.classList.toggle("active");

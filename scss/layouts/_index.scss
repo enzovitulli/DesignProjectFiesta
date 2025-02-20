@@ -14,7 +14,9 @@ section div {
     border: none; // Added to ensure no border
   }
 }
-
+.enlace-reservar{
+  text-decoration: none;
+}
 // Common title styles
 h2 {
   @include header-text;

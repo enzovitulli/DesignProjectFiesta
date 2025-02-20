@@ -2127,6 +2127,10 @@ section div .content-box {
   border: none;
 }
 
+.enlace-reservar {
+  text-decoration: none;
+}
+
 h2 {
   font-family: "Bebas Neue", sans-serif;
   font-size: 4.2rem;
