@@ -4,6 +4,8 @@ const navLinks = document.querySelector(".nav-links");
 document.querySelector(".dropbtn").addEventListener("click", function() {
     document.querySelector(".dropdown-content").classList.toggle("show");
 });
+
+// Dropdown menu
 window.onclick = function(event) {
     if (!event.target.matches('.dropbtn')) {
         document.querySelector(".dropdown-content").classList.remove("show");
@@ -94,16 +96,15 @@ cards.forEach((card) => {
 // Slider on index.html
 const sliderTrack = document.querySelector(".slider-track");
 const slides = document.querySelectorAll(".slide");
-const slideWidth = 200; // Match this with your CSS
+const slideWidth = 200;
 const slideCount = slides.length;
-const gap = 16; // This should match your $spacing-unit * 2
+const gap = 16;
 
-// Set the track width to accommodate all slides plus gaps
 sliderTrack.style.width = `${(slideWidth + gap) * slideCount}px`;
 sliderTrack.style.width = `${(slideWidth + gap) * slideCount}px`;
 
 
-// Get URL parameters to show booking summary in the payment.html form
+// Get URL parameters to show booking summary in the payment.html form (REMOVE)
 //Not sure if using these
 const params = new URLSearchParams(window.location.search);
 const summaryDiv = document.querySelector(".booking-summary");
