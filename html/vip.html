@@ -7,7 +7,47 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="../css/main.css" />
   </head>
-
+  <style>
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+    .dropbtn {
+        background-color: rgba(128, 128, 128, 0.5);
+        color: white;
+        padding: 100px;
+        border: 1px solid white;
+        cursor: pointer;
+        border-radius: 10px;
+    }
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: rgba(128, 128, 128, 0.5);
+        min-width: 160px;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        border-radius: 10px;
+        border: 1px solid white;
+    }
+    .dropdown-content a {
+        color: white;
+        padding: 10px;
+        text-decoration: none;
+        display: block;
+    }
+    .dropdown-content a:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+    .show {
+        display: block;
+    }
+    .section {
+        height: 500px;
+        padding: 20px;
+        border-bottom: 2px solid #ddd;
+    }
+</style>
   <body>
     <a href="#main-content" class="skip-to-content">Saltar al contenido principal</a>
 
@@ -68,6 +108,14 @@
         <span></span>
       </button>
     </header>
+    <div class="dropdown">
+      <button class="dropbtn">Ir a sección</button>
+      <div class="dropdown-content">
+          <a href="#vip-booking">Reservar sala VIP</a>
+          <a href="#seccion2">Sección 2</a>
+          <a href="#seccion3">Sección 3</a>
+      </div>
+  </div>  
 
     <main id="main-content" role="main">
       <section class="vip-title-section">
@@ -255,8 +303,8 @@
             <label for="phone">Teléfono</label>
             <input type="tel" id="phone" required aria-required="true" placeholder="+34 600 000 000" />
           </div>
-          <div class="form-group">
-            <label for="room">Sala VIP</label>
+          <div class="form-group" >
+            <label for="room" >Sala VIP</label>
             <select id="room" required aria-required="true">
               <option value="">Selecciona una sala</option>
               <option value="gold">Sala Gold (hasta 20 personas)</option>
