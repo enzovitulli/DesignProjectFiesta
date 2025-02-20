@@ -267,6 +267,8 @@
 
     .standard-button {
       display: block;
+      width: 300px;
+      height: 7rem;
       margin: $spacing-unit * 6 auto 0;
     }
   }
@@ -292,11 +294,6 @@
           padding: $spacing-unit * 1.5;
           font-size: 1.6rem;
         }
-      }
-      
-      .standard-button {
-        width: 100%; // Only override for mobile
-        margin-top: $spacing-unit * 4;
       }
     }
   }

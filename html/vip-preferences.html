@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personaliza tu Experiencia VIP - Nighttime</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/main.css" />
+  </head>
+
+  <body>
+    <a href="#main-content" class="skip-to-content">Saltar al contenido principal</a>
+
+    <header class="navbar" role="banner">
+      <div class="logo-container">
+        <div class="logo-wrapper">
+          <a href="index.html" aria-label="Ir a pagina de Inicio">
+            <div class="logo"></div>
+          </a>
+        </div>
+        <div class="title-wrapper">
+          <a href="index.html"><h1 class="title">NIGHTTIME</h1></a>
+        </div>
+      </div>
+      <nav class="nav-links" role="navigation" aria-label="Menú principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="vip.html" aria-current="page">VIP</a></li>
+          <li><a href="tickets.html">Entradas</a></li>
+          <li><a href="gallery.html">Galería</a></li>
+          <li><a href="contact.html">Contacto</a></li>
+        </ul>
+          <!-- Mobile-only icons container -->
+        <div class="nav-icons-mobile">
+          <a href="help.html" class="icon-link tooltip" aria-label="Preguntas frecuentes">
+            <i class="fas fa-circle-question tooltip" aria-hidden="true"></i>
+            <span class="tooltiptext">Ayuda</span>
+          </a>
+          <a href="mailto:contact@nighttime.com" class="icon-link tooltip" aria-label="Enviar email">
+            <i class="fas fa-envelope" aria-hidden="true"></i>
+            <span class="tooltiptext">Correo</span>
+          </a>
+          <a href="#" class="icon-link tooltip" aria-label="Compartir">
+            <i class="fas fa-share-nodes tooltip" aria-hidden="true"></i>
+            <span class="tooltiptext">Compartir</span>
+          </a>
+        </div>
+      </nav>
+      <!-- Desktop-only icons -->
+      <div class="nav-icons-desktop ">
+        <a href="help.html" class="icon-link tooltip" aria-label="Preguntas frecuentes">
+          <span class="tooltiptext">Ayuda</span>
+          <i class="fas fa-circle-question" aria-hidden="true"></i>
+        </a>
+        <a href="mailto:contact@nighttime.com" class="icon-link tooltip" aria-label="Enviar email">
+          <i class="fas fa-envelope" aria-hidden="true"></i>
+          <span class="tooltiptext">Correo</span>
+        </a>
+        <a href="#" class="icon-link tooltip" aria-label="Compartir">
+          <i class="fas fa-share-nodes" aria-hidden="true"></i>
+          <span class="tooltiptext">Compartir</span>
+        </a>
+      </div>
+      <!-- Hamburger menu toggle -->
+      <button class="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </header>
+
+    <main id="main-content">
+      <section class="vip-preferences-section">
+        <h1>Personaliza Tu Experiencia VIP</h1>
+        <p>Configura cada detalle de tu experiencia VIP para que sea exactamente como la imaginas.</p>
+
+        <form id="preferences-form" class="preferences-form glow-effect">
+          <div class="form-section music-preferences">
+            <h2>Preferencias Musicales</h2>
+            <p class="section-description">
+              Elige los géneros que quieres que suenen en tu evento. Nuestros DJs se encargarán de seleccionar los mejores temas y crear la atmósfera perfecta para tu celebración.
+            </p>
+            <div class="genre-grid">
+              <div class="genre-item">
+                <input type="checkbox" id="house" name="genres[]" value="house">
+                <label for="house"><span>House</span></label>
+              </div>
+              <div class="genre-item">
+                <input type="checkbox" id="techno" name="genres[]" value="techno">
+                <label for="techno"><span>Techno</span></label>
+              </div>
+              <div class="genre-item">
+                <input type="checkbox" id="latin" name="genres[]" value="latin">
+                <label for="latin"><span>Latino</span></label>
+              </div>
+              <div class="genre-item">
+                <input type="checkbox" id="pop" name="genres[]" value="pop">
+                <label for="pop"><span>Pop Internacional</span></label>
+              </div>
+              <div class="genre-item">
+                <input type="checkbox" id="rnb" name="genres[]" value="rnb">
+                <label for="rnb"><span>R&B</span></label>
+              </div>
+              <div class="genre-item">
+                <input type="checkbox" id="hiphop" name="genres[]" value="hiphop">
+                <label for="hiphop"><span>Hip Hop</span></label>
+              </div>
+            </div>
+
+            <div class="playlist-mode">
+              <h3>Modo de Reproducción</h3>
+              <p class="section-description">
+                Personaliza cómo quieres que se reproduzca tu música: mezclada para mantener la variedad o por bloques para crear diferentes momentos durante la noche.
+              </p>
+              <div class="mode-options">
+                <div class="mode-option">
+                  <input type="radio" id="mix" name="playmode" value="mix" checked>
+                  <label for="mix">
+                    <i class="fas fa-random"></i>
+                    <span>Mezclar Géneros</span>
+                  </label>
+                </div>
+                <div class="mode-option">
+                  <input type="radio" id="sequence" name="playmode" value="sequence">
+                  <label for="sequence">
+                    <i class="fas fa-list-ol"></i>
+                    <span>Reproducir por Bloques</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-section lighting-preferences">
+            <h2>Iluminación</h2>
+            <p class="section-description">
+              Diseña el ambiente visual de tu espacio VIP. Combina diferentes efectos de iluminación para crear una experiencia inmersiva y única.
+            </p>
+            <div class="options-grid">
+              <div class="option-item">
+                <input type="checkbox" id="ambient" name="lighting[]" value="ambient">
+                <label for="ambient">
+                  <i class="fas fa-lightbulb"></i>
+                  <span>Ambiental Suave</span>
+                </label>
+              </div>
+              <div class="option-item">
+                <input type="checkbox" id="party" name="lighting[]" value="party">
+                <label for="party">
+                  <i class="fas fa-star"></i>
+                  <span>Luces de Fiesta</span>
+                </label>
+              </div>
+              <div class="option-item">
+                <input type="checkbox" id="laser" name="lighting[]" value="laser">
+                <label for="laser">
+                  <i class="fas fa-wand-sparkles"></i>
+                  <span>Show Láser</span>
+                </label>
+              </div>
+              <div class="option-item">
+                <input type="checkbox" id="strobe" name="lighting[]" value="strobe">
+                <label for="strobe">
+                  <i class="fas fa-burst"></i>
+                  <span>Luces Estroboscópicas</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-section welcome-preferences">
+            <h2>Mensaje de Bienvenida</h2>
+            <p class="section-description">
+              Haz que tu entrada sea memorable. Elige cómo quieres que te recibamos a ti y a tus invitados para hacer de ese momento algo especial.
+            </p>
+            <div class="options-grid">
+              <div class="option-item">
+                <input type="checkbox" id="screen" name="welcome[]" value="screen">
+                <label for="screen"><span>Mensaje en Pantalla</span></label>
+              </div>
+              <div class="option-item">
+                <input type="checkbox" id="champagne" name="welcome[]" value="champagne">
+                <label for="champagne"><span>Champagne Bienvenida</span></label>
+              </div>
+              <div class="option-item">
+                <input type="checkbox" id="confetti" name="welcome[]" value="confetti">
+                <label for="confetti"><span>Lluvia de Confeti</span></label>
+              </div>
+            </div>
+          </div>
+
+          <div class="submit-section">
+            <button type="submit" class="standard-button">Guardar Preferencias</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <!-- Modal Component -->
+    <div class="preferences-modal">
+      <div class="modal-content glow-effect">
+        <div class="success-icon">
+          <i class="fas fa-circle-check"></i>
+        </div>
+        <h2>¡Preferencias Guardadas!</h2>
+        <p>
+          Tus preferencias para la sala VIP han sido guardadas correctamente. 
+          ¡Te esperamos el sábado 12 de Abril 2025!
+        </p>
+        <button class="close-button">Entendido</button>
+      </div>
+    </div>
+
+    <footer role="contentinfo">
+      <div class="footer-content">
+        <div class="footer-section about-us">
+          <h3>Sobre Nosotros</h3>
+          <p>
+            Nighttime es tu destino nocturno premium, donde la música, el ambiente y la diversión se fusionan para crear experiencias
+            inolvidables. Desde 2010 liderando el entretenimiento nocturno en Madrid.
+          </p>
+        </div>
+
+        <div class="footer-section schedule">
+          <h3>Horario</h3>
+          <div class="schedule-item">
+            <span class="day">Lunes - Miércoles:</span>
+            <span class="hours">23:00 - 04:00</span>
+          </div>
+          <div class="schedule-item">
+            <span class="day">Jueves:</span>
+            <span class="hours">23:00 - 05:00</span>
+          </div>
+          <div class="schedule-item">
+            <span class="day">Viernes - Sábado:</span>
+            <span class="hours">23:00 - 06:00</span>
+          </div>
+          <div class="schedule-item">
+            <span class="day">Domingo:</span>
+            <span class="hours">Cerrado</span>
+          </div>
+        </div>
+
+        <div class="footer-section contact">
+          <h3>Visítanos</h3>
+          <div class="contact-item">
+            <i class="fas fa-location-dot"></i>
+            <p>Calle Falsa 123, 28000 Madrid</p>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:info@nighttime.com">info@nighttime.com</a>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <a href="tel:+34912345678">+34 91 234 56 78</a>
+          </div>
+          <div class="contact-item">
+            <i class="fab fa-whatsapp"></i>
+            <a href="https://wa.me/34666123456">+34 666 12 34 56</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-legal">
+        <a href="legal.html">Aviso Legal</a>
+      </div>
+
+      <div class="social-links">
+        <a href="#" target="_blank" aria-label="Visítanos en Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+        <a href="#" target="_blank" aria-label="Síguenos en Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+        <a href="#" target="_blank" aria-label="Síguenos en Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+        <a href="#" target="_blank" aria-label="Míranos en TikTok"><i class="fab fa-tiktok" aria-hidden="true"></i></a>
+      </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+  </body>
+</html>

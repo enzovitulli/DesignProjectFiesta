@@ -1,0 +1,273 @@
+.vip-preferences-section {
+  @include section-container;
+  margin: $spacing-unit * 12 auto;
+
+  h1 {
+    @include header-text;
+    text-align: center;
+    margin-bottom: $spacing-unit * 2;
+  }
+
+  > p {
+    text-align: center;
+    color: $text-light;
+    font-size: 1.8rem;
+    margin-bottom: $spacing-unit * 8;
+    opacity: 0.9;
+  }
+}
+
+.preferences-form {
+  @include card-base;
+  max-width: min(1000px, 90vw);
+  margin: 0 auto;
+  padding: $spacing-unit * 8;
+
+  .form-section {
+    margin-bottom: $spacing-unit * 8;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    h2 {
+      @include header-text;
+      font-size: 3.2rem;
+      margin-bottom: $spacing-unit * 4;
+    }
+
+    h3 {
+      font-family: $header-font;
+      font-size: 2.4rem;
+      color: $text-light;
+      margin-bottom: $spacing-unit * 3;
+    }
+
+    .section-description {
+      color: rgba($text-light, 0.9);
+      font-size: 1.6rem;
+      line-height: 1.6;
+      margin-bottom: $spacing-unit * 4;
+      max-width: 80ch; // Limit line length for better readability
+    }
+  }
+
+  .genre-grid,
+  .options-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); // Fixed 3 columns for symmetry
+    gap: $spacing-unit * 2;
+    margin-bottom: $spacing-unit * 4;
+  }
+
+  .genre-item,
+  .option-item {
+    position: relative;
+
+    input[type="checkbox"] {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+
+      &:checked + label {
+        background: rgba($hot-pink, 0.2);
+        border-color: $hot-pink;
+        transform: translateY(-2px);
+      }
+    }
+
+    label {
+      min-height: 7rem; // Fixed height for all options
+      display: flex;
+      align-items: center;
+      justify-content: center; // Center content
+      gap: $spacing-unit * 2;
+      padding: $spacing-unit * 2;
+      border: 1px solid rgba($pure-white, 0.2);
+      border-radius: $border-radius-sm;
+      color: $text-light;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-align: center; // Center text
+
+      i {
+        font-size: 2rem;
+        min-width: 2.4rem; // Fixed width for icons
+        text-align: center;
+      }
+
+      &:hover {
+        background: rgba($hot-pink, 0.1);
+        border-color: rgba($hot-pink, 0.5);
+      }
+    }
+  }
+
+  .mode-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-unit * 3;
+
+    .mode-option {
+      position: relative;
+
+      input[type="radio"] {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+
+        &:checked + label {
+          background: rgba($deep-purple, 0.2);
+          border-color: $deep-purple;
+          transform: translateY(-2px);
+        }
+      }
+
+      label {
+        min-height: 12rem; // Fixed height for mode options
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: $spacing-unit;
+        padding: $spacing-unit * 3;
+        border: 1px solid rgba($pure-white, 0.2);
+        border-radius: $border-radius-sm;
+        color: $text-light;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-align: center;
+
+        i {
+          font-size: 2.4rem;
+          margin-bottom: $spacing-unit;
+        }
+
+        &:hover {
+          background: rgba($deep-purple, 0.1);
+          border-color: rgba($deep-purple, 0.5);
+        }
+      }
+    }
+  }
+
+  .submit-section {
+    margin-top: $spacing-unit * 8;
+    text-align: center;
+
+    .standard-button {
+      width: 300px; // Match VIP page button width
+      height: 7rem; // Match VIP page button height
+      font-size: 2.5rem; // Match VIP page button font size
+      background: $deep-purple; // Use brand color
+      margin: 0 auto;
+    }
+  }
+}
+
+.preferences-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba($pure-black, 0.8);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+
+  &.active {
+    display: flex;
+  }
+
+  .modal-content {
+    @include card-base;
+    width: 90%;
+    max-width: 500px;
+    padding: $spacing-unit * 6;
+    text-align: center;
+
+    .success-icon {
+      font-size: 6.4rem; // Updated to match success page
+      color: $accent-primary;
+      margin-bottom: $spacing-unit * 4; // Increased margin
+      animation: scaleIn 0.5s ease-out; // Added animation
+      
+      i {
+        filter: drop-shadow(0 0 20px rgba($accent-primary, 0.4));
+      }
+    }
+
+    h2 {
+      @include header-text;
+      font-size: 3.2rem;
+      margin-bottom: $spacing-unit * 3;
+    }
+
+    p {
+      color: $text-light;
+      font-size: 1.8rem;
+      margin-bottom: $spacing-unit * 4;
+      line-height: 1.6;
+    }
+
+    .close-button {
+      @include button-3d-base;
+      width: 300px; // Updated to match standard-button
+      height: 7rem; // Updated to match standard-button
+      font-size: 2.5rem; // Updated to match standard-button
+      background: $deep-purple;
+      margin: 0 auto; // Center the button
+      @include button-3d-shadow;
+
+      &:hover {
+        @include button-3d-hover;
+      }
+
+      &:active {
+        @include button-3d-active;
+      }
+    }
+  }
+}
+
+@include mobile {
+  .vip-preferences-section {
+    margin-top: $spacing-unit * 8;
+    padding: $spacing-unit * 2;
+  }
+
+  .preferences-form {
+    padding: $spacing-unit * 4;
+
+    .genre-grid,
+    .options-grid {
+      grid-template-columns: 1fr; // Stack on mobile
+
+      .genre-item label,
+      .option-item label {
+        min-height: 6rem; // Slightly shorter on mobile
+      }
+    }
+
+    .mode-options {
+      grid-template-columns: 1fr;
+
+      .mode-option label {
+        min-height: 10rem; // Slightly shorter on mobile
+      }
+    }
+
+    .submit-section .standard-button {
+      width: 100%; // Full width on mobile
+      max-width: 300px;
+    }
+  }
+
+  .preferences-modal .modal-content .close-button {
+    width: 100%; // Full width on mobile
+    max-width: 300px; // Match the max-width of standard-button
+  }
+}

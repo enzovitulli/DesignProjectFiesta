@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Verificación VIP - Nighttime</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/main.css" />
+  </head>
+
+  <body>
+    <a href="#main-content" class="skip-to-content">Saltar al contenido principal</a>
+
+    <header class="navbar" role="banner">
+      <div class="logo-container">
+        <div class="logo-wrapper">
+          <a href="index.html" aria-label="Ir a pagina de Inicio">
+            <div class="logo"></div>
+          </a>
+        </div>
+        <div class="title-wrapper">
+          <a href="index.html"><h1 class="title">NIGHTTIME</h1></a>
+        </div>
+      </div>
+      <nav class="nav-links" role="navigation" aria-label="Menú principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="vip.html" aria-current="page">VIP</a></li>
+          <li><a href="tickets.html">Entradas</a></li>
+          <li><a href="gallery.html">Galería</a></li>
+          <li><a href="contact.html">Contacto</a></li>
+        </ul>
+          <!-- Mobile-only icons container -->
+        <div class="nav-icons-mobile">
+          <a href="help.html" class="icon-link tooltip" aria-label="Preguntas frecuentes">
+            <i class="fas fa-circle-question tooltip" aria-hidden="true"></i>
+            <span class="tooltiptext">Ayuda</span>
+          </a>
+          <a href="mailto:contact@nighttime.com" class="icon-link tooltip" aria-label="Enviar email">
+            <i class="fas fa-envelope" aria-hidden="true"></i>
+            <span class="tooltiptext">Correo</span>
+          </a>
+          <a href="#" class="icon-link tooltip" aria-label="Compartir">
+            <i class="fas fa-share-nodes tooltip" aria-hidden="true"></i>
+            <span class="tooltiptext">Compartir</span>
+          </a>
+        </div>
+      </nav>
+      <!-- Desktop-only icons -->
+      <div class="nav-icons-desktop ">
+        <a href="help.html" class="icon-link tooltip" aria-label="Preguntas frecuentes">
+          <span class="tooltiptext">Ayuda</span>
+          <i class="fas fa-circle-question" aria-hidden="true"></i>
+        </a>
+        <a href="mailto:contact@nighttime.com" class="icon-link tooltip" aria-label="Enviar email">
+          <i class="fas fa-envelope" aria-hidden="true"></i>
+          <span class="tooltiptext">Correo</span>
+        </a>
+        <a href="#" class="icon-link tooltip" aria-label="Compartir">
+          <i class="fas fa-share-nodes" aria-hidden="true"></i>
+          <span class="tooltiptext">Compartir</span>
+        </a>
+      </div>
+      <!-- Hamburger menu toggle -->
+      <button class="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </header>
+
+    <main id="main-content">
+      <section class="vip-entry-section">
+        <h1>Acceso VIP</h1>
+        <p>
+          Introduce tu código de reserva VIP para personalizar tu experiencia. 
+          Lo encontrarás en el email de confirmación de tu reserva. <br>
+          Consta de ocho caracteres alfanuméricos en mayúsculas. 
+        </p>
+        <form id="entry-form" class="entry-form glow-effect">
+          <div class="form-group">
+            <label for="reservation-code">Código de Reserva</label>
+            <input 
+              type="text" 
+              id="reservation-code" 
+              name="reservation-code"
+              placeholder="Introduce tu código" 
+              required
+              maxlength="8"
+              pattern="[A-Z0-9]{8}"
+              autocomplete="off"
+            />
+          </div>
+          <button type="submit" class="standard-button">Verificar</button>
+        </form>
+      </section>
+    </main>
+
+    <!-- Verification Modal -->
+    <div class="verification-modal">
+      <div class="modal-content glow-effect">
+        <h2>Verificación SMS</h2>
+        <p>
+          Hemos enviado un código de verificación al número de teléfono asociado a tu reserva.
+          Por favor, introdúcelo para continuar.
+        </p>
+        <div class="verification-code">
+          <input type="text" maxlength="1" pattern="\d" required />
+          <input type="text" maxlength="1" pattern="\d" required />
+          <input type="text" maxlength="1" pattern="\d" required />
+          <input type="text" maxlength="1" pattern="\d" required />
+        </div>
+        <button class="verify-button">Verificar</button>
+      </div>
+    </div>
+
+    <footer role="contentinfo">
+        <div class="footer-content">
+          <div class="footer-section about-us">
+            <h3>Sobre Nosotros</h3>
+            <p>
+              Nighttime es tu destino nocturno premium, donde la música, el ambiente y la diversión se fusionan para crear experiencias
+              inolvidables. Desde 2010 liderando el entretenimiento nocturno en Madrid.
+            </p>
+          </div>
+  
+          <div class="footer-section schedule">
+            <h3>Horario</h3>
+            <div class="schedule-item">
+              <span class="day">Lunes - Miércoles:</span>
+              <span class="hours">23:00 - 04:00</span>
+            </div>
+            <div class="schedule-item">
+              <span class="day">Jueves:</span>
+              <span class="hours">23:00 - 05:00</span>
+            </div>
+            <div class="schedule-item">
+              <span class="day">Viernes - Sábado:</span>
+              <span class="hours">23:00 - 06:00</span>
+            </div>
+            <div class="schedule-item">
+              <span class="day">Domingo:</span>
+              <span class="hours">Cerrado</span>
+            </div>
+          </div>
+  
+          <div class="footer-section contact">
+            <h3>Visítanos</h3>
+            <div class="contact-item">
+              <i class="fas fa-location-dot"></i>
+              <p>Calle Falsa 123, 28000 Madrid</p>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <a href="mailto:info@nighttime.com">info@nighttime.com</a>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-phone"></i>
+              <a href="tel:+34912345678">+34 91 234 56 78</a>
+            </div>
+            <div class="contact-item">
+              <i class="fab fa-whatsapp"></i>
+              <a href="https://wa.me/34666123456">+34 666 12 34 56</a>
+            </div>
+          </div>
+        </div>
+  
+        <div class="footer-legal">
+          <a href="legal.html">Aviso Legal</a>
+        </div>
+  
+        <div class="social-links">
+          <a href="#" target="_blank" aria-label="Visítanos en Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+          <a href="#" target="_blank" aria-label="Síguenos en Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+          <a href="#" target="_blank" aria-label="Síguenos en Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+          <a href="#" target="_blank" aria-label="Míranos en TikTok"><i class="fab fa-tiktok" aria-hidden="true"></i></a>
+        </div>
+      </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const entryForm = document.getElementById('entry-form');
+        const verificationModal = document.querySelector('.verification-modal');
+        const verifyButton = verificationModal.querySelector('.verify-button');
+        const codeInputs = verificationModal.querySelectorAll('.verification-code input');
+
+        // Handle reservation code submission
+        entryForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          verificationModal.classList.add('active');
+        });
+
+        // Handle verification code inputs
+        codeInputs.forEach((input, index) => {
+          // Handle input events
+          input.addEventListener('input', function(e) {
+            // Clear any non-digit characters
+            this.value = this.value.replace(/[^\d]/g, '');
+
+            if (this.value.length === 1) {
+              if (index < codeInputs.length - 1) {
+                codeInputs[index + 1].focus();
+              }
+            }
+          });
+
+          // Handle keydown events
+          input.addEventListener('keydown', function(e) {
+            if (e.key === 'Backspace' && !this.value) {
+              if (index > 0) {
+                codeInputs[index - 1].focus();
+              }
+            } else if (/^\d$/.test(e.key)) {
+              // If a digit is pressed, replace the current value
+              e.preventDefault();
+              this.value = e.key;
+              if (index < codeInputs.length - 1) {
+                codeInputs[index + 1].focus();
+              }
+            }
+          });
+
+          // Select all content when focused
+          input.addEventListener('focus', function() {
+            this.select();
+          });
+        });
+
+        // Handle verification button click
+        verifyButton.addEventListener('click', function() {
+          window.location.href = 'vip-preferences.html';
+        });
+      });
+    </script>
+  </body>
+</html>

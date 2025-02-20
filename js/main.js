@@ -1,21 +1,11 @@
 // Hamburger menu
 const hamburger = document.querySelector(".hamburger");
 const navLinks = document.querySelector(".nav-links");
-document.querySelector(".dropbtn").addEventListener("click", function() {
-    document.querySelector(".dropdown-content").classList.toggle("show");
-});
 
-// Dropdown menu
-window.onclick = function(event) {
-    if (!event.target.matches('.dropbtn')) {
-        document.querySelector(".dropdown-content").classList.remove("show");
-    }
-}
 hamburger.addEventListener("click", () => {
   hamburger.classList.toggle("active");
   navLinks.classList.toggle("active");
 });
-
 
 // Unified glow effect
 const glowElements = document.querySelectorAll(".glow-effect");
@@ -29,6 +19,28 @@ glowElements.forEach((element) => {
     element.style.setProperty("--mouse-x", `${x}px`);
     element.style.setProperty("--mouse-y", `${y}px`);
   });
+});
+
+// Preferences form handling
+document.addEventListener('DOMContentLoaded', () => {
+  const preferencesForm = document.getElementById('preferences-form');
+  const modal = document.querySelector('.preferences-modal');
+  const closeModalBtn = document.querySelector('.close-button');
+
+  if (preferencesForm) {
+    preferencesForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      modal.classList.add('active');
+    });
+  }
+
+  if (closeModalBtn) {
+    closeModalBtn.addEventListener('click', () => {
+      modal.classList.remove('active');
+      // Optionally redirect after closing modal
+      window.location.href = 'vip.html';
+    });
+  }
 });
 
 // Logo sprite animation
@@ -122,3 +134,31 @@ if (params.has("room")) {
       `;
   summaryDiv.innerHTML = summary;
 }
+
+// VIP Preferences Form Handling
+document.addEventListener('DOMContentLoaded', function() {
+  const preferencesForm = document.getElementById('preferences-form');
+  const modal = document.querySelector('.preferences-modal');
+  const closeButton = modal?.querySelector('.close-button');
+
+  if (preferencesForm) {
+    preferencesForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Here you would normally send the data to a server
+      const formData = new FormData(preferencesForm);
+      console.log('Preferences submitted:', Object.fromEntries(formData));
+      
+      // Show success modal
+      modal?.classList.add('active');
+    });
+  }
+
+  if (closeButton) {
+    closeButton.addEventListener('click', function() {
+      modal?.classList.remove('active');
+      // Optional: redirect to VIP page after closing modal
+      // window.location.href = 'vip.html';
+    });
+  }
+});
