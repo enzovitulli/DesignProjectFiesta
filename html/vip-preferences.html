@@ -13,6 +13,16 @@
     <button id="scroll-top" class="scroll-top" aria-label="Volver arriba">
       <i class="fas fa-arrow-up" aria-hidden="true"></i>
     </button>
+    <button id="section-nav-toggle" class="section-nav-toggle" aria-label="Navegación por secciones">
+      <i class="fas fa-list-ul" aria-hidden="true"></i>
+    </button>
+    <nav id="section-nav" class="section-nav" aria-label="Navegación por secciones">
+      <ul>
+        <li><a href="#music">Ambiente Musical</a></li>
+        <li><a href="#lighting">Ambiente Visual</a></li>
+        <li><a href="#welcome">Entrada al Club</a></li>
+      </ul>
+    </nav>
 
     <header class="navbar" role="banner">
       <div class="logo-container">
@@ -78,7 +88,7 @@
         <p>Define cada aspecto de tu noche y haz que tu reservado VIP sea exactamente como deseas. Tu espacio, tus reglas.</p>
 
         <form id="preferences-form" class="preferences-form glow-effect">
-          <div class="form-section music-preferences">
+          <div class="form-section music-preferences" id="music">
             <h2>Tu Ambiente Musical</h2>
             <p class="section-description">
               Selecciona los géneros que prefieres escuchar en tu zona VIP. Nuestros DJs se asegurarán de mantener el ritmo perfecto durante toda la noche.
@@ -134,7 +144,7 @@
             </div>
           </div>
 
-          <div class="form-section lighting-preferences">
+          <div class="form-section lighting-preferences" id="lighting">
             <h2>Tu Ambiente Visual</h2>
             <p class="section-description">
               Personaliza la iluminación de tu zona VIP para crear la atmósfera perfecta. Combina diferentes efectos para lograr el ambiente que buscas.
@@ -171,7 +181,7 @@
             </div>
           </div>
 
-          <div class="form-section welcome-preferences">
+          <div class="form-section welcome-preferences" id="welcome">
             <h2>Tu Entrada al Club</h2>
             <p class="section-description">
               Haz que tu llegada sea memorable. Elige cómo quieres que sea tu entrada y la de tus acompañantes al club.
@@ -278,5 +288,6 @@
     </footer>
 
     <script src="../js/main.js"></script>
+    <script src="../js/dropdown-menu.js"></script>
   </body>
 </html>

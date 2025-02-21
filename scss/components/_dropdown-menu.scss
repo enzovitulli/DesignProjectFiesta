@@ -1,0 +1,87 @@
+.section-nav-toggle {
+  display: none; // Hidden by default
+  position: fixed;
+  bottom: 3rem;
+  left: 3rem;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background: $glass-black;
+  border: none;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: transform 0.3s ease;
+
+  @include mobile {
+    display: none !important; // Force hide on mobile
+  }
+
+  @include desktop {
+    display: flex; // Only show on desktop
+  }
+
+  i {
+    font-size: 2rem;
+    color: $text-light;
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+  }
+
+  &:active {
+    transform: translateY(2px);
+  }
+}
+
+.section-nav {
+  display: none; // Hidden by default
+  
+  @include mobile {
+    display: none !important; // Force hide on mobile
+  }
+
+  position: fixed;
+  bottom: 9rem; // Position it above the toggle button
+  left: -300px;
+  background: $glass-black;
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: $border-radius;
+  z-index: 9;
+  transition: left 0.4s cubic-bezier(0.3, 0, 0.2, 1);
+  
+  @include desktop {
+    display: block; // Only show on desktop
+    
+    &.active {
+      left: 3rem;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+    li {
+      margin: 1rem 0;
+      
+      a {
+        color: $text-light;
+        text-decoration: none;
+        font-size: 1.6rem;
+        transition: color 0.3s ease;
+        display: block;
+        padding: 0.5rem 1rem;
+        white-space: nowrap;
+        
+        &:hover {
+          color: $accent-primary;
+        }
+      }
+    }
+  }
+}

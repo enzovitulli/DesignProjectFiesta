@@ -12,13 +12,13 @@ footer {
     justify-content: space-between;
     gap: $spacing-unit * 4;
     margin: 0 auto;
-    max-width: 1200px; // Added to control footer width
+    max-width: 1200px;
 
     .footer-section {
       flex: 1;
       max-width: 380px; // Prevent sections from getting too wide
       min-width: 280px; // Ensure sections don't get too narrow
-      text-align: left; // Add this to ensure left alignment
+      text-align: left;
       
       h3 {
         @include header-text;
@@ -33,7 +33,7 @@ footer {
           left: 0;
           width: 60px;
           height: 2px;
-          background: $accent-primary; // Keep underline accent colored
+          background: $accent-primary;
         }
       }
 
@@ -48,26 +48,27 @@ footer {
       }
 
       &.about-us {
-        max-width: 380px; // Reset to original max-width
-        min-width: 280px; // Keep original min-width
-        margin: 0; // Remove any auto margins
-        padding: 0; // Remove any extra padding
-        width: auto; // Remove fixed width
-        text-align: left; // Explicitly set left alignment
+        max-width: 380px;
+        min-width: 280px;
+        margin: 0;
+        padding: 0;
+        width: auto;
+        text-align: left;
         
         p {
           line-height: 1.8;
           margin-bottom: $spacing-unit * 2;
           opacity: 0.9; // Slightly dimmed like navbar text
-          text-align: left; // Ensure paragraph is also left-aligned
+          text-align: left;
         }
       }
 
+      // Not used
       &.schedule {
-        flex: 0.6; // Reduced from 0.8 for narrower width
+        flex: 0.6;
         min-width: 220px; // Adjusted minimum width to prevent too narrow display
         max-width: 300px; // Added max-width to keep content compact
-        margin: 0 auto; // Center the narrower section
+        margin: 0 auto;
 
         .schedule-item {
           display: flex;
@@ -75,7 +76,7 @@ footer {
           margin-bottom: $spacing-unit;
           
           .day, .hours {
-            color: $text-light; // Ensure hours are also white
+            color: $text-light;
             opacity: 0.9;
             font-weight: 300;
           }
@@ -84,7 +85,7 @@ footer {
 
       &.contact {
         max-width: 2px; // Added max-width to control text length
-        margin-left: auto; // Push to the right side of its space
+        margin-left: auto;
         
         .contact-item {
           display: flex;
@@ -93,7 +94,7 @@ footer {
           max-width: 100%; // Ensure items don't overflow
           
           i {
-            color: $text-light; // Changed from accent to white
+            color: $text-light;
             font-size: 2rem;
             margin-right: $spacing-unit * 2;
             width: 2.4rem;
@@ -165,11 +166,11 @@ footer {
       .footer-section {
         width: 90%; // Set consistent width for all sections
         max-width: 380px; // Keep max-width consistent
-        margin: 0 auto $spacing-unit * 4; // Add bottom margin for spacing
+        margin: 0 auto $spacing-unit * 4;
         text-align: center;
         
         &:last-child {
-          margin-bottom: 0; // Remove margin from last section
+          margin-bottom: 0;
         }
 
         h3 {

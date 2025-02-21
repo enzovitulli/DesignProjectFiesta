@@ -13,6 +13,16 @@
     <button id="scroll-top" class="scroll-top" aria-label="Volver arriba">
       <i class="fas fa-arrow-up" aria-hidden="true"></i>
     </button>
+    <button id="section-nav-toggle" class="section-nav-toggle" aria-label="Navegación por secciones">
+      <i class="fas fa-list-ul" aria-hidden="true"></i>
+    </button>
+    <nav id="section-nav" class="section-nav" aria-label="Navegación por secciones">
+      <ul>
+        <li><a href="#rooms-section">Salas</a></li>
+        <li><a href="#registration-section">Reservas</a></li>
+        <li><a href="#location">Ubicación</a></li>
+      </ul>
+    </nav>
     
     <header class="navbar" role="banner">
       <div class="logo-container">
@@ -86,7 +96,7 @@
           <div class="cta-buttons">
             <a href="vip.html#vip-booking" class="cta-button primary" aria-label="Reserva VIP">Reserva VIP</a>
             <a href="tickets.html#tickets" class="cta-button secondary" aria-label="Comprar Entradas">Comprar Entradas</a>
-          </div>1
+          </div>
         </div>
       </section>
 
@@ -95,8 +105,9 @@
           <video 
             controls
             preload="metadata"
-            poster="../assets/img/video-poster.webp" <!-- Ensure this image exists -->
+            poster="../assets/img/video-poster.webp"
             aria-label="Video promocional de Nighttime Club"
+            aria-describedby="video-description"
             playsinline
           >
             <!-- WebM: Chrome, Firefox, Edge -->
@@ -108,25 +119,14 @@
               <p>Tu navegador no soporta la reproducción de video.</p>
               <a href="../assets/video/Video Final 2.0.mp4" download>Descargar video</a>
             </div>
-            <!-- Audio description track -->
-            <track
-              kind="descriptions"
-              src="../assets/video/descriptions-es.vtt"
-              srclang="es"
-              label="Descripción en español"
-            >
-            <!-- Subtitles -->
-            <track
-              kind="subtitles"
-              src="../assets/video/subtitles-es.vtt"
-              srclang="es"
-              label="Subtítulos en español"
-            >
           </video>
+          <p id="video-description" class="sr-only">
+            Video promocional de Nighttime que muestra escenas de las mejores fiestas en el club. El video incluye música de fondo mientras se muestran tomas del ambiente vibrante, con efectos de iluminación espectaculares, gente bailando y disfrutando en las diferentes salas del local. Las escenas alternan entre planos generales del club y primeros planos de la pista de baile, todo ello sincronizado con los efectos de luz y la música.
+          </p>
         </div>
       </section>
 
-      <section class="rooms-section" aria-labelledby="rooms-title">
+      <section class="rooms-section" id="rooms-section" aria-labelledby="rooms-title">
         <div class="section-intro glow-effect">
           <h2 id="rooms-title">Experiencia Nighttime</h2>
           <p>
@@ -213,7 +213,7 @@
         />
       </section>
 
-      <section class="registration-section" aria-labelledby="registration-title">
+      <section class="registration-section" id="registration-section" aria-labelledby="registration-title">
         <div class="container">
           <div class="registration-form glow-effect">
             <h2 id="registration-title">Reserva Tu Experiencia VIP</h2>
@@ -261,7 +261,7 @@
         </div>
       </section>
 
-      <section class="location" aria-labelledby="location-title">
+      <section class="location" id="location" aria-labelledby="location-title">
         <div class="container">
           <div class="location-info glow-effect">
             <h2 id="location-title">Encuentra el Club</h2>
@@ -443,5 +443,6 @@
     </footer>
 
     <script src="../js/main.js"></script>
+    <script src="../js/dropdown-menu.js"></script>
   </body>
 </html>

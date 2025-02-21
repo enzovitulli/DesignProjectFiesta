@@ -13,6 +13,16 @@
     <button id="scroll-top" class="scroll-top" aria-label="Volver arriba">
       <i class="fas fa-arrow-up" aria-hidden="true"></i>
     </button>
+    <button id="section-nav-toggle" class="section-nav-toggle" aria-label="Navegación por secciones">
+      <i class="fas fa-list-ul" aria-hidden="true"></i>
+    </button>
+    <nav id="section-nav" class="section-nav" aria-label="Navegación por secciones">
+      <ul>
+        <li><a href="#features">Características</a></li>
+        <li><a href="#venue">Instalaciones</a></li>
+        <li><a href="#tickets">Comprar Entradas</a></li>
+      </ul>
+    </nav>
 
     <header class="navbar" role="banner">
       <div class="logo-container">
@@ -81,7 +91,7 @@
         </p>
       </section>
 
-      <section class="features-section">
+      <section class="features-section" id="features">
         <div class="features-block" role="region" aria-label="Bloque de características">
           <div class="feature-text">
             <h3>Sistema de Sonido VOID Acoustics</h3>
@@ -155,7 +165,7 @@
         </div>
       </section>
 
-      <section class="venue-showcase">
+      <section class="venue-showcase" id="venue">
         <h2>Nuestras Instalaciones</h2>
         <div class="showcase-grid">
           <div class="showcase-item glow-effect">
@@ -286,5 +296,6 @@
     </footer>
 
     <script src="../js/main.js"></script>
+    <script src="../js/dropdown-menu.js"></script>
   </body>
 </html>

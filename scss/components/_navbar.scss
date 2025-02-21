@@ -46,7 +46,7 @@
     .title-wrapper {
       position: relative;
       padding: 0;
-      margin: 0 1rem 0 0; // Reduced right margin
+      margin: 0 1rem 0 0;
       flex-shrink: 1; // Allow title to shrink
       overflow: hidden; // Prevent text overflow
       
@@ -61,8 +61,8 @@
           transition: all 0.3s ease;
           transform-origin: left; // Keep this to ensure expansion from left
           white-space: nowrap; // Prevent text wrapping
-          font-size: clamp(2.4rem, 4vw, 4rem); // Make font size responsive
-          letter-spacing: clamp(0.3rem, 1vw, 1rem); // Make letter spacing responsive
+          font-size: clamp(2.4rem, 4vw, 4rem); // Font size responsive
+          letter-spacing: clamp(0.3rem, 1vw, 1rem); // Letter spacing responsive
           
           &:hover {
             letter-spacing: clamp(0.5rem, 1.25vw, 1.25rem); // Responsive hover state
@@ -79,14 +79,14 @@
   }
 
   .nav-links {
-    margin: 0 2rem; // Changed from auto to fixed margin
+    margin: 0 2rem;
     padding: 0;
     flex-shrink: 1; // Allow shrinking
 
     ul {
       display: flex;
       list-style: none;
-      gap: $spacing-unit * 10; // Increased gap from 6 to 10 units
+      gap: $spacing-unit * 10;
 
       @media (max-width: 1200px) {
         gap: $spacing-unit * 5; // Reduced gap at smaller screens
@@ -104,10 +104,10 @@
         @include link-base; // Replace duplicate link styles
         text-decoration: none;
         color: $text-light;
-        font-size: 2.5rem; // Increased from 1.8rem to 2rem
+        font-size: 2.5rem;
         transition: all 0.3s ease;
         position: relative;
-        padding: $spacing-unit * 1.5 0; // Increased padding
+        padding: $spacing-unit * 1.5 0;
 
         &::after {
           content: '';
@@ -132,9 +132,9 @@
 
   .nav-icons {
     display: flex;
-    gap: $spacing-unit * 4; // Increased from 2 to 4 units
+    gap: $spacing-unit * 4;
     margin-left: auto;
-    padding-left: $spacing-unit * 3; // Increased padding from 2 to 3 units
+    padding-left: $spacing-unit * 3;
 
     .icon-link {
       @include link-base; // Replace duplicate link styles
@@ -243,7 +243,7 @@
       }
 
       .title-wrapper .title {
-        font-size: 3rem; // Increased from 2.8rem to 3rem
+        font-size: 3rem;
         letter-spacing: 0.4rem; // Reduced letter spacing for mobile
         
         &:hover {
@@ -289,7 +289,7 @@
         width: 100%;
         justify-content: center;
         padding: $spacing-unit * 2;
-        gap: $spacing-unit * 8; // Increased from 4 to 8 units for mobile
+        gap: $spacing-unit * 8;
 
         .icon-link {
           @include link-base; // Replace duplicate link styles
@@ -324,7 +324,7 @@
     .hamburger {
       display: block;
       margin-left: auto; // Ensure hamburger stays at the right
-      position: relative; // Change from absolute to relative
+      position: relative;
       z-index: 1001;
     }
   }
@@ -340,12 +340,11 @@
   }
 }
 
-// Remove old animations and keep only the new one
 @keyframes sparkleDiscoBall {
   from {
     object-position: 0 0;
   }
   to {
-    object-position: -13200px 0; // Full width of sprite sheet
+    object-position: -13200px 0; // Full width of sprite sheet (is actually 3300px)
   }
 }

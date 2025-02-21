@@ -1,7 +1,7 @@
 // Standard Button Style (with 3D effects but no animations)
 .standard-button {
   @include button-3d-base;
-  width: clamp(200px, 90%, 300px); // More responsive width
+  width: clamp(200px, 90%, 300px); // Responsive width
   height: 7.5rem;
   padding: $spacing-unit * 2;
   font-size: clamp(1.8rem, 3vw, 2.4rem); // Responsive font size

@@ -13,6 +13,17 @@
     <button id="scroll-top" class="scroll-top" aria-label="Volver arriba">
       <i class="fas fa-arrow-up" aria-hidden="true"></i>
     </button>
+    <button id="section-nav-toggle" class="section-nav-toggle" aria-label="Navegación por secciones">
+      <i class="fas fa-list-ul" aria-hidden="true"></i>
+    </button>
+    <nav id="section-nav" class="section-nav" aria-label="Navegación por secciones">
+      <ul>
+        <li><a href="#location-contact">Ubicación</a></li>
+        <li><a href="#transport">Cómo Llegar</a></li>
+        <li><a href="#contact-form">Formulario</a></li>
+        <li><a href="#newsletter">Newsletter</a></li>
+      </ul>
+    </nav>
 
     <header class="navbar" role="banner">
       <div class="logo-container">
@@ -74,7 +85,7 @@
 
     <main id="main-content" role="main">
       <div class="contact-section">
-        <div class="contact-block glow-effect" role="region" aria-labelledby="location-title">
+        <div class="contact-block glow-effect" id="location-contact" role="region" aria-labelledby="location-title">
           <h2 id="location-title">Ubicación y Contacto</h2>
           <div class="contact-content">
             <div class="info-text">
@@ -125,7 +136,7 @@
           </div>
         </div>
 
-        <div class="transport-options glow-effect" role="region" aria-labelledby="transport-title">
+        <div class="transport-options glow-effect" id="transport" role="region" aria-labelledby="transport-title">
           <h2 id="transport-title">Cómo Llegar</h2>
           <div class="transport-grid">
             <div class="transport-item">
@@ -315,5 +326,6 @@
     </footer>
 
     <script src="../js/main.js"></script>
+    <script src="../js/dropdown-menu.js"></script>
   </body>
 </html>

@@ -12,6 +12,16 @@
     <button id="scroll-top" class="scroll-top" aria-label="Volver arriba">
       <i class="fas fa-arrow-up" aria-hidden="true"></i>
     </button>
+    <button id="section-nav-toggle" class="section-nav-toggle" aria-label="Navegación por secciones">
+      <i class="fas fa-list-ul" aria-hidden="true"></i>
+    </button>
+    <nav id="section-nav" class="section-nav" aria-label="Navegación por secciones">
+      <ul>
+        <li><a href="#faq">Preguntas Frecuentes</a></li>
+        <li><a href="#lost-found">Objetos Perdidos</a></li>
+        <li><a href="#quick-links">Enlaces Rápidos</a></li>
+      </ul>
+    </nav>
 
     <header class="navbar" role="banner">
       <div class="logo-container">
@@ -80,7 +90,7 @@
         </p>
       </section>
 
-      <section class="faq-section">
+      <section class="faq-section" id="faq">
         <div class="faq-container glow-effect">
           <h2>Preguntas Frecuentes</h2>
           <div class="faq-list">
@@ -226,7 +236,7 @@
       </section>
 
       <section class="help-additional">
-        <div class="help-card glow-effect">
+        <div class="help-card glow-effect" id="lost-found">
           <h2>Objetos Perdidos</h2>
           <p class="form-intro">
             ¿Has perdido algo durante el evento? Rellena este formulario con los detalles del objeto extraviado y nos pondremos en contacto
@@ -264,7 +274,7 @@
           </form>
         </div>
 
-        <div class="help-card glow-effect">
+        <div class="help-card glow-effect" id="quick-links">
           <h2>Enlaces Rápidos</h2>
           <div class="quick-links">
             <a href="vip.html" class="quick-link">
@@ -361,5 +371,6 @@
 
     <script src="../js/main.js"></script>
     <script src="../js/faq-accordeon.js"></script>
+    <script src="../js/dropdown-menu.js"></script>
   </body>
 </html>

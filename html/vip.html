@@ -13,6 +13,19 @@
     <button id="scroll-top" class="scroll-top" aria-label="Volver arriba">
       <i class="fas fa-arrow-up" aria-hidden="true"></i>
     </button>
+    <button id="section-nav-toggle" class="section-nav-toggle" aria-label="Navegación por secciones">
+      <i class="fas fa-list-ul" aria-hidden="true"></i>
+    </button>
+    <nav id="section-nav" class="section-nav" aria-label="Navegación por secciones">
+      <ul>
+        <li><a href="#sala-gold">Sala Gold</a></li>
+        <li><a href="#sala-sapphire">Sala Sapphire</a></li>
+        <li><a href="#sala-ruby">Sala Ruby</a></li>
+        <li><a href="#sala-diamond">Sala Diamond</a></li>
+        <li><a href="#vip-booking">Reservas</a></li>
+        <li><a href="#bottle-service">Carta de Bebidas</a></li>
+      </ul>
+    </nav>
 
     <header class="navbar" role="banner">
       <div class="logo-container">
@@ -143,7 +156,7 @@
         <h2 id="rooms-title">Nuestras Salas VIP</h2>
 
         <!-- Room 1: Gold -->
-        <div class="room">
+        <div class="room" id="sala-gold">
           <div class="room-content glow-effect gold-glow">
             <h3>Sala Gold</h3>
             <div class="room-details">
@@ -171,7 +184,7 @@
         </div>
 
         <!-- Room 2: Sapphire -->
-        <div class="room">
+        <div class="room" id="sala-sapphire">
           <div class="room-content glow-effect sapphire-glow">
             <h3>Sala Sapphire</h3>
             <div class="room-details">
@@ -199,7 +212,7 @@
         </div>
 
         <!-- Room 3: Ruby -->
-        <div class="room">
+        <div class="room" id="sala-ruby">
           <div class="room-content glow-effect ruby-glow">
             <h3>Sala Ruby</h3>
             <div class="room-details">
@@ -227,7 +240,7 @@
         </div>
 
         <!-- Room 4: Diamond -->
-        <div class="room">
+        <div class="room" id="sala-diamond">
           <div class="room-content glow-effect diamond-glow">
             <h3>Sala Diamond</h3>
             <div class="room-details">
@@ -393,8 +406,7 @@
                   </tr>
                   <tr>
                     <th><strong>LALLIER BIANC DE BLANCS</strong></th>
-                    <td>€250</td>
-                  </tr>
+                    <td>€250</                  </tr>
                   <tr>
                     <th><strong>LAURENT PERRIER ROSE</strong></th>
                     <td>€290</td>
@@ -724,5 +736,6 @@
 
     <script src="../js/main.js"></script>
     <script src="../js/bottle-accordeon.js"></script>
+    <script src="../js/dropdown-menu.js"></script>
   </body>
 </html>
