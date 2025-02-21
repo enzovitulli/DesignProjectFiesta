@@ -171,7 +171,7 @@
 
         <div class="inquiry-form glow-effect" id="contact-form" role="region" aria-labelledby="form-title">
           <h2 id="form-title">Envíanos tu Consulta</h2>
-          <form action="#" method="POST" class="form-grid">
+          <form class="form-grid" id="contactForm" onsubmit="return false;">
             <div class="form-group">
               <label for="name">Nombre *</label>
               <input type="text" id="name" name="name" required aria-required="true" placeholder="Tu nombre completo" />
@@ -217,7 +217,7 @@
             Suscríbete a nuestro boletín para recibir las últimas novedades, promociones exclusivas y noticias sobre próximos eventos. Sé el
             primero en enterarte de todo lo que sucede en Nighttime.
           </p>
-          <form class="newsletter-form">
+          <form class="newsletter-form" id="newsletterForm" onsubmit="return false;">
             <div class="form-group">
               <input type="email" id="newsletter-email" placeholder="tu@email.com" required />
               <button type="submit" class="standard-button">Suscribirse</button>
@@ -225,6 +225,30 @@
           </form>
         </div>
       </section>
+
+      <!-- Contact Form Modal -->
+      <div class="modal contact-modal">
+        <div class="modal-content glow-effect">
+          <div class="success-icon">
+            <i class="fas fa-circle-check"></i>
+          </div>
+          <h2>¡Mensaje Enviado!</h2>
+          <p>Gracias por contactar con nosotros. Te responderemos lo antes posible.</p>
+          <button type="button" class="standard-button close-modal">Aceptar</button>
+        </div>
+      </div>
+
+      <!-- Newsletter Modal -->
+      <div class="modal newsletter-modal">
+        <div class="modal-content glow-effect">
+          <div class="success-icon">
+            <i class="fas fa-circle-check"></i>
+          </div>
+          <h2>¡Suscripción Confirmada!</h2>
+          <p>Te has suscrito correctamente a nuestro boletín de noticias.</p>
+          <button type="button" class="standard-button close-modal">Aceptar</button>
+        </div>
+      </div>
     </main>
 
     <footer role="contentinfo">

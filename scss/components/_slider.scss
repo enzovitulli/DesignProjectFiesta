@@ -9,10 +9,9 @@
   position: relative;
   width: 100%;
   max-width: none;  // Removed max-width constraint
-  margin: 0;        // Removed margin
-  padding: 0;       // Removed padding
+  margin: 0;        
+  padding: 0;       
   
-  // Remove the fade effects completely
   &::before,
   &::after {
     display: none; // This removes the fade effects
@@ -41,7 +40,7 @@
 
 .slider-track {
   display: flex;
-  gap: $spacing-unit * 2;  // Add gap between slides
+  gap: $spacing-unit * 2;  // Adds gap between slides
   animation: scroll 40s linear infinite;
   will-change: transform;
 }
@@ -60,8 +59,7 @@
     object-fit: contain;
     filter: invert(1);
     opacity: 0.7;
-    transition: all 0.5s ease; // Changed to transition all properties with longer duration
-
+    transition: all 0.5s ease;
     &:hover {
       opacity: 1;
       filter: invert(1) drop-shadow(0 2px 8px rgba($accent-primary, 0.3));
@@ -74,21 +72,21 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-200px * 12 - #{$spacing-unit * 24})); // Account for gaps
+    transform: translateX(calc(-200px * 12 - #{$spacing-unit * 24}));
   }
 }
 
 @include mobile {
   .slider-section {
-    padding: 0;  // Remove all padding
+    padding: 0;
     width: 100vw; // Force full viewport width
     margin-left: -5%; // Compensate for any parent container margins
   }
 
   .slider-container {
-    padding: 0; // Remove container padding
-    margin: 0; // Remove any margin
-    width: 100vw; // Force full viewport width
+    padding: 0;
+    margin: 0;
+    width: 100vw;
     overflow: hidden; // Ensure no horizontal scrollbar
     
     &::before,
@@ -98,12 +96,12 @@
   }
 
   .slider {
-    padding: 0;  // Remove slider padding
-    width: 100vw; // Force full viewport width
+    padding: 0;
+    width: 100vw;
   }
 
   .slide {
-    width: 120px; // Slightly smaller slides on mobile
+    width: 120px;
     padding: $spacing-unit;
     
     img.logos {

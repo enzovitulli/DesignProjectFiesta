@@ -70,6 +70,54 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+// Contact and Newsletter Modal Handling
+document.addEventListener('DOMContentLoaded', () => {
+  // Contact Form Modal
+  const contactForm = document.getElementById('contactForm');
+  const contactModal = document.querySelector('.contact-modal');
+  
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      contactModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      return false;
+    });
+  }
+
+  // Newsletter Modal
+  const newsletterForm = document.getElementById('newsletterForm');
+  const newsletterModal = document.querySelector('.newsletter-modal');
+  
+  if (newsletterForm) {
+    newsletterForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      newsletterModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      return false;
+    });
+  }
+
+  // Close Modal Buttons
+  const closeButtons = document.querySelectorAll('.close-modal');
+  closeButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const modal = button.closest('.modal');
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+      
+      // Reset the respective form
+      if (modal.classList.contains('contact-modal')) {
+        contactForm.reset();
+      } else if (modal.classList.contains('newsletter-modal')) {
+        newsletterForm.reset();
+      }
+    });
+  });
+});
+
 // VIP preferences form handling
 document.addEventListener('DOMContentLoaded', () => {
   const preferencesForm = document.getElementById('preferences-form');
@@ -122,7 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Validate input when user types or changes value
+    // Validate input when user types
     guestsInput.addEventListener('input', () => {
       let value = parseInt(guestsInput.value);
       const max = parseInt(guestsInput.max);
@@ -137,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// Tilt effect on index.hmtl room cards
+// Card tilt effect on index.html room cards
 const cards = document.querySelectorAll(".room-card");
 
 cards.forEach((card) => {
@@ -203,5 +251,4 @@ const slideWidth = 200;
 const slideCount = slides.length;
 const gap = 16;
 
-sliderTrack.style.width = `${(slideWidth + gap) * slideCount}px`;
 sliderTrack.style.width = `${(slideWidth + gap) * slideCount}px`;
