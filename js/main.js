@@ -7,43 +7,7 @@ hamburger.addEventListener("click", () => {
   navLinks.classList.toggle("active");
 });
 
-// Unified glow effect
-const glowElements = document.querySelectorAll(".glow-effect");
-
-glowElements.forEach((element) => {
-  element.addEventListener("mousemove", (e) => {
-    const rect = element.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-
-    element.style.setProperty("--mouse-x", `${x}px`);
-    element.style.setProperty("--mouse-y", `${y}px`);
-  });
-});
-
-// Preferences form handling
-document.addEventListener('DOMContentLoaded', () => {
-  const preferencesForm = document.getElementById('preferences-form');
-  const modal = document.querySelector('.preferences-modal');
-  const closeModalBtn = document.querySelector('.close-button');
-
-  if (preferencesForm) {
-    preferencesForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      modal.classList.add('active');
-    });
-  }
-
-  if (closeModalBtn) {
-    closeModalBtn.addEventListener('click', () => {
-      modal.classList.remove('active');
-      // Optionally redirect after closing modal
-      window.location.href = 'vip.html';
-    });
-  }
-});
-
-// Logo sprite animation
+// Logo sprite
 document.addEventListener("DOMContentLoaded", () => {
   const logo = document.querySelector(".logo");
 
@@ -67,7 +31,88 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// Tilt effect on room cards (keeping this separate as it's different functionality)
+// Glow effect
+const glowElements = document.querySelectorAll(".glow-effect");
+
+glowElements.forEach((element) => {
+  element.addEventListener("mousemove", (e) => {
+    const rect = element.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    element.style.setProperty("--mouse-x", `${x}px`);
+    element.style.setProperty("--mouse-y", `${y}px`);
+  });
+});
+
+// VIP preferences form handling
+document.addEventListener('DOMContentLoaded', () => {
+  const preferencesForm = document.getElementById('preferences-form');
+  const modal = document.querySelector('.preferences-modal');
+  const closeModalBtn = document.querySelector('.close-button');
+
+  if (preferencesForm) {
+    preferencesForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      modal.classList.add('active');
+    });
+  }
+
+  if (closeModalBtn) {
+    closeModalBtn.addEventListener('click', () => {
+      modal.classList.remove('active');
+      // Optionally redirect after closing modal
+      window.location.href = 'vip.html';
+    });
+  }
+});
+
+// VIP Room capacity validation
+document.addEventListener('DOMContentLoaded', () => {
+  const roomSelect = document.getElementById('room');
+  const guestsInput = document.getElementById('guests');
+
+  if (roomSelect && guestsInput) {
+    // Set initial state
+    guestsInput.min = 10;
+    guestsInput.disabled = true;
+
+    roomSelect.addEventListener('change', () => {
+      const selectedOption = roomSelect.options[roomSelect.selectedIndex];
+      
+      if (selectedOption.value === '') {
+        // No room selected
+        guestsInput.disabled = true;
+        guestsInput.value = '';
+      } else {
+        // Room selected - get capacity from data attributes
+        const maxGuests = parseInt(selectedOption.getAttribute('data-max'));
+        guestsInput.max = maxGuests;
+        guestsInput.disabled = false;
+        
+        // Adjust current value if it exceeds new max
+        if (parseInt(guestsInput.value) > maxGuests) {
+          guestsInput.value = maxGuests;
+        }
+      }
+    });
+
+    // Validate input when user types or changes value
+    guestsInput.addEventListener('input', () => {
+      let value = parseInt(guestsInput.value);
+      const max = parseInt(guestsInput.max);
+      const min = parseInt(guestsInput.min);
+
+      if (value > max) {
+        guestsInput.value = max;
+      } else if (value < min && value !== '') {
+        guestsInput.value = min;
+      }
+    });
+  }
+});
+
+// Tilt effect on index.hmtl room cards
 const cards = document.querySelectorAll(".room-card");
 
 cards.forEach((card) => {
@@ -104,7 +149,6 @@ cards.forEach((card) => {
   });
 });
 
-
 // Slider on index.html
 const sliderTrack = document.querySelector(".slider-track");
 const slides = document.querySelectorAll(".slide");
@@ -114,26 +158,6 @@ const gap = 16;
 
 sliderTrack.style.width = `${(slideWidth + gap) * slideCount}px`;
 sliderTrack.style.width = `${(slideWidth + gap) * slideCount}px`;
-
-
-// Get URL parameters to show booking summary in the payment.html form (REMOVE)
-//Not sure if using these
-const params = new URLSearchParams(window.location.search);
-const summaryDiv = document.querySelector(".booking-summary");
-
-if (params.has("room")) {
-  const summary = `
-          <div class="summary-details">
-              <h3>Resumen de la Reserva</h3>
-              <p><strong>Nombre:</strong> ${params.get("name")}</p>
-              <p><strong>Email:</strong> ${params.get("email")}</p>
-              <p><strong>Teléfono:</strong> ${params.get("phone")}</p>
-              <p><strong>Sala:</strong> ${params.get("room")}</p>
-              <p><strong>Invitados:</strong> ${params.get("guests")}</p>
-          </div>
-      `;
-  summaryDiv.innerHTML = summary;
-}
 
 // VIP Preferences Form Handling
 document.addEventListener('DOMContentLoaded', function() {
@@ -145,11 +169,6 @@ document.addEventListener('DOMContentLoaded', function() {
     preferencesForm.addEventListener('submit', function(e) {
       e.preventDefault();
       
-      // Here you would normally send the data to a server
-      const formData = new FormData(preferencesForm);
-      console.log('Preferences submitted:', Object.fromEntries(formData));
-      
-      // Show success modal
       modal?.classList.add('active');
     });
   }
@@ -157,8 +176,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (closeButton) {
     closeButton.addEventListener('click', function() {
       modal?.classList.remove('active');
-      // Optional: redirect to VIP page after closing modal
-      // window.location.href = 'vip.html';
+      window.location.href = 'vip.html';
     });
   }
 });

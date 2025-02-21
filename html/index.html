@@ -227,18 +227,18 @@
               <input type="tel" id="phone" placeholder="+34 600 000 000" aria-required="true" />
             </div>
             <div class="form-group">
-              <label for="guests">Número de Invitados</label>
-              <input type="number" id="guests" placeholder="2" min="1" max="20" aria-required="true" />
-            </div>
-            <div class="form-group">
               <label for="room">Selecciona una sala</label>
               <select id="room" name="room" required>
                 <option value="">Selecciona una sala</option>
-                <option value="gold">Sala Gold (hasta 20 personas)</option>
-                <option value="sapphire">Sala Sapphire (hasta 30 personas)</option>
-                <option value="ruby">Sala Ruby (hasta 30 personas)</option>
-                <option value="diamond">Sala Diamond (hasta 40 personas)</option>
+                <option value="gold" data-min="10" data-max="35">Sala Gold (hasta 35 personas)</option>
+                <option value="sapphire" data-min="10" data-max="50">Sala Sapphire (hasta 50 personas)</option>
+                <option value="ruby" data-min="10" data-max="50">Sala Ruby (hasta 50 personas)</option>
+                <option value="diamond" data-min="10" data-max="80">Sala Diamond (hasta 80 personas)</option>
               </select>
+            </div>
+            <div class="form-group">
+              <label for="guests">Número de Invitados</label>
+              <input type="number" id="guests" placeholder="10" min="10" max="80" aria-required="true" />
             </div>
             <a class="enlace-reservar" href="payment.html"><button type="submit" class="standard-button">Reservar Ahora</button></a>
           </div>
