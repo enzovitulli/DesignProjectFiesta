@@ -2818,6 +2818,19 @@ footer .footer-legal a:hover {
   display: flex;
   flex-direction: column;
 }
+.registration-section .container .spotify-player .skip-spotify {
+  position: absolute;
+  left: -9999px;
+  z-index: 999;
+  padding: 0.8rem;
+  background: #040a1d;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+.registration-section .container .spotify-player .skip-spotify:focus {
+  left: 0;
+  top: 0;
+}
 .registration-section .container .spotify-player iframe {
   flex: 1;
   margin-top: 1.6rem;

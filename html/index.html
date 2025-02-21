@@ -248,6 +248,7 @@
 
           <div class="spotify-player glow-effect">
             <h2>Nuestra Playlist de la Semana</h2>
+            <a href="#location" class="skip-spotify">Saltar reproductor de Spotify</a>
             <iframe
               src="https://open.spotify.com/embed/playlist/37i9dQZF1DXcBWIGoYBM5M"
               title="Playlist semanal de Nighttime Club - Los mejores hits del momento"
@@ -256,7 +257,13 @@
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture; volume-controls"
               loading="lazy"
               aria-label="Reproductor de Spotify con la playlist semanal del club"
+              tabindex="0"
+              role="complementary"
+              aria-describedby="spotify-description"
             ></iframe>
+            <span id="spotify-description" class="sr-only">
+              Este es un reproductor de música integrado de Spotify que muestra nuestra playlist semanal. Puedes usar el enlace anterior para saltar este contenido.
+            </span>
           </div>
         </div>
       </section>

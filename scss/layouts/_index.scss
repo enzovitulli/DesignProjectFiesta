@@ -442,6 +442,22 @@
       display: flex;
       flex-direction: column;
 
+      // Style for the link to skip
+      .skip-spotify {
+        position: absolute;
+        left: -9999px;
+        z-index: 999;
+        padding: $spacing-unit;
+        background: $deep-navy;
+        color: $text-light;
+        text-decoration: none;
+        
+        &:focus {
+          left: 0;
+          top: 0;
+        }
+      }
+
       iframe {
         flex: 1;
         margin-top: $spacing-unit * 2;
