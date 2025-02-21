@@ -442,19 +442,26 @@
       display: flex;
       flex-direction: column;
 
-      // Style for the link to skip
       .skip-spotify {
         position: absolute;
-        left: -9999px;
-        z-index: 999;
-        padding: $spacing-unit;
-        background: $deep-navy;
+        left: 50%;
+        transform: translateX(-50%);
+        background: $accent-primary;
         color: $text-light;
+        padding: 0.5rem 1rem;
+        z-index: 9999;
         text-decoration: none;
+        border-radius: 0 0 0.5rem 0.5rem;
         
+        // Initially hidden
+        top: -100px;
+        opacity: 0;
+        
+        // Show on focus
         &:focus {
-          left: 0;
           top: 0;
+          opacity: 1;
+          transition: opacity 0.3s ease-in-out;
         }
       }
 

@@ -2820,16 +2820,21 @@ footer .footer-legal a:hover {
 }
 .registration-section .container .spotify-player .skip-spotify {
   position: absolute;
-  left: -9999px;
-  z-index: 999;
-  padding: 0.8rem;
-  background: #040a1d;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #00aaff;
   color: #FFFFFF;
+  padding: 0.5rem 1rem;
+  z-index: 9999;
   text-decoration: none;
+  border-radius: 0 0 0.5rem 0.5rem;
+  top: -100px;
+  opacity: 0;
 }
 .registration-section .container .spotify-player .skip-spotify:focus {
-  left: 0;
   top: 0;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
 }
 .registration-section .container .spotify-player iframe {
   flex: 1;
