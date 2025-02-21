@@ -235,41 +235,43 @@
     margin: 0 auto;
     padding: 0;
     
-    // Large screens - Four cards
-    @media (min-width: 1400px) {
+    // Breakpoints:
+    // Large screens (4 cards in a row)
+    @media (min-width: 1700px) {
       grid-template-columns: repeat(4, 1fr);
       gap: $spacing-unit * 4;
+      width: 95%;
       
       .room-card {
-        min-width: 320px; // Slightly bigger minimum
-        max-width: 500px; // Allow cards to grow more
+        min-width: 260px;
+        max-width: 400px;
         
         .image-container {
-          max-height: 650px; // Higher max-height for large screens
+          max-height: 500px;
         }
       }
     }
 
-    // Medium screens - Two cards
-    @media (max-width: 1399px) and (min-width: 999px) { // Changed from 901px to 999px to match mobile mixin
+    // Medium screens (2x2 grid)
+    @media (min-width: 999px) and (max-width: 1699px) {
       grid-template-columns: repeat(2, 1fr);
-      width: min(90%, 1000px); // Control max-width while keeping proportions
+      width: min(90%, 1000px);
       gap: $spacing-unit * 4;
       justify-content: center;
       
       .room-card {
         min-width: 300px;
-        max-width: 450px; // Reduced max-width
-        margin: 0; // Remove individual card margins
+        max-width: 450px;
+        margin: 0;
         
         .image-container {
-          max-height: 450px; // Reduced height for medium screens
+          max-height: 450px;
         }
       }
     }
 
-    // Small screens - Single column (now matches mobile mixin)
-    @media (max-width: 998px) { // Changed from 900px to 998px
+    // Small screens (single column)
+    @media (max-width: 998px) {
       grid-template-columns: 1fr;
       width: 95%; // Reduced from 100% to add some margin
       padding: 0;

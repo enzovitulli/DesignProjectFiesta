@@ -2453,20 +2453,21 @@ footer .footer-legal a:hover {
   margin: 0 auto;
   padding: 0;
 }
-@media (min-width: 1400px) {
+@media (min-width: 1700px) {
   .rooms-section .rooms-grid {
     grid-template-columns: repeat(4, 1fr);
     gap: 3.2rem;
+    width: 95%;
   }
   .rooms-section .rooms-grid .room-card {
-    min-width: 320px;
-    max-width: 500px;
+    min-width: 260px;
+    max-width: 400px;
   }
   .rooms-section .rooms-grid .room-card .image-container {
-    max-height: 650px;
+    max-height: 500px;
   }
 }
-@media (max-width: 1399px) and (min-width: 999px) {
+@media (min-width: 999px) and (max-width: 1699px) {
   .rooms-section .rooms-grid {
     grid-template-columns: repeat(2, 1fr);
     width: min(90%, 1000px);
