@@ -202,64 +202,69 @@
 .tickets-purchase {
   @include section-container;
   margin: $spacing-unit * 16 auto;
+  padding: 0 $spacing-unit * 2;
 
   .purchase-container {
     @include card-base;
-    max-width: min(800px, 90vw);
+    width: 100%;
+    max-width: min(800px, 95vw);
     margin: 0 auto;
-    padding: $spacing-unit * 8;
+    padding: clamp($spacing-unit * 4, 5vw, $spacing-unit * 8);
 
     h2 {
       @include header-text;
       text-align: center;
-      margin-bottom: $spacing-unit * 6;
+      margin-bottom: clamp($spacing-unit * 4, 5vw, $spacing-unit * 6);
+      font-size: clamp(2.8rem, 4vw, 3.6rem); // Responsive font size
     }
 
     .ticket-form {
       display: grid;
-      gap: $spacing-unit * 4;
+      gap: clamp($spacing-unit * 2, 3vw, $spacing-unit * 4);
 
       .form-group {
         label {
           display: block;
           font-family: $header-font;
-          font-size: 2rem;
+          font-size: clamp(1.8rem, 2.5vw, 2rem);
           color: $text-light;
-          margin-bottom: $spacing-unit * 2;
+          margin-bottom: $spacing-unit * 1.5;
         }
 
         input,
         select {
           width: 100%;
-          padding: $spacing-unit * 2;
+          padding: clamp($spacing-unit, 2vw, $spacing-unit * 2);
           background: rgba($pure-white, 0.1);
           border: 1px solid rgba($pure-white, 0.2);
           border-radius: $border-radius-sm;
           color: $text-light;
-          font-size: 1.6rem;
-
-          &:focus {
-            outline: none;
-            border-color: $accent-primary;
-            box-shadow: 0 0 15px rgba($accent-primary, 0.3);
-          }
+          font-size: clamp(1.4rem, 2vw, 1.6rem);
         }
       }
-    }
-
-    .standard-button {
-      display: block;
-      width: 300px;
-      height: 7rem;
-      margin: $spacing-unit * 6 auto 0;
     }
   }
 
   @include mobile {
     margin: $spacing-unit * 8 auto;
-
+    padding: $spacing-unit;
+    
     .purchase-container {
-      padding: $spacing-unit * 4;
+      padding: $spacing-unit * 3;
+      width: 100%;
+      
+      .ticket-form {
+        gap: $spacing-unit * 2;
+        
+        .form-group {
+          margin-bottom: $spacing-unit;
+          
+          input,
+          select {
+            padding: $spacing-unit * 1.5;
+          }
+        }
+      }
     }
   }
 }

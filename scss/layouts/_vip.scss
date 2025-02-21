@@ -21,10 +21,84 @@
   }
 }
 
+.vip-header-section {
+  @include section-container;
+  margin: $spacing-unit * 12 auto;
+  display: flex;
+  gap: $spacing-unit * 8;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  .intro-content {
+    flex: 0 1 65%;
+    max-width: 800px;
+    padding-right: $spacing-unit * 4;
+    
+    h1 {
+      @include header-text;
+      margin-bottom: $spacing-unit * 4;
+      font-size: clamp(4.2rem, 7vw, 7.2rem);
+    }
+
+    p {
+      font-size: clamp(1.6rem, 2vw, 2rem);
+      color: rgba($text-light, 0.9);
+      line-height: 1.6;
+      margin: 0;
+      max-width: 600px;
+    }
+  }
+
+  .entry-card {
+    flex: 0 0 35%;
+    @include card-base;
+    padding: $spacing-unit * 4;
+    text-align: center;
+    min-width: 300px;
+    max-width: 400px;
+
+    h2 {
+      font-family: $header-font;
+      font-size: 2.8rem;
+      color: $text-light;
+      margin-bottom: $spacing-unit * 3;
+    }
+
+    p {
+      color: rgba($text-light, 0.9);
+      font-size: 1.6rem;
+      line-height: 1.6;
+      margin-bottom: $spacing-unit * 4;
+    }
+  }
+
+  @include mobile {
+    flex-direction: column;
+    text-align: center;
+    gap: $spacing-unit * 4;
+
+    .intro-content {
+      width: 100%;
+      padding-right: 0;
+      text-align: center;
+
+      p {
+        margin: 0 auto;
+      }
+    }
+
+    .entry-card {
+      width: 100%;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+  }
+}
+
 .vip-title-section {
   @include section-container;
   margin: $spacing-unit * 12 auto;
-  max-width: min(1200px, 95vw); // Wider container
+  max-width: min(1200px, 95vw);
   text-align: center;
 
   h1 {
@@ -38,9 +112,10 @@
   }
 
   p {
-    margin: 0;
+    margin: 0 auto;
+    max-width: 800px;
     font-family: $body-font;
-    font-size: clamp(1.6rem, 2vw, 2rem);
+    font-size: clamp(1.8rem, 2vw, 2.2rem);
     color: rgba($text-light, 0.9);
     line-height: 1.6;
   }
@@ -51,20 +126,20 @@
   margin: $spacing-unit * 12 auto;
 
   .intro-content {
-    max-width: min(1000px, 90vw); // Increased from 500px to match index.html's section-intro
+    max-width: min(1000px, 90vw);
     margin: 0 auto;
     padding: $spacing-unit * 8;
     @include card-base;
 
     @include mobile {
-      max-width: min(500px, 95vw); // Narrower on mobile
+      max-width: min(500px, 95vw);
       padding: $spacing-unit * 4;
     }
 
     p {
-      font-family: $body-font; // Added explicit font-family
+      font-family: $body-font;
       font-size: 1.8rem;
-      color: $text-light; // Fixed text color
+      color: $text-light;
       line-height: 1.6;
       margin-bottom: $spacing-unit * 4;
     }
@@ -186,7 +261,7 @@
         height: 100%;
         object-fit: cover;
         filter: none;
-        mix-blend-mode: normal; // Remove any blend modes
+        mix-blend-mode: normal;
         opacity: 1;
         background: none;
         position: relative;
@@ -195,7 +270,7 @@
 
       &::before,
       &::after {
-        display: none; // Remove any pseudo-element overlays
+        display: none;
         content: none;
       }
     }
@@ -267,9 +342,7 @@
 
     .standard-button {
       display: block;
-      width: 300px;
-      height: 7rem;
-      margin: $spacing-unit * 6 auto 0;
+      width: clamp(200px, 90%, 300px); // Ensure responsiveness in forms
     }
   }
 
@@ -277,6 +350,8 @@
     padding: $spacing-unit * 2;
     
     .registration-form {
+      width: 100%;
+      max-width: min(450px, 95%); // Adjusted container max-width
       padding: $spacing-unit * 4;
       
       h2 {
@@ -328,17 +403,17 @@
 
   .vip-rooms {
     .room {
-      flex-direction: column !important; // This forces column positioning in the mobile version
+      flex-direction: column !important;
       gap: $spacing-unit * 4;
       margin-bottom: $spacing-unit * 8;
 
       .room-content {
-        order: 1; // Content always comes first
+        order: 1;
         padding: $spacing-unit * 4;
       }
 
       .room-image {
-        order: 2; // Image always comes second
+        order: 2;
         height: 40vh;
       }
     }

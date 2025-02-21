@@ -337,22 +337,35 @@ h4 {
   border: none;
   color: #FFFFFF;
   cursor: pointer;
-  width: clamp(200px, 30vw, 300px);
-  height: clamp(5rem, 7vh, 7rem);
-  padding: clamp(0.8rem, 1.5vw, 1.6rem);
-  font-size: clamp(2rem, 2.5vw, 2.8rem);
+  width: clamp(200px, 90%, 300px);
+  height: 7.5rem;
+  padding: 1.6rem;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
   background: #9030FD;
   margin: 0 auto;
+  white-space: normal;
+  line-height: 1.2;
+  min-width: 180px;
   box-shadow: inset 0 12px 12px -12px rgba(255, 255, 255, 0.6), inset 12px 0 12px -12px rgba(255, 255, 255, 0.6), inset 2px 2px 4px rgba(255, 255, 255, 0.4), inset -4px -4px 8px rgba(0, 0, 0, 0.7), inset -8px -8px 16px rgba(0, 0, 0, 0.5), 2px 2px 4px rgba(0, 0, 0, 0.3), 6px 6px 12px rgba(0, 0, 0, 0.4), 8px 8px 16px rgba(0, 0, 0, 0.3), 12px 12px 24px rgba(0, 0, 0, 0.2);
-  transition: transform 0.1s ease;
 }
 .standard-button:hover {
   transform: translateY(-2px);
 }
 .standard-button:active {
   transform: translateY(1px);
+  background: #7502f8;
+  transform: translateY(3px);
   box-shadow: inset 0 2px 2px -2px rgba(255, 255, 255, 0.2), inset 2px 0 2px -2px rgba(255, 255, 255, 0.2), inset -1px -1px 3px rgba(0, 0, 0, 0.9), inset -2px -2px 6px rgba(0, 0, 0, 0.8), inset -3px -3px 9px rgba(0, 0, 0, 0.7), 0 1px 2px rgba(0, 0, 0, 0.3);
   filter: brightness(0.85);
+}
+@media (max-width: 999px) {
+  .standard-button {
+    width: 100%;
+    max-width: 220px;
+    height: auto;
+    min-height: 7.2rem;
+    padding: 1.44rem;
+  }
 }
 
 .cta-buttons {
@@ -873,7 +886,8 @@ footer .footer-legal a:hover {
   align-items: center;
   gap: 1.2rem;
   min-width: auto;
-  flex-shrink: 0;
+  flex-shrink: 1;
+  max-width: 40%;
 }
 .navbar .logo-container .logo-wrapper {
   width: 4rem;
@@ -896,8 +910,9 @@ footer .footer-legal a:hover {
 .navbar .logo-container .title-wrapper {
   position: relative;
   padding: 0;
-  margin: 0 2rem 0 1rem;
-  flex-shrink: 0;
+  margin: 0 1rem 0 0;
+  flex-shrink: 1;
+  overflow: hidden;
 }
 .navbar .logo-container .title-wrapper a {
   text-decoration: none;
@@ -909,18 +924,14 @@ footer .footer-legal a:hover {
   transition: all 0.3s ease;
   transform-origin: left;
   white-space: nowrap;
-  font-size: 4rem;
+  font-size: clamp(2.4rem, 4vw, 4rem);
+  letter-spacing: clamp(0.3rem, 1vw, 1rem);
 }
 .navbar .logo-container .title-wrapper a .title:hover {
-  letter-spacing: 1.25rem;
+  letter-spacing: clamp(0.5rem, 1.25vw, 1.25rem);
   transform: none;
   text-shadow: 0 0 10px rgba(0, 170, 255, 0.5), 0 0 20px rgba(0, 170, 255, 0.3), 0 0 30px rgba(0, 170, 255, 0.1);
   color: #d9f2ff;
-}
-@media (max-width: 999px) {
-  .navbar .logo-container .title-wrapper a .title {
-    font-size: 3.2rem;
-  }
 }
 .navbar .nav-links {
   margin: 0 2rem;
@@ -1083,6 +1094,23 @@ footer .footer-legal a:hover {
   }
 }
 @media (max-width: 999px) {
+  .navbar {
+    padding: 1.6rem 1.6rem;
+  }
+  .navbar .logo-container {
+    max-width: 75%;
+  }
+  .navbar .logo-container .logo-wrapper {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+  .navbar .logo-container .title-wrapper .title {
+    font-size: 3rem;
+    letter-spacing: 0.4rem;
+  }
+  .navbar .logo-container .title-wrapper .title:hover {
+    letter-spacing: 0.5rem;
+  }
   .navbar .nav-icons-desktop {
     display: none;
   }
@@ -1166,6 +1194,8 @@ footer .footer-legal a:hover {
   }
   .navbar .hamburger {
     display: block;
+    margin-left: auto;
+    position: relative;
     z-index: 1001;
   }
 }
@@ -2055,9 +2085,6 @@ footer .footer-legal a:hover {
   min-height: 120px;
   resize: vertical;
 }
-.help-additional .help-card .lost-found-form .standard-button {
-  margin-top: 3.2rem;
-}
 .help-additional .help-card .quick-links {
   display: flex;
   flex-direction: column;
@@ -2276,9 +2303,9 @@ h2 {
 }
 
 .rooms-section {
-  padding: 1.6rem 0;
+  padding: 1.6rem 5%;
   margin: 9.6rem auto;
-  width: 100%;
+  width: 90%;
   max-width: 1800px;
   display: flex;
   flex-direction: column;
@@ -2299,6 +2326,7 @@ h2 {
   overflow: hidden;
   text-align: left;
   position: relative;
+  width: 100%;
 }
 .rooms-section .section-intro::before {
   content: "";
@@ -2316,6 +2344,24 @@ h2 {
 .rooms-section .section-intro:hover::before {
   opacity: 1;
   transition: opacity 0.3s ease-in;
+}
+@media (max-width: 999px) {
+  .rooms-section .section-intro {
+    padding: 3.2rem;
+    margin: 0 auto 2.4rem;
+  }
+  .rooms-section .section-intro h2 {
+    font-size: 3.6rem;
+    margin-bottom: 2.4rem;
+  }
+  .rooms-section .section-intro p {
+    font-size: 1.6rem;
+    margin-bottom: 1.6rem;
+  }
+  .rooms-section .section-intro .rooms-available {
+    font-size: 2.4rem;
+    padding-top: 1.6rem;
+  }
 }
 .rooms-section .section-intro h2 {
   font-family: "Bebas Neue", sans-serif;
@@ -2419,6 +2465,13 @@ h2 {
     margin: 1.6rem 0;
     font-size: 2.4rem;
     text-align: center;
+  }
+}
+@media (max-width: 999px) {
+  .rooms-section {
+    width: 95%;
+    padding: 1.6rem;
+    margin: 6.4rem auto;
   }
 }
 
@@ -2535,12 +2588,6 @@ h2 {
 .registration-section .container .registration-form select option {
   background: #040a1d;
   color: #FFFFFF;
-}
-.registration-section .container .registration-form .standard-button {
-  display: block;
-  width: 300px;
-  height: 7rem;
-  margin: 4.8rem auto 0;
 }
 .registration-section .container .spotify-player {
   display: flex;
@@ -3056,10 +3103,6 @@ h2 {
 .payment-section .payment-accordion .accordion-item .accordion-content form .form-group {
   margin-bottom: 0;
 }
-.payment-section .payment-accordion .accordion-item .accordion-content form .standard-button {
-  margin-top: 3.2rem;
-  align-self: center;
-}
 @media (max-width: 999px) {
   .payment-section .payment-accordion .accordion-item .accordion-content form {
     padding: 1.6rem;
@@ -3186,10 +3229,6 @@ h2 {
   .payment-section .form-row {
     flex-direction: column;
     gap: 0.8rem;
-  }
-  .payment-section .standard-button {
-    width: 100% !important;
-    margin-top: 1.6rem !important;
   }
   .payment-section .payment-buttons {
     flex-direction: column;
@@ -3418,26 +3457,29 @@ h2 {
   margin-bottom: 2.4rem;
   color: rgba(255, 255, 255, 0.9);
 }
-.success-section .action-buttons {
+.success-section .vip-options a {
+  text-decoration: none;
   display: flex;
   justify-content: center;
-  gap: 3.2rem;
 }
-.success-section .action-buttons .cta-button {
-  min-width: 220px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1.6rem;
+.success-section .vip-options button.standard-button {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: min(90%, 220px);
+  width: auto;
+  max-width: 300px;
+  padding: 0.8rem 1.6rem;
+  font-size: clamp(1.6rem, 2vw, 2.4rem);
+  min-height: 7rem;
+  white-space: normal;
+  line-height: 1.2;
 }
-.success-section .action-buttons .cta-button i {
-  margin-right: 0.8rem;
-}
-.success-section .action-buttons .cta-button i {
-  font-size: 2.4rem;
-}
-.success-section .action-buttons .cta-button span {
-  font-size: 2.2rem;
+@media (max-width: 999px) {
+  .success-section .vip-options button.standard-button {
+    width: 100%;
+    font-size: 1.8rem;
+    padding: 1.2rem;
+  }
 }
 .success-section .action-links {
   display: flex;
@@ -3484,13 +3526,6 @@ h2 {
   .success-section .qr-container .qr-code {
     width: 160px;
     height: 160px;
-  }
-  .success-section .action-buttons {
-    flex-direction: column;
-    gap: 1.6rem;
-  }
-  .success-section .action-buttons .cta-button {
-    width: 100%;
   }
   .success-section .action-links {
     flex-direction: column;
@@ -3737,6 +3772,7 @@ h2 {
   margin: 0 auto;
   padding: 3.2rem 5%;
   margin: 12.8rem auto;
+  padding: 0 1.6rem;
 }
 .tickets-purchase .purchase-container {
   background: rgba(255, 255, 255, 0.05);
@@ -3748,9 +3784,10 @@ h2 {
   position: relative;
   transition: transform 0.3s ease;
   position: relative;
-  max-width: min(800px, 90vw);
+  width: 100%;
+  max-width: min(800px, 95vw);
   margin: 0 auto;
-  padding: 6.4rem;
+  padding: clamp(3.2rem, 5vw, 6.4rem);
 }
 .tickets-purchase .purchase-container::before {
   content: "";
@@ -3780,47 +3817,48 @@ h2 {
   text-transform: uppercase;
   text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
   text-align: center;
-  margin-bottom: 4.8rem;
+  margin-bottom: clamp(3.2rem, 5vw, 4.8rem);
+  font-size: clamp(2.8rem, 4vw, 3.6rem);
 }
 .tickets-purchase .purchase-container .ticket-form {
   display: grid;
-  gap: 3.2rem;
+  gap: clamp(1.6rem, 3vw, 3.2rem);
 }
 .tickets-purchase .purchase-container .ticket-form .form-group label {
   display: block;
   font-family: "Bebas Neue", sans-serif;
-  font-size: 2rem;
+  font-size: clamp(1.8rem, 2.5vw, 2rem);
   color: #FFFFFF;
-  margin-bottom: 1.6rem;
+  margin-bottom: 1.2rem;
 }
 .tickets-purchase .purchase-container .ticket-form .form-group input,
 .tickets-purchase .purchase-container .ticket-form .form-group select {
   width: 100%;
-  padding: 1.6rem;
+  padding: clamp(0.8rem, 2vw, 1.6rem);
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 0.5rem;
   color: #FFFFFF;
-  font-size: 1.6rem;
-}
-.tickets-purchase .purchase-container .ticket-form .form-group input:focus,
-.tickets-purchase .purchase-container .ticket-form .form-group select:focus {
-  outline: none;
-  border-color: #00aaff;
-  box-shadow: 0 0 15px rgba(0, 170, 255, 0.3);
-}
-.tickets-purchase .purchase-container .standard-button {
-  display: block;
-  width: 300px;
-  height: 7rem;
-  margin: 4.8rem auto 0;
+  font-size: clamp(1.4rem, 2vw, 1.6rem);
 }
 @media (max-width: 999px) {
   .tickets-purchase {
     margin: 6.4rem auto;
+    padding: 0.8rem;
   }
   .tickets-purchase .purchase-container {
-    padding: 3.2rem;
+    padding: 2.4rem;
+    width: 100%;
+  }
+  .tickets-purchase .purchase-container .ticket-form {
+    gap: 1.6rem;
+  }
+  .tickets-purchase .purchase-container .ticket-form .form-group {
+    margin-bottom: 0.8rem;
+  }
+  .tickets-purchase .purchase-container .ticket-form .form-group input,
+  .tickets-purchase .purchase-container .ticket-form .form-group select {
+    padding: 1.2rem;
   }
 }
 
@@ -3939,6 +3977,108 @@ h2 {
   box-shadow: 0 0 10px rgba(0, 170, 255, 0.7), 0 0 20px rgba(0, 170, 255, 0.5);
 }
 
+.vip-header-section {
+  width: 90%;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 3.2rem 5%;
+  margin: 9.6rem auto;
+  display: flex;
+  gap: 6.4rem;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.vip-header-section .intro-content {
+  flex: 0 1 65%;
+  max-width: 800px;
+  padding-right: 3.2rem;
+}
+.vip-header-section .intro-content h1 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 4.2rem;
+  color: #FFFFFF;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+  margin-bottom: 3.2rem;
+  font-size: clamp(4.2rem, 7vw, 7.2rem);
+}
+.vip-header-section .intro-content p {
+  font-size: clamp(1.6rem, 2vw, 2rem);
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  margin: 0;
+  max-width: 600px;
+}
+.vip-header-section .entry-card {
+  flex: 0 0 35%;
+  background: rgba(255, 255, 255, 0.05);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 2rem;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.1), 0 10px 30px rgba(0, 0, 0, 0.2), inset 0 0 60px rgba(255, 255, 255, 0.05);
+  position: relative;
+  transition: transform 0.3s ease;
+  position: relative;
+  padding: 3.2rem;
+  text-align: center;
+  min-width: 300px;
+  max-width: 400px;
+}
+.vip-header-section .entry-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 77, 151, 0.15), transparent 250px);
+  opacity: 0;
+  transition: opacity 1s ease-out;
+  pointer-events: none;
+}
+.vip-header-section .entry-card:hover::before {
+  opacity: 1;
+  transition: opacity 0.3s ease-in;
+}
+.vip-header-section .entry-card:hover {
+  transform: translateY(-5px);
+}
+.vip-header-section .entry-card h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2.8rem;
+  color: #FFFFFF;
+  margin-bottom: 2.4rem;
+}
+.vip-header-section .entry-card p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.6rem;
+  line-height: 1.6;
+  margin-bottom: 3.2rem;
+}
+@media (max-width: 999px) {
+  .vip-header-section {
+    flex-direction: column;
+    text-align: center;
+    gap: 3.2rem;
+  }
+  .vip-header-section .intro-content {
+    width: 100%;
+    padding-right: 0;
+    text-align: center;
+  }
+  .vip-header-section .intro-content p {
+    margin: 0 auto;
+  }
+  .vip-header-section .entry-card {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}
+
 .vip-title-section {
   width: 90%;
   max-width: 1800px;
@@ -3958,9 +4098,10 @@ h2 {
   text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
 }
 .vip-title-section p {
-  margin: 0;
+  margin: 0 auto;
+  max-width: 800px;
   font-family: "Roboto", sans-serif;
-  font-size: clamp(1.6rem, 2vw, 2rem);
+  font-size: clamp(1.8rem, 2vw, 2.2rem);
   color: rgba(255, 255, 255, 0.9);
   line-height: 1.6;
 }
@@ -4268,15 +4409,15 @@ h2 {
 }
 .vip-booking .registration-form .standard-button {
   display: block;
-  width: 300px;
-  height: 7rem;
-  margin: 4.8rem auto 0;
+  width: clamp(200px, 90%, 300px);
 }
 @media (max-width: 999px) {
   .vip-booking {
     padding: 1.6rem;
   }
   .vip-booking .registration-form {
+    width: 100%;
+    max-width: min(450px, 95%);
     padding: 3.2rem;
   }
   .vip-booking .registration-form h2 {
@@ -4775,11 +4916,16 @@ h2 {
   text-align: center;
 }
 .preferences-form .submit-section .standard-button {
-  width: 300px;
-  height: 7rem;
-  font-size: 2.5rem;
-  background: #9030FD;
-  margin: 0 auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: min(90%, 220px);
+  width: auto;
+  max-width: 300px;
+  padding: 0.8rem 1.6rem;
+  font-size: clamp(1.6rem, 2vw, 2.4rem);
+  min-height: 7rem;
+  white-space: normal;
+  line-height: 1.2;
 }
 
 .preferences-modal {
@@ -4875,9 +5021,16 @@ h2 {
   border: none;
   color: #FFFFFF;
   cursor: pointer;
-  width: 300px;
-  height: 7rem;
-  font-size: 2.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: min(90%, 220px);
+  width: auto;
+  max-width: 300px;
+  padding: 0.8rem 1.6rem;
+  font-size: clamp(1.6rem, 2vw, 2.4rem);
+  min-height: 7rem;
+  white-space: normal;
+  line-height: 1.2;
   background: #9030FD;
   margin: 0 auto;
   box-shadow: inset 0 12px 12px -12px rgba(255, 255, 255, 0.6), inset 12px 0 12px -12px rgba(255, 255, 255, 0.6), inset 2px 2px 4px rgba(255, 255, 255, 0.4), inset -4px -4px 8px rgba(0, 0, 0, 0.7), inset -8px -8px 16px rgba(0, 0, 0, 0.5), 2px 2px 4px rgba(0, 0, 0, 0.3), 6px 6px 12px rgba(0, 0, 0, 0.4), 8px 8px 16px rgba(0, 0, 0, 0.3), 12px 12px 24px rgba(0, 0, 0, 0.2);
@@ -4917,9 +5070,11 @@ h2 {
   .preferences-form .mode-options .mode-option label {
     min-height: 10rem;
   }
-  .preferences-form .submit-section .standard-button {
+  .preferences-form .submit-section .standard-button,
+  .preferences-form .preferences-modal .modal-content .close-button {
     width: 100%;
-    max-width: 300px;
+    font-size: 1.8rem;
+    padding: 1.2rem;
   }
   .preferences-modal .modal-content .close-button {
     width: 100%;

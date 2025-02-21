@@ -175,25 +175,46 @@ h2 {
 }
 
 // Rooms Section
-.rooms-section {  // Changed from about-us
-  padding: $spacing-unit * 2 0; // Remove horizontal padding
-  margin: $spacing-unit * 12 auto; // Increased from 2
-  width: 100%; // Use full width
-  max-width: 1800px; // Added max-width constraint
+.rooms-section {
+  padding: $spacing-unit * 2 5%; // Added horizontal padding
+  margin: $spacing-unit * 12 auto;
+  width: 90%; // Changed from 100% to 90%
+  max-width: 1800px;
   display: flex;
   flex-direction: column;
-  align-items: center; // Center all content
+  align-items: center;
   
   .section-intro {
-    max-width: 1000px; // Increased from 1400px to match rooms-grid
-    margin: 0 auto $spacing-unit * 4; // Reduced from 6 to 4
-    padding: $spacing-unit * 8; // Increased padding for better text width
-    @include frosted-glass; // Added this mixin
+    max-width: 1000px;
+    margin: 0 auto $spacing-unit * 4;
+    padding: $spacing-unit * 8;
+    @include frosted-glass;
     position: relative;
     transition: transform 0.3s ease;
     overflow: hidden;
-    text-align: left; // Added explicit left alignment
+    text-align: left;
     @include glow-effect;
+    width: 100%; // Added explicit width
+
+    @include mobile {
+      padding: $spacing-unit * 4; // Reduced padding on mobile
+      margin: 0 auto $spacing-unit * 3; // Reduced bottom margin on mobile
+      
+      h2 {
+        font-size: 3.6rem; // Slightly smaller on mobile
+        margin-bottom: $spacing-unit * 3;
+      }
+
+      p {
+        font-size: 1.6rem;
+        margin-bottom: $spacing-unit * 2;
+      }
+
+      .rooms-available {
+        font-size: 2.4rem;
+        padding-top: $spacing-unit * 2;
+      }
+    }
     
     h2 {
       font-family: $header-font;
@@ -310,6 +331,12 @@ h2 {
         }
       }
     }
+  }
+
+  @include mobile {
+    width: 95%;
+    padding: $spacing-unit * 2;
+    margin: $spacing-unit * 8 auto;
   }
 }
 
@@ -431,13 +458,6 @@ h2 {
           background: $deep-navy;
           color: $text-light;
         }
-      }
-
-      .standard-button {
-        display: block;
-        width: 300px;
-        height: 7rem;
-        margin: $spacing-unit * 6 auto 0;
       }
     }
 

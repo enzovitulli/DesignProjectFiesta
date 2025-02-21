@@ -368,7 +368,7 @@
         flex-direction: column;
         gap: $spacing-unit;
 
-        .standard-button {
+        .standard-button { // Different button for the newsletter in mobile
           width: 100%;
         }
       }

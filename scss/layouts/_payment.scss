@@ -186,11 +186,6 @@
             margin-bottom: 0; // Remove margin, using gap instead
           }
 
-          .standard-button {
-            margin-top: $spacing-unit * 4;
-            align-self: center;
-          }
-
           @include mobile {
             padding: $spacing-unit * 2;
             gap: $spacing-unit;
@@ -308,11 +303,6 @@
     .form-row {
       flex-direction: column; // Stack inputs on mobile
       gap: $spacing-unit;
-    }
-
-    .standard-button {
-      width: 100% !important; // Override any other width settings
-      margin-top: $spacing-unit * 2 !important;
     }
 
     .payment-buttons {

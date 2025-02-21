@@ -206,31 +206,31 @@
             margin-bottom: $spacing-unit * 3;
             color: rgba($text-light, 0.9);
         }
-    }
 
-    .action-buttons {
-        display: flex;
-        justify-content: center;
-        gap: $spacing-unit * 4;
-
-        .cta-button {
-            min-width: 220px;
-            
-            i {
-                margin-right: $spacing-unit;
-            }
-
+        a {
+            text-decoration: none;
             display: flex;
-            align-items: center;
             justify-content: center;
-            gap: $spacing-unit * 2;
+        }
 
-            i {
-                font-size: 2.4rem;
-            }
+        button.standard-button {
+            overflow: hidden; // Prevent text overflow
+            text-overflow: ellipsis; // Add ellipsis if text overflows
+            min-width: min(90%, 220px);
+            width: auto; // Allow button to grow but not beyond parent
+            max-width: 300px;
+            padding: $spacing-unit $spacing-unit * 2;
+            font-size: clamp(1.6rem, 2vw, 2.4rem);
+            min-height: 7rem;
+            white-space: normal; // Allow text to wrap if needed
+            line-height: 1.2;
+        }
 
-            span {
-                font-size: 2.2rem;
+        @include mobile {
+            button.standard-button {
+                width: 100%; // Full width on mobile
+                font-size: 1.8rem; // Fixed size for mobile
+                padding: $spacing-unit * 1.5;
             }
         }
     }
@@ -285,15 +285,6 @@
             .qr-code {
                 width: 160px;
                 height: 160px;
-            }
-        }
-
-        .action-buttons {
-            flex-direction: column;
-            gap: $spacing-unit * 2;
-
-            .cta-button {
-                width: 100%;
             }
         }
 
