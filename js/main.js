@@ -45,6 +45,31 @@ glowElements.forEach((element) => {
   });
 });
 
+// Scroll to top functionality
+document.addEventListener('DOMContentLoaded', () => {
+  const scrollButton = document.getElementById('scroll-top');
+  
+  if (scrollButton) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        scrollButton.style.display = 'flex';
+      } else {
+        scrollButton.style.display = 'none';
+      }
+    });
+
+    // Hide button initially
+    scrollButton.style.display = 'none';
+    
+    scrollButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
+});
+
 // VIP preferences form handling
 document.addEventListener('DOMContentLoaded', () => {
   const preferencesForm = document.getElementById('preferences-form');
@@ -149,16 +174,6 @@ cards.forEach((card) => {
   });
 });
 
-// Slider on index.html
-const sliderTrack = document.querySelector(".slider-track");
-const slides = document.querySelectorAll(".slide");
-const slideWidth = 200;
-const slideCount = slides.length;
-const gap = 16;
-
-sliderTrack.style.width = `${(slideWidth + gap) * slideCount}px`;
-sliderTrack.style.width = `${(slideWidth + gap) * slideCount}px`;
-
 // VIP Preferences Form Handling
 document.addEventListener('DOMContentLoaded', function() {
   const preferencesForm = document.getElementById('preferences-form');
@@ -180,3 +195,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+
+// Slider on index.html
+const sliderTrack = document.querySelector(".slider-track");
+const slides = document.querySelectorAll(".slide");
+const slideWidth = 200;
+const slideCount = slides.length;
+const gap = 16;
+
+sliderTrack.style.width = `${(slideWidth + gap) * slideCount}px`;
+sliderTrack.style.width = `${(slideWidth + gap) * slideCount}px`;

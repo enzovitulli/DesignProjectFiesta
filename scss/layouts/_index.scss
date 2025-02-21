@@ -1,28 +1,3 @@
-// Common section content styles
-section div {
-  img {
-    height: auto;
-    width: 35%;
-    border-radius: $border-radius;
-  }
-
-  .content-box {
-    flex-grow: 2;
-    width: 57%;
-    padding: 6%;
-    border-radius: $border-radius;
-    border: none; // Added to ensure no border
-  }
-}
-.enlace-reservar{
-  text-decoration: none;
-}
-// Common title styles
-h2 {
-  @include header-text;
-  text-align: center;
-}
-
 // Active Navigation Link Styles
 .nav-links ul a[aria-current="page"] {
   color: $text-light;

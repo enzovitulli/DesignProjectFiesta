@@ -1,0 +1,29 @@
+.scroll-top {
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background: $hot-pink;
+  border: none;
+  cursor: pointer;
+  display: none; // Hide by default
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: transform 0.3s ease;
+
+  i {
+    font-size: 2rem;
+    color: white;
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+  }
+
+  &:active {
+    transform: translateY(2px);
+  }
+}

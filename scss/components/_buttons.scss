@@ -31,6 +31,13 @@
   }
 }
 
+.enlace-reservar {
+  text-decoration: none;
+  display: block;
+  margin: 0 auto;
+  width: fit-content;
+}
+
 .cta-buttons {
   display: flex;
   gap: $spacing-unit * 3;

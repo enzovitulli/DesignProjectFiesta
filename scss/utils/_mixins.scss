@@ -18,7 +18,7 @@
   font-weight: 400; // Bebas Neue works better with 400
   font-family: $header-font; // Added Bebas Neue font
   letter-spacing: 0.1rem; // Added letter spacing for Bebas
-  text-decoration: none;
+  text-decoration: none !important; // Added !important to override any link styles
   transition: all 0.3s ease;
   position: relative;
   text-align: center;

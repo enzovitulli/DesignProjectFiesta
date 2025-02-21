@@ -9,9 +9,10 @@
 // 3. Components (standalone items)
 @import 'components/bottle-list';
 @import 'components/buttons';
-@import 'components/cards';  // Added new cards component
+@import 'components/cards';
 @import 'components/footer';
 @import 'components/navbar';
+@import 'components/scrolltop';
 @import 'components/slider';
 @import 'components/tooltips';
 
@@ -24,6 +25,6 @@
 @import 'layouts/payment';
 @import 'layouts/success';
 @import 'layouts/tickets';
-@import 'layouts/vip';
 @import 'layouts/vip-entry';
 @import 'layouts/vip-preferences';
+@import 'layouts/vip';
