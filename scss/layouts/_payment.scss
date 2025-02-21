@@ -128,44 +128,68 @@
         position: relative; // Added for absolute positioning of arrow
         height: 100px; // Fixed height for all headers
 
-        .payment-icons {
-          font-size: 3.2rem; // Reduced from 4.2rem
-          width: 120px; // Reduced from 180px
-          min-width: 100px; // Reduced from 120px
+        // Add new container for logo and text
+        .header-content {
           display: flex;
-          gap: $spacing-unit; // Reduced gap between icons
-          color: $text-light;
-          margin-right: $spacing-unit * 8; // Increased from *2 to *8
-          height: 60px; // Fixed height for icon container
           align-items: center;
-          justify-content: center;
+          width: 100%;
+          gap: $spacing-unit * 2;
+          padding-right: 40px; // Space for arrow
 
-          .bizum-logo {
-            width: auto; // Let width be automatic
-            height: 30px; // Slightly smaller fixed height
-            padding: 0; // Remove padding
-            object-fit: contain;
-            border-radius: 0; // Remove any border radius
-            transform: scale(0.9); // Slightly scale down to prevent any edge touching
+          .payment-icons-container {
+            flex: 0 0 auto;
+
+            .payment-icons {
+              font-size: 3.2rem; // Reduced from 4.2rem
+              width: 120px; // Reduced from 180px
+              min-width: 100px; // Reduced from 120px
+              display: flex;
+              gap: $spacing-unit; // Reduced gap between icons
+              color: $text-light;
+              height: 60px; // Fixed height for icon container
+              align-items: center;
+              justify-content: center;
+
+              .bizum-logo {
+                width: auto; // Let width be automatic
+                height: 30px; // Slightly smaller fixed height
+                padding: 0; // Remove padding
+                object-fit: contain;
+                border-radius: 0; // Remove any border radius
+                transform: scale(0.9); // Slightly scale down to prevent any edge touching
+              }
+            }
           }
-        }
 
-        h3 {
-          flex: 0 1 auto; // Don't grow, allow shrink, auto base size
-          text-align: left;
-          margin-left: auto; // Push text to the right
-          padding-right: 50px; // Fixed space for arrow, instead of margin
-          font-size: clamp(1.8rem, 3vw, 2.4rem); // Responsive font size
-        }
+          .payment-text-container {
+            flex: 1;
+            min-width: 0;
 
-        .fa-chevron-down {
-          position: absolute;
-          right: $spacing-unit * 3;
-          top: 50%;
-          transform: translateY(-50%);
-          width: 24px; // Fixed width for icon
-          text-align: center; // Center the icon
-          transition: transform 0.3s ease;
+            h3 {
+              flex: 1;
+              min-width: 0; // Allow text to shrink
+              white-space: nowrap; // Prevent text wrapping
+              overflow: hidden;
+              text-overflow: ellipsis; // Show ellipsis if text overflows
+              padding-right: $spacing-unit * 4; // Extra padding to avoid arrow
+              text-align: left;
+              margin-left: auto; // Push text to the right
+              font-size: clamp(1.8rem, 3vw, 2.4rem); // Responsive font size
+            }
+          }
+
+          .payment-arrow-container {
+            position: absolute;
+            right: $spacing-unit * 3;
+            top: 50%;
+            transform: translateY(-50%);
+            
+            .fa-chevron-down {
+              width: 24px; // Fixed width for icon
+              text-align: center; // Center the icon
+              transition: transform 0.3s ease;
+            }
+          }
         }
       }
 
@@ -264,9 +288,6 @@
   }
 
   @include mobile {
-    margin: 60px auto 20px; // Reduced top margin
-    padding: $spacing-unit;
-
     .payment-container {
       padding: $spacing-unit * 2;
       margin: 0;
@@ -275,28 +296,42 @@
     }
 
     .accordion-header {
-      padding: $spacing-unit * 1.5;
-      gap: $spacing-unit;
-      height: auto; // Remove fixed height
-      min-height: 80px; // Set minimum height instead
+      padding: $spacing-unit * 2;
+      min-height: 80px;
       
-      .payment-icons {
-        font-size: 2.4rem !important; // Increased from 2rem
-        width: auto; // Allow width to adjust
-        height: auto; // Remove fixed height
-        margin-right: $spacing-unit;
-        min-width: 90px; // Increased from 80px
-      }
+      .header-content {
+        width: calc(100% - 35px);
+        gap: $spacing-unit;
 
-      h3 {
-        font-size: 1.8rem; // Smaller font on mobile
-        padding-right: 40px; // Slightly reduced but still maintaining space
-        margin-right: 0; // Remove margin since we're using padding
+        .payment-icons {
+          font-size: 2.4rem !important; // Increased from 2rem
+          width: auto; // Allow width to adjust
+          height: auto; // Remove fixed height
+          min-width: 80px; // Reduced minimum width
+          margin-right: $spacing-unit;
+
+          i {
+            font-size: 2.2rem; // Slightly smaller icons
+          }
+          
+          .bizum-logo {
+            height: 25px; // Slightly smaller logo
+          }
+        }
+
+        h3 {
+          font-size: clamp(1.8rem, 4vw, 2.2rem);
+          white-space: nowrap; // Prevent text wrapping
+          padding-right: 40px; // Slightly reduced but still maintaining space
+          margin-right: 0; // Remove margin since we're using padding
+        }
       }
 
       .fa-chevron-down {
         right: $spacing-unit * 2;
         width: 20px; // Slightly smaller fixed width for mobile
+        font-size: 1.8rem;
+        color: $text-light;
       }
     }
 
@@ -322,6 +357,127 @@
 
         span {
           font-size: 2rem; // Adjusted for mobile
+        }
+      }
+    }
+  }
+}
+
+.accordion-item {
+  .accordion-header {
+    padding: $spacing-unit * 3;
+    width: 100%;
+    background: none;
+    border: none;
+    cursor: pointer;
+    
+    .header-content {
+      display: flex;
+      justify-content: space-between; // This spreads content and arrow
+      align-items: center;
+      width: 100%;
+      padding-right: $spacing-unit * 4; // Space for arrow
+
+      .content-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: $spacing-unit * 4;
+        margin-right: auto; // This pushes the content to the left
+
+        .payment-icons {
+          display: flex;
+          gap: $spacing-unit;
+          font-size: 3.2rem;
+          color: $text-light;
+          min-width: 120px;
+          height: 40px; // Fixed height for consistency
+          align-items: center;
+          justify-content: center;
+          
+          .bizum-logo {
+            height: 35px; // Increased from 30px for better visibility
+            width: auto;
+            object-fit: contain; // Ensure the entire image is visible
+            padding: 0; // Remove padding that might cause cropping
+            border-radius: 0;
+            transform: none; // Remove any transforms
+            filter: none; // Remove any filters
+            opacity: 1; // Ensure full opacity
+            backdrop-filter: none; // Remove any backdrop filters
+            -webkit-backdrop-filter: none;
+            background: none; // Remove any background
+            mix-blend-mode: normal; // Reset blend mode
+            box-shadow: none; // Remove any shadow effects
+          }
+
+          i {
+            height: 100%; // Ensure icons take full height
+            display: flex;
+            align-items: center;
+          }
+        }
+
+        .payment-text {
+          h3 {
+            font-size: 2.4rem;
+            color: $text-light;
+            margin: 0;
+            white-space: nowrap;
+          }
+        }
+      }
+
+      .arrow-container {
+        margin-left: $spacing-unit * 2; // Add space between content and arrow
+        font-size: 2.4rem;
+        color: $text-light;
+        width: 24px;
+        flex-shrink: 0; // Prevent arrow from shrinking
+      }
+    }
+  }
+
+  &.active {
+    .arrow-container .fa-chevron-down {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+@include mobile {
+  .accordion-item {
+    .accordion-header {
+      padding: $spacing-unit * 2;
+
+      .header-content {
+        padding-right: $spacing-unit * 3;
+
+        .content-wrapper {
+          flex-direction: column;
+          align-items: center;
+          gap: $spacing-unit;
+          
+          .payment-icons {
+            height: 35px; // Slightly reduced height for mobile
+            margin-bottom: $spacing-unit;
+
+            .bizum-logo {
+              max-height: 30px; // Slightly smaller on mobile
+              height: 100%;
+              width: auto;
+              object-fit: contain;
+              padding: 0;
+              transform: none;
+              filter: none;
+              opacity: 1;
+              backdrop-filter: none;
+              -webkit-backdrop-filter: none;
+              background: none;
+              mix-blend-mode: normal;
+              box-shadow: none;
+            }
+          }
         }
       }
     }

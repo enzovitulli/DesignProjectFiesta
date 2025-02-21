@@ -88,13 +88,22 @@
               <!-- Credit Card Option -->
               <div class="accordion-item">
                 <button class="accordion-header">
-                  <div class="payment-icons">
-                    <i class="fab fa-cc-visa"></i>
-                    <i class="fab fa-cc-mastercard"></i>
-                    <i class="fab fa-cc-amex"></i>
+                  <!-- New structure with 3 distinct containers -->
+                  <div class="header-content">
+                    <div class="content-wrapper">
+                      <div class="payment-icons">
+                        <i class="fab fa-cc-visa"></i>
+                        <i class="fab fa-cc-mastercard"></i>
+                        <i class="fab fa-cc-amex"></i>
+                      </div>
+                      <div class="payment-text">
+                        <h3>Tarjeta</h3>
+                      </div>
+                    </div>
+                    <div class="arrow-container">
+                      <i class="fas fa-chevron-down"></i>
+                    </div>
                   </div>
-                  <h3>Tarjeta</h3>
-                  <i class="fas fa-chevron-down"></i>
                 </button>
                 <div class="accordion-content">
                   <form class="card-payment-form" action="success.html">
@@ -124,11 +133,19 @@
               <!-- Bizum Option -->
               <div class="accordion-item">
                 <button class="accordion-header">
-                  <div class="payment-icons">
-                    <img src="../assets/img/brands/bizum-logo.png" alt="" class="bizum-logo" />
+                  <div class="header-content">
+                    <div class="content-wrapper">
+                      <div class="payment-icons">
+                        <img src="../assets/img/brands/bizum-logo.png" alt="" class="bizum-logo" />
+                      </div>
+                      <div class="payment-text">
+                        <h3>Bizum</h3>
+                      </div>
+                    </div>
+                    <div class="arrow-container">
+                      <i class="fas fa-chevron-down"></i>
+                    </div>
                   </div>
-                  <h3>Bizum</h3>
-                  <i class="fas fa-chevron-down"></i>
                 </button>
                 <div class="accordion-content">
                   <form class="bizum-payment-form" action="success.html">
