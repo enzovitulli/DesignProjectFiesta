@@ -79,7 +79,7 @@
     }
 
     .feature-images {
-      flex: 0 1 45%; // Change from flex: 1 to specific width
+      flex: 0 1 50%; // Increased from 45% to give more space to images
       margin-left: auto; // Push images to the right
       display: flex;
       justify-content: flex-end; // Align images to the end
@@ -94,6 +94,7 @@
         
         img {
           width: 100%;
+          height: 280px; // Added fixed height for consistency
           display: inline-block; // Make images inline-block
           object-fit: cover;
           margin-bottom: $spacing-unit * 2;
@@ -146,6 +147,7 @@
           column-gap: $spacing-unit;
           
           img {
+            height: 220px; // Slightly bigger on mobile too
             margin-bottom: $spacing-unit;
             max-height: 250px; // Increased from 200px for mobile
           }
@@ -169,6 +171,8 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: $spacing-unit * 8;
+    max-width: 1000px; // Add this line to constrain the width
+    margin: 0 auto; // Add this to center the grid
 
     .showcase-item {
       @include card-base;
@@ -176,7 +180,7 @@
 
       img {
         width: 100%;
-        height: 400px;
+        height: 350px; // Reduced from 400px
         object-fit: cover;
       }
 
